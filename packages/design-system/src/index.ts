@@ -7,6 +7,7 @@ export * from './components/Layout';
 export * from './components/Link';
 export * from './components/Notice';
 export * from './components/Post';
+export * from './components/SegmentedControl';
 export * from './components/SiteFooter';
 export * from './components/SiteHeader';
 export * from './components/Testimonial';

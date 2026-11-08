@@ -1,0 +1,5 @@
+{
+  "segmented-control": {
+    "radius": { "$value": "{radius.sm}" }
+  }
+}

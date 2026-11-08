@@ -1,0 +1,7 @@
+{
+  "segmented-control": {
+    "track-bg": { "$value": "{color.transparent}" },
+    "thumb-bg": { "$value": "{color.surface}" },
+    "thumb-fg": { "$value": "{color.text}" }
+  }
+}

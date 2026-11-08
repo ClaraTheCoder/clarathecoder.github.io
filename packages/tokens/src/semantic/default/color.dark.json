@@ -5,6 +5,7 @@
     "surface": { "$value": "{color.neutral.950}" },
     "surface-hover": { "$value": "{color.neutral.900}" },
     "surface-shadow": {"$value": "none"},
+    "surface-shadow-tight": {"$value": "none"},
     "surface-backdrop": { "$value": "none" },
     "surface-border": { "$value": "{color.border}" },
 

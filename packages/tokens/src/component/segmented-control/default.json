@@ -1,0 +1,9 @@
+{
+  "segmented-control": {
+    "radius": { "$value": "{radius.full}" },
+    "track-bg": { "$value": "{color.secondary-subtle}" },
+    "thumb-bg": { "$value": "{color.accent}" },
+    "thumb-fg": { "$value": "{color.text-on-color}" },
+    "thumb-border": { "$value": "{color.surface-border}" }
+  }
+}

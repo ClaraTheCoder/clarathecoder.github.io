@@ -1,0 +1,134 @@
+@layer reset, base, components, utilities;
+
+@layer components {
+  .segmented-control {
+    --_pad: var(--space-50);
+    --_radius: var(--segmented-control-radius);
+    --_seg-py: var(--space-400);
+    --_seg-px: var(--space-500);
+    --_seg-fs: var(--font-size-300);
+
+    position: relative;
+    display: inline-grid;
+    align-items: stretch;
+    padding: var(--_pad);
+    background: var(--color-surface);
+    border: var(--surface-border-width, 1px) solid var(--color-surface-border);
+    border-radius: var(--_radius);
+    backdrop-filter: var(--color-surface-backdrop);
+    -webkit-backdrop-filter: var(--color-surface-backdrop);
+    box-shadow: var(--color-surface-shadow);
+  }
+
+  .segmented-control__thumb {
+    position: absolute;
+    inset-block: var(--_pad);
+    inset-inline-start: var(--_pad);
+    inline-size: calc((100% - var(--_pad) * 2) / var(--_count, 1));
+    transform: translateX(calc(var(--_index, 0) * 100%));
+    border-radius: calc(var(--_radius) - var(--_pad));
+    background: var(--segmented-control-thumb-bg);
+    border: var(--surface-border-width, 1px) solid var(--segmented-control-thumb-border);
+    box-shadow: var(--color-surface-shadow-tight);
+    backdrop-filter: var(--color-surface-backdrop);
+    -webkit-backdrop-filter: var(--color-surface-backdrop);
+    transition: transform var(--duration-base) var(--ease-standard);
+    pointer-events: none;
+  }
+
+  .segmented-control__segment {
+    position: relative;
+    z-index: var(--z-base);
+    display: inline-grid;
+    grid-template-areas: 'label';
+    place-items: center;
+    min-inline-size: 0;
+    padding-block: var(--_seg-py);
+    padding-inline: var(--_seg-px);
+    font-family: var(--text-body-font-family);
+    font-weight: var(--font-weight-medium);
+    font-size: var(--_seg-fs);
+    line-height: 1;
+    white-space: nowrap;
+    color: var(--color-text-muted);
+    background: transparent;
+    border: 0;
+    border-radius: calc(var(--_radius) - var(--_pad));
+    cursor: pointer;
+    user-select: none;
+    transition: color var(--duration-base) var(--ease-standard);
+  }
+
+  .segmented-control__input {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .segmented-control__input:disabled {
+    cursor: not-allowed;
+  }
+
+  .segmented-control__label {
+    grid-area: label;
+  }
+
+  .segmented-control__segment::after {
+    content: attr(data-label);
+    grid-area: label;
+    font-weight: var(--font-weight-semibold);
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  .segmented-control__input:checked ~ .segmented-control__label {
+    color: var(--segmented-control-thumb-fg);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .segmented-control__segment:not(:has(.segmented-control__input:checked)):hover
+    .segmented-control__label {
+    color: var(--color-text);
+  }
+
+  .segmented-control__segment:has(.segmented-control__input:focus-visible) {
+    outline: var(--focus-ring-width) solid var(--color-border-strong);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  .segmented-control__segment:has(.segmented-control__input:disabled) {
+    cursor: not-allowed;
+    opacity: var(--opacity-disabled);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .segmented-control__thumb,
+    .segmented-control__segment {
+      transition: none;
+    }
+  }
+
+  @media (prefers-contrast: more) {
+    .segmented-control__thumb {
+      border-color: var(--color-border-strong);
+    }
+  }
+
+  @media (prefers-reduced-transparency: reduce) {
+    .segmented-control {
+      background: var(--color-secondary-subtle);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+    .segmented-control__thumb {
+      background: var(--color-accent);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+    .segmented-control__input:checked ~ .segmented-control__label {
+      color: var(--color-text-on-color);
+    }
+  }
+}

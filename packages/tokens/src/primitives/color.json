@@ -457,6 +457,10 @@
         "$type": "color",
         "$value": "#00000033"
       },
+      "30": {
+        "$type": "color",
+        "$value": "#00000045"
+      },
       "40": {
         "$type": "color",
         "$value": "#00000066"
@@ -486,6 +490,10 @@
       "20": {
         "$type": "color",
         "$value": "#ffffff33"
+      },
+      "30": {
+        "$type": "color",
+        "$value": "#ffffff45"
       },
       "40": {
         "$type": "color",
