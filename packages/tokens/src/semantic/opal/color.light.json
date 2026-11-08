@@ -2,9 +2,9 @@
   "color": {
     "$type": "color",
     "surface": { "$value": "{color.white-alpha.40}" },
-    "surface-hover": { "$value": "{color.white-alpha.60}" },
-    "surface-shadow": { "$value": "0 22px 48px -24px rgba(12, 18, 40, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.9)" },
-    "surface-backdrop": { "$value": "blur(18px) brightness(140%) contrast(80%)" },
-    "surface-border": { "$value": "{color.white-alpha.40}" }
+    "surface-hover": { "$value": "{color.white-alpha.80}" },
+    "surface-shadow": { "$value": "0 22px 48px -24px rgba(12, 18, 40, 0.6), inset 0 1px 0 rgba(255, 255, 255, 1)" },
+    "surface-backdrop": { "$value": "blur(30px)" },
+    "surface-border": { "$value": "{color.white-alpha.60}" }
   }
 }

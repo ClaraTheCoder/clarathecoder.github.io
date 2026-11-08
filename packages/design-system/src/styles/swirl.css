@@ -1,0 +1,83 @@
+@layer components {
+  .swirl {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    display: none;
+
+    --_field: var(--color-white);
+    --_c1: color-mix(in oklab, var(--color-lavender-500) 66%, transparent);
+    --_c2: color-mix(in oklab, var(--color-fuchsia-500) 66%, transparent);
+    --_c3: color-mix(in oklab, var(--color-cerulean-500) 66%, transparent);
+    --_c4: color-mix(in oklab, var(--color-celadon-500) 66%, transparent);
+
+    background: var(--_field);
+  }
+
+  [data-preset='opal'] .swirl {
+    display: block;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme='light']) .swirl {
+      --_field: color-mix(in oklab, var(--color-bg), var(--color-black) 50%);
+      --_c1: color-mix(in oklab, var(--color-lavender-800) 42%, transparent);
+      --_c2: color-mix(in oklab, var(--color-fuchsia-700) 42%, transparent);
+      --_c3: color-mix(in oklab, var(--color-cerulean-800) 42%, transparent);
+      --_c4: color-mix(in oklab, var(--color-celadon-900) 42%, transparent);
+    }
+  }
+
+  .swirl__rotor {
+    position: absolute;
+    inset: 0;
+    animation: swirl-spin 120s linear infinite;
+  }
+
+  .swirl__aurora {
+    position: absolute;
+    inset: -30%;
+    background:
+      radial-gradient(42% 42% at 25% 30%, var(--_c1), transparent 65%),
+      radial-gradient(46% 46% at 75% 22%, var(--_c2), transparent 65%),
+      radial-gradient(52% 52% at 68% 74%, var(--_c3), transparent 65%),
+      radial-gradient(40% 40% at 28% 80%, var(--_c4), transparent 65%);
+    filter: blur(90px) saturate(3);
+    animation:
+      aurora-drift 20s ease-in-out infinite alternate,
+      aurora-hue 30s ease-in-out infinite alternate;
+    will-change: transform, filter;
+  }
+}
+
+@keyframes swirl-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes aurora-drift {
+  from {
+    transform: translate3d(-3%, -2%, 0) scale(1);
+  }
+  to {
+    transform: translate3d(4%, 3%, 0) scale(1.12);
+  }
+}
+
+@keyframes aurora-hue {
+  from {
+    filter: blur(90px) saturate(2) hue-rotate(-18deg);
+  }
+  to {
+    filter: blur(90px) saturate(2) hue-rotate(18deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .swirl__rotor,
+  .swirl__aurora {
+    animation: none;
+  }
+}

@@ -1,6 +1,7 @@
 ---
 import '@clara/tokens/tokens.css';
 import '@clara/design-system/styles.css';
+import '@clara/design-system/swirl.css';
 import '../styles/site.css';
 import { Notice, SiteHeader, SiteFooter, Link } from '@clara/design-system';
 
@@ -29,6 +30,12 @@ const nav = [
     <meta name="description" content={description} />
   </head>
   <body>
+    <div class="swirl" aria-hidden="true">
+      <div class="swirl__rotor">
+        <div class="swirl__aurora"></div>
+      </div>
+    </div>
+
     <a class="skip-link" href="#main">Skip to content</a>
     <Notice>🚧 Under construction 🚧</Notice>
 

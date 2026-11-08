@@ -27,6 +27,11 @@
 }
 
 @layer components {
+  .swirl {
+    position: fixed;
+    z-index: var(--z-below);
+  }
+
   .page {
     display: flex;
     flex-direction: column;

@@ -12,6 +12,7 @@
     "./fonts.css": "./src/styles/fonts.css",
     "./typography.css": "./src/styles/typography.css",
     "./prose.css": "./src/styles/prose.css",
+    "./swirl.css": "./src/styles/swirl.css",
     "./styles.css": "./src/styles/index.css"
   },
   "scripts": {

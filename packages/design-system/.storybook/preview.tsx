@@ -4,6 +4,7 @@ import addonA11y from '@storybook/addon-a11y';
 import addonDocs from '@storybook/addon-docs';
 import '@clara/tokens/tokens.css';
 import '../src/styles/index.css';
+import '../src/styles/swirl.css';
 
 const presets = [
   { value: 'default', title: 'Default' },
@@ -25,16 +26,12 @@ const withTheme: Decorator = (Story, context) => {
   // Per-theme stage backdrops. The pattern themes draw with the live
   // `--color-accent`, so they track whatever accent the active theme/mode sets.
   // Dots (pow) and blueprint grid (datum) are ported from the old site.
+  // Opal is not here: its backdrop is the animated `.swirl` orbs (swirl.css),
+  // rendered as real layers below, not a background image.
   const backdrops: Record<
     string,
     { image: string; size: string; position: string; repeat: string }
   > = {
-    opal: {
-      image: `url("${mode === 'light' ? 'https://images.unsplash.com/photo-1565073182887-6bcefbe225b1?q=80&w=2342&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D' : 'https://images.unsplash.com/photo-1638215134810-313b0fd2dafb?q=80&w=2346&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D'}")`,
-      size: 'cover',
-      position: 'center',
-      repeat: 'no-repeat',
-    },
     pow: {
       image:
         'radial-gradient(circle, color-mix(in srgb, var(--color-accent) 14%, transparent) 1.2px, transparent 1.3px), radial-gradient(circle, color-mix(in srgb, var(--color-accent) 14%, transparent) 1.2px, transparent 1.3px)',
@@ -55,6 +52,8 @@ const withTheme: Decorator = (Story, context) => {
   return (
     <div
       style={{
+        position: 'relative',
+        overflow: 'hidden',
         minHeight: '100vh',
         boxSizing: 'border-box',
         display: 'flex',
@@ -69,7 +68,16 @@ const withTheme: Decorator = (Story, context) => {
         color: 'var(--color-text)',
       }}
     >
-      <Story />
+      {preset === 'opal' && (
+        <div className="swirl" aria-hidden="true">
+          <div className="swirl__rotor">
+            <div className="swirl__aurora" />
+          </div>
+        </div>
+      )}
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <Story />
+      </div>
     </div>
   );
 };
