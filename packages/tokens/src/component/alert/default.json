@@ -1,0 +1,24 @@
+{
+  "alert": {
+    "pad-block": { "$value": "{space.400}" },
+    "pad-start": { "$value": "{space.300}" },
+    "pad-end": { "$value": "{space.400}" },
+
+    "icon-size": { "$value": "{space.500}" },
+    "icon-pad": { "$value": "0px" },
+    "icon-radius": { "$value": "{radius.none}" },
+    "icon-offset-top": { "$value": "0px" },
+    "icon-row": { "$value": "1" },
+    "icon-self": { "$value": "center" },
+
+    "bar-bleed": { "$value": "0px" },
+    "bar-border-width": { "$value": "0px" },
+
+    "bg": { "$value": "var(--alert-accent-subtle)" },
+    "border-color": { "$value": "var(--alert-accent)" },
+    "shadow": { "$value": "{color.surface-shadow}" },
+    "icon": { "$value": "var(--alert-accent)" },
+    "icon-bg": { "$value": "{color.transparent}" },
+    "icon-shadow": { "$value": "none" }
+  }
+}

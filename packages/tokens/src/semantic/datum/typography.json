@@ -1,0 +1,91 @@
+{
+  "text": {
+    "display-1": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.saira-condensed}",
+        "textCase": "uppercase",
+        "letterSpacing": "{font.tracking.wide}"
+      }
+    },
+    "display-2": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.saira-condensed}",
+        "textCase": "uppercase",
+        "letterSpacing": "{font.tracking.wide}"
+      }
+    },
+    "heading-1": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.saira-condensed}",
+        "textCase": "uppercase",
+        "letterSpacing": "{font.tracking.wide}"
+      }
+    },
+    "heading-2": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.saira-condensed}",
+        "fontWeight": "{font.weight.bold}",
+        "textCase": "uppercase",
+        "letterSpacing": "{font.tracking.wide}"
+      }
+    },
+    "heading-3": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.saira-condensed}",
+        "fontWeight": "{font.weight.bold}",
+        "textCase": "uppercase",
+        "letterSpacing": "{font.tracking.wide}"
+      }
+    },
+    "heading-4": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.saira-condensed}",
+        "fontWeight": "{font.weight.bold}",
+        "textCase": "uppercase",
+        "letterSpacing": "{font.tracking.wide}"
+      }
+    },
+    "heading-5": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.saira-condensed}",
+        "fontWeight": "{font.weight.bold}",
+        "textCase": "uppercase",
+        "letterSpacing": "{font.tracking.wide}"
+      }
+    },
+    "heading-6": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.saira-condensed}",
+        "fontWeight": "{font.weight.bold}",
+        "textCase": "uppercase",
+        "letterSpacing": "{font.tracking.wide}"
+      }
+    },
+    "lead": { "$type": "typography", "$value": { "fontFamily": "{font.family.jetbrains-mono}" } },
+    "body": { "$type": "typography", "$value": { "fontFamily": "{font.family.jetbrains-mono}" } },
+    "body-sm": {
+      "$type": "typography",
+      "$value": { "fontFamily": "{font.family.jetbrains-mono}" }
+    },
+    "caption": {
+      "$type": "typography",
+      "$value": { "fontFamily": "{font.family.jetbrains-mono}" }
+    },
+    "overline": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.jetbrains-mono}",
+        "letterSpacing": "{font.tracking.widest}"
+      }
+    },
+    "code": { "$type": "typography", "$value": { "fontFamily": "{font.family.jetbrains-mono}" } }
+  }
+}

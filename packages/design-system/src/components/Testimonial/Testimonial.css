@@ -1,0 +1,41 @@
+@layer reset, base, components, utilities;
+
+@layer components {
+  .testimonial {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-400);
+    margin: 0;
+  }
+
+  .testimonial__quote {
+    margin: 0;
+    font-size: var(--font-size-600);
+    line-height: var(--font-line-height-snug);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .testimonial__cite {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-50);
+  }
+
+  .testimonial__role {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-200);
+  }
+
+  .testimonial__quote-mark {
+    width: var(--space-900);
+    height: var(--space-900);
+    margin-block: var(--space-300);
+    fill: var(--color-accent);
+  }
+
+  .testimonial__quote-mark:last-child {
+    align-self: flex-end;
+    transform: rotate(180deg);
+  }
+}

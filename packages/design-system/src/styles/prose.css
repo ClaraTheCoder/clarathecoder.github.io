@@ -1,0 +1,110 @@
+/*
+ * Long-form prose (Astro markdown → bare h1–h6 / p / ul / blockquote / code…).
+ * The base element defaults in typography.css already apply the heading/body/
+ * code *roles* to these tags, so prose only adds what's relational: the line-
+ * length measure, vertical rhythm (same-role gaps from the role's
+ * paragraph-spacing token; heading top-margins in em), and element treatments
+ * markdown needs. Everything reads tokens, so the active theme restyles it.
+ */
+
+@layer components {
+  .prose {
+    max-inline-size: var(--size-container-prose, 680px);
+    font-family: var(--text-body-font-family);
+    font-size: var(--text-body-font-size);
+    font-weight: var(--text-body-font-weight);
+    line-height: var(--text-body-line-height);
+    letter-spacing: var(--text-body-letter-spacing);
+    color: var(--color-text);
+  }
+
+  /* Flow: gap between consecutive blocks = the body role's paragraph-spacing. */
+  .prose > * + * {
+    margin-block-start: var(--text-body-paragraph-spacing);
+  }
+  .prose p {
+    text-indent: var(--text-body-paragraph-indent);
+  }
+
+  /* Headings get a larger relational top-margin (em = relative to their own
+     size). Role font styling comes from the base :where() defaults. */
+  .prose :is(h2, h3, h4) {
+    margin-block-start: 1.6em;
+    color: var(--color-text);
+  }
+
+  /* Opt-in standfirst for the first paragraph or an explicit .lead. */
+  .prose .lead {
+    font-family: var(--text-lead-font-family);
+    font-size: var(--text-lead-font-size);
+    font-weight: var(--text-lead-font-weight);
+    line-height: var(--text-lead-line-height);
+    letter-spacing: var(--text-lead-letter-spacing);
+    color: var(--color-text-muted);
+  }
+
+  .prose ul,
+  .prose ol {
+    padding-inline-start: 1.4em;
+  }
+  .prose ul {
+    list-style: disc;
+  }
+  .prose ol {
+    list-style: decimal;
+  }
+  .prose li + li {
+    margin-block-start: 0.35em;
+  }
+
+  .prose strong {
+    font-weight: var(--font-weight-semibold);
+  }
+  .prose em {
+    font-style: italic;
+  }
+
+  .prose blockquote {
+    margin-inline: 0;
+    padding-inline-start: 1em;
+    border-inline-start: 2px solid var(--color-border-strong);
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  .prose a {
+    color: var(--color-accent);
+    text-decoration-line: underline;
+    text-underline-offset: 0.15em;
+  }
+  .prose a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  /* Inline code: the code role, scaled down to sit with body text. */
+  .prose :not(pre) > code {
+    font-family: var(--text-code-font-family);
+    font-size: 0.9em;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 0.1em 0.3em;
+    border-radius: 0.25em;
+  }
+
+  .prose pre {
+    font-family: var(--text-code-font-family);
+    font-size: var(--text-code-font-size);
+    line-height: var(--text-code-line-height);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    padding: 1em;
+    border-radius: 0.5em;
+    overflow-x: auto;
+  }
+  .prose pre code {
+    font: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+  }
+}

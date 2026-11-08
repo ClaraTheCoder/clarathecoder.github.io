@@ -1,0 +1,45 @@
+---
+import '@clara/tokens/tokens.css';
+import '@clara/design-system/styles.css';
+import '../styles/site.css';
+import { Notice, SiteHeader, SiteFooter, Link } from '@clara/design-system';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Clara',
+  description = 'Design-systems engineer and tech lead.',
+} = Astro.props;
+
+const nav = [
+  { label: 'Writing', href: '/writing' },
+  { label: 'Work', href: '/work' },
+];
+---
+
+<!doctype html>
+<html lang="en-GB" data-preset="opal">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Notice>🚧 Under construction 🚧</Notice>
+
+    <SiteHeader brand={{ label: 'Clara', href: '/' }} nav={nav} />
+
+    <main id="main" class="container" tabindex="-1">
+      <slot />
+    </main>
+
+    <SiteFooter>
+      Find me elsewhere on <Link href="#">LinkedIn</Link> and <Link href="#">GitHub</Link>.
+    </SiteFooter>
+  </body>
+</html>

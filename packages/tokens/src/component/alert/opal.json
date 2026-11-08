@@ -1,0 +1,16 @@
+{
+  "alert": {
+    "pad-start": { "$value": "{space.400}" },
+    "pad-end": { "$value": "{space.500}" },
+    "icon-pad": { "$value": "{space.200}" },
+    "icon-radius": { "$value": "{radius.md}" },
+    "icon-offset-top": { "$value": "{space.100}" },
+    "icon-row": { "$value": "1 / span 2" },
+    "icon-self": { "$value": "start" },
+
+    "bg": { "$value": "{color.surface}" },
+    "border-color": { "$value": "{color.surface-border}" },
+    "icon": { "$value": "{color.text-on-color-fixed}" },
+    "icon-bg": { "$value": "var(--alert-accent)" }
+  }
+}

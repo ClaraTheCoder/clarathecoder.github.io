@@ -1,0 +1,7 @@
+@layer reset, base, components, utilities;
+
+@layer components {
+  .flex {
+    display: flex;
+  }
+}

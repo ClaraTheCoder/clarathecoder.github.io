@@ -1,0 +1,260 @@
+/*
+ * Typography application layer (ADR 0007).
+ *
+ * The token build explodes each composite role into a group of custom
+ * properties: --text-<role>-font-family, -font-size, -font-weight,
+ * -line-height, -letter-spacing, -text-transform, -text-decoration, plus
+ * -paragraph-spacing / -paragraph-indent (consumed only by prose.css). This
+ * file turns those groups into usable styles two ways:
+ *   1. base element defaults (zero-specificity `:where()`, so anything wins over
+ *      them), and
+ *   2. a semantic role class `.text-<role>` for applying a role on demand.
+ * Both read tokens only, so the active [data-preset]/[data-theme] restyles them
+ * for free.
+ */
+
+@layer reset, base, components, utilities;
+
+@layer base {
+  :where(body) {
+    font-family: var(--text-body-font-family);
+    font-size: var(--text-body-font-size);
+    font-weight: var(--text-body-font-weight);
+    line-height: var(--text-body-line-height);
+    letter-spacing: var(--text-body-letter-spacing);
+    color: var(--color-text);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  :where(h1) {
+    font: inherit;
+    font-family: var(--text-heading-1-font-family);
+    font-size: var(--text-heading-1-font-size);
+    font-weight: var(--text-heading-1-font-weight);
+    line-height: var(--text-heading-1-line-height);
+    letter-spacing: var(--text-heading-1-letter-spacing);
+    text-transform: var(--text-heading-1-text-transform);
+  }
+  :where(h2) {
+    font: inherit;
+    font-family: var(--text-heading-2-font-family);
+    font-size: var(--text-heading-2-font-size);
+    font-weight: var(--text-heading-2-font-weight);
+    line-height: var(--text-heading-2-line-height);
+    letter-spacing: var(--text-heading-2-letter-spacing);
+    text-transform: var(--text-heading-2-text-transform);
+  }
+  :where(h3) {
+    font: inherit;
+    font-family: var(--text-heading-3-font-family);
+    font-size: var(--text-heading-3-font-size);
+    font-weight: var(--text-heading-3-font-weight);
+    line-height: var(--text-heading-3-line-height);
+    letter-spacing: var(--text-heading-3-letter-spacing);
+    text-transform: var(--text-heading-3-text-transform);
+  }
+  :where(h4) {
+    font: inherit;
+    font-family: var(--text-heading-4-font-family);
+    font-size: var(--text-heading-4-font-size);
+    font-weight: var(--text-heading-4-font-weight);
+    line-height: var(--text-heading-4-line-height);
+    letter-spacing: var(--text-heading-4-letter-spacing);
+    text-transform: var(--text-heading-4-text-transform);
+  }
+  :where(h5) {
+    font: inherit;
+    font-family: var(--text-heading-5-font-family);
+    font-size: var(--text-heading-5-font-size);
+    font-weight: var(--text-heading-5-font-weight);
+    line-height: var(--text-heading-5-line-height);
+    letter-spacing: var(--text-heading-5-letter-spacing);
+    text-transform: var(--text-heading-5-text-transform);
+  }
+  :where(h6) {
+    font: inherit;
+    font-family: var(--text-heading-6-font-family);
+    font-size: var(--text-heading-6-font-size);
+    font-weight: var(--text-heading-6-font-weight);
+    line-height: var(--text-heading-6-line-height);
+    letter-spacing: var(--text-heading-6-letter-spacing);
+    text-transform: var(--text-heading-6-text-transform);
+  }
+
+  :where(small) {
+    font-size: var(--text-caption-font-size);
+    line-height: var(--text-caption-line-height);
+  }
+  :where(code, kbd, samp, pre) {
+    font-family: var(--text-code-font-family);
+    font-size: var(--text-code-font-size);
+  }
+}
+
+@layer components {
+  .text-display-1,
+  .text-display-2,
+  .text-heading-1,
+  .text-heading-2,
+  .text-heading-3,
+  .text-heading-4,
+  .text-heading-5,
+  .text-heading-6,
+  .text-lead,
+  .text-body,
+  .text-body-sm,
+  .text-caption,
+  .text-overline,
+  .text-code {
+    font-family: var(--_ff);
+    font-size: var(--_fs);
+    font-weight: var(--_fw);
+    line-height: var(--_lh);
+    letter-spacing: var(--_ls);
+    text-transform: var(--_tt);
+    text-decoration: var(--_td);
+  }
+
+  .text-display-1 {
+    --_ff: var(--text-display-1-font-family);
+    --_fs: var(--text-display-1-font-size);
+    --_fw: var(--text-display-1-font-weight);
+    --_lh: var(--text-display-1-line-height);
+    --_ls: var(--text-display-1-letter-spacing);
+    --_tt: var(--text-display-1-text-transform);
+    --_td: var(--text-display-1-text-decoration);
+  }
+  .text-display-2 {
+    --_ff: var(--text-display-2-font-family);
+    --_fs: var(--text-display-2-font-size);
+    --_fw: var(--text-display-2-font-weight);
+    --_lh: var(--text-display-2-line-height);
+    --_ls: var(--text-display-2-letter-spacing);
+    --_tt: var(--text-display-2-text-transform);
+    --_td: var(--text-display-2-text-decoration);
+  }
+  .text-heading-1 {
+    --_ff: var(--text-heading-1-font-family);
+    --_fs: var(--text-heading-1-font-size);
+    --_fw: var(--text-heading-1-font-weight);
+    --_lh: var(--text-heading-1-line-height);
+    --_ls: var(--text-heading-1-letter-spacing);
+    --_tt: var(--text-heading-1-text-transform);
+    --_td: var(--text-heading-1-text-decoration);
+  }
+  .text-heading-2 {
+    --_ff: var(--text-heading-2-font-family);
+    --_fs: var(--text-heading-2-font-size);
+    --_fw: var(--text-heading-2-font-weight);
+    --_lh: var(--text-heading-2-line-height);
+    --_ls: var(--text-heading-2-letter-spacing);
+    --_tt: var(--text-heading-2-text-transform);
+    --_td: var(--text-heading-2-text-decoration);
+  }
+  .text-heading-3 {
+    --_ff: var(--text-heading-3-font-family);
+    --_fs: var(--text-heading-3-font-size);
+    --_fw: var(--text-heading-3-font-weight);
+    --_lh: var(--text-heading-3-line-height);
+    --_ls: var(--text-heading-3-letter-spacing);
+    --_tt: var(--text-heading-3-text-transform);
+    --_td: var(--text-heading-3-text-decoration);
+  }
+  .text-heading-4 {
+    --_ff: var(--text-heading-4-font-family);
+    --_fs: var(--text-heading-4-font-size);
+    --_fw: var(--text-heading-4-font-weight);
+    --_lh: var(--text-heading-4-line-height);
+    --_ls: var(--text-heading-4-letter-spacing);
+    --_tt: var(--text-heading-4-text-transform);
+    --_td: var(--text-heading-4-text-decoration);
+  }
+  .text-heading-5 {
+    --_ff: var(--text-heading-5-font-family);
+    --_fs: var(--text-heading-5-font-size);
+    --_fw: var(--text-heading-5-font-weight);
+    --_lh: var(--text-heading-5-line-height);
+    --_ls: var(--text-heading-5-letter-spacing);
+    --_tt: var(--text-heading-5-text-transform);
+    --_td: var(--text-heading-5-text-decoration);
+  }
+  .text-heading-6 {
+    --_ff: var(--text-heading-6-font-family);
+    --_fs: var(--text-heading-6-font-size);
+    --_fw: var(--text-heading-6-font-weight);
+    --_lh: var(--text-heading-6-line-height);
+    --_ls: var(--text-heading-6-letter-spacing);
+    --_tt: var(--text-heading-6-text-transform);
+    --_td: var(--text-heading-6-text-decoration);
+  }
+  .text-lead {
+    --_ff: var(--text-lead-font-family);
+    --_fs: var(--text-lead-font-size);
+    --_fw: var(--text-lead-font-weight);
+    --_lh: var(--text-lead-line-height);
+    --_ls: var(--text-lead-letter-spacing);
+    --_tt: var(--text-lead-text-transform);
+    --_td: var(--text-lead-text-decoration);
+  }
+  .text-body {
+    --_ff: var(--text-body-font-family);
+    --_fs: var(--text-body-font-size);
+    --_fw: var(--text-body-font-weight);
+    --_lh: var(--text-body-line-height);
+    --_ls: var(--text-body-letter-spacing);
+    --_tt: var(--text-body-text-transform);
+    --_td: var(--text-body-text-decoration);
+  }
+  .text-body-sm {
+    --_ff: var(--text-body-sm-font-family);
+    --_fs: var(--text-body-sm-font-size);
+    --_fw: var(--text-body-sm-font-weight);
+    --_lh: var(--text-body-sm-line-height);
+    --_ls: var(--text-body-sm-letter-spacing);
+    --_tt: var(--text-body-sm-text-transform);
+    --_td: var(--text-body-sm-text-decoration);
+  }
+  .text-caption {
+    --_ff: var(--text-caption-font-family);
+    --_fs: var(--text-caption-font-size);
+    --_fw: var(--text-caption-font-weight);
+    --_lh: var(--text-caption-line-height);
+    --_ls: var(--text-caption-letter-spacing);
+    --_tt: var(--text-caption-text-transform);
+    --_td: var(--text-caption-text-decoration);
+  }
+  .text-overline {
+    --_ff: var(--text-overline-font-family);
+    --_fs: var(--text-overline-font-size);
+    --_fw: var(--text-overline-font-weight);
+    --_lh: var(--text-overline-line-height);
+    --_ls: var(--text-overline-letter-spacing);
+    --_tt: var(--text-overline-text-transform);
+    --_td: var(--text-overline-text-decoration);
+  }
+  .text-code {
+    --_ff: var(--text-code-font-family);
+    --_fs: var(--text-code-font-size);
+    --_fw: var(--text-code-font-weight);
+    --_lh: var(--text-code-line-height);
+    --_ls: var(--text-code-letter-spacing);
+    --_tt: var(--text-code-text-transform);
+    --_td: var(--text-code-text-decoration);
+  }
+}
+
+@layer utilities {
+  .text-default {
+    color: var(--color-text);
+  }
+  .text-muted {
+    color: var(--color-text-muted);
+  }
+  .text-subtle {
+    color: var(--color-text-subtle);
+  }
+  .text-on-color {
+    color: var(--color-text-on-color);
+  }
+}

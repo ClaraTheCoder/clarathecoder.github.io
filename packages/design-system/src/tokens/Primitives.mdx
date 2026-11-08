@@ -1,0 +1,59 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import { ColorRamp, Solids, AlphaRamp } from './ColorTokens';
+
+<Meta title="Foundations/Color primitives" />
+
+{/* ──────────────────────────────────────────────────────────────────────
+    WRITING NOTES
+
+    Intro — worth covering:
+    • What "primitives" are: raw, context-free values — no semantics, no
+      theming. The bottom of the three tiers: primitives → semantics → components.
+    • Why OKLCH: perceptually-even lightness so ramps step evenly; wide-gamut
+      (P3) with the browser falling back to sRGB automatically.
+    • Where the seven accents come from (the site's background "swirl"), and that
+      they're named after Kanto towns — vermilion, saffron, viridian, celadon,
+      cerulean, lavender, fuchsia; the neutral is a cool-tinted grey (hue 275)
+      chosen to sit with the cool accents.
+    • How to consume: import `@clara/tokens/primitives.css`, reference
+      `var(--color-<hue>-<step>)`. Components shouldn't use these directly —
+      the semantic tier will alias them.
+
+    Links:
+    • W3C Design Tokens format (DTCG): https://tr.designtokens.org/format/
+    • Style Dictionary (the build tool here): https://styledictionary.com/
+    • OKLCH, and why: https://evilmartians.com/chronicles/oklch-in-css-why-quit-rgb-hsl
+    • OKLCH picker: https://oklch.com/
+    • Naming & tiering tokens (Nathan Curtis): https://medium.com/eightshapes-llc/naming-tokens-in-design-systems-9e86c7444676
+   ────────────────────────────────────────────────────────────────────── */}
+
+# Color
+
+{/* TODO: 1–2 sentence intro to the primitive color tier. */}
+
+## Colors
+
+<ColorRamp name="vermilion" />
+<ColorRamp name="saffron" />
+<ColorRamp name="viridian" />
+<ColorRamp name="celadon" />
+<ColorRamp name="cerulean" />
+<ColorRamp name="lavender" />
+<ColorRamp name="fuchsia" />
+
+## Neutral
+
+<ColorRamp name="neutral" />
+
+## Solids
+
+{/* TODO: when to reach for true black / white vs the neutral ends. */}
+
+<Solids />
+
+## Transparencies
+
+{/* TODO: what the alpha ramps are for — scrims, hairlines, hover washes, on light and dark. */}
+
+<AlphaRamp base="black" />
+<AlphaRamp base="white" />

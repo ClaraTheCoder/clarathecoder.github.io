@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import { Hero, Text, PostList, Post } from '@clara/design-system';
+import { POSTS, formatDate } from '../data/posts';
+---
+
+<Base>
+  <div class="page">
+    <Hero title="Writing">
+      <Text variant="lead">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
+        ut labore et dolore magna aliqua.
+      </Text>
+    </Hero>
+
+    <PostList>
+      {
+        POSTS.map((post) => (
+          <Post
+            meta={formatDate(post.date)}
+            title={post.title}
+            href={`/writing/${post.slug}`}
+            description={post.description}
+          />
+        ))
+      }
+    </PostList>
+  </div>
+</Base>

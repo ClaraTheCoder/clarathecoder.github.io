@@ -1,0 +1,12 @@
+packages:
+  - packages/*
+  - apps/*
+
+allowBuilds:
+  '@bundled-es-modules/glob': true
+  esbuild: true
+  sharp: true
+  style-dictionary: true
+
+minimumReleaseAgeExclude:
+  - lucide-react@1.65.0

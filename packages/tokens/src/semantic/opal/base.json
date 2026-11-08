@@ -1,0 +1,5 @@
+{
+    "surface": {
+        "radius": { "$value": "{radius.lg}" }
+    }
+}

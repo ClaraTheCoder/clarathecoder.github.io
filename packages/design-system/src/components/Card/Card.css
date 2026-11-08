@@ -1,0 +1,78 @@
+@layer reset, base, components, utilities;
+
+@layer components {
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-300);
+    inline-size: 100%;
+    padding: var(--card-pad);
+    color: var(--color-text);
+    text-decoration: none;
+    background: var(--color-surface);
+    border: var(--surface-border-width) solid var(--color-surface-border);
+    border-radius: var(--surface-radius);
+    box-shadow: var(--color-surface-shadow);
+    backdrop-filter: var(--color-surface-backdrop);
+    -webkit-backdrop-filter: var(--color-surface-backdrop);
+  }
+
+  :is(a, button).card {
+    cursor: pointer;
+    transition: background var(--duration-slow) var(--ease-standard);
+  }
+  button.card {
+    appearance: none;
+    font: inherit;
+    text-align: start;
+  }
+  :is(a, button).card:hover {
+    background: var(--color-surface-hover);
+  }
+  :is(a, button).card:focus-visible {
+    outline: var(--focus-ring-width) solid var(--color-border-strong);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  .card__header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-100);
+  }
+
+  .card__title {
+    margin: 0;
+    color: var(--color-text);
+    font-family: var(--text-heading-5-font-family);
+    font-weight: var(--text-heading-5-font-weight);
+    font-size: var(--text-heading-5-font-size);
+    line-height: var(--text-heading-5-line-height);
+    letter-spacing: var(--text-heading-5-letter-spacing);
+    text-transform: var(--text-heading-5-text-transform);
+  }
+
+  .card__description {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-family: var(--text-body-sm-font-family);
+    font-size: var(--text-body-sm-font-size);
+    line-height: var(--text-body-sm-line-height);
+    letter-spacing: var(--text-body-sm-letter-spacing);
+  }
+
+  .card__content {
+    margin: 0;
+    font-family: var(--text-body-font-family);
+    font-size: var(--text-body-font-size);
+    line-height: var(--text-body-line-height);
+    letter-spacing: var(--text-body-letter-spacing);
+  }
+
+  .card__footer {
+    color: var(--color-text-subtle);
+    font-family: var(--text-caption-font-family);
+    font-size: var(--text-caption-font-size);
+    line-height: var(--text-caption-line-height);
+    letter-spacing: var(--text-caption-letter-spacing);
+  }
+}

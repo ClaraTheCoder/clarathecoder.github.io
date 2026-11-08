@@ -1,0 +1,11 @@
+@layer reset, base, components, utilities;
+
+@layer components {
+  .site-footer {
+    margin-top: var(--space-900);
+    padding-block: var(--space-700);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-200);
+    inline-size: 100%;
+  }
+}

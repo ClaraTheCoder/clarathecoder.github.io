@@ -1,0 +1,5 @@
+{
+  "button": {
+    "radius": { "$value": "{radius.sm}" }
+  }
+}

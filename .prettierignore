@@ -1,0 +1,7 @@
+node_modules
+dist
+.astro
+storybook-static
+drafts
+pnpm-lock.yaml
+packages/design-system/src/tokens

@@ -1,0 +1,53 @@
+{
+  "color": {
+    "$type": "color",
+    "bg": { "$value": "{color.neutral.100}" },
+    "surface": { "$value": "{color.white}" },
+    "surface-hover": { "$value": "{color.neutral.50}" },
+    "surface-shadow": {"$value": "none"},
+    "surface-backdrop": { "$value": "none" },
+    "surface-border": { "$value": "{color.border}" },
+
+    "text": { "$value": "{color.neutral.950}" },
+    "text-muted": { "$value": "{color.neutral.700}" },
+    "text-subtle": { "$value": "{color.neutral.600}" },
+    "text-on-color": { "$value": "{color.neutral.50}" },
+    "text-on-color-fixed": { "$value": "{color.neutral.50}" },
+
+    "border": { "$value": "{color.neutral.300}" },
+    "border-strong": { "$value": "{color.neutral.600}" },
+
+    "accent": { "$value": "{color.lavender.700}" },
+    "accent-hover": { "$value": "{color.lavender.800}" },
+    "accent-subtle": { "$value": "{color.lavender.100}" },
+    "accent-subtle-hover": { "$value": "{color.lavender.200}" },
+
+    "secondary": { "$value": "{color.neutral.700}" },
+    "secondary-hover": { "$value": "{color.neutral.800}" },
+    "secondary-subtle": { "$value": "{color.neutral.100}" },
+    "secondary-subtle-hover": { "$value": "{color.neutral.200}" },
+
+    "success": { "$value": "{color.viridian.700}" },
+    "success-hover": { "$value": "{color.viridian.800}" },
+    "success-subtle": { "$value": "{color.viridian.100}" },
+    "success-subtle-hover": { "$value": "{color.viridian.200}" },
+
+    "danger": { "$value": "{color.vermilion.700}" },
+    "danger-hover": { "$value": "{color.vermilion.800}" },
+    "danger-subtle": { "$value": "{color.vermilion.100}" },
+    "danger-subtle-hover": { "$value": "{color.vermilion.200}" },
+
+    "warning": { "$value": "{color.saffron.600}" },
+    "warning-hover": { "$value": "{color.saffron.700}" },
+    "warning-subtle": { "$value": "{color.saffron.100}" },
+    "warning-subtle-hover": { "$value": "{color.saffron.200}" },
+
+    "info": { "$value": "{color.cerulean.700}" },
+    "info-hover": { "$value": "{color.cerulean.800}" },
+    "info-subtle": { "$value": "{color.cerulean.100}" },
+    "info-subtle-hover": { "$value": "{color.cerulean.200}" },
+
+    "overlay": { "$value": "{color.black-alpha.60}" },
+    "transparent": { "$value": "{color.black-alpha.0}" }
+  }
+}

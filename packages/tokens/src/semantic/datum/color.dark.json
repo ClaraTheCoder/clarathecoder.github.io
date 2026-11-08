@@ -1,0 +1,15 @@
+{
+  "color": {
+    "$type": "color",
+
+    "surface-border": { "$value": "{color.accent}" },
+    "surface-shadow": {
+      "$value": "0 0 0 1px color-mix(in srgb, {color.accent} 30%, transparent), 0 0 18px color-mix(in srgb, {color.accent} 28%, transparent)"
+    },
+
+    "accent": { "$value": "{color.celadon.600}" },
+    "accent-hover": { "$value": "{color.celadon.700}" },
+    "accent-subtle": { "$value": "{color.celadon.950}" },
+    "accent-subtle-hover": { "$value": "{color.celadon.900}" }
+  }
+}

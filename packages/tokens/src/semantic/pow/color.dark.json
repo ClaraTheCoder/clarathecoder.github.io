@@ -1,0 +1,13 @@
+{
+  "color": {
+    "$type": "color",
+    "border": { "$value": "{color.black}" },
+    "border-strong": { "$value": "{color.black}" },
+    "surface-shadow": {"$value": "5px 5px 0 {color.black}"},
+
+    "accent": { "$value": "{color.vermilion.700}" },
+    "accent-hover": { "$value": "{color.vermilion.800}" },
+    "accent-subtle": { "$value": "{color.vermilion.950}" },
+    "accent-subtle-hover": { "$value": "{color.vermilion.900}" }
+  }
+}

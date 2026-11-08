@@ -1,0 +1,6 @@
+/* Aggregate style entry for the design system (ADR 0002 cascade layers).
+   Token custom properties come from @clara/tokens. */
+@import './fonts.css';
+@import './reset.css';
+@import './typography.css';
+@import './prose.css';

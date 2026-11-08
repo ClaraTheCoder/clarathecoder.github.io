@@ -1,0 +1,126 @@
+---
+import Base from '../layouts/Base.astro';
+import { Hero, Text, Link, Video, Testimonial, Grid, Box, Flex } from '@clara/design-system';
+
+const waysToWork = [
+  {
+    title: 'Build it with your team',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.',
+  },
+  {
+    title: 'A second pair of eyes',
+    body: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt.',
+  },
+  {
+    title: 'Talks and workshops',
+    body: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto.',
+  },
+  {
+    title: 'Yet another thing',
+    body: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto.',
+  },
+];
+---
+
+<Base title="Work">
+  <div class="page page--roomy">
+    <Hero title="Let's work together">
+      <Text variant="lead">
+        <strong>I am available for hire</strong>. I usually do contract work for clients, but I'm open to permanent roles if the right one comes along. Read on to learn more about me and my work, or <Link href="#">drop me an email</Link> if you fancy working together.
+      </Text>
+    </Hero>
+
+    <Grid
+      as="section"
+      aria-labelledby="what-i-do"
+      columns={{ initial: 1, lg: 12 }}
+      gap="var(--grid-gutter)"
+      align={{ md: 'center' }}
+    >
+      <Box px={{ md: '600', xl: '900' }} gridColumn={{ lg: '1 / 7' }} gridRow={{ md: '1' }}>
+        <Testimonial name="Name Surname" role="Role, Company">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt ut labore et dolore magna aliqua, quis nostrud exercitation ullamco.
+        </Testimonial>
+      </Box>
+      <Flex direction="column" gap="500" gridColumn={{ lg: '7 / -1', xl: '7 / -2' }} gridRow={{ lg: '1' }}>
+        <Text variant="heading-1" as="h2" id="what-i-do">What I do</Text>
+        <Text as="div" color="muted" className="prose">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <p>
+            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum, sed ut perspiciatis unde omnis iste natus error.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+        </Text>
+      </Flex>
+    </Grid>
+
+    <Grid
+      as="section"
+      aria-labelledby="case-study-title"
+      columns={{ initial: 1, md: 12 }}
+      gapX="var(--grid-gutter)"
+      gapY="600"
+    >
+      <Flex as="figure" direction="column" gap="200" gridColumn={{ md: '3 / -1' }}>
+        <Video />
+      </Flex>
+      <Flex direction="column" gap="500" gridColumn={{ md: '3 / -1', lg: '3 / 10' }}>
+        <Text variant="heading-1" as="h2" id="case-study-title">Lorem ipsum dolor sit amet consectetur.</Text>
+        <Text as="div" color="muted" className="prose">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+          </p>
+          <p>
+            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          </p>
+          <p>
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum, sed ut perspiciatis unde omnis iste natus error.
+          </p>
+          <p>Full case study coming soon</p>
+        </Text>
+      </Flex>
+    </Grid>
+
+    <Grid
+      as="section"
+      aria-labelledby="ways-to-work"
+      columns={{ initial: 1, md: 12 }}
+      gapX="var(--grid-gutter)"
+      gapY="600"
+    >
+      <Box gridColumn={{ md: '1 / 5' }}>
+        <Text variant="heading-1" as="h2" id="ways-to-work">How we can work together</Text>
+      </Box>
+      <Grid columns={{ initial: 1, sm: 2, md: 2 }} gap="var(--grid-gutter)" gridColumn={{ md: '5 / -1' }}>
+        {
+          waysToWork.map((item) => (
+            <Flex direction="column" gap="200">
+              <Text variant="heading-5" as="h3" className="way__title">{item.title}</Text>
+              <Text color="muted">{item.body}</Text>
+            </Flex>
+          ))
+        }
+      </Grid>
+    </Grid>
+
+    <section class="work-cta" aria-labelledby="cta">
+      <div class="container">
+        <Flex direction="column" gap="600" className="work-cta__content">
+          <Text variant="display-2" as="h2" className="work-cta__title" id="cta">Have something in mind?</Text>
+          <Text variant="lead">
+            <Link href="#">Lorem ipsum dolor</Link> sit amet consectetur —
+            <strong>adipiscing elit sed do eiusmod.</strong>
+          </Text>
+        </Flex>
+      </div>
+    </section>
+  </div>
+</Base>

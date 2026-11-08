@@ -1,0 +1,14 @@
+@layer reset, base, components, utilities;
+
+@layer components {
+  .image {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    color: var(--color-text-muted);
+    background: var(--color-surface);
+    border: var(--border-width-100, 1px) dashed var(--color-border-strong);
+    border-radius: var(--radius-md);
+    aspect-ratio: 16 / 7.5;
+  }
+}

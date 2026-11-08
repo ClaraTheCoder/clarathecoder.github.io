@@ -1,0 +1,15 @@
+@layer reset, base, components, utilities;
+
+@layer components {
+  .container {
+    inline-size: 100%;
+    max-inline-size: var(--_container-max, var(--size-container-page));
+    margin-inline: auto;
+    padding-inline: var(--grid-gutter, clamp(var(--space-400), 5vw, var(--space-900)));
+  }
+  .container--prose {
+    --_container-max: var(--size-container-prose);
+    margin: 0;
+    padding: 0;
+  }
+}

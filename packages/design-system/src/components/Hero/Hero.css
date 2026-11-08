@@ -1,0 +1,23 @@
+@layer reset, base, components, utilities;
+
+@layer components {
+  .page-hero {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-700);
+    max-inline-size: var(--size-container-prose);
+  }
+  .page-hero__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-500);
+  }
+
+  @media (min-width: 1280px) {
+    .page-hero {
+      max-inline-size: calc(
+        100% * 7 / 12 - var(--grid-gutter, clamp(var(--space-400), 5vw, var(--space-900))) / 2.5
+      );
+    }
+  }
+}

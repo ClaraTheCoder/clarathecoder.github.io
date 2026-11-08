@@ -1,0 +1,13 @@
+{
+    "opacity": {
+        "disabled": { "$value": "0.5" }
+    },
+    "focus-ring": {
+        "width": { "$value": "{space.50}" },
+        "offset": { "$value": "{space.50}" }
+    },
+    "surface": {
+        "radius": { "$value": "{radius.md}" },
+        "border-width": { "$value": "1px" }
+    }
+}

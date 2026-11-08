@@ -1,0 +1,13 @@
+@layer reset, base, components, utilities;
+
+@layer components {
+  .notice {
+    text-align: center;
+    padding-block: var(--space-200);
+    background: var(--color-surface);
+    color: var(--color-text-muted);
+    font-size: var(--font-size-100);
+    border-bottom: var(--border-width-100, 1px) solid var(--color-border);
+    inline-size: 100%;
+  }
+}

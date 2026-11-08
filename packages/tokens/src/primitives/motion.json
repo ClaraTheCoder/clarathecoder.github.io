@@ -1,0 +1,11 @@
+{
+  "duration": {
+    "$type": "duration",
+    "base": { "$value": "200ms" },
+    "slow": { "$value": "250ms" }
+  },
+  "ease": {
+    "$type": "cubicBezier",
+    "standard": { "$value": "cubic-bezier(0.25, 0.1, 0.25, 1)" }
+  }
+}

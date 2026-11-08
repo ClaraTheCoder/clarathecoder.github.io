@@ -1,0 +1,38 @@
+@layer reset, base, components, utilities;
+
+@layer components {
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-500);
+    padding-block: var(--space-500);
+    inline-size: 100%;
+  }
+  .site-header__brand {
+    font-weight: 700;
+    font-size: var(--font-size-300);
+  }
+  .site-header__right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-500);
+  }
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-500);
+  }
+
+  /* Placeholder for the future theme switcher (out of scope this pass). */
+  .theme-toggle {
+    padding: var(--space-150) var(--space-300);
+    font: inherit;
+    font-size: var(--font-size-100);
+    color: var(--color-text-muted);
+    background: var(--color-surface);
+    border: var(--border-width-100, 1px) dashed var(--color-border);
+    border-radius: var(--radius-sm);
+    cursor: not-allowed;
+  }
+}

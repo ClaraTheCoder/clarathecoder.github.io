@@ -1,0 +1,24 @@
+{
+  "space": {
+    "$type": "dimension",
+    "25": { "$value": "1px" },
+    "50": { "$value": "2px" },
+    "100": { "$value": "4px" },
+    "150": { "$value": "6px" },
+    "200": { "$value": "8px" },
+    "300": { "$value": "12px" },
+    "400": { "$value": "16px" },
+    "500": { "$value": "24px" },
+    "600": { "$value": "36px" },
+    "700": { "$value": "48px" },
+    "800": { "$value": "60px" },
+    "900": { "$value": "72px" }
+  },
+  "size": {
+    "container": {
+      "$type": "dimension",
+      "prose": { "$value": "680px" },
+      "page": { "$value": "1820px" }
+    }
+  }
+}

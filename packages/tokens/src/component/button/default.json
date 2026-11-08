@@ -1,0 +1,30 @@
+{
+  "button": {
+    "radius": { "$value": "{radius.full}" },
+
+    "border-width": { "$value": "1px" },
+
+    "font-family": { "$value": "var(--text-body-font-family)" },
+    "font-weight": { "$value": "{font.weight.semibold}" },
+    "letter-spacing": { "$value": "normal" },
+    "text-transform": { "$value": "none" },
+
+    "backdrop": { "$value": "none" },
+
+    "primary-fg": { "$value": "{color.text-on-color}" },
+    "primary-shadow": { "$value": "none" },
+    "primary-border-color": { "$value": "{color.transparent}" },
+
+    "secondary-bg": { "$value": "{color.secondary}" },
+    "secondary-bg-hover": { "$value": "{color.secondary-hover}" },
+    "secondary-fg": { "$value": "{color.text-on-color}" },
+    "secondary-shadow": { "$value": "none" },
+    "secondary-border-color": { "$value": "{color.transparent}" },
+
+    "tertiary-bg": { "$value": "{color.secondary-subtle}" },
+    "tertiary-bg-hover": { "$value": "{color.secondary-subtle-hover}" },
+    "tertiary-fg": { "$value": "{color.text}" },
+    "tertiary-shadow": { "$value": "none" },
+    "tertiary-border-color": { "$value": "{color.border}" }
+  }
+}

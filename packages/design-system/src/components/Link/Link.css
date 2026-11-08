@@ -1,0 +1,15 @@
+@layer reset, base, components, utilities;
+
+@layer components {
+  .link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+  .link--quiet {
+    text-decoration: none;
+  }
+  .link--quiet:hover {
+    text-decoration: underline;
+  }
+}
