@@ -55,9 +55,16 @@
   .button--lg {
     --_h: var(--space-900);
     --_px: var(--space-500);
-    --_gap: var(--space-300);
+    --_gap: var(--space-400);
     --_fs: var(--font-size-400);
     --_icon: var(--space-600);
+  }
+  .button--xl {
+    --_h: calc(var(--space-800) * 2);
+    --_px: var(--space-600);
+    --_gap: var(--space-700);
+    --_fs: var(--font-size-600);
+    --_icon: var(--space-700);
   }
 
   .button--icon-only {

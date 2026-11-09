@@ -6,10 +6,6 @@
     "secondary-bg-hover": { "$value": "{color.surface-hover}" },
     "secondary-fg": { "$value": "{color.text}" },
     "secondary-shadow": { "$value": "{color.surface-shadow-tight}" },
-    "secondary-border-color": { "$value": "{color.surface-border}" },
-
-    "tertiary-bg": { "$value": "{color.surface}" },
-    "tertiary-bg-hover": { "$value": "{color.surface-hover}" },
-    "tertiary-border-color": { "$value": "none" }
+    "secondary-border-color": { "$value": "{color.surface-border}" }
   }
 }

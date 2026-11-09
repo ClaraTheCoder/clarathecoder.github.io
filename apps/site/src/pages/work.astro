@@ -1,6 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 import { Hero, Text, Link, Video, Testimonial, Grid, Box, Flex } from '@clara/design-system';
+import showreel1080 from '../assets/showreel/showreel-2026-10-1080.mp4';
+import showreel720 from '../assets/showreel/showreel-2026-10-720.mp4';
+import showreelPoster from '../assets/showreel/showreel-2026-10-poster.webp';
+import showreelCaptions from '../assets/showreel/showreel-2026-10.en.vtt?no-inline';
+import { Content as ShowreelTranscript } from '../assets/showreel/showreel-2026-10-transcript.md';
 
 const waysToWork = [
   {
@@ -66,11 +71,23 @@ const waysToWork = [
       gapX="var(--grid-gutter)"
       gapY="600"
     >
-      <Flex as="figure" direction="column" gap="200" gridColumn={{ md: '3 / -1' }}>
-        <Video />
-      </Flex>
+      <Box gridColumn={{ md: '3 / -1' }}>
+        <Video
+          poster={showreelPoster.src}
+          aria-label="Showreel: Vodafone Neo"
+          track={{ src: showreelCaptions, srcLang: 'en', label: 'English' }}
+        >
+          <source
+            src={showreel1080}
+            type='video/mp4; codecs="avc1.640029, mp4a.40.2"'
+            media="(min-width: 52rem)"
+          />
+          <source src={showreel720} type='video/mp4; codecs="avc1.640029, mp4a.40.2"' />
+          <Fragment slot="transcript"><ShowreelTranscript /></Fragment>
+        </Video>
+      </Box>
       <Flex direction="column" gap="500" gridColumn={{ md: '3 / -1', lg: '3 / 10' }}>
-        <Text variant="heading-1" as="h2" id="case-study-title">Lorem ipsum dolor sit amet consectetur.</Text>
+        <Text variant="heading-1" as="h2" id="case-study-title">Case study: Vodafone’s first AI-native design system</Text>
         <Text as="div" color="muted" className="prose">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
@@ -84,7 +101,6 @@ const waysToWork = [
             Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
             anim id est laborum, sed ut perspiciatis unde omnis iste natus error.
           </p>
-          <p>Full case study coming soon</p>
         </Text>
       </Flex>
     </Grid>

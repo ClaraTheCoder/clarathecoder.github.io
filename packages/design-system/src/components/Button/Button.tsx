@@ -4,7 +4,7 @@ import { cx } from '../../utils/cx.js';
 import { type Polymorphic } from '../../utils/polymorphic.js';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary' | 'ghost';
-export type ButtonSize = 'sm' | 'md' | 'lg';
+export type ButtonSize = 'sm' | 'md' | 'lg' | 'xl';
 
 export type ButtonProps<E extends ElementType = 'button'> = Polymorphic<
   E,

@@ -15,7 +15,7 @@
     font-weight: var(--text-body-font-weight);
     line-height: var(--text-body-line-height);
     letter-spacing: var(--text-body-letter-spacing);
-    color: var(--color-text);
+    color: var(--color-text-muted);
   }
 
   /* Flow: gap between consecutive blocks = the body role's paragraph-spacing. */
@@ -33,14 +33,14 @@
     color: var(--color-text);
   }
 
-  /* Opt-in standfirst for the first paragraph or an explicit .lead. */
+  .prose .text-lead,
   .prose .lead {
     font-family: var(--text-lead-font-family);
     font-size: var(--text-lead-font-size);
     font-weight: var(--text-lead-font-weight);
     line-height: var(--text-lead-line-height);
     letter-spacing: var(--text-lead-letter-spacing);
-    color: var(--color-text-muted);
+    color: var(--color-text);
   }
 
   .prose ul,

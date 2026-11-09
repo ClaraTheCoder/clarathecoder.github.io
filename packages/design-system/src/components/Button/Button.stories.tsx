@@ -15,7 +15,7 @@ const meta = preview.meta({
 });
 
 const VARIANTS: ButtonVariant[] = ['primary', 'secondary', 'tertiary', 'ghost'];
-const SIZES: ButtonSize[] = ['sm', 'md', 'lg'];
+const SIZES: ButtonSize[] = ['sm', 'md', 'lg', 'xl'];
 
 const Row = ({ children }: { children: React.ReactNode }) => (
   <Flex align="center" gap="300" wrap="wrap">

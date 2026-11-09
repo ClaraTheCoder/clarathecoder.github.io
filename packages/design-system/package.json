@@ -4,7 +4,8 @@
   "private": true,
   "type": "module",
   "sideEffects": [
-    "*.css"
+    "*.css",
+    "./src/components/Video/video-element.ts"
   ],
   "exports": {
     ".": "./src/index.ts",
@@ -14,7 +15,8 @@
     "./prose.css": "./src/styles/prose.css",
     "./swirl.css": "./src/styles/swirl.css",
     "./grid-backdrop.css": "./src/styles/grid-backdrop.css",
-    "./styles.css": "./src/styles/index.css"
+    "./styles.css": "./src/styles/index.css",
+    "./video-element.js": "./src/components/Video/video-element.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit -p tsconfig.json",
@@ -23,7 +25,8 @@
   },
   "dependencies": {
     "@base-ui-components/react": "1.0.0-rc.0",
-    "@clara/tokens": "workspace:*"
+    "@clara/tokens": "workspace:*",
+    "lucide-react": "^1.65.0"
   },
   "peerDependencies": {
     "react": "^19.0.0",
@@ -40,7 +43,6 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^4.3.4",
-    "lucide-react": "^1.65.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "storybook": "^10.6.5",

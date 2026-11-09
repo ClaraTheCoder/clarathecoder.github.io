@@ -70,12 +70,16 @@ const nav = [
 
     <SiteHeader brand={{ label: 'Clara', href: '/' }} nav={nav} />
 
-    <main id="main" class="container" tabindex="-1">
+    <main id="main" class="container">
       <slot />
     </main>
 
     <SiteFooter>
-      <p>Find me elsewhere on <Link href="#">LinkedIn</Link> and <Link href="#">GitHub</Link>.</p>
+      <p>Find me elsewhere on <Link href="https://www.linkedin.com/in/clarajordan1/">LinkedIn</Link> and <Link href="https://github.com/clarathecoder">GitHub</Link>.</p>
     </SiteFooter>
+
+    <script>
+      import '@clara/design-system/video-element.js';
+    </script>
   </body>
 </html>
