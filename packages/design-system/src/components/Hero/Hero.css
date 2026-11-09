@@ -7,11 +7,6 @@
     gap: var(--space-700);
     max-inline-size: var(--size-container-prose);
   }
-  .page-hero__body {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-500);
-  }
 
   @media (min-width: 1280px) {
     .page-hero {

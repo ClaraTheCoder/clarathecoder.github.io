@@ -1,8 +1,9 @@
 import { type HTMLAttributes } from 'react';
 import './Post.css';
 import { cx } from '../../utils/cx.js';
-import { Flex } from '../Layout/index.js';
-import { Text } from '../Text/index.js';
+import { Flex } from '../Layout';
+import { Text } from '../Text';
+import { Link } from '../Link';
 
 export type PostListProps = HTMLAttributes<HTMLDivElement>;
 
@@ -27,7 +28,7 @@ export const Post = ({ meta, title, href, description, className }: PostProps) =
     <p className="post__meta">{meta}</p>
     <Flex direction="column" gap="200">
       <Text variant="heading-4" as="h3" className="post__title">
-        <a href={href}>{title}</a>
+        <Link href={href}>{title}</Link>
       </Text>
       <p className="post__desc">{description}</p>
     </Flex>

@@ -1,15 +1,14 @@
 @layer reset, base, components, utilities;
 
+/* TODO: how do I keep this in sync with .prose a */
 @layer components {
   .link {
-    color: inherit;
+    color: var(--color-accent);
     text-decoration: underline;
-    text-underline-offset: 0.18em;
+    text-underline-offset: 0.15em;
   }
-  .link--quiet {
-    text-decoration: none;
-  }
-  .link--quiet:hover {
-    text-decoration: underline;
+
+  .link:hover {
+    color: var(--color-accent-hover);
   }
 }

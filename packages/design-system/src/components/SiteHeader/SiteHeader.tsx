@@ -18,7 +18,7 @@ export interface SiteHeaderProps {
 export const SiteHeader = ({ brand, nav, className }: SiteHeaderProps) => (
   <header className={cx('site-header', 'container', className)}>
     <div className="site-header__brand">
-      <Link variant="quiet" href={brand.href}>
+      <Link href={brand.href}>
         {brand.label}
       </Link>
     </div>
@@ -27,7 +27,7 @@ export const SiteHeader = ({ brand, nav, className }: SiteHeaderProps) => (
         <ul>
         {nav.map((item) => (
           <li key={item.href}>
-            <Link variant="quiet" href={item.href}>
+            <Link href={item.href}>
               {item.label}
             </Link>
           </li>

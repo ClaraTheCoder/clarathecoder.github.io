@@ -16,6 +16,6 @@ export const Hero = ({ title, children, className }: HeroProps) => (
     <Text variant="display-1" as="h1">
       {title}
     </Text>
-    <div className="page-hero__body">{children}</div>
+    <div className="prose">{children}</div>
   </header>
 );

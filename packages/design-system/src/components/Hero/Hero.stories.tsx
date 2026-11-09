@@ -11,14 +11,14 @@ const meta = preview.meta({
 
 export const Default = meta.story({
   render: () => (
-    <Hero title="Hi, I'm Clara">
+    <Hero title="Hi, I’m Clara">
       <Text variant="lead">
-        I like building things and helping people. At the moment I'm mostly working on{' '}
-        <Link href="#">design systems</Link>, tinkering with online tools and toys, making music,
-        and <Link href="#">writing</Link> about it all.
+        I like building things and helping people. At the moment I’m working on{' '}
+        <Link href="#">design systems</Link>, tinkering with online tools and toys, and making music.
+        Sometimes I <Link href="#">write</Link> about those things.
       </Text>
       <Text variant="lead">
-        <strong>I'm available for hire.</strong> Read about <Link href="#">what I can do</Link>, or{' '}
+        <strong>I’m available for hire.</strong> Read about <Link href="#">what I can do</Link>, or{' '}
         <Link href="#">say hi</Link>.
       </Text>
     </Hero>
