@@ -1,5 +1,6 @@
+import { Button, Flex, Link, Text } from '@clara/design-system';
+import { MoveRight } from 'lucide-react';
 import { useState } from 'react';
-import { Flex, Link, SegmentedControl, Text } from '@clara/design-system';
 
 type Mode = 'raw' | 'default' | 'opal' | 'blueprint';
 
@@ -26,13 +27,15 @@ export function ThemeControl() {
 
   return (
     <Flex align="start" direction="column" gap="500">
-      <Text as="p" color="muted">This site is styled with <Link href="https://www.designtokens.org/">design tokens</Link>. Pick a theme:</Text>
+      {/* <Text as="p" color="muted">This site is styled with <Link href="https://www.designtokens.org/">design tokens</Link>:</Text>
       <SegmentedControl
         aria-label="Pick a theme"
         options={OPTIONS}
         value={mode}
         onValueChange={handleChange}
-      />
+      /> */}
+      <Button size="lg">Pick a theme <MoveRight/> </Button>
     </Flex>
+
   );
 }

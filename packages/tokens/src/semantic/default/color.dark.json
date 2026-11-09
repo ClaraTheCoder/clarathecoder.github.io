@@ -18,8 +18,8 @@
     "border": { "$value": "{color.neutral.700}" },
     "border-strong": { "$value": "{color.neutral.600}" },
 
-    "accent": { "$value": "{color.saffron.400}" },
-    "accent-hover": { "$value": "{color.saffron.300}" },
+    "accent": { "$value": "{color.saffron.500}" },
+    "accent-hover": { "$value": "{color.saffron.400}" },
     "accent-subtle": { "$value": "{color.saffron.950}" },
     "accent-subtle-hover": { "$value": "{color.saffron.900}" },
 

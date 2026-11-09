@@ -205,6 +205,9 @@ importers:
       astro:
         specifier: ^5.1.0
         version: 5.18.2(rollup@4.65.0)(supports-color@7.2.0)(typescript@5.9.3)(yaml@2.9.1)
+      lucide-react:
+        specifier: ^1.65.0
+        version: 1.65.0(@types/react@19.3.0)(react@19.3.1)
       motion:
         specifier: ^14.6.0
         version: 14.6.0(react-dom@19.3.1(react@19.3.1))(react@19.3.1)
