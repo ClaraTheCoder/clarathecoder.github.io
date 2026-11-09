@@ -1,3 +1,10 @@
+:root[data-raw],
+:root[data-raw] *,
+:root[data-raw] *::before,
+:root[data-raw] *::after {
+  all: revert !important;
+}
+
 @layer base {
   body {
     background: var(--color-bg);

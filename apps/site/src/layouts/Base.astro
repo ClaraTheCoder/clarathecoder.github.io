@@ -22,10 +22,37 @@ const nav = [
 ---
 
 <!doctype html>
-<html lang="en-GB" data-preset="opal">
+<html lang="en-GB">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      (function () {
+        var KEY = 'theme-mode';
+        var root = document.documentElement;
+        var stored;
+        try {
+          stored = localStorage.getItem(KEY);
+        } catch (e) {}
+        var mode = ['raw','default','opal'].includes(stored) ? stored : 'default';
+
+        function apply(next) {
+          root.dataset.themeMode = next;
+          if (next === 'opal') root.setAttribute('data-preset', 'opal');
+          else root.removeAttribute('data-preset');
+          // 'raw' strips all author CSS via [data-raw] (site.css); no stylesheet
+          // juggling, so it survives navigation and dev's late style injection.
+          if (next === 'raw') root.setAttribute('data-raw', '');
+          else root.removeAttribute('data-raw');
+          try {
+            localStorage.setItem(KEY, next);
+          } catch (e) {}
+        }
+
+        window.__setThemeMode = apply;
+        apply(mode);
+      })();
+    </script>
     <title>{title}</title>
     <meta name="description" content={description} />
   </head>
@@ -46,7 +73,7 @@ const nav = [
     </main>
 
     <SiteFooter>
-      Find me elsewhere on <Link href="#">LinkedIn</Link> and <Link href="#">GitHub</Link>.
+      <p>Find me elsewhere on <Link href="#">LinkedIn</Link> and <Link href="#">GitHub</Link>.</p>
     </SiteFooter>
   </body>
 </html>

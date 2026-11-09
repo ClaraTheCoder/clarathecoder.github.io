@@ -24,11 +24,15 @@ export const SiteHeader = ({ brand, nav, className }: SiteHeaderProps) => (
     </div>
     <div className="site-header__right">
       <nav aria-label="Main" className="site-nav">
+        <ul>
         {nav.map((item) => (
-          <Link key={item.href} variant="quiet" href={item.href}>
-            {item.label}
-          </Link>
+          <li key={item.href}>
+            <Link variant="quiet" href={item.href}>
+              {item.label}
+            </Link>
+          </li>
         ))}
+        </ul>
       </nav>
     </div>
   </header>

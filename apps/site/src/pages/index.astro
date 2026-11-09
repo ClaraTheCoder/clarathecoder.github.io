@@ -1,10 +1,11 @@
 ---
 import Base from '../layouts/Base.astro';
 import { Hero, Text, Link } from '@clara/design-system';
+import { ThemeControl } from '../components/ThemeControl';
 ---
 
 <Base>
-  <div class="page page--roomy">
+  <div class="page">
     <Hero title="Hi, I'm Clara">
       <Text variant="lead">
         I like building things and helping people. At the moment I'm mostly working on
@@ -15,5 +16,7 @@ import { Hero, Text, Link } from '@clara/design-system';
         <Link href="/work">what I can do</Link>, or <Link href="#">say hi</Link>.
       </Text>
     </Hero>
+
+    <ThemeControl client:only="react" />
   </div>
 </Base>
