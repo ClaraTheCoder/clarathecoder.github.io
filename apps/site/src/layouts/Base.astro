@@ -2,6 +2,7 @@
 import '@clara/tokens/tokens.css';
 import '@clara/design-system/styles.css';
 import '@clara/design-system/swirl.css';
+import '@clara/design-system/grid-backdrop.css';
 import '../styles/site.css';
 import { Notice, SiteHeader, SiteFooter, Link } from '@clara/design-system';
 
@@ -34,11 +35,11 @@ const nav = [
         try {
           stored = localStorage.getItem(KEY);
         } catch (e) {}
-        var mode = ['raw','default','opal'].includes(stored) ? stored : 'default';
+        var mode = ['raw','default','opal','blueprint'].includes(stored) ? stored : 'default';
 
         function apply(next) {
           root.dataset.themeMode = next;
-          if (next === 'opal') root.setAttribute('data-preset', 'opal');
+          if (next === 'opal' || next === 'blueprint') root.setAttribute('data-preset', next);
           else root.removeAttribute('data-preset');
           // 'raw' strips all author CSS via [data-raw] (site.css); no stylesheet
           // juggling, so it survives navigation and dev's late style injection.
@@ -57,6 +58,7 @@ const nav = [
     <meta name="description" content={description} />
   </head>
   <body>
+    <div class="grid-backdrop" aria-hidden="true"></div>
     <div class="swirl" aria-hidden="true">
       <div class="swirl__rotor">
         <div class="swirl__aurora"></div>

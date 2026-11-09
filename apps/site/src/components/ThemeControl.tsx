@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { Flex, Link, SegmentedControl, Text } from '@clara/design-system';
 
-type Mode = 'raw' | 'default' | 'opal';
+type Mode = 'raw' | 'default' | 'opal' | 'blueprint';
 
 const OPTIONS = [
   { value: 'raw', label: 'Raw' },
   { value: 'default', label: 'Default' },
   { value: 'opal', label: 'Opal' },
+  { value: 'blueprint', label: 'Blueprint' },
 ];
 
 declare global {

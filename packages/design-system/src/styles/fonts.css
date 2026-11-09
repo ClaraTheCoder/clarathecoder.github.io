@@ -7,14 +7,14 @@
 @import '@fontsource/fraunces/500.css';
 @import '@fontsource/fraunces/600.css';
 
-/* datum — body + code */
+/* blueprint — body + code */
 @import '@fontsource/jetbrains-mono/400.css';
 @import '@fontsource/jetbrains-mono/700.css';
 
 /* opal — display + body; default — body */
 @import '@fontsource-variable/nunito/wght.css';
 
-/* datum (light headings) — display */
+/* blueprint (light headings) — display */
 @import '@fontsource/saira-condensed/300.css';
 @import '@fontsource/saira-condensed/600.css';
 @import '@fontsource/saira-condensed/700.css';

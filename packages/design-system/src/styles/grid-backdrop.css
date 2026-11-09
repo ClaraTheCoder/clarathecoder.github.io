@@ -1,0 +1,31 @@
+/* The blueprint preset's grid backdrop, ported from the old site. Drawn with the
+   live `--color-accent`, so it tracks whatever accent the active mode sets.
+   Like `.swirl`, it is a positioned layer the host places behind content. */
+@layer components {
+  .grid-backdrop {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    display: none;
+
+    --_line: color-mix(in srgb, var(--color-accent) 8%, transparent);
+    --_weight: var(--space-25);
+    --_cell: var(--space-600);
+
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        var(--_line) 0 var(--_weight),
+        transparent var(--_weight) var(--_cell)
+      ),
+      repeating-linear-gradient(
+        90deg,
+        var(--_line) 0 var(--_weight),
+        transparent var(--_weight) var(--_cell)
+      );
+  }
+
+  [data-preset='blueprint'] .grid-backdrop {
+    display: block;
+  }
+}

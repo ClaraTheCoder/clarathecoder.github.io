@@ -12,7 +12,7 @@ Personal site for Clara + the design system it's built on. pnpm monorepo, Node �
 
 - **Styling**: plain CSS organised with native cascade layers (`@layer reset, base, components, utilities`), semantic class names, no utility classes, no CSS-in-JS (ADR 0002). Every styled property reads a token custom property — never hard-code a literal value or magic number.
 - **Components**: plain React components composed with the local `cx` helper (`src/utils/cx.ts`). Element polymorphism is a plain `as` prop (typed via `Polymorphic<E, Own>` in `src/utils/polymorphic.ts`), **not** Base UI's `useRender` — a `render` element can't cross Astro's static-render boundary (ADR 0005). One folder per component: `Name.tsx` + `Name.css` + `Name.stories.tsx`. BEM-ish class names (`.card`, `.card__header`). Re-exported from `src/index.ts`.
-- **Theming** is two-axis via data attributes (ADR 0004): `[data-theme='light'|'dark']` and `[data-preset='<name>']` (presets: `datum`, `opal`). Presets are partial, override-only layers over the default theme; the token build enforces this plus reference integrity.
+- **Theming** is two-axis via data attributes (ADR 0004): `[data-theme='light'|'dark']` and `[data-preset='<name>']` (presets: `blueprint`, `opal`). Presets are partial, override-only layers over the default theme; the token build enforces this plus reference integrity.
 - **Typography** tokens are responsive composites exploded into per-subproperty custom props (`--text-<role>-font-size`, etc.) — ADR 0007.
 
 ## ADRs

@@ -5,11 +5,12 @@ import addonDocs from '@storybook/addon-docs';
 import '@clara/tokens/tokens.css';
 import '../src/styles/index.css';
 import '../src/styles/swirl.css';
+import '../src/styles/grid-backdrop.css';
 
 const presets = [
   { value: 'default', title: 'Default' },
   { value: 'opal', title: 'Opal' },
-  { value: 'datum', title: 'Datum' },
+  { value: 'blueprint', title: 'Blueprint' },
 ];
 
 const withTheme: Decorator = (Story, context) => {
@@ -22,25 +23,9 @@ const withTheme: Decorator = (Story, context) => {
     if (preset === 'default') root.removeAttribute('data-preset');
     else root.setAttribute('data-preset', preset);
   }
-  // Per-theme stage backdrops. The pattern themes draw with the live
-  // `--color-accent`, so they track whatever accent the active theme/mode sets.
-  // The blueprint grid (datum) is ported from the old site.
-  // Opal is not here: its backdrop is the animated `.swirl` orbs (swirl.css),
-  // rendered as real layers below, not a background image.
-  const backdrops: Record<
-    string,
-    { image: string; size: string; position: string; repeat: string }
-  > = {
-    datum: {
-      image:
-        'repeating-linear-gradient(0deg, color-mix(in srgb, var(--color-accent) 8%, transparent) 0 1px, transparent 1px 34px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--color-accent) 8%, transparent) 0 1px, transparent 1px 34px)',
-      size: 'auto',
-      position: '0 0',
-      repeat: 'repeat',
-    },
-  };
-  const backdrop = backdrops[preset];
-
+  // Per-theme stage backdrops are the same layers the site uses: the animated
+  // `.swirl` orbs (opal, swirl.css) and the `.grid-backdrop` grid
+  // (grid-backdrop.css, blueprint). Each shows only under its own [data-preset].
   return (
     <div
       style={{
@@ -53,13 +38,10 @@ const withTheme: Decorator = (Story, context) => {
         justifyContent: 'center',
         padding: 28,
         background: 'var(--color-bg)',
-        backgroundImage: backdrop?.image ?? '',
-        backgroundSize: backdrop?.size ?? 'auto',
-        backgroundPosition: backdrop?.position ?? '0 0',
-        backgroundRepeat: backdrop?.repeat ?? 'repeat',
         color: 'var(--color-text)',
       }}
     >
+      <div className="grid-backdrop" aria-hidden="true" />
       {preset === 'opal' && (
         <div className="swirl" aria-hidden="true">
           <div className="swirl__rotor">

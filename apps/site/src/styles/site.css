@@ -34,7 +34,8 @@
 }
 
 @layer components {
-  .swirl {
+  .swirl,
+  .grid-backdrop {
     position: fixed;
     z-index: var(--z-below);
   }

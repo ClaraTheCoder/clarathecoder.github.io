@@ -13,6 +13,7 @@
     "./typography.css": "./src/styles/typography.css",
     "./prose.css": "./src/styles/prose.css",
     "./swirl.css": "./src/styles/swirl.css",
+    "./grid-backdrop.css": "./src/styles/grid-backdrop.css",
     "./styles.css": "./src/styles/index.css"
   },
   "scripts": {
