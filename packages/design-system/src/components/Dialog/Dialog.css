@@ -1,0 +1,33 @@
+@layer reset, base, components, utilities;
+
+@layer components {
+  .dialog {
+    inline-size: min(var(--size-container-prose), 100% - 2 * var(--space-400));
+    max-block-size: calc(100% - 2 * var(--space-400));
+    margin: auto;
+    padding: 0;
+    color: var(--color-text);
+    background: var(--color-surface);
+    border: var(--surface-border-width) solid var(--color-surface-border);
+    border-radius: var(--surface-radius);
+    box-shadow: var(--color-surface-shadow);
+    backdrop-filter: var(--color-surface-backdrop);
+    -webkit-backdrop-filter: var(--color-surface-backdrop);
+    overflow: auto;
+  }
+
+  .dialog::backdrop {
+    background: var(--color-overlay);
+  }
+
+  .dialog__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-400);
+    padding: var(--space-600);
+  }
+
+  .dialog__content > * {
+    margin: 0;
+  }
+}

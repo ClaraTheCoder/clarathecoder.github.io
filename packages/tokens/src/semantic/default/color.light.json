@@ -19,14 +19,14 @@
     "border-strong": { "$value": "{color.lavender.600}" },
 
     "accent": { "$value": "{color.saffron.700}" },
-    "accent-hover": { "$value": "{color.saffron.600}" },
+    "accent-hover": { "$value": "{color.saffron.800}" },
     "accent-subtle": { "$value": "{color.saffron.200}" },
     "accent-subtle-hover": { "$value": "{color.saffron.300}" },
 
-    "secondary": { "$value": "{color.neutral.700}" },
-    "secondary-hover": { "$value": "{color.neutral.800}" },
-    "secondary-subtle": { "$value": "{color.neutral.100}" },
-    "secondary-subtle-hover": { "$value": "{color.neutral.200}" },
+    "fixed": { "$value": "{color.neutral.100}" },
+    "fixed-hover": { "$value": "{color.neutral.50}" },
+    "fixed-inverse": { "$value": "{color.neutral.900}" },
+    "fixed-inverse-hover": { "$value": "{color.neutral.800}" },
 
     "success": { "$value": "{color.viridian.700}" },
     "success-hover": { "$value": "{color.viridian.800}" },
@@ -49,6 +49,7 @@
     "info-subtle-hover": { "$value": "{color.cerulean.200}" },
 
     "overlay": { "$value": "{color.black-alpha.60}" },
+    "ghost": { "$value": "{color.black-alpha.5}" },
     "transparent": { "$value": "{color.black-alpha.0}" }
   }
 }

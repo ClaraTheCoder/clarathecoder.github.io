@@ -11,13 +11,13 @@ Personal site for Clara + the design system it's built on. pnpm monorepo, Node �
 ## Conventions
 
 - **Styling**: plain CSS organised with native cascade layers (`@layer reset, base, components, utilities`), semantic class names, no utility classes, no CSS-in-JS (ADR 0002). Every styled property reads a token custom property — never hard-code a literal value or magic number.
-- **Components**: plain React components composed with the local `cx` helper (`src/utils/cx.ts`). Element polymorphism is a plain `as` prop (typed via `Polymorphic<E, Own>` in `src/utils/polymorphic.ts`), **not** Base UI's `useRender` — a `render` element can't cross Astro's static-render boundary (ADR 0005). One folder per component: `Name.tsx` + `Name.css` + `Name.stories.tsx`. BEM-ish class names (`.card`, `.card__header`). Re-exported from `src/index.ts`.
+- **Components**: plain React components composed with the local `cx` helper (`src/utils/cx.ts`). Element polymorphism is a plain `as` prop (typed via `Polymorphic<E, Own>` in `src/utils/polymorphic.ts`), never a `render`-element prop — a `render` element can't cross Astro's static-render boundary (ADR 0009). Interactive components are built on native elements (`<dialog>`, radio inputs), not a headless library, so they keep working in raw mode (ADR 0009). One folder per component: `Name.tsx` + `Name.css` + `Name.stories.tsx`. BEM-ish class names (`.card`, `.card__header`). Re-exported from `src/index.ts`.
 - **Theming** is two-axis via data attributes (ADR 0004): `[data-theme='light'|'dark']` and `[data-preset='<name>']` (presets: `blueprint`, `opal`). Presets are partial, override-only layers over the default theme; the token build enforces this plus reference integrity.
 - **Typography** tokens are responsive composites exploded into per-subproperty custom props (`--text-<role>-font-size`, etc.) — ADR 0007.
 
 ## ADRs
 
-See `docs/adr/`: 0001 static Astro + React islands · 0002 vanilla CSS + cascade layers · 0003 token pipeline build gates · 0004 two-axis theming via data attributes · 0005 shadcn + Base UI primitives · 0006 pnpm monorepo · 0007 responsive typography tokens.
+See `docs/adr/`: 0001 static Astro + React islands · 0002 vanilla CSS + cascade layers · 0003 token pipeline build gates · 0004 two-axis theming via data attributes · 0005 shadcn + Base UI primitives (superseded by 0009) · 0006 pnpm monorepo · 0007 responsive typography tokens · 0008 nested primitive inheritance reset · 0009 native HTML interactive components.
 
 ## Commands
 

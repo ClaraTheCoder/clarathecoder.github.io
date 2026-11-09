@@ -73,33 +73,28 @@
   }
 
   .button--primary {
-    --_bg: var(--color-accent);
+    --_bg: var(--button-primary-bg);
     --_fg: var(--button-primary-fg);
-    --_bg-hover: var(--color-accent-hover);
+    --_bg-hover: var(--button-primary-bg-hover);
     --_border-color: var(--button-primary-border-color);
     --_shadow: var(--button-primary-shadow);
     backdrop-filter: var(--button-backdrop);
     -webkit-backdrop-filter: var(--button-backdrop);
   }
-  .button--secondary {
-    --_bg: var(--button-secondary-bg);
-    --_fg: var(--button-secondary-fg);
-    --_bg-hover: var(--button-secondary-bg-hover);
-    --_border-color: var(--button-secondary-border-color);
-    --_shadow: var(--button-secondary-shadow);
+
+  /* TODO: fix this in opal */
+  .button--fixed {
+    --_bg: var(--button-fixed-bg);
+    --_fg: var(--button-fixed-fg);
+    --_bg-hover: var(--button-fixed-bg-hover);
+    --_border-color: var(--button-fixed-border-color);
+    --_shadow: var(--button-fixed-shadow);
     backdrop-filter: var(--button-backdrop);
     -webkit-backdrop-filter: var(--button-backdrop);
   }
-  .button--tertiary {
-    --_bg: var(--button-tertiary-bg);
-    --_fg: var(--button-tertiary-fg);
-    --_bg-hover: var(--button-tertiary-bg-hover);
-    --_border-color: var(--button-tertiary-border-color);
-    --_shadow: var(--button-tertiary-shadow);
-  }
   .button--ghost {
     --_bg: transparent;
-    --_bg-hover: var(--button-tertiary-bg-hover);
+    --_bg-hover: var(--button-ghost-bg-hover);
   }
 
   .button:hover:not(:disabled),

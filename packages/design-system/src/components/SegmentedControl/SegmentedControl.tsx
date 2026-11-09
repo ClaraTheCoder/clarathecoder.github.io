@@ -8,15 +8,18 @@ export interface SegmentedControlOption {
   disabled?: boolean;
 }
 
-export interface SegmentedControlProps {
+type SegmentedControlName =
+  | { 'aria-label': string; 'aria-labelledby'?: never }
+  | { 'aria-labelledby': string; 'aria-label'?: never };
+
+export type SegmentedControlProps = SegmentedControlName & {
   options: SegmentedControlOption[];
   value: string;
   onValueChange: (value: string) => void;
-  'aria-label': string;
   disabled?: boolean;
   name?: string;
   className?: string;
-}
+};
 
 export const SegmentedControl = ({
   options,
@@ -26,6 +29,7 @@ export const SegmentedControl = ({
   name,
   className,
   'aria-label': ariaLabel,
+  'aria-labelledby': ariaLabelledBy,
 }: SegmentedControlProps) => {
   const generatedName = useId();
   const groupName = name ?? generatedName;
@@ -38,6 +42,7 @@ export const SegmentedControl = ({
     <div
       role="radiogroup"
       aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledBy}
       className={cx('segmented-control', className)}
       style={
         {

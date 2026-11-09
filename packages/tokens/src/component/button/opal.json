@@ -2,10 +2,16 @@
   "button": {
     "backdrop": { "$value": "{color.surface-backdrop}" },
 
-    "secondary-bg": { "$value": "{color.surface}" },
-    "secondary-bg-hover": { "$value": "{color.surface-hover}" },
-    "secondary-fg": { "$value": "{color.text}" },
-    "secondary-shadow": { "$value": "{color.surface-shadow-tight}" },
-    "secondary-border-color": { "$value": "{color.surface-border}" }
+    "primary-bg": { "$value": "{color.surface}" },
+    "primary-bg-hover": { "$value": "{color.surface-hover}" },
+    "primary-fg": { "$value": "{color.text}" },
+    "primary-shadow": { "$value": "{color.surface-shadow-tight}" },
+    "primary-border-color": { "$value": "{color.surface-border}" },
+
+    "fixed-bg": { "$value": "{color.surface}" },
+    "fixed-bg-hover": { "$value": "{color.surface-hover}" },
+    "fixed-fg": { "$value": "{color.fixed}" },
+    "fixed-shadow": { "$value": "{color.surface-shadow-tight}" },
+    "fixed-border-color": { "$value": "{color.surface-border}" }
   }
 }

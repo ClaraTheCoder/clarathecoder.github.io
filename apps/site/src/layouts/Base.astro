@@ -5,6 +5,7 @@ import '@clara/design-system/swirl.css';
 import '@clara/design-system/grid-backdrop.css';
 import '../styles/site.css';
 import { Notice, SiteHeader, SiteFooter, Link } from '@clara/design-system';
+import { ThemeDialog } from '../components/ThemeDialog';
 
 interface Props {
   title?: string;
@@ -52,6 +53,24 @@ const nav = [
 
         window.__setThemeMode = apply;
         apply(mode);
+
+        var SCHEME_KEY = 'color-scheme';
+        var storedScheme;
+        try {
+          storedScheme = localStorage.getItem(SCHEME_KEY);
+        } catch (e) {}
+        var scheme = ['system','light','dark'].includes(storedScheme) ? storedScheme : 'system';
+
+        function applyScheme(next) {
+          if (next === 'light' || next === 'dark') root.setAttribute('data-theme', next);
+          else root.removeAttribute('data-theme');
+          try {
+            localStorage.setItem(SCHEME_KEY, next);
+          } catch (e) {}
+        }
+
+        window.__setColorScheme = applyScheme;
+        applyScheme(scheme);
       })();
     </script>
     <title>{title}</title>
@@ -68,7 +87,9 @@ const nav = [
     <a class="skip-link" href="#main">Skip to content</a>
     <Notice>🚧 Under construction 🚧</Notice>
 
-    <SiteHeader brand={{ label: 'Clara', href: '/' }} nav={nav} />
+    <SiteHeader brand={{ label: 'Clara', href: '/' }} nav={nav}>
+      <ThemeDialog slot="actions" variant="header" client:only="react" />
+    </SiteHeader>
 
     <main id="main" class="container">
       <slot />

@@ -6,27 +6,29 @@
     pointer-events: none;
     display: none;
 
-    --_field: var(--color-white);
-    --_c1: color-mix(in oklab, var(--color-lavender-500) 66%, transparent);
-    --_c2: color-mix(in oklab, var(--color-fuchsia-500) 66%, transparent);
-    --_c3: color-mix(in oklab, var(--color-cerulean-500) 66%, transparent);
-    --_c4: color-mix(in oklab, var(--color-celadon-500) 66%, transparent);
+    --_field: light-dark(var(--color-white), color-mix(in oklab, var(--color-bg), var(--color-black) 50%));
+    --_c1: light-dark(
+      color-mix(in oklab, var(--color-lavender-500) 66%, transparent),
+      color-mix(in oklab, var(--color-lavender-800) 42%, transparent)
+    );
+    --_c2: light-dark(
+      color-mix(in oklab, var(--color-fuchsia-500) 66%, transparent),
+      color-mix(in oklab, var(--color-fuchsia-700) 42%, transparent)
+    );
+    --_c3: light-dark(
+      color-mix(in oklab, var(--color-cerulean-500) 66%, transparent),
+      color-mix(in oklab, var(--color-cerulean-800) 42%, transparent)
+    );
+    --_c4: light-dark(
+      color-mix(in oklab, var(--color-celadon-500) 66%, transparent),
+      color-mix(in oklab, var(--color-celadon-900) 42%, transparent)
+    );
 
     background: var(--_field);
   }
 
   [data-preset='opal'] .swirl {
     display: block;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme='light']) .swirl {
-      --_field: color-mix(in oklab, var(--color-bg), var(--color-black) 50%);
-      --_c1: color-mix(in oklab, var(--color-lavender-800) 42%, transparent);
-      --_c2: color-mix(in oklab, var(--color-fuchsia-700) 42%, transparent);
-      --_c3: color-mix(in oklab, var(--color-cerulean-800) 42%, transparent);
-      --_c4: color-mix(in oklab, var(--color-celadon-900) 42%, transparent);
-    }
   }
 
   .swirl__rotor {

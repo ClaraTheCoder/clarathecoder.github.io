@@ -8,13 +8,13 @@ const meta = preview.meta({
   component: Button,
   args: { variant: 'primary', size: 'md', children: 'Button' },
   argTypes: {
-    variant: { control: 'inline-radio', options: ['primary', 'secondary', 'tertiary', 'ghost'] },
+    variant: { control: 'inline-radio', options: ['primary', 'fixed', 'ghost'] },
     size: { control: 'inline-radio', options: ['sm', 'md', 'lg'] },
     iconOnly: { control: 'boolean' },
   },
 });
 
-const VARIANTS: ButtonVariant[] = ['primary', 'secondary', 'tertiary', 'ghost'];
+const VARIANTS: ButtonVariant[] = ['primary', 'fixed', 'ghost'];
 const SIZES: ButtonSize[] = ['sm', 'md', 'lg', 'xl'];
 
 const Row = ({ children }: { children: React.ReactNode }) => (

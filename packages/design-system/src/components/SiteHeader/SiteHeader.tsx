@@ -1,3 +1,4 @@
+import { type ReactNode } from 'react';
 import './SiteHeader.css';
 import { cx } from '../../utils/cx.js';
 import { Link } from '../Link/index.js';
@@ -12,10 +13,11 @@ export interface SiteHeaderProps {
   brand: SiteHeaderLink;
   /** Main navigation links (top-right). */
   nav: SiteHeaderLink[];
+  actions?: ReactNode;
   className?: string;
 }
 
-export const SiteHeader = ({ brand, nav, className }: SiteHeaderProps) => (
+export const SiteHeader = ({ brand, nav, actions, className }: SiteHeaderProps) => (
   <header className={cx('site-header', 'container', className)}>
     <div className="site-header__brand">
       <Link href={brand.href}>
@@ -34,6 +36,7 @@ export const SiteHeader = ({ brand, nav, className }: SiteHeaderProps) => (
         ))}
         </ul>
       </nav>
+      {actions}
     </div>
   </header>
 );

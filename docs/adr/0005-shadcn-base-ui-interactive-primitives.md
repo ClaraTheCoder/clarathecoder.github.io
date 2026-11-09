@@ -1,6 +1,6 @@
 # 5. shadcn + Base UI for interactive components
 
-- Status: Accepted
+- Status: Superseded by [0009](0009-native-html-interactive-components.md)
 - Date: 2026-10-27
 - Revised: 2026-11-08
 

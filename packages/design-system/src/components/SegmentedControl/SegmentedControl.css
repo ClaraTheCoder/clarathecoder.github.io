@@ -119,7 +119,7 @@
 
   @media (prefers-reduced-transparency: reduce) {
     .segmented-control {
-      background: var(--color-secondary-subtle);
+      background: var(--color-fixed-inverse);
       backdrop-filter: none;
       -webkit-backdrop-filter: none;
     }

@@ -24,7 +24,6 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
-    "@base-ui-components/react": "1.0.0-rc.0",
     "@clara/tokens": "workspace:*",
     "lucide-react": "^1.65.0"
   },

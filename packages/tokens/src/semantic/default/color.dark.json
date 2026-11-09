@@ -23,10 +23,10 @@
     "accent-subtle": { "$value": "{color.saffron.950}" },
     "accent-subtle-hover": { "$value": "{color.saffron.900}" },
 
-    "secondary": { "$value": "{color.neutral.300}" },
-    "secondary-hover": { "$value": "{color.neutral.200}" },
-    "secondary-subtle": { "$value": "{color.neutral.900}" },
-    "secondary-subtle-hover": { "$value": "{color.neutral.800}" },
+    "fixed": { "$value": "{color.neutral.100}" },
+    "fixed-hover": { "$value": "{color.neutral.50}" },
+    "fixed-inverse": { "$value": "{color.neutral.900}" },
+    "fixed-inverse-hover": { "$value": "{color.neutral.800}" },
 
     "success": { "$value": "{color.viridian.700}" },
     "success-hover": { "$value": "{color.viridian.800}" },
@@ -49,6 +49,7 @@
     "info-subtle-hover": { "$value": "{color.cerulean.900}" },
 
     "overlay": { "$value": "{color.black-alpha.60}" },
+    "ghost": { "$value": "{color.white-alpha.10}" },
     "transparent": { "$value": "{color.black-alpha.0}" }
   }
 }

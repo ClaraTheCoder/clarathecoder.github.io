@@ -38,7 +38,7 @@ export const Video = ({ className, poster, track, transcript, children, ...props
       style={poster ? ({ '--video-poster': `url("${poster}")` } as CSSProperties) : undefined}
     >
       <Button
-        variant="secondary"
+        variant="fixed"
         size="xl"
         iconOnly
         className="video__play"

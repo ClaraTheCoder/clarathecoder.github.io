@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { Hero, Text, Link } from '@clara/design-system';
-import { ThemeControl } from '../components/ThemeControl';
+import { ThemeDialog } from '../components/ThemeDialog';
 ---
 
 <Base>
@@ -17,6 +17,6 @@ import { ThemeControl } from '../components/ThemeControl';
       </Text>
     </Hero>
 
-    <ThemeControl client:only="react" />
+    <ThemeDialog variant="hero" client:only="react" />
   </div>
 </Base>

@@ -11,20 +11,18 @@
 
     "backdrop": { "$value": "none" },
 
+    "primary-bg": { "$value": "{color.accent}" },
+    "primary-bg-hover": { "$value": "{color.accent-hover}" },
     "primary-fg": { "$value": "{color.text-on-color}" },
     "primary-shadow": { "$value": "none" },
     "primary-border-color": { "$value": "{color.transparent}" },
 
-    "secondary-bg": { "$value": "{color.secondary}" },
-    "secondary-bg-hover": { "$value": "{color.secondary-hover}" },
-    "secondary-fg": { "$value": "{color.text-on-color}" },
-    "secondary-shadow": { "$value": "none" },
-    "secondary-border-color": { "$value": "{color.transparent}" },
-
-    "tertiary-bg": { "$value": "{color.secondary-subtle}" },
-    "tertiary-bg-hover": { "$value": "{color.secondary-subtle-hover}" },
-    "tertiary-fg": { "$value": "{color.text}" },
-    "tertiary-shadow": { "$value": "none" },
-    "tertiary-border-color": { "$value": "{color.border}" }
+    "fixed-bg": { "$value": "{color.fixed}" },
+    "fixed-bg-hover": { "$value": "{color.fixed-hover}" },
+    "fixed-fg": { "$value": "{color.fixed-inverse}" },
+    "fixed-shadow": { "$value": "none" },
+    "fixed-border-color": { "$value": "{color.transparent}" },
+    
+    "ghost-bg-hover": { "$value": "{color.ghost}" }
   }
 }
