@@ -1,0 +1,68 @@
+{
+  "text": {
+    "display-1": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.nunito}",
+        "fontWeight": "{font.weight.regular}",
+        "letterSpacing": "{font.tracking.tighter}"
+      }
+    },
+    "display-2": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.nunito}",
+        "fontWeight": "{font.weight.regular}",
+        "letterSpacing": "{font.tracking.tighter}"
+      }
+    },
+    "heading-1": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.nunito}",
+        "fontWeight": "{font.weight.bold}",
+        "letterSpacing": "{font.tracking.tight}"
+      }
+    },
+    "heading-2": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.nunito}",
+        "fontWeight": "{font.weight.bold}",
+        "letterSpacing": "{font.tracking.tight}"
+      }
+    },
+    "heading-3": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.nunito}",
+        "fontWeight": "{font.weight.bold}",
+        "letterSpacing": "{font.tracking.tight}"
+      }
+    },
+    "heading-4": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.nunito}",
+        "fontWeight": "{font.weight.bold}",
+        "letterSpacing": "{font.tracking.snug}"
+      }
+    },
+    "heading-5": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.nunito}",
+        "fontWeight": "{font.weight.bold}",
+        "letterSpacing": "{font.tracking.snug}"
+      }
+    },
+    "heading-6": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.nunito}",
+        "fontWeight": "{font.weight.bold}",
+        "letterSpacing": "{font.tracking.snug}"
+      }
+    }
+  }
+}

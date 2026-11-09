@@ -1,6 +1,9 @@
 {
   "color": {
     "$type": "color",
+    "bg": { "$value": "{color.neutral.950}" },
+    "surface": { "$value": "{color.neutral.950}" },
+    "surface-hover": { "$value": "{color.neutral.900}" },
 
     "surface-border": { "$value": "{color.accent}" },
     "surface-shadow": {

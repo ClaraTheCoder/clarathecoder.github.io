@@ -1,11 +1,20 @@
 {
   "color": {
     "$type": "color",
+    "bg": { "$value": "{color.neutral.50}" },
+    "text": { "$value": "{color.neutral.900}" },
+    "border": { "$value": "{color.neutral.300}" },
+    "border-strong": { "$value": "{color.neutral.600}" },
     "surface": { "$value": "{color.white-alpha.40}" },
     "surface-hover": { "$value": "{color.white-alpha.60}" },
     "surface-shadow": { "$value": "0 22px 48px -24px rgba(12, 18, 40, 0.6), inset 0 1px 0 {color.white}" },
     "surface-shadow-tight": { "$value": "0 4px 12px -4px {color.black-alpha.40}, inset 0 1px 0 {color.white}" },
     "surface-backdrop": { "$value": "blur(30px) saturate(2)" },
-    "surface-border": { "$value": "{color.white-alpha.60}" }
+    "surface-border": { "$value": "{color.white-alpha.60}" },
+
+    "accent": { "$value": "{color.black-alpha.80}" },
+    "accent-hover": { "$value": "{color.black-alpha.60}" },
+    "accent-subtle": { "$value": "{color.black-alpha.20}" },
+    "accent-subtle-hover": { "$value": "{color.black-alpha.40}" }
   }
 }

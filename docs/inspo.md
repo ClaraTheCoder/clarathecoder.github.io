@@ -24,8 +24,8 @@ Colelction of games and stuff
 https://beyondtellerrand.com/
 I like the buttons and layout
 
-https://www.theboringblog.ai
-That's a charming little homepage toy
+http://eszterbial.com/works
+motion
 
 https://nesilnoble.com
 Why do design portfolios all have this figma node styling at the moment? Other than that though, it has a lot of personality in the colours and artwork.

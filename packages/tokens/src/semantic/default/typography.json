@@ -3,11 +3,11 @@
     "display-1": {
       "$type": "typography",
       "$value": {
-        "fontFamily": "{font.family.system-sans}",
+        "fontFamily": "{font.family.fraunces}",
         "fontSize": "{font.size.1000}",
-        "fontWeight": "{font.weight.bold}",
+        "fontWeight": "{font.weight.medium}",
         "lineHeight": "{font.line-height.tight}",
-        "letterSpacing": "{font.tracking.normal}",
+        "letterSpacing": "{font.tracking.tight}",
         "textCase": "none",
         "textDecoration": "none",
         "paragraphSpacing": "0",
@@ -17,11 +17,11 @@
     "display-2": {
       "$type": "typography",
       "$value": {
-        "fontFamily": "{font.family.system-sans}",
+        "fontFamily": "{font.family.fraunces}",
         "fontSize": "{font.size.900}",
-        "fontWeight": "{font.weight.bold}",
+        "fontWeight": "{font.weight.medium}",
         "lineHeight": "{font.line-height.tight}",
-        "letterSpacing": "{font.tracking.normal}",
+        "letterSpacing": "{font.tracking.tight}",
         "textCase": "none",
         "textDecoration": "none",
         "paragraphSpacing": "0",
@@ -31,11 +31,11 @@
     "heading-1": {
       "$type": "typography",
       "$value": {
-        "fontFamily": "{font.family.system-sans}",
+        "fontFamily": "{font.family.fraunces}",
         "fontSize": "{font.size.800}",
-        "fontWeight": "{font.weight.bold}",
+        "fontWeight": "{font.weight.semibold}",
         "lineHeight": "{font.line-height.heading}",
-        "letterSpacing": "{font.tracking.normal}",
+        "letterSpacing": "{font.tracking.snug}",
         "textCase": "none",
         "textDecoration": "none",
         "paragraphSpacing": "0",
@@ -45,7 +45,7 @@
     "heading-2": {
       "$type": "typography",
       "$value": {
-        "fontFamily": "{font.family.system-sans}",
+        "fontFamily": "{font.family.fraunces}",
         "fontSize": "{font.size.700}",
         "fontWeight": "{font.weight.semibold}",
         "lineHeight": "{font.line-height.heading}",
@@ -59,7 +59,7 @@
     "heading-3": {
       "$type": "typography",
       "$value": {
-        "fontFamily": "{font.family.system-sans}",
+        "fontFamily": "{font.family.fraunces}",
         "fontSize": "{font.size.600}",
         "fontWeight": "{font.weight.semibold}",
         "lineHeight": "{font.line-height.heading}",
@@ -73,7 +73,7 @@
     "heading-4": {
       "$type": "typography",
       "$value": {
-        "fontFamily": "{font.family.system-sans}",
+        "fontFamily": "{font.family.fraunces}",
         "fontSize": "{font.size.500}",
         "fontWeight": "{font.weight.semibold}",
         "lineHeight": "{font.line-height.heading}",
@@ -87,7 +87,7 @@
     "heading-5": {
       "$type": "typography",
       "$value": {
-        "fontFamily": "{font.family.system-sans}",
+        "fontFamily": "{font.family.fraunces}",
         "fontSize": "{font.size.400}",
         "fontWeight": "{font.weight.semibold}",
         "lineHeight": "{font.line-height.heading}",
@@ -101,7 +101,7 @@
     "heading-6": {
       "$type": "typography",
       "$value": {
-        "fontFamily": "{font.family.system-sans}",
+        "fontFamily": "{font.family.fraunces}",
         "fontSize": "{font.size.300}",
         "fontWeight": "{font.weight.semibold}",
         "lineHeight": "{font.line-height.heading}",
@@ -115,7 +115,7 @@
     "lead": {
       "$type": "typography",
       "$value": {
-        "fontFamily": "{font.family.system-sans}",
+        "fontFamily": "{font.family.nunito}",
         "fontSize": "{font.size.400}",
         "fontWeight": "{font.weight.regular}",
         "lineHeight": "{font.line-height.body}",
@@ -129,7 +129,7 @@
     "body": {
       "$type": "typography",
       "$value": {
-        "fontFamily": "{font.family.system-sans}",
+        "fontFamily": "{font.family.nunito}",
         "fontSize": "{font.size.200}",
         "fontWeight": "{font.weight.regular}",
         "lineHeight": "{font.line-height.reading}",
@@ -143,7 +143,7 @@
     "body-sm": {
       "$type": "typography",
       "$value": {
-        "fontFamily": "{font.family.system-sans}",
+        "fontFamily": "{font.family.nunito}",
         "fontSize": "{font.size.100}",
         "fontWeight": "{font.weight.regular}",
         "lineHeight": "{font.line-height.body}",
@@ -157,7 +157,7 @@
     "caption": {
       "$type": "typography",
       "$value": {
-        "fontFamily": "{font.family.system-sans}",
+        "fontFamily": "{font.family.nunito}",
         "fontSize": "{font.size.100}",
         "fontWeight": "{font.weight.regular}",
         "lineHeight": "{font.line-height.snug}",
@@ -171,7 +171,7 @@
     "overline": {
       "$type": "typography",
       "$value": {
-        "fontFamily": "{font.family.system-sans}",
+        "fontFamily": "{font.family.nunito}",
         "fontSize": "{font.size.100}",
         "fontWeight": "{font.weight.semibold}",
         "lineHeight": "{font.line-height.snug}",

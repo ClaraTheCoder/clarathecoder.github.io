@@ -1,6 +1,11 @@
 {
   "color": {
     "$type": "color",
+    "bg": { "$value": "{color.neutral.50}" },
+    "surface-hover": { "$value": "{color.neutral.50}" },
+    "text": { "$value": "{color.neutral.900}" },
+    "border": { "$value": "{color.neutral.300}" },
+    "border-strong": { "$value": "{color.neutral.600}" },
     "surface-border": { "$value": "{color.accent}" },
     "surface-shadow": {
       "$value": "0 0 0 1px color-mix(in srgb, {color.accent} 30%, transparent), 0 0 18px color-mix(in srgb, {color.accent} 28%, transparent)"

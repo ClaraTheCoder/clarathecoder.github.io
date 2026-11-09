@@ -16,7 +16,7 @@
     },
     "line-height": {
       "$type": "number",
-      "tight": { "$value": 1.05 },
+      "tight": { "$value": 1 },
       "heading": { "$value": 1.15 },
       "snug": { "$value": 1.3 },
       "body": { "$value": 1.55 },
@@ -32,6 +32,7 @@
     },
     "tracking": {
       "$type": "dimension",
+      "tighter": { "$value": "-0.03em" },
       "tight": { "$value": "-0.02em" },
       "snug": { "$value": "-0.01em" },
       "normal": { "$value": "0em" },
@@ -52,7 +53,9 @@
         "$value": "'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
       },
       "bangers": { "$value": "'Bangers', 'Comic Sans MS', cursive" },
-      "comic-neue": { "$value": "'Comic Neue', 'Comic Sans MS', cursive" }
+      "comic-neue": { "$value": "'Comic Neue', 'Comic Sans MS', cursive" },
+      "fraunces": { "$value": "'Fraunces', Georgia, serif" },
+      "nunito": { "$value": "'Nunito Variable', ui-rounded, sans-serif" }
     }
   }
 }

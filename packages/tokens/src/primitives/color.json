@@ -3,7 +3,7 @@
     "lavender": {
       "50": {
         "$type": "color",
-        "$value": "oklch(0.994 0 293)"
+        "$value": "oklch(0.984 0.003 293)"
       },
       "100": {
         "$type": "color",
@@ -47,7 +47,7 @@
       },
       "900": {
         "$type": "color",
-        "$value": "oklch(0.316 0.119 293)"
+        "$value": "oklch(0.271 0.079 293)"
       },
       "950": {
         "$type": "color",
@@ -381,7 +381,7 @@
     "neutral": {
       "50": {
         "$type": "color",
-        "$value": "oklch(0.971 0.001 120)"
+        "$value": "oklch(0.98 0 0 / 1)"
       },
       "100": {
         "$type": "color",

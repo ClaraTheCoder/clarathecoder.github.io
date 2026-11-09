@@ -1,6 +1,5 @@
 import preview from '../../../.storybook/preview';
 import { Link } from './Link';
-import { Flex } from '../Layout';
 
 const meta = preview.meta({
   title: 'Components/Link',

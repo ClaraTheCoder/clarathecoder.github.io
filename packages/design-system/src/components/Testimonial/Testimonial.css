@@ -28,14 +28,14 @@
   }
 
   .testimonial__quote-mark {
-    width: var(--space-900);
-    height: var(--space-900);
-    margin-block: var(--space-300);
-    fill: var(--color-accent);
+    font-family: var(--text-display-1-font-family);
+    font-weight: var(--text-display-1-font-weight);
+    font-size: var(--font-size-1000);
+    line-height: var(--font-line-height-tight);
+    color: var(--color-accent);
   }
 
   .testimonial__quote-mark:last-child {
     align-self: flex-end;
-    transform: rotate(180deg);
   }
 }

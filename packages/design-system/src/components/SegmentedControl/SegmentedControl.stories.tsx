@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import preview from '../../../.storybook/preview';
 import { SegmentedControl, type SegmentedControlOption } from './SegmentedControl';
-import { Flex } from '../Layout';
 
 const meta = preview.meta({
   title: 'Components/SegmentedControl',

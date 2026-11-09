@@ -1,8 +1,11 @@
 /* Self-hosted faces for every theme's fonts (ADR 0007: eager-loaded so a
    runtime theme switch never flashes an unloaded font). Only the weights the
-   roles actually use are imported. The `default` and `opal` themes use
-   system-ui / ui-monospace and need no files.
+   roles actually use are imported.
    @fontsource sets `font-display: swap` on these @font-face blocks. */
+
+/* default — display */
+@import '@fontsource/fraunces/500.css';
+@import '@fontsource/fraunces/600.css';
 
 /* pow — display */
 @import '@fontsource/bangers/400.css';
@@ -14,6 +17,9 @@
 /* datum — body + code */
 @import '@fontsource/jetbrains-mono/400.css';
 @import '@fontsource/jetbrains-mono/700.css';
+
+/* opal — display + body; default — body */
+@import '@fontsource-variable/nunito/wght.css';
 
 /* datum (light headings) — display */
 @import '@fontsource/saira-condensed/300.css';
