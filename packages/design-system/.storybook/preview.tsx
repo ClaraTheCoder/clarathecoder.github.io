@@ -9,7 +9,6 @@ import '../src/styles/swirl.css';
 const presets = [
   { value: 'default', title: 'Default' },
   { value: 'opal', title: 'Opal' },
-  { value: 'pow', title: 'Pow' },
   { value: 'datum', title: 'Datum' },
 ];
 
@@ -25,20 +24,13 @@ const withTheme: Decorator = (Story, context) => {
   }
   // Per-theme stage backdrops. The pattern themes draw with the live
   // `--color-accent`, so they track whatever accent the active theme/mode sets.
-  // Dots (pow) and blueprint grid (datum) are ported from the old site.
+  // The blueprint grid (datum) is ported from the old site.
   // Opal is not here: its backdrop is the animated `.swirl` orbs (swirl.css),
   // rendered as real layers below, not a background image.
   const backdrops: Record<
     string,
     { image: string; size: string; position: string; repeat: string }
   > = {
-    pow: {
-      image:
-        'radial-gradient(circle, color-mix(in srgb, var(--color-accent) 14%, transparent) 1.2px, transparent 1.3px), radial-gradient(circle, color-mix(in srgb, var(--color-accent) 14%, transparent) 1.2px, transparent 1.3px)',
-      size: '12px 12px, 12px 12px',
-      position: '0 0, 6px 6px',
-      repeat: 'repeat',
-    },
     datum: {
       image:
         'repeating-linear-gradient(0deg, color-mix(in srgb, var(--color-accent) 8%, transparent) 0 1px, transparent 1px 34px), repeating-linear-gradient(90deg, color-mix(in srgb, var(--color-accent) 8%, transparent) 0 1px, transparent 1px 34px)',

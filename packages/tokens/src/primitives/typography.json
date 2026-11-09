@@ -52,8 +52,6 @@
       "jetbrains-mono": {
         "$value": "'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace"
       },
-      "bangers": { "$value": "'Bangers', 'Comic Sans MS', cursive" },
-      "comic-neue": { "$value": "'Comic Neue', 'Comic Sans MS', cursive" },
       "fraunces": { "$value": "'Fraunces', Georgia, serif" },
       "nunito": { "$value": "'Nunito Variable', ui-rounded, sans-serif" }
     }
