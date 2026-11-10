@@ -1,6 +1,4 @@
-# clara-site
-
-Personal site for Clara — a design-systems engineer and tech lead — and the design system it is built on.
+# personal-site
 
 A pnpm monorepo:
 
