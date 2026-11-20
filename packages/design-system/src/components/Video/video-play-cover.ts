@@ -2,9 +2,9 @@
  * Sets `data-ready` / `data-revealed` so `Video.css` can cover the native controls
  * with the poster and play button until first play. Separate file for SSR.
  */
-if (typeof customElements !== 'undefined' && !customElements.get('clara-video')) {
+if (typeof customElements !== 'undefined' && !customElements.get('video-play-cover')) {
   customElements.define(
-    'clara-video',
+    'video-play-cover',
     class extends HTMLElement {
       connectedCallback() {
         const video = this.querySelector('video');

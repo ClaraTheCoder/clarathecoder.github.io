@@ -2,7 +2,12 @@
 
 @layer components {
   .site-header {
-    padding-block: var(--space-300);
+    margin-top: var(--space-200);
+    padding-block: var(--space-200);
+
+    @media (min-width: 768px) {
+      margin-top: var(--space-500);
+    }
   }
 
   .site-header__bar {

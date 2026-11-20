@@ -7,7 +7,7 @@ import {
 } from 'react';
 import { Play } from 'lucide-react';
 import './Video.css';
-import './video-element.js';
+import './video-play-cover.js';
 import { Button } from '../Button';
 import { Flex } from '../Layout';
 
@@ -15,7 +15,7 @@ declare module 'react' {
   // eslint-disable-next-line @typescript-eslint/no-namespace
   namespace JSX {
     interface IntrinsicElements {
-      'clara-video': HTMLAttributes<HTMLElement>;
+      'video-play-cover': HTMLAttributes<HTMLElement>;
     }
   }
 }
@@ -30,10 +30,10 @@ export type VideoProps = VideoHTMLAttributes<HTMLVideoElement> & {
   transcript?: ReactNode;
 };
 
-/** Load `@clara/design-system/video-element.js` on the page for the play button. */
+/** Load `@clara/design-system/video-play-cover.js` on the page for the play button. */
 export const Video = ({ className, poster, track, transcript, children, ...props }: VideoProps) => (
   <Flex className={className} gap="400" direction="column">
-    <clara-video
+    <video-play-cover
       className="video__frame"
       style={poster ? ({ '--video-poster': `url("${poster}")` } as CSSProperties) : undefined}
     >
@@ -58,7 +58,7 @@ export const Video = ({ className, poster, track, transcript, children, ...props
         {children}
         <track default {...track} kind="captions" />
       </video>
-    </clara-video>
+    </video-play-cover>
     {transcript && (
       <details className="video__transcript prose">
         <summary>Read the transcript</summary>

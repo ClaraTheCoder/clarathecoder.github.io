@@ -43,8 +43,13 @@
   .page {
     display: flex;
     flex-direction: column;
-    gap: var(--space-900);
-    padding-top: var(--space-800);
+    gap: var(--space-500);
+    padding-top: var(--space-500);
+
+    @media (min-width: 768px) {
+      gap: var(--space-900);
+      padding-top: var(--space-800);
+    }
   }
 
   .page--roomy {

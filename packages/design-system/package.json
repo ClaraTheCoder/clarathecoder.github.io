@@ -5,7 +5,7 @@
   "type": "module",
   "sideEffects": [
     "*.css",
-    "./src/components/Video/video-element.ts"
+    "./src/components/Video/video-play-cover.ts"
   ],
   "exports": {
     ".": "./src/index.ts",
@@ -16,7 +16,8 @@
     "./swirl.css": "./src/styles/swirl.css",
     "./grid-backdrop.css": "./src/styles/grid-backdrop.css",
     "./styles.css": "./src/styles/index.css",
-    "./video-element.js": "./src/components/Video/video-element.ts"
+    "./video-play-cover.js": "./src/components/Video/video-play-cover.ts",
+    "./font-preloads.js": "./src/styles/font-preloads.ts"
   },
   "scripts": {
     "typecheck": "tsc --noEmit -p tsconfig.json",

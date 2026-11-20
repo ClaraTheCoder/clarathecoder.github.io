@@ -44,8 +44,8 @@ interface ThemeDialogProps {
 
 export function ThemeDialog({ variant }: ThemeDialogProps) {
   const [open, setOpen] = useState(false);
-  const [mode, setMode] = useState<Mode>(readMode);
-  const [scheme, setScheme] = useState<Scheme>(readScheme);
+  const [mode, setMode] = useState<Mode>('default');
+  const [scheme, setScheme] = useState<Scheme>('system');
   const modeLabelId = useId();
   const schemeLabelId = useId();
 
