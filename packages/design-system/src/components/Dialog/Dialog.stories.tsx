@@ -34,7 +34,7 @@ export const Controlled = meta.story({
     const [open, setOpen] = useState(false);
     return (
       <Dialog open={open} onOpenChange={setOpen}>
-        <DialogTrigger variant="fixed">Open ({open ? 'open' : 'closed'})</DialogTrigger>
+        <DialogTrigger>Open ({open ? 'open' : 'closed'})</DialogTrigger>
         <DialogContent>
           <DialogTitle>Controlled dialog</DialogTitle>
           <DialogDescription>Open state lives in the story.</DialogDescription>
@@ -57,7 +57,7 @@ export const LongContent = meta.story({
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Paragraph {i + 1}.
           </p>
         ))}
-        <Button variant="fixed">A focusable button at the end</Button>
+        <Button>A focusable button at the end</Button>
       </DialogContent>
     </Dialog>
   ),

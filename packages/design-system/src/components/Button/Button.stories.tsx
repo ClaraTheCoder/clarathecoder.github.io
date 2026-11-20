@@ -1,7 +1,8 @@
 import { ArrowRight, Heart, Plus, Settings } from 'lucide-react';
 import preview from '../../../.storybook/preview';
 import { Button, type ButtonSize, type ButtonVariant } from './Button';
-import { Flex } from '../Layout';
+import { Box, Flex } from '../Layout';
+import { Text } from '../Text';
 
 const meta = preview.meta({
   title: 'Components/Button',
@@ -22,6 +23,39 @@ const Row = ({ children }: { children: React.ReactNode }) => (
     {children}
   </Flex>
 );
+// Fixed buttons are designed to sit on dark media, so show them on a panel that
+// stays dark in both modes. Every row gets the same padding so they line up.
+const VariantRow = ({
+  variant,
+  children,
+}: {
+  variant: ButtonVariant;
+  children: React.ReactNode;
+}) => (
+  <Box
+    p="400"
+    style={
+      variant === 'fixed'
+        ? { background: 'var(--color-fixed-inverse)', borderRadius: 'var(--radius-md)' }
+        : undefined
+    }
+  >
+    <Row>
+      <Text
+        as="span"
+        variant="overline"
+        color={variant === 'fixed' ? undefined : 'muted'}
+        style={{
+          minInlineSize: 'var(--space-900)',
+          color: variant === 'fixed' ? 'var(--color-fixed)' : undefined,
+        }}
+      >
+        {variant}
+      </Text>
+      {children}
+    </Row>
+  </Box>
+);
 const Stack = ({ children }: { children: React.ReactNode }) => (
   <Flex direction="column" gap="400">
     {children}
@@ -33,7 +67,7 @@ export const Variants = meta.story({
   render: () => (
     <Stack>
       {VARIANTS.map((v) => (
-        <Row key={v}>
+        <VariantRow key={v} variant={v}>
           <Button key={`${v}-sm`} variant={v} size="sm">
             <Plus /> Add item
           </Button>
@@ -46,7 +80,7 @@ export const Variants = meta.story({
           <Button key={`${v}-disabled`} variant={v} disabled size="lg">
             Disabled
           </Button>
-        </Row>
+        </VariantRow>
       ))}
     </Stack>
   ),
@@ -57,7 +91,7 @@ export const IconOnly = meta.story({
   render: () => (
     <Stack>
       {VARIANTS.map((v) => (
-        <Row key={v}>
+        <VariantRow key={v} variant={v}>
           {SIZES.map((s) => (
             <Button key={s} variant={v} size={s} iconOnly aria-label="Settings">
               <Settings />
@@ -66,7 +100,7 @@ export const IconOnly = meta.story({
           <Button key={v} variant={v} disabled iconOnly aria-label="Settings" size="lg">
             <Settings />
           </Button>
-        </Row>
+        </VariantRow>
       ))}
     </Stack>
   ),
