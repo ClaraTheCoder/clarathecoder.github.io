@@ -16,6 +16,10 @@ const presets = [
 const withTheme: Decorator = (Story, context) => {
   const preset = context.globals.preset ?? 'default';
   const mode = context.globals.mode ?? 'light';
+  // Full-width stories (header, hero, media, …) render in plain block flow, as
+  // they do in the site's `.container`, instead of being shrink-wrapped by the
+  // centring flex stage.
+  const fullWidth = Boolean(context.parameters.fullWidth);
   if (typeof document !== 'undefined') {
     const root = document.documentElement;
     root.setAttribute('data-theme', mode);
@@ -49,7 +53,7 @@ const withTheme: Decorator = (Story, context) => {
           </div>
         </div>
       )}
-      <div style={{ position: 'relative', zIndex: 1 }}>
+      <div style={{ position: 'relative', zIndex: 1, inlineSize: fullWidth ? '100%' : undefined }}>
         <Story />
       </div>
     </div>

@@ -13,7 +13,7 @@ const paragraphs = transcriptMd
 const meta = preview.meta({
   title: 'Components/Video',
   component: Video,
-  parameters: { layout: 'fullscreen' },
+  parameters: { fullWidth: true },
 });
 
 export const Default = meta.story({

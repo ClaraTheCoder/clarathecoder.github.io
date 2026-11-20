@@ -5,7 +5,7 @@ const meta = preview.meta({
   title: 'Components/Notice',
   component: Notice,
   args: { children: '🚧 Under construction 🚧' },
-  parameters: { layout: 'fullscreen' },
+  parameters: { fullWidth: true },
 });
 
 export const Default = meta.story({});

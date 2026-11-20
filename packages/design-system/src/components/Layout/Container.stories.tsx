@@ -5,7 +5,7 @@ import { Box } from './Box';
 const meta = preview.meta({
   title: 'Layout/Container',
   component: Container,
-  parameters: { layout: 'fullscreen' },
+  parameters: { fullWidth: true },
 });
 
 const panel = {

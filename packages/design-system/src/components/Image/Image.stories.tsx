@@ -5,12 +5,12 @@ import { Box } from '../Layout';
 const meta = preview.meta({
   title: 'Components/Image',
   component: Image,
-  parameters: { layout: 'fullscreen' },
+  parameters: { fullWidth: true },
 });
 
 export const Default = meta.story({
   render: () => (
-    <Box py="500" style={{ inlineSize: 'min(720px, 100%)' }}>
+    <Box py="500">
       <Image />
     </Box>
   ),

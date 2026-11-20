@@ -25,7 +25,7 @@ const POSTS = [
 const meta = preview.meta({
   title: 'Components/Post',
   component: Post,
-  parameters: { layout: 'fullscreen' },
+  parameters: { fullWidth: true },
 });
 
 export const List = meta.story({

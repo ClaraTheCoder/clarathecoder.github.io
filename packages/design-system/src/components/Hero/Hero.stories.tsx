@@ -6,7 +6,7 @@ import { Link } from '../Link';
 const meta = preview.meta({
   title: 'Components/Hero',
   component: Hero,
-  parameters: { layout: 'fullscreen' },
+  parameters: { fullWidth: true },
 });
 
 export const Default = meta.story({

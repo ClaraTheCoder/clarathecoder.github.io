@@ -11,7 +11,7 @@ const meta = preview.meta({
       { label: 'Work', href: '/work' },
     ],
   },
-  parameters: { layout: 'fullscreen' },
+  parameters: { fullWidth: true },
 });
 
 export const Default = meta.story({});
