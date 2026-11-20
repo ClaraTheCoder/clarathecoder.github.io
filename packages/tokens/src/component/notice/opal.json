@@ -1,0 +1,5 @@
+{
+  "notice": {
+    "border-color": { "$value": "{color.surface-border}" }
+  }
+}

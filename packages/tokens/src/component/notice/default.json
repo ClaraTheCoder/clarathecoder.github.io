@@ -1,0 +1,10 @@
+{
+  "notice": {
+    "bg": { "$value": "{color.surface}" },
+    "bg-hover": { "$value": "{color.surface-hover}" },
+    "fg": { "$value": "{color.text-muted}" },
+    "fg-hover": { "$value": "{color.text}" },
+    "border-color": { "$value": "{color.border}" },
+    "backdrop": { "$value": "{color.surface-backdrop}" }
+  }
+}

@@ -4,7 +4,7 @@ import { Notice } from './Notice';
 const meta = preview.meta({
   title: 'Components/Notice',
   component: Notice,
-  args: { children: '🚧 Under construction 🚧' },
+  args: { href: '#contact', children: 'Available for work from January 2027' },
   parameters: { fullWidth: true },
 });
 

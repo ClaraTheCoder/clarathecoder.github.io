@@ -2,12 +2,34 @@
 
 @layer components {
   .notice {
+    display: block;
     text-align: center;
-    padding-block: var(--space-200);
-    background: var(--color-surface);
-    color: var(--color-text-muted);
-    font-size: var(--font-size-100);
-    border-bottom: var(--border-width-100, 1px) solid var(--color-border);
     inline-size: 100%;
+    padding-block: var(--space-200);
+    padding-inline: var(--space-400);
+    color: var(--notice-fg);
+    background: var(--notice-bg);
+    border-bottom: var(--surface-border-width) solid var(--notice-border-color);
+    backdrop-filter: var(--notice-backdrop);
+    -webkit-backdrop-filter: var(--notice-backdrop);
+    font-size: var(--font-size-100);
+    text-decoration: none;
+    transition: all var(--duration-base) var(--ease-standard);
+  }
+
+  .notice:hover,
+  .notice:focus-visible {
+    color: var(--notice-fg-hover);
+    background: var(--notice-bg-hover);
+  }
+  .notice:focus-visible {
+    outline: var(--focus-ring-width) solid var(--color-border-strong);
+    outline-offset: calc(var(--focus-ring-width) * -1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .notice {
+      transition: none;
+    }
   }
 }
