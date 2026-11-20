@@ -82,15 +82,14 @@
     -webkit-backdrop-filter: var(--button-backdrop);
   }
 
-  /* TODO: fix this in opal */
   .button--fixed {
     --_bg: var(--button-fixed-bg);
     --_fg: var(--button-fixed-fg);
     --_bg-hover: var(--button-fixed-bg-hover);
     --_border-color: var(--button-fixed-border-color);
     --_shadow: var(--button-fixed-shadow);
-    backdrop-filter: var(--button-backdrop);
-    -webkit-backdrop-filter: var(--button-backdrop);
+    backdrop-filter: var(--button-fixed-backdrop);
+    -webkit-backdrop-filter: var(--button-fixed-backdrop);
   }
   .button--ghost {
     --_bg: transparent;

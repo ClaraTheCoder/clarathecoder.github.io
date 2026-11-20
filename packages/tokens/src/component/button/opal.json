@@ -8,10 +8,11 @@
     "primary-shadow": { "$value": "{color.surface-shadow-tight}" },
     "primary-border-color": { "$value": "{color.surface-border}" },
 
-    "fixed-bg": { "$value": "{color.surface}" },
-    "fixed-bg-hover": { "$value": "{color.surface-hover}" },
+    "fixed-bg": { "$value": "{color.white-alpha.10}" },
+    "fixed-bg-hover": { "$value": "{color.white-alpha.20}" },
     "fixed-fg": { "$value": "{color.fixed}" },
-    "fixed-shadow": { "$value": "{color.surface-shadow-tight}" },
-    "fixed-border-color": { "$value": "{color.surface-border}" }
+    "fixed-shadow": { "$value": "0 5px 10px -5px {color.black-alpha.60}, inset 0 1px 0 {color.white-alpha.60}" },
+    "fixed-border-color": { "$value": "{color.white-alpha.30}" },
+    "fixed-backdrop": { "$value": "blur(30px) saturate(1.3)" }
   }
 }
