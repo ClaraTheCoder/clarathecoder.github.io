@@ -1,0 +1,11 @@
+{
+  "dialog": {
+    "bg": { "$value": "{color.surface}" },
+    "border-color": { "$value": "{color.surface-border}" },
+    "shadow": { "$value": "{color.surface-shadow}" },
+    "backdrop": { "$value": "{color.surface-backdrop}" },
+
+    "overlay": { "$value": "{color.overlay}" },
+    "overlay-backdrop": { "$value": "none" }
+  }
+}

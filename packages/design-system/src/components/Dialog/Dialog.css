@@ -7,17 +7,19 @@
     margin: auto;
     padding: 0;
     color: var(--color-text);
-    background: var(--color-surface);
-    border: var(--surface-border-width) solid var(--color-surface-border);
+    background: var(--dialog-bg);
+    border: var(--surface-border-width) solid var(--dialog-border-color);
     border-radius: var(--surface-radius);
-    box-shadow: var(--color-surface-shadow);
-    backdrop-filter: var(--color-surface-backdrop);
-    -webkit-backdrop-filter: var(--color-surface-backdrop);
+    box-shadow: var(--dialog-shadow);
+    backdrop-filter: var(--dialog-backdrop);
+    -webkit-backdrop-filter: var(--dialog-backdrop);
     overflow: auto;
   }
 
   .dialog::backdrop {
-    background: var(--color-overlay);
+    background: var(--dialog-overlay);
+    backdrop-filter: var(--dialog-overlay-backdrop);
+    -webkit-backdrop-filter: var(--dialog-overlay-backdrop);
   }
 
   .dialog__content {

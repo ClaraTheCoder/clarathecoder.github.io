@@ -1,0 +1,8 @@
+{
+  "dialog": {
+    "bg": { "$value": "color-mix(in oklab, {color.bg} 85%, transparent)" },
+
+    "overlay": { "$value": "{color.black-alpha.10}" },
+    "overlay-backdrop": { "$value": "blur(8px)" }
+  }
+}
