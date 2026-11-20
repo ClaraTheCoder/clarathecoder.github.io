@@ -39,6 +39,12 @@
         "theme": {
             "duration": { "$value": "{duration.slowest}" },
             "easing": { "$value": "{ease.in-out}" }
+        },
+        "attention": {
+            "duration": { "$value": "2000ms" },
+            "easing": { "$value": "{ease.out}" },
+            "scale": { "$value": "1.6" },
+            "opacity": { "$value": "0.8" }
         }
     }
 }

@@ -13,4 +13,16 @@
       opacity: 0;
     }
   }
+
+  @keyframes attention-ring {
+    from {
+      opacity: var(--motion-attention-opacity);
+      transform: scale(1);
+    }
+    80%,
+    to {
+      opacity: 0;
+      transform: scale(var(--motion-attention-scale));
+    }
+  }
 }

@@ -28,6 +28,32 @@
     place-self: center;
   }
 
+  .video__play {
+    position: relative;
+  }
+  .video__play::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: var(--button-border-width) solid var(--color-fixed);
+    border-radius: inherit;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .video__frame[data-ready]:hover > .button.video__play::after {
+      animation: attention-ring var(--motion-attention-duration) var(--motion-attention-easing)
+        infinite;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .video__frame[data-ready]:hover > .button.video__play::after {
+      animation: none;
+    }
+  }
+
   .video__frame[data-revealed]::before,
   .video__frame[data-revealed] > .button.video__play[hidden] {
     display: none;
