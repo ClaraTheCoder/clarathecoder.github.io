@@ -2,25 +2,28 @@
 
 @layer components {
   .site-header {
+    padding-block: var(--space-300);
+  }
+
+  .site-header__bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-500);
-    padding-block: var(--space-500);
-    inline-size: 100%;
+    gap: var(--space-400);
   }
-  .site-header__brand {
-    font-weight: 700;
-    font-size: var(--font-size-300);
-  }
+
   .site-header__right {
     display: flex;
     align-items: center;
-    gap: var(--space-500);
+    gap: var(--space-100);
   }
-  .site-nav {
+
+  .site-nav ul {
     display: flex;
     align-items: center;
-    gap: var(--space-500);
+    gap: var(--space-100);
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 }

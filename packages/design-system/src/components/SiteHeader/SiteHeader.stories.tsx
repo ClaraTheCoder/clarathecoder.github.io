@@ -10,6 +10,7 @@ const meta = preview.meta({
       { label: 'Writing', href: '/writing' },
       { label: 'Work', href: '/work' },
     ],
+    current: '/writing',
   },
   parameters: { fullWidth: true },
 });
