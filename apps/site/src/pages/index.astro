@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import { Hero, Text, Link } from '@clara/design-system';
 import { ThemeDialog } from '../components/ThemeDialog';
+import { SITE } from '../data/site';
 ---
 
 <Base>
@@ -13,7 +14,7 @@ import { ThemeDialog } from '../components/ThemeDialog';
       </Text>
       <Text variant="lead">
         <strong>I’m available for hire.</strong> Read about
-        <Link href="/work">what I do</Link>, or <Link href="#">say hi</Link>.
+        <Link href="/work">what I do</Link>, or <Link href={`mailto:${SITE.email}`}>send me an email</Link>.
       </Text>
     </Hero>
 

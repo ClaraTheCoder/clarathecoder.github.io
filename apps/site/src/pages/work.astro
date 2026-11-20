@@ -6,6 +6,7 @@ import showreel720 from '../assets/showreel/showreel-2026-10-720.mp4';
 import showreelPoster from '../assets/showreel/showreel-2026-10-poster.webp';
 import showreelCaptions from '../assets/showreel/showreel-2026-10.en.vtt?no-inline';
 import { Content as ShowreelTranscript } from '../assets/showreel/showreel-2026-10-transcript.md';
+import { SITE } from '../data/site';
 
 const waysToWork = [
   {
@@ -31,7 +32,7 @@ const waysToWork = [
   <div class="page page--roomy">
     <Hero title="Let’s work together">
       <Text variant="lead">
-        <strong>I am available for hire</strong>. I usually do contract work for clients, but I’m open to permanent roles if the right one comes along. Read on to learn more about me and my work, or <Link href="#">drop me an email</Link> if you fancy working together.
+        <strong>I am available for hire</strong>. I usually do contract work for clients, but I’m open to permanent roles if the right one comes along. Read on to learn more about me and my work, or <Link href={`mailto:${SITE.email}`}>drop me an email</Link> if you fancy working together.
       </Text>
     </Hero>
 

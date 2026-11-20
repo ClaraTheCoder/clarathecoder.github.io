@@ -8,6 +8,7 @@ import { Notice, SiteHeader, SiteFooter, Link } from '@clara/design-system';
 import { ThemeDialog } from '../components/ThemeDialog';
 import { AvailableFrom } from '../components/AvailableFrom';
 import { fontPreloads } from '@clara/design-system/font-preloads.js';
+import { SITE } from '../data/site';
 
 interface Props {
   title?: string;
@@ -110,7 +111,7 @@ const nav = [
     </main>
 
     <SiteFooter>
-      <p>Find me elsewhere on <Link href="https://www.linkedin.com/in/clarajordan1/">LinkedIn</Link> and <Link href="https://github.com/clarathecoder">GitHub</Link>.</p>
+      <p>Find me elsewhere on <Link href={SITE.social.linkedin}>LinkedIn</Link> and <Link href={SITE.social.github}>GitHub</Link>.</p>
     </SiteFooter>
 
     <script>
