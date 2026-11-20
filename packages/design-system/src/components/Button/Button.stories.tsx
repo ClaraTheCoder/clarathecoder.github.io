@@ -75,7 +75,7 @@ export const Variants = meta.story({
             <Heart /> Save
           </Button>
           <Button key={`${v}-lg`} variant={v} size="lg">
-            See all projects <ArrowRight />
+            See all projects <ArrowRight className="button__arrow" />
           </Button>
           <Button key={`${v}-disabled`} variant={v} disabled size="lg">
             Disabled

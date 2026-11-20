@@ -9,5 +9,36 @@
     "surface": {
         "radius": { "$value": "{radius.md}" },
         "border-width": { "$value": "1px" }
+    },
+    "motion": {
+        "entrance": {
+            "duration": { "$value": "{duration.slowest}" },
+            "easing": { "$value": "{ease.out}" },
+            "distance": { "$value": "{space.200}" },
+            "lead": { "$value": "{duration.fast}" },
+            "stagger": { "$value": "{duration.faster}" }
+        },
+        "feedback": {
+            "duration": { "$value": "{duration.fast}" },
+            "easing": { "$value": "{ease.out}" },
+            "press-scale": { "$value": "0.97" },
+            "nudge": { "$value": "{space.100}" },
+            "nudge-duration": { "$value": "{duration.base}" },
+            "nudge-easing": { "$value": "{ease.in-out-soft}" }
+        },
+        "overlay": {
+            "enter-duration": { "$value": "{duration.slower}" },
+            "enter-easing": { "$value": "{ease.spring}" },
+            "exit-duration": { "$value": "{duration.fast}" },
+            "fade-duration": { "$value": "{duration.base}" },
+            "fade-easing": { "$value": "{ease.out}" },
+            "scale": { "$value": "0.9" },
+            "exit-blur": { "$value": "6px" },
+            "distance": { "$value": "{space.400}" }
+        },
+        "theme": {
+            "duration": { "$value": "{duration.slowest}" },
+            "easing": { "$value": "{ease.in-out}" }
+        }
     }
 }

@@ -1,0 +1,16 @@
+@layer reset, base, components, utilities;
+
+@layer base {
+  @keyframes entrance-rise {
+    from {
+      opacity: 0;
+      transform: translateY(var(--motion-entrance-distance));
+    }
+  }
+
+  @keyframes entrance-fade {
+    from {
+      opacity: 0;
+    }
+  }
+}

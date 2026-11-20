@@ -29,13 +29,22 @@
     color: var(--_fg);
     background: var(--_bg);
     box-shadow: var(--_shadow);
-    transition: all var(--duration-base) var(--ease-standard);
+    transition:
+      background-color var(--duration-fast) var(--ease-standard),
+      color var(--duration-fast) var(--ease-standard),
+      border-color var(--duration-fast) var(--ease-standard),
+      box-shadow var(--duration-fast) var(--ease-standard),
+      transform var(--motion-feedback-duration) var(--motion-feedback-easing);
   }
 
   .button > svg {
     flex: none;
     inline-size: var(--_icon);
     block-size: var(--_icon);
+  }
+
+  .button__arrow {
+    transition: transform var(--motion-feedback-nudge-duration) var(--motion-feedback-nudge-easing);
   }
 
   .button--sm {
@@ -111,9 +120,24 @@
     opacity: var(--opacity-disabled);
   }
 
+  .button:active:not(:disabled) {
+    transform: scale(var(--motion-feedback-press-scale));
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .button:hover:not(:disabled) .button__arrow {
+      transform: translateX(var(--motion-feedback-nudge));
+    }
+  }
+  .button:focus-visible:not(:disabled) .button__arrow {
+    transform: translateX(var(--motion-feedback-nudge));
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    .button {
-      transition: none;
+    .button:active:not(:disabled),
+    .button:hover:not(:disabled) .button__arrow,
+    .button:focus-visible:not(:disabled) .button__arrow {
+      transform: none;
     }
   }
 }

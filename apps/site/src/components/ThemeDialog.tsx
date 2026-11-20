@@ -11,6 +11,8 @@ import {
 } from '@clara/design-system';
 import { ArrowRight, Palette } from 'lucide-react';
 import { useId, useState } from 'react';
+import { flushSync } from 'react-dom';
+import { revealTheme } from '../scripts/theme-reveal';
 
 type Mode = 'raw' | 'default' | 'opal' | 'blueprint';
 type Scheme = 'system' | 'light' | 'dark';
@@ -62,7 +64,7 @@ export function ThemeDialog({ variant }: ThemeDialogProps) {
       {variant === 'hero' ? (
         <Flex align="start" direction="column">
           <DialogTrigger size="lg">
-            Pick a theme <ArrowRight aria-hidden="true" />
+            Pick a theme <ArrowRight className="button__arrow" aria-hidden="true" />
           </DialogTrigger>
         </Flex>
       ) : (
@@ -84,8 +86,13 @@ export function ThemeDialog({ variant }: ThemeDialogProps) {
             options={MODE_OPTIONS}
             value={mode}
             onValueChange={(next) => {
-              setMode(next as Mode);
-              window.__setThemeMode?.(next as Mode);
+              revealTheme(
+                () => {
+                  flushSync(() => setMode(next as Mode));
+                  window.__setThemeMode?.(next as Mode);
+                },
+                { instant: next === 'raw' },
+              );
             }}
           />
         </Flex>
@@ -98,8 +105,10 @@ export function ThemeDialog({ variant }: ThemeDialogProps) {
             options={SCHEME_OPTIONS}
             value={scheme}
             onValueChange={(next) => {
-              setScheme(next as Scheme);
-              window.__setColorScheme?.(next as Scheme);
+              revealTheme(() => {
+                flushSync(() => setScheme(next as Scheme));
+                window.__setColorScheme?.(next as Scheme);
+              });
             }}
           />
         </Flex>

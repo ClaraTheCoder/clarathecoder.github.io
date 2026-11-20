@@ -70,7 +70,7 @@ function RadiusSwatch({ step }: { step: string }) {
 }
 
 export function MotionScale() {
-  const durations = ['base', 'slow'];
+  const durations = ['faster', 'fast', 'base', 'slow', 'slower', 'slowest'];
   return (
     <>
       <style>{`

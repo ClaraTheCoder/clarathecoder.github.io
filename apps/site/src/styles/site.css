@@ -52,6 +52,27 @@
     }
   }
 
+  .page > :not(.page-hero) {
+    animation: entrance-rise var(--motion-entrance-duration) var(--motion-entrance-easing) both;
+  }
+  .page > .page-hero ~ * {
+    animation-delay: calc(var(--motion-entrance-lead) + var(--motion-entrance-stagger));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .page > :not(.page-hero) {
+      animation: entrance-fade var(--duration-base) var(--motion-entrance-easing) both;
+    }
+  }
+
+  .page > [data-reveal='pending'] {
+    opacity: 0;
+    animation: none;
+  }
+  .page > [data-reveal='shown'] {
+    animation-delay: 0ms;
+  }
+
   .page--roomy {
     gap: clamp(var(--space-800), 9vw, calc(var(--space-900) * 2));
     padding-top: var(--space-900);
@@ -72,6 +93,24 @@
     }
   }
 
+  .page > .article {
+    animation: none;
+  }
+  .article-rail,
+  .article-body {
+    animation: entrance-rise var(--motion-entrance-duration) var(--motion-entrance-easing) both;
+  }
+  .article-body {
+    animation-delay: var(--motion-entrance-lead);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .article-rail,
+    .article-body {
+      animation: entrance-fade var(--duration-base) var(--motion-entrance-easing) both;
+    }
+  }
+
   .work-cta {
     width: 100vw;
     margin-inline: calc(50% - 50vw);
@@ -82,5 +121,35 @@
   .work-cta__content {
     margin: auto;
     max-inline-size: 100%;
+  }
+}
+
+@layer base {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+
+  ::view-transition-new(root) {
+    animation: theme-reveal var(--motion-theme-duration) var(--motion-theme-easing);
+  }
+
+  @keyframes theme-reveal {
+    from {
+      clip-path: circle(0 at var(--theme-reveal-x) var(--theme-reveal-y));
+    }
+    to {
+      clip-path: circle(var(--theme-reveal-radius) at var(--theme-reveal-x) var(--theme-reveal-y));
+    }
+  }
+
+  :root[data-theme-transition='fade']::view-transition-new(root) {
+    animation: entrance-fade var(--duration-base) var(--motion-entrance-easing) both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    ::view-transition-new(root) {
+      animation: entrance-fade var(--duration-base) var(--motion-entrance-easing) both;
+    }
   }
 }

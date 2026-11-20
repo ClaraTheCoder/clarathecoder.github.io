@@ -16,8 +16,7 @@ import { SITE } from '../data/site';
         <strong>I’m available for hire.</strong> Read about
         <Link href="/work">what I do</Link>, or <Link href={`mailto:${SITE.email}`}>send me an email</Link>.
       </Text>
+      <ThemeDialog slot="actions" variant="hero" client:load />
     </Hero>
-
-    <ThemeDialog variant="hero" client:load />
   </div>
 </Base>

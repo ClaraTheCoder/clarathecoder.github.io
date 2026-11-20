@@ -1,12 +1,22 @@
 {
   "duration": {
     "$type": "duration",
+    "faster": { "$value": "80ms" },
     "fast": { "$value": "150ms" },
     "base": { "$value": "200ms" },
-    "slow": { "$value": "250ms" }
+    "slow": { "$value": "300ms" },
+    "slower": { "$value": "500ms" },
+    "slowest": { "$value": "600ms" }
   },
   "ease": {
     "$type": "cubicBezier",
-    "standard": { "$value": "cubic-bezier(0.25, 0.1, 0.25, 1)" }
+    "standard": { "$value": "cubic-bezier(0.25, 0.1, 0.25, 1)" },
+    "out": { "$value": "cubic-bezier(0.23, 1, 0.32, 1)" },
+    "in-out": { "$value": "cubic-bezier(0.77, 0, 0.175, 1)" },
+    "in-out-soft": { "$value": "cubic-bezier(0.4, 0, 0.2, 1)" },
+    "spring": {
+      "$type": "string",
+      "$value": "linear(0, 0.087 4.2%, 0.282 8.3%, 0.508 12.5%, 0.717 16.7%, 0.882 20.8%, 0.997 25%, 1.063 29.2%, 1.091 33.3%, 1.093 37.5%, 1.079 41.7%, 1.059 45.8%, 1.038 50%, 1.019 54.2%, 1.006 58.3%, 0.997 62.5%, 0.992 66.7%, 0.991 70.8%, 0.992 75%, 0.993 79.2%, 0.995 83.3%, 0.997 87.5%, 0.999 91.7%, 1)"
+    }
   }
 }

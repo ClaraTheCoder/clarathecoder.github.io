@@ -14,12 +14,61 @@
     backdrop-filter: var(--dialog-backdrop);
     -webkit-backdrop-filter: var(--dialog-backdrop);
     overflow: auto;
+    opacity: 0;
+    transform: translateY(var(--motion-overlay-distance)) scale(var(--motion-overlay-scale));
+    transition:
+      opacity var(--motion-overlay-exit-duration) var(--motion-overlay-fade-easing),
+      transform var(--motion-overlay-exit-duration) var(--motion-overlay-fade-easing),
+      overlay var(--motion-overlay-exit-duration) allow-discrete,
+      display var(--motion-overlay-exit-duration) allow-discrete;
+  }
+
+  .dialog[open] {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity var(--motion-overlay-fade-duration) var(--motion-overlay-fade-easing),
+      transform var(--motion-overlay-enter-duration) var(--motion-overlay-enter-easing),
+      overlay var(--motion-overlay-enter-duration) allow-discrete,
+      display var(--motion-overlay-enter-duration) allow-discrete;
   }
 
   .dialog::backdrop {
     background: var(--dialog-overlay);
     backdrop-filter: var(--dialog-overlay-backdrop);
     -webkit-backdrop-filter: var(--dialog-overlay-backdrop);
+    opacity: 0;
+    transition:
+      opacity var(--motion-overlay-exit-duration) var(--motion-overlay-fade-easing),
+      overlay var(--motion-overlay-exit-duration) allow-discrete,
+      display var(--motion-overlay-exit-duration) allow-discrete;
+  }
+
+  .dialog[open]::backdrop {
+    opacity: 1;
+    transition-duration: var(--motion-overlay-fade-duration);
+  }
+
+  @starting-style {
+    .dialog[open] {
+      opacity: 0;
+      transform: translateY(var(--motion-overlay-distance)) scale(var(--motion-overlay-scale));
+    }
+    .dialog[open]::backdrop {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dialog,
+    .dialog[open] {
+      transform: none;
+    }
+    @starting-style {
+      .dialog[open] {
+        transform: none;
+      }
+    }
   }
 
   .dialog__content {
@@ -31,5 +80,10 @@
 
   .dialog__content > * {
     margin: 0;
+  }
+
+  .dialog:not([open]) .dialog__content {
+    filter: blur(var(--motion-overlay-exit-blur));
+    transition: filter var(--motion-overlay-exit-duration) var(--motion-overlay-fade-easing);
   }
 }

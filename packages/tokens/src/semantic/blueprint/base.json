@@ -1,5 +1,10 @@
 {
     "surface": {
         "radius": { "$value": "{radius.sm}" }
+    },
+    "motion": {
+        "entrance": {
+            "distance": { "$value": "0px" }
+        }
     }
 }
