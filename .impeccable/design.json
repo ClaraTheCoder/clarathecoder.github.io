@@ -1,0 +1,557 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-21T10:17:37+00:00",
+  "title": "Design System: Clara's Site",
+  "extensions": {
+    "colorMeta": {
+      "lavender-ground": {
+        "role": "neutral",
+        "displayName": "Lavender Ground",
+        "canonical": "oklch(0.984 0.003 293)",
+        "tonalRamp": [
+          "oklch(0.242 0.024 293)",
+          "oklch(0.271 0.079 293)",
+          "oklch(0.44 0.213 293)",
+          "oklch(0.54 0.256 293)",
+          "oklch(0.714 0.14 293)",
+          "oklch(0.874 0.047 293)",
+          "oklch(0.954 0.012 293)",
+          "oklch(0.984 0.003 293)"
+        ]
+      },
+      "lavender-ink": {
+        "role": "neutral",
+        "displayName": "Lavender Ink",
+        "canonical": "oklch(0.271 0.079 293)",
+        "tonalRamp": [
+          "oklch(0.242 0.024 293)",
+          "oklch(0.271 0.079 293)",
+          "oklch(0.44 0.213 293)",
+          "oklch(0.54 0.256 293)",
+          "oklch(0.714 0.14 293)",
+          "oklch(0.874 0.047 293)",
+          "oklch(0.954 0.012 293)",
+          "oklch(0.984 0.003 293)"
+        ]
+      },
+      "lavender-rule": {
+        "role": "neutral",
+        "displayName": "Lavender Rule",
+        "canonical": "oklch(0.874 0.047 293)",
+        "tonalRamp": [
+          "oklch(0.242 0.024 293)",
+          "oklch(0.271 0.079 293)",
+          "oklch(0.44 0.213 293)",
+          "oklch(0.54 0.256 293)",
+          "oklch(0.714 0.14 293)",
+          "oklch(0.874 0.047 293)",
+          "oklch(0.954 0.012 293)",
+          "oklch(0.984 0.003 293)"
+        ]
+      },
+      "lavender-strong": {
+        "role": "neutral",
+        "displayName": "Lavender Strong",
+        "canonical": "oklch(0.63 0.199 293)",
+        "tonalRamp": [
+          "oklch(0.242 0.024 293)",
+          "oklch(0.271 0.079 293)",
+          "oklch(0.44 0.213 293)",
+          "oklch(0.54 0.256 293)",
+          "oklch(0.714 0.14 293)",
+          "oklch(0.874 0.047 293)",
+          "oklch(0.954 0.012 293)",
+          "oklch(0.984 0.003 293)"
+        ]
+      },
+      "lavender-night": {
+        "role": "neutral",
+        "displayName": "Lavender Night",
+        "canonical": "oklch(0.242 0.024 293)",
+        "tonalRamp": [
+          "oklch(0.242 0.024 293)",
+          "oklch(0.271 0.079 293)",
+          "oklch(0.44 0.213 293)",
+          "oklch(0.54 0.256 293)",
+          "oklch(0.714 0.14 293)",
+          "oklch(0.874 0.047 293)",
+          "oklch(0.954 0.012 293)",
+          "oklch(0.984 0.003 293)"
+        ]
+      },
+      "saffron": {
+        "role": "primary",
+        "displayName": "Saffron",
+        "canonical": "oklch(0.54 0.112 58)",
+        "tonalRamp": [
+          "oklch(0.242 0.02 58)",
+          "oklch(0.316 0.049 58)",
+          "oklch(0.44 0.088 58)",
+          "oklch(0.54 0.112 58)",
+          "oklch(0.714 0.14 58)",
+          "oklch(0.874 0.06 58)",
+          "oklch(0.954 0.0145 58)",
+          "oklch(0.994 0.001 58)"
+        ]
+      },
+      "saffron-deep": {
+        "role": "primary",
+        "displayName": "Saffron Deep",
+        "canonical": "oklch(0.44 0.088 58)",
+        "tonalRamp": [
+          "oklch(0.242 0.02 58)",
+          "oklch(0.316 0.049 58)",
+          "oklch(0.44 0.088 58)",
+          "oklch(0.54 0.112 58)",
+          "oklch(0.714 0.14 58)",
+          "oklch(0.874 0.06 58)",
+          "oklch(0.954 0.0145 58)",
+          "oklch(0.994 0.001 58)"
+        ]
+      },
+      "saffron-wash": {
+        "role": "primary",
+        "displayName": "Saffron Wash",
+        "canonical": "oklch(0.936 0.023 58)",
+        "tonalRamp": [
+          "oklch(0.242 0.02 58)",
+          "oklch(0.316 0.049 58)",
+          "oklch(0.44 0.088 58)",
+          "oklch(0.54 0.112 58)",
+          "oklch(0.714 0.14 58)",
+          "oklch(0.874 0.06 58)",
+          "oklch(0.954 0.0145 58)",
+          "oklch(0.994 0.001 58)"
+        ]
+      },
+      "saffron-glow": {
+        "role": "primary",
+        "displayName": "Saffron Glow",
+        "canonical": "oklch(0.714 0.14 58)",
+        "tonalRamp": [
+          "oklch(0.242 0.02 58)",
+          "oklch(0.316 0.049 58)",
+          "oklch(0.44 0.088 58)",
+          "oklch(0.54 0.112 58)",
+          "oklch(0.714 0.14 58)",
+          "oklch(0.874 0.06 58)",
+          "oklch(0.954 0.0145 58)",
+          "oklch(0.994 0.001 58)"
+        ]
+      },
+      "celadon": {
+        "role": "secondary",
+        "displayName": "Celadon",
+        "canonical": "oklch(0.58 0.0888 172)",
+        "tonalRamp": [
+          "oklch(0.242 0.0144 172)",
+          "oklch(0.316 0.0333 172)",
+          "oklch(0.49 0.0755 172)",
+          "oklch(0.58 0.0888 172)",
+          "oklch(0.753 0.0965 172)",
+          "oklch(0.894 0.0645 172)",
+          "oklch(0.954 0.0306 172)",
+          "oklch(0.994 0.0009 172)"
+        ]
+      },
+      "celadon-deep": {
+        "role": "secondary",
+        "displayName": "Celadon Deep",
+        "canonical": "oklch(0.49 0.0755 172)",
+        "tonalRamp": [
+          "oklch(0.242 0.0144 172)",
+          "oklch(0.316 0.0333 172)",
+          "oklch(0.49 0.0755 172)",
+          "oklch(0.58 0.0888 172)",
+          "oklch(0.753 0.0965 172)",
+          "oklch(0.894 0.0645 172)",
+          "oklch(0.954 0.0306 172)",
+          "oklch(0.994 0.0009 172)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Paper",
+        "canonical": "oklch(0.98 0 0)",
+        "tonalRamp": [
+          "oklch(0.195 0.003 120)",
+          "oklch(0.255 0.0035 120)",
+          "oklch(0.32 0.0045 120)",
+          "oklch(0.41 0.005 120)",
+          "oklch(0.605 0.0055 120)",
+          "oklch(0.833 0.0045 120)",
+          "oklch(0.939 0.003 120)",
+          "oklch(0.98 0 0 / 1)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "#ffffff"
+      },
+      "graphite": {
+        "role": "neutral",
+        "displayName": "Graphite",
+        "canonical": "oklch(0.255 0.0035 120)",
+        "tonalRamp": [
+          "oklch(0.195 0.003 120)",
+          "oklch(0.255 0.0035 120)",
+          "oklch(0.32 0.0045 120)",
+          "oklch(0.41 0.005 120)",
+          "oklch(0.605 0.0055 120)",
+          "oklch(0.833 0.0045 120)",
+          "oklch(0.939 0.003 120)",
+          "oklch(0.98 0 0 / 1)"
+        ]
+      },
+      "ash": {
+        "role": "neutral",
+        "displayName": "Ash",
+        "canonical": "oklch(0.41 0.005 120)",
+        "tonalRamp": [
+          "oklch(0.195 0.003 120)",
+          "oklch(0.255 0.0035 120)",
+          "oklch(0.32 0.0045 120)",
+          "oklch(0.41 0.005 120)",
+          "oklch(0.605 0.0055 120)",
+          "oklch(0.833 0.0045 120)",
+          "oklch(0.939 0.003 120)",
+          "oklch(0.98 0 0 / 1)"
+        ]
+      },
+      "ash-light": {
+        "role": "neutral",
+        "displayName": "Ash Light",
+        "canonical": "oklch(0.505 0.0055 120)",
+        "tonalRamp": [
+          "oklch(0.195 0.003 120)",
+          "oklch(0.255 0.0035 120)",
+          "oklch(0.32 0.0045 120)",
+          "oklch(0.41 0.005 120)",
+          "oklch(0.605 0.0055 120)",
+          "oklch(0.833 0.0045 120)",
+          "oklch(0.939 0.003 120)",
+          "oklch(0.98 0 0 / 1)"
+        ]
+      },
+      "stone-rule": {
+        "role": "neutral",
+        "displayName": "Stone Rule",
+        "canonical": "oklch(0.833 0.0045 120)",
+        "tonalRamp": [
+          "oklch(0.195 0.003 120)",
+          "oklch(0.255 0.0035 120)",
+          "oklch(0.32 0.0045 120)",
+          "oklch(0.41 0.005 120)",
+          "oklch(0.605 0.0055 120)",
+          "oklch(0.833 0.0045 120)",
+          "oklch(0.939 0.003 120)",
+          "oklch(0.98 0 0 / 1)"
+        ]
+      },
+      "viridian": {
+        "role": "status",
+        "displayName": "Viridian",
+        "canonical": "oklch(0.502 0.145 150)",
+        "tonalRamp": [
+          "oklch(0.22 0.024 150)",
+          "oklch(0.3 0.086 150)",
+          "oklch(0.396 0.118 150)",
+          "oklch(0.502 0.145 150)",
+          "oklch(0.714 0.158 150)",
+          "oklch(0.874 0.09 150)",
+          "oklch(0.954 0.03 150)",
+          "oklch(0.994 0.0006 150)"
+        ]
+      },
+      "vermilion": {
+        "role": "status",
+        "displayName": "Vermilion",
+        "canonical": "oklch(0.502 0.205 20)",
+        "tonalRamp": [
+          "oklch(0.22 0.026 20)",
+          "oklch(0.3 0.12 20)",
+          "oklch(0.396 0.165 20)",
+          "oklch(0.502 0.205 20)",
+          "oklch(0.714 0.195 20)",
+          "oklch(0.874 0.112 20)",
+          "oklch(0.954 0.025 20)",
+          "oklch(0.994 0 20)"
+        ]
+      },
+      "cerulean": {
+        "role": "status",
+        "displayName": "Cerulean",
+        "canonical": "oklch(0.54 0.225 262)",
+        "tonalRamp": [
+          "oklch(0.22 0.024 262)",
+          "oklch(0.3 0.099 262)",
+          "oklch(0.44 0.178 262)",
+          "oklch(0.54 0.225 262)",
+          "oklch(0.714 0.127 262)",
+          "oklch(0.874 0.043 262)",
+          "oklch(0.954 0.015 262)",
+          "oklch(0.99 0.01 262)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero titles only (display-1/2). Blueprint: Saira Condensed 700 uppercase; Opal: Nunito 400, -0.03em."
+      },
+      "headline": {
+        "displayName": "Heading 1",
+        "purpose": "Section headings. Fraunces 600 in Default."
+      },
+      "title": {
+        "displayName": "Heading 4",
+        "purpose": "Component and post titles."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Hero intro paragraphs."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text in a 680px measure. JetBrains Mono in Blueprint."
+      },
+      "label": {
+        "displayName": "Overline",
+        "purpose": "Small uppercase labels; Blueprint widens tracking to 0.18em."
+      },
+      "code": {
+        "displayName": "Code",
+        "purpose": "Inline and block code."
+      }
+    },
+    "shadows": [
+      {
+        "name": "default-surface",
+        "value": "none",
+        "purpose": "Default preset is flat; surfaces separate by white fill and lavender rule."
+      },
+      {
+        "name": "blueprint-glow",
+        "value": "0 0 0 1px color-mix(in srgb, var(--color-accent) 30%, transparent), 0 0 18px color-mix(in srgb, var(--color-accent) 28%, transparent)",
+        "purpose": "Blueprint surfaces: accent outline plus soft accent glow."
+      },
+      {
+        "name": "opal-lift",
+        "value": "0 22px 48px -24px rgba(12, 18, 40, 0.6), inset 0 1px 0 #ffffff",
+        "purpose": "Opal panels and dialogs: deep soft lift with top-edge highlight."
+      },
+      {
+        "name": "opal-tight",
+        "value": "0 4px 12px -4px #00000066, inset 0 1px 0 #ffffff",
+        "purpose": "Opal buttons and segmented-control thumbs."
+      },
+      {
+        "name": "opal-fixed",
+        "value": "0 5px 10px -5px #00000099, inset 0 1px 0 #ffffff99",
+        "purpose": "Opal smoked-glass fixed button over media."
+      },
+      {
+        "name": "opal-backdrop",
+        "value": "blur(30px) saturate(2)",
+        "purpose": "Opal frosted-glass backdrop-filter for surfaces."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+        "purpose": "Colour and border state transitions."
+      },
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Entrances, press feedback, overlay fades."
+      },
+      {
+        "name": "ease-in-out",
+        "value": "cubic-bezier(0.77, 0, 0.175, 1)",
+        "purpose": "Theme-change reveal (600ms)."
+      },
+      {
+        "name": "ease-in-out-soft",
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Arrow nudge on hover/focus."
+      },
+      {
+        "name": "ease-spring",
+        "value": "linear(0, 0.087 4.2%, 0.282 8.3%, 0.508 12.5%, 0.717 16.7%, 0.882 20.8%, 0.997 25%, 1.063 29.2%, 1.091 33.3%, 1.093 37.5%, 1.079 41.7%, 1.059 45.8%, 1.038 50%, 1.019 54.2%, 1.006 58.3%, 0.997 62.5%, 0.992 66.7%, 0.991 70.8%, 0.992 75%, 0.993 79.2%, 0.995 83.3%, 0.997 87.5%, 0.999 91.7%, 1)",
+        "purpose": "Dialog spring-in (500ms)."
+      },
+      {
+        "name": "duration-faster",
+        "value": "80ms",
+        "purpose": "Entrance stagger."
+      },
+      {
+        "name": "duration-fast",
+        "value": "150ms",
+        "purpose": "Hover colour, press, overlay exit, entrance lead."
+      },
+      {
+        "name": "duration-base",
+        "value": "200ms",
+        "purpose": "Nudge, overlay fade, reduced-motion entrance."
+      },
+      {
+        "name": "duration-slow",
+        "value": "300ms",
+        "purpose": "General transitions."
+      },
+      {
+        "name": "duration-slower",
+        "value": "500ms",
+        "purpose": "Overlay enter."
+      },
+      {
+        "name": "duration-slowest",
+        "value": "600ms",
+        "purpose": "Entrance rise and theme change."
+      },
+      {
+        "name": "press-scale",
+        "value": "0.97",
+        "purpose": "Button :active scale."
+      },
+      {
+        "name": "entrance-distance",
+        "value": "8px (Blueprint 0, Opal 16px)",
+        "purpose": "Rise distance for staggered entrances."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      },
+      {
+        "name": "xl",
+        "value": "1280px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Accent call to action; pill in Default, 2px in Blueprint, glass chip in Opal.",
+      "html": "<button class=\"ds-btn ds-btn-primary\">Send me an email <svg class=\"ds-btn__arrow\" width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14M13 6l6 6-6 6\"/></svg></button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;gap:var(--space-200);block-size:var(--space-700);padding-inline:var(--space-400);border:var(--button-border-width) solid transparent;border-radius:var(--button-radius);font-family:var(--button-font-family);font-weight:var(--button-font-weight);font-size:var(--font-size-200);letter-spacing:var(--button-letter-spacing);text-transform:var(--button-text-transform);line-height:1;cursor:pointer;transition:background-color var(--duration-fast) var(--ease-standard),transform var(--motion-feedback-duration) var(--motion-feedback-easing)}.ds-btn__arrow{transition:transform var(--motion-feedback-nudge-duration) var(--motion-feedback-nudge-easing)}.ds-btn:hover .ds-btn__arrow,.ds-btn:focus-visible .ds-btn__arrow{transform:translateX(var(--motion-feedback-nudge))}.ds-btn:active{transform:scale(var(--motion-feedback-press-scale))}.ds-btn:focus-visible{outline:var(--focus-ring-width) solid var(--color-border-strong);outline-offset:var(--focus-ring-offset)}.ds-btn-primary{background:var(--button-primary-bg);color:var(--button-primary-fg);border-color:var(--button-primary-border-color);box-shadow:var(--button-primary-shadow);backdrop-filter:var(--button-backdrop)}.ds-btn-primary:hover,.ds-btn-primary:focus-visible{background:var(--button-primary-bg-hover)}"
+    },
+    {
+      "name": "Fixed Button",
+      "kind": "button",
+      "refersTo": "button-fixed",
+      "description": "Mode-independent light button for use over imagery and video.",
+      "html": "<button class=\"ds-btn-fixed\">Play showreel</button>",
+      "css": ".ds-btn-fixed{display:inline-flex;align-items:center;block-size:var(--space-700);padding-inline:var(--space-400);border:var(--button-border-width) solid var(--button-fixed-border-color);border-radius:var(--button-radius);font-family:var(--button-font-family);font-weight:var(--button-font-weight);font-size:var(--font-size-200);line-height:1;cursor:pointer;background:var(--button-fixed-bg);color:var(--button-fixed-fg);box-shadow:var(--button-fixed-shadow);backdrop-filter:var(--button-fixed-backdrop);transition:background-color var(--duration-fast) var(--ease-standard),transform var(--motion-feedback-duration) var(--motion-feedback-easing)}.ds-btn-fixed:hover,.ds-btn-fixed:focus-visible{background:var(--button-fixed-bg-hover)}.ds-btn-fixed:active{transform:scale(var(--motion-feedback-press-scale))}.ds-btn-fixed:focus-visible{outline:var(--focus-ring-width) solid var(--color-border-strong);outline-offset:var(--focus-ring-offset)}"
+    },
+    {
+      "name": "Ghost Nav",
+      "kind": "nav",
+      "refersTo": "button-ghost",
+      "description": "Site navigation as ghost buttons; the current page holds the hover wash.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav__item\" href=\"#\" aria-current=\"page\">Home</a><a class=\"ds-nav__item\" href=\"#\">Work</a><a class=\"ds-nav__item\" href=\"#\">Writing</a></nav>",
+      "css": ".ds-nav{display:flex;gap:var(--space-100)}.ds-nav__item{display:inline-flex;align-items:center;block-size:var(--space-700);padding-inline:var(--space-400);border-radius:var(--button-radius);font-family:var(--button-font-family);font-weight:var(--button-font-weight);font-size:var(--font-size-200);color:var(--color-text);text-decoration:none;transition:background-color var(--duration-fast) var(--ease-standard)}.ds-nav__item:hover,.ds-nav__item:focus-visible,.ds-nav__item[aria-current=page]{background:var(--button-ghost-bg-hover)}.ds-nav__item:focus-visible{outline:var(--focus-ring-width) solid var(--color-border-strong);outline-offset:var(--focus-ring-offset)}"
+    },
+    {
+      "name": "Segmented Control",
+      "kind": "custom",
+      "refersTo": "segmented-control-thumb",
+      "description": "Native radios under a sliding thumb; the theme picker's mode switch.",
+      "html": "<div class=\"ds-seg\" style=\"--_count:3;--_index:0\"><span class=\"ds-seg__thumb\"></span><label class=\"ds-seg__opt is-on\">Light</label><label class=\"ds-seg__opt\">Dark</label><label class=\"ds-seg__opt\">System</label></div>",
+      "css": ".ds-seg{position:relative;display:inline-grid;grid-auto-flow:column;grid-auto-columns:1fr;padding:var(--space-50);background:var(--color-surface);border:var(--surface-border-width) solid var(--color-surface-border);border-radius:var(--segmented-control-radius);box-shadow:var(--color-surface-shadow);backdrop-filter:var(--color-surface-backdrop)}.ds-seg__thumb{position:absolute;inset-block:var(--space-50);inset-inline-start:var(--space-50);inline-size:calc((100% - var(--space-50) * 2) / var(--_count));transform:translateX(calc(var(--_index) * 100%));border-radius:calc(var(--segmented-control-radius) - var(--space-50));background:var(--segmented-control-thumb-bg);border:var(--surface-border-width) solid var(--segmented-control-thumb-border);box-shadow:var(--color-surface-shadow-tight);transition:transform var(--duration-slow) var(--ease-out)}.ds-seg__opt{position:relative;padding:var(--space-400) var(--space-500);font-family:var(--text-body-font-family);font-weight:var(--font-weight-medium);font-size:var(--font-size-300);line-height:1;color:var(--color-text-muted);text-align:center;cursor:pointer;transition:color var(--duration-base) var(--ease-standard)}.ds-seg__opt.is-on{color:var(--segmented-control-thumb-fg)}.ds-seg__opt:hover{color:var(--color-text)}"
+    },
+    {
+      "name": "Surface Panel",
+      "kind": "card",
+      "refersTo": "surface",
+      "description": "The dialog/panel surface: flat in Default, glowing in Blueprint, glass in Opal.",
+      "html": "<div class=\"ds-surface\"><h3 class=\"ds-surface__title\">Pick a hat</h3><p class=\"ds-surface__body\">Switch between Default, Blueprint and Opal.</p></div>",
+      "css": ".ds-surface{max-inline-size:var(--size-container-prose);padding:var(--space-600);color:var(--color-text);background:var(--dialog-bg);border:var(--surface-border-width) solid var(--dialog-border-color);border-radius:var(--surface-radius);box-shadow:var(--dialog-shadow);backdrop-filter:var(--dialog-backdrop)}.ds-surface__title{margin:0 0 var(--space-300);font-family:var(--text-heading-3-font-family);font-size:var(--text-heading-3-font-size);font-weight:var(--text-heading-3-font-weight);line-height:var(--text-heading-3-line-height);letter-spacing:var(--text-heading-3-letter-spacing);text-transform:var(--text-heading-3-text-transform, none)}.ds-surface__body{margin:0;font-family:var(--text-body-font-family);font-size:var(--text-body-font-size);line-height:var(--text-body-line-height);color:var(--color-text-muted)}"
+    },
+    {
+      "name": "Inline Link",
+      "kind": "custom",
+      "refersTo": "link",
+      "description": "Accent-coloured underlined link inside lead and body copy.",
+      "html": "<p class=\"ds-lead\">Sometimes I <a class=\"ds-link\" href=\"#\">write</a> about those things.</p>",
+      "css": ".ds-lead{margin:0;font-family:var(--text-lead-font-family);font-size:var(--text-lead-font-size);line-height:var(--text-lead-line-height);color:var(--color-text)}.ds-link{color:var(--color-accent);text-decoration:underline;text-underline-offset:0.15em;transition:color var(--duration-fast) var(--ease-standard)}.ds-link:hover{color:var(--color-accent-hover)}.ds-link:focus-visible{outline:var(--focus-ring-width) solid var(--color-border-strong);outline-offset:var(--focus-ring-offset)}"
+    },
+    {
+      "name": "Post Row",
+      "kind": "custom",
+      "description": "Ruled writing-list row: uppercase muted date beside title and description.",
+      "html": "<article class=\"ds-post\"><time class=\"ds-post__meta\">2 Nov 2026</time><div><h3 class=\"ds-post__title\"><a href=\"#\">Post title</a></h3><p class=\"ds-post__desc\">One-line description.</p></div></article>",
+      "css": ".ds-post{display:grid;grid-template-columns:8rem 1fr;column-gap:var(--space-500);align-items:baseline;padding-block:var(--space-400);border-block:1px solid var(--color-border)}.ds-post__meta{color:var(--color-text-muted);font-family:var(--text-body-font-family);font-size:var(--font-size-100);letter-spacing:var(--font-tracking-wide);text-transform:uppercase}.ds-post__title{margin:0;font-family:var(--text-heading-4-font-family);font-size:var(--text-heading-4-font-size);font-weight:var(--text-heading-4-font-weight)}.ds-post__title a{color:var(--color-text);text-decoration:none}.ds-post__title a:hover{color:var(--color-accent)}.ds-post__desc{margin:0;font-family:var(--text-body-font-family);color:var(--color-text-muted)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Magician's Hat",
+    "overview": "One hat, endless tricks. Every page is the same structure — the same token tiers, components, spacing and motion — and the visitor reaches in and pulls out a different world: the warm, bookish **Default**; the strong, technical, precise **Blueprint**; the polished but friendly **Opal**. The magic is that nothing underneath changes. Swapping `data-preset` and `data-theme` (ADR 0004) re-dresses the whole site in one move, and the reveal is animated so the trick lands.\n\nEach preset is a complete world in its own right, not a skin over Default. Presets are partial, override-only layers in the token build, but what they override — colour, type families, case, radius, depth, backdrop, entrance distance — is chosen so each one has a distinct personality. Everything should feel fun, a little magical, and worth poking: components spring, nudge and press back.\n\nDensity is relaxed. Content sits in a prose measure (680px) or a 12-column grid with a fluid gutter, with plenty of air above and between blocks. Type is fluid (`clamp()` everywhere) rather than stepping at breakpoints (ADR 0007).\n\n**Rejected:** the generic SaaS/template look — centred hero, three feature cards, gradient call-to-action. If a page could belong to any startup, it has drifted.",
+    "keyCharacteristics": [
+      "Three named presets × light/dark, all driven by the same semantic and component tokens.",
+      "Each preset owns its type pairing, corner language and depth model.",
+      "Springy, pokeable components with press-scale, nudging arrows and spring-in overlays.",
+      "Fluid typography and spacing; no hard-coded values anywhere.",
+      "Native HTML interactive components that work without JavaScript."
+    ],
+    "rules": [
+      {
+        "name": "The Kanto Rule",
+        "body": "Every primitive hue is named after a Kanto town from Pokémon — Lavender, Saffron, Celadon, Cerulean, Viridian, Vermilion, Fuchsia. A new hue gets a new Kanto town name, never a generic `blue`/`green`.",
+        "section": "colors"
+      },
+      {
+        "name": "The Roles-Only Rule",
+        "body": "Components read semantic or component tokens, never a primitive ramp step. The one sanctioned exception is a preset's own backdrop (the Opal aurora), which mixes primitives directly.",
+        "section": "colors"
+      },
+      {
+        "name": "The Override-Only Rule",
+        "body": "A preset may only override tokens the default theme already defines; the token build fails otherwise (ADR 0003/0004).",
+        "section": "colors"
+      },
+      {
+        "name": "The Shared Scale Rule",
+        "body": "Presets change *how* type looks, never *how big* it is. Size steps are global so layout is identical across worlds.",
+        "section": "typography"
+      },
+      {
+        "name": "The Eager Fonts Rule",
+        "body": "Every preset's faces are self-hosted and loaded up front, only in the weights the roles use, so switching worlds never flashes a fallback.",
+        "section": "typography"
+      },
+      {
+        "name": "The Depth-Is-Preset Rule",
+        "body": "Never add a shadow or blur in component CSS. Components read `--color-surface-shadow`, `--color-surface-shadow-tight` and `--color-surface-backdrop`; the preset decides whether those are `none`, glow or glass.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do read every styled property from a token custom property. No literal values in component CSS (ADR 0002).",
+      "Do let the preset decide radius, depth, backdrop and type family. Components consume `--surface-*`, `--button-*` and `--color-surface-*` roles.",
+      "Do describe each preset by its own personality when extending it: Default warm and bookish, Blueprint strong, technical and precise, Opal polished but friendly.",
+      "Do give every interactive component a physical response (press, nudge, spring) and a `prefers-reduced-motion` fallback.",
+      "Do build interactive pieces on native elements (`<dialog>`, radio inputs) so they work without JavaScript (ADR 0009).",
+      "Do name new primitive hues after Kanto towns."
+    ],
+    "donts": [
+      "Don't drift into the generic SaaS/template look: centred hero, three feature cards, gradient call-to-action.",
+      "Don't hard-code a shadow, blur or radius in a component; that breaks the Depth-Is-Preset Rule.",
+      "Don't change type *sizes* per preset; only families, weights, tracking and case.",
+      "Don't reference a primitive ramp step from a component (`--color-saffron-700`); use the semantic role.",
+      "Don't add a preset token the default theme doesn't define; the build rejects it."
+    ]
+  }
+}
