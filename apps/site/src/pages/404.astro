@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import { Hero, Text, Link } from '@clara/design-system';
+---
+
+<Base title="Page not found">
+  <div class="page">
+    <Hero title="Nothing here">
+      <Text variant="lead">
+        This page doesn’t exist, or it’s moved. Try the <Link href="/">home page</Link>, my
+        <Link href="/writing">writing</Link> or my <Link href="/work">work</Link>.
+      </Text>
+    </Hero>
+  </div>
+</Base>
