@@ -16,3 +16,12 @@ export const Default = meta.story({
       </p>
   ),
 });
+
+/** For links whose context already says "this is a link", like a list of post titles. */
+export const Plain = meta.story({
+  render: () => (
+    <Link variant="plain" href="#">
+      A post title
+    </Link>
+  ),
+});

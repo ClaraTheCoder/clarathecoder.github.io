@@ -12,4 +12,15 @@
   .link:hover {
     color: var(--color-accent-hover);
   }
+
+  .link--plain {
+    color: inherit;
+    text-decoration-line: none;
+  }
+
+  .link--plain:hover,
+  .link--plain:focus-visible {
+    color: var(--link-plain-hover-color);
+    text-decoration-line: var(--link-plain-hover-decoration);
+  }
 }

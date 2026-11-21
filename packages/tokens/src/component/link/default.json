@@ -1,0 +1,6 @@
+{
+  "link": {
+    "plain-hover-color": { "$value": "{color.accent}" },
+    "plain-hover-decoration": { "$value": "none" }
+  }
+}

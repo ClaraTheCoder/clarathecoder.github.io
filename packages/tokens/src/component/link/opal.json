@@ -1,0 +1,5 @@
+{
+  "link": {
+    "plain-hover-decoration": { "$value": "underline" }
+  }
+}
