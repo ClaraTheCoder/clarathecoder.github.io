@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
-import { Hero, Text, PostList, Post } from '@clara/design-system';
-import { POSTS, formatDate } from '../data/posts';
+import { Hero, Text, PostList, Post, Flex } from '@clara/design-system';
+import { POSTS, formatDate, postsByYear } from '../data/posts';
 ---
 
 <Base>
@@ -13,17 +13,21 @@ import { POSTS, formatDate } from '../data/posts';
       </Text>
     </Hero>
 
-    <PostList>
+    <Flex direction="column" gap="800">
       {
-        POSTS.map((post) => (
-          <Post
-            meta={formatDate(post.date)}
-            title={post.title}
-            href={`/writing/${post.slug}`}
-            description={post.description}
-          />
+        postsByYear(POSTS).map(([year, posts]) => (
+          <PostList title={year}>
+            {posts.map((post) => (
+              <Post
+                meta={`${formatDate(post.date, { year: false })} · ${post.readingTime} min read`}
+                title={post.title}
+                href={`/writing/${post.slug}`}
+                description={post.description}
+              />
+            ))}
+          </PostList>
         ))
       }
-    </PostList>
+    </Flex>
   </div>
 </Base>

@@ -288,7 +288,7 @@ A surface-coloured strip in muted text that turns to full text colour on hover. 
 
 ### Post list
 
-Ruled rows (1px border top, plus bottom on the last row). Uppercase, +0.04em, muted date; title; muted one-line description.
+Posts grouped under a heading (a year on Writing; later "Recent writing" or "A few faves" on Home): the heading in the heading-3 face, followed by a 2px accent rule running to the right edge. Each row is spacious (36px padding, hairline rule between rows): a heading-4 title balanced to two lines and a muted description on the left, with the date and reading time small and subtle on the right (stacked under the text on phones). Titles are plain links in ink that take the accent on hover (Opal: underline); the whole row is the click target, and the link's accessible name stays the title.
 
 ### Testimonial
 

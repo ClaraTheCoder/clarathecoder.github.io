@@ -1,20 +1,36 @@
-import { type HTMLAttributes } from 'react';
+import { type HTMLAttributes, useId } from 'react';
 import './Post.css';
 import { cx } from '../../utils/cx.js';
 import { Flex } from '../Layout';
 import { Text } from '../Text';
 import { Link } from '../Link';
 
-export type PostListProps = HTMLAttributes<HTMLDivElement>;
+export type PostListProps = HTMLAttributes<HTMLElement> & {
+  /** Heading for the group, e.g. a year or "Recent writing". */
+  title?: string;
+};
 
-export const PostList = ({ className, children, ...props }: PostListProps) => (
-  <div className={cx('post-list', className)} {...props}>
-    {children}
-  </div>
-);
+export const PostList = ({ title, className, children, ...props }: PostListProps) => {
+  const titleId = useId();
+  if (!title) {
+    return (
+      <div className={cx('post-list', className)} {...props}>
+        {children}
+      </div>
+    );
+  }
+  return (
+    <section className={cx('post-list', className)} aria-labelledby={titleId} {...props}>
+      <h2 id={titleId} className="post-list__title">
+        {title}
+      </h2>
+      {children}
+    </section>
+  );
+};
 
 export interface PostProps {
-  /** Pre-formatted date / eyebrow line. */
+  /** Pre-formatted date and reading time, shown on the right. */
   meta: string;
   title: string;
   /** Destination for the title link. */
@@ -25,12 +41,14 @@ export interface PostProps {
 
 export const Post = ({ meta, title, href, description, className }: PostProps) => (
   <article className={cx('post', className)}>
-    <p className="post__meta">{meta}</p>
-    <Flex direction="column" gap="200">
+    <Flex direction="column" gap="300" className="post__main">
       <Text variant="heading-4" as="h3" className="post__title">
-        <Link href={href}>{title}</Link>
+        <Link variant="plain" href={href}>
+          {title}
+        </Link>
       </Text>
       <p className="post__desc">{description}</p>
     </Flex>
+    <p className="post__meta">{meta}</p>
   </article>
 );
