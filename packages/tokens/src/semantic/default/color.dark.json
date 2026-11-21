@@ -20,8 +20,8 @@
 
     "accent": { "$value": "{color.saffron.500}" },
     "accent-hover": { "$value": "{color.saffron.400}" },
-    "accent-subtle": { "$value": "{color.lavender.850}" },
-    "accent-subtle-hover": { "$value": "{color.lavender.800}" },
+    "accent-subtle": { "$value": "{color.lavender.900}" },
+    "accent-subtle-hover": { "$value": "{color.lavender.850}" },
 
     "fixed": { "$value": "{color.neutral.100}" },
     "fixed-hover": { "$value": "{color.neutral.50}" },
