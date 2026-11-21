@@ -9,6 +9,6 @@ import sairaCondensed700 from '@fontsource/saira-condensed/files/saira-condensed
 /** The latin font files each theme needs for its first paint, for `<link rel="preload">`. */
 export const fontPreloads: Record<string, string[]> = {
   default: [fraunces500, fraunces600, nunito],
-  opal: [nunito],
-  blueprint: [jetbrainsMono400, jetbrainsMono700, sairaCondensed700],
+  opal: [fraunces600, nunito],
+  blueprint: [fraunces600, jetbrainsMono400, jetbrainsMono700, sairaCondensed700],
 };

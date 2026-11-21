@@ -5,7 +5,7 @@ const meta = preview.meta({
   title: 'Components/SiteHeader',
   component: SiteHeader,
   args: {
-    brand: { label: 'Clara', href: '/' },
+    brand: { label: 'claras.place', href: '/' },
     nav: [
       { label: 'Writing', href: '/writing' },
       { label: 'Work', href: '/work' },

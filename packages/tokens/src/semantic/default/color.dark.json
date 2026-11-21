@@ -23,6 +23,8 @@
     "accent-subtle": { "$value": "{color.saffron.950}" },
     "accent-subtle-hover": { "$value": "{color.saffron.900}" },
 
+    "brand-mark": { "$value": "{color.celadon.400}" },
+
     "fixed": { "$value": "{color.neutral.100}" },
     "fixed-hover": { "$value": "{color.neutral.50}" },
     "fixed-inverse": { "$value": "{color.neutral.900}" },

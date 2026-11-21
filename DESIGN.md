@@ -257,6 +257,12 @@ The feel is **springy and pokeable**: every interactive thing gives a small phys
 - **Feedback:** colour changes over 150ms; the button presses down to 0.97 scale on `:active`; trailing arrows nudge 4px right on hover/focus (fine pointers only).
 - **Focus:** 2px outline in the strong border colour at 2px offset; the shadow is removed while focused.
 
+### Wordmark
+
+"claras.place" in the header: Fraunces 600 in the text colour (the `text.brand` role, size 500, stepping down on small phones), with the dot drawn as a celadon circle (`color.brand-mark`: celadon 600 light, 400 dark). It is the site's identity, not part of the box of tricks: no preset overrides its tokens, so it looks the same in every world. A visually hidden "." inside the mark keeps the name intact for screen readers and raw mode.
+
+The favicon is the dot alone: `apps/site/public/favicon.svg` (celadon 600, celadon 400 when the browser is dark) and a 180px `apple-touch-icon.png` with the dot on lavender 50. SVG favicons can't read tokens, so they carry hex conversions of the brand-mark colours; keep them in step if `color.brand-mark` changes.
+
 ### Dialog
 
 - Native `<dialog>`, prose width, with the surface's radius, border, shadow and backdrop. The frame slims from 36px to 12px padding below 480px.

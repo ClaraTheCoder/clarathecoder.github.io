@@ -18,6 +18,21 @@ export interface SiteHeaderProps {
   className?: string;
 }
 
+// "claras.place" renders its dot as the brand mark.
+const Wordmark = ({ label }: { label: string }) => {
+  const [name, ...rest] = label.split('.');
+  if (!rest.length) return <>{label}</>;
+  return (
+    <>
+      {name}
+      <span className="site-header__mark">
+        <VisuallyHidden>.</VisuallyHidden>
+      </span>
+      {rest.join('.')}
+    </>
+  );
+};
+
 const trimSlash = (path: string) => path.replace(/\/+$/, '') || '/';
 
 const isCurrent = (href: string, current?: string) => {
@@ -29,16 +44,13 @@ const isCurrent = (href: string, current?: string) => {
 export const SiteHeader = ({ brand, nav, current, actions, className }: SiteHeaderProps) => (
   <header className={cx('site-header', 'container', className)}>
     <div className="site-header__bar">
-      <Button
-        as="a"
-        variant="ghost"
-        iconOnly
-        icon="house"
+      <a
+        className="site-header__brand"
         href={brand.href}
         aria-current={isCurrent(brand.href, current) ? 'page' : undefined}
       >
-        <VisuallyHidden>{brand.label}</VisuallyHidden>
-      </Button>
+        <Wordmark label={brand.label} />
+      </a>
       <div className="site-header__right">
         <nav aria-label="Main" className="site-nav">
           <ul>

@@ -28,6 +28,20 @@
         "paragraphIndent": "0"
       }
     },
+    "brand": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.fraunces}",
+        "fontSize": "{font.size.500}",
+        "fontWeight": "{font.weight.semibold}",
+        "lineHeight": "{font.line-height.tight}",
+        "letterSpacing": "{font.tracking.snug}",
+        "textCase": "none",
+        "textDecoration": "none",
+        "paragraphSpacing": "0",
+        "paragraphIndent": "0"
+      }
+    },
     "heading-1": {
       "$type": "typography",
       "$value": {
