@@ -15,7 +15,7 @@
     font-weight: var(--text-body-font-weight);
     line-height: var(--text-body-line-height);
     letter-spacing: var(--text-body-letter-spacing);
-    color: var(--color-text-muted);
+    color: var(--prose-color);
   }
 
   /* Flow: gap between consecutive blocks = the body role's paragraph-spacing. */

@@ -1,0 +1,5 @@
+{
+  "prose": {
+    "color": { "$value": "light-dark({color.text}, {color.text-muted})" }
+  }
+}
