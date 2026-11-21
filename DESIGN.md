@@ -271,6 +271,10 @@ The feel is **springy and pokeable**: every interactive thing gives a small phys
 - **Signature use, the theme picker:** each card carries its own `data-preset` and mirrors the page's `data-theme`, so it renders in its own world (ADR 0010): Default lavender with a saffron radio, Opal glass over a mini aurora, Blueprint on grid paper in celadon. The No CSS card wears browser defaults (Times, system colours, the native radio).
 - **Raw mode:** a hidden separator turns each card into one readable radio line ("Default – Good for reading").
 
+### Banner
+
+The page's closing call to action: an inset card within the content width, with a full-width display-2 title and the body below at prose measure. Corners come from each world's `surface-radius` and the treatment from `--banner-*` tokens: Default a saffron-wash card in light mode and deep violet (lavender 850) in dark, Blueprint a solid surface with an accent border and glow, Opal a thin frosted-glass pane (white 10% / 5%, hairline white border, inner top highlight, the surface backdrop blur) with no drop shadow. Links use `--banner-accent` (accent-hover on Default) so they keep contrast. First used for "Drop me a line" at the end of Work.
+
 ### Notice
 
 A surface-coloured strip in muted text that turns to full text colour on hover. Used for the availability line.

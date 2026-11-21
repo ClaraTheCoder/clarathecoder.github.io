@@ -1,0 +1,9 @@
+{
+  "banner": {
+    "bg": { "$value": "light-dark({color.white-alpha.40}, {color.white-alpha.5})" },
+    "accent": { "$value": "{color.accent}" },
+    "border-color": { "$value": "light-dark({color.white-alpha.80}, {color.white-alpha.30})" },
+    "shadow": { "$value": "inset 0 1px 0 {color.white-alpha.60}" },
+    "backdrop": { "$value": "{color.surface-backdrop}" }
+  }
+}

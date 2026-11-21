@@ -1,0 +1,8 @@
+{
+  "banner": {
+    "bg": { "$value": "{color.surface}" },
+    "accent": { "$value": "{color.accent}" },
+    "border-color": { "$value": "{color.accent}" },
+    "shadow": { "$value": "0 0 24px color-mix(in srgb, {color.accent} 35%, transparent)" }
+  }
+}

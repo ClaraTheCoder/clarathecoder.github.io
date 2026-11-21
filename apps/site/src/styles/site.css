@@ -110,18 +110,6 @@
       animation: entrance-fade var(--duration-base) var(--motion-entrance-easing) both;
     }
   }
-
-  .work-cta {
-    width: 100vw;
-    margin-inline: calc(50% - 50vw);
-    padding-block: var(--space-900);
-    background: var(--color-text);
-    color: var(--color-text-on-color);
-  }
-  .work-cta__content {
-    margin: auto;
-    max-inline-size: 100%;
-  }
 }
 
 @layer base {

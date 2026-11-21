@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { Hero, Text, Link, Video, Testimonial, Grid, Box, Flex } from '@clara/design-system';
+import { Banner, Hero, Text, Link, Video, Testimonial, Grid, Box, Flex } from '@clara/design-system';
 import showreel1080 from '../assets/showreel/showreel-2026-10-1080.mp4';
 import showreel720 from '../assets/showreel/showreel-2026-10-720.mp4';
 import showreelPoster from '../assets/showreel/showreel-2026-10-poster.webp';
@@ -128,16 +128,11 @@ const waysToWork = [
       </Grid>
     </Grid>
 
-    <section class="work-cta" aria-labelledby="cta">
-      <div class="container">
-        <Flex direction="column" gap="600" className="work-cta__content">
-          <Text variant="display-2" as="h2" className="work-cta__title" id="cta">Have something in mind?</Text>
-          <Text variant="lead">
-            <Link href="#">Lorem ipsum dolor</Link> sit amet consectetur —
-            <strong>adipiscing elit sed do eiusmod.</strong>
-          </Text>
-        </Flex>
-      </div>
-    </section>
+    <Banner title="Drop me a line">
+      <Text variant="lead">
+        If what you need doesn’t fit neatly into any of those, get in touch anyway.
+        <Link href={`mailto:${SITE.email}`}>Send me an email</Link> and tell me what you’re working on.
+      </Text>
+    </Banner>
   </div>
 </Base>

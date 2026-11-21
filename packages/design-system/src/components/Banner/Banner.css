@@ -1,0 +1,43 @@
+@layer reset, base, components, utilities;
+
+@layer components {
+  .banner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-500);
+    margin-block: var(--space-700);
+    padding: var(--space-800);
+    background: var(--banner-bg);
+    border: var(--surface-border-width) solid var(--banner-border-color);
+    border-radius: var(--surface-radius);
+    box-shadow: var(--banner-shadow);
+    backdrop-filter: var(--banner-backdrop);
+    -webkit-backdrop-filter: var(--banner-backdrop);
+  }
+
+  .banner__title {
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .banner__body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-400);
+    max-inline-size: var(--size-container-prose);
+  }
+
+  .banner__body > * {
+    margin: 0;
+  }
+
+  .banner__body .link {
+    color: var(--banner-accent);
+  }
+
+  @media (max-width: 767px) {
+    .banner {
+      padding: var(--space-500);
+    }
+  }
+}

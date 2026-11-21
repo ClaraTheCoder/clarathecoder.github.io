@@ -1,0 +1,9 @@
+{
+  "banner": {
+    "bg": { "$value": "light-dark({color.accent-subtle}, {color.lavender.850})" },
+    "accent": { "$value": "{color.accent-hover}" },
+    "border-color": { "$value": "{color.transparent}" },
+    "shadow": { "$value": "none" },
+    "backdrop": { "$value": "none" }
+  }
+}
