@@ -36,7 +36,7 @@ const sections = post.toc ?? [{ id: '', label: '' }];
         {
           post.toc && (
             <Flex as="nav" direction="column" gap="300" aria-labelledby="toc-title">
-              <h5 id="toc-title">Contents</h5>
+              <Text variant="heading-5" as="h2" id="toc-title">Contents</Text>
               <Flex as="ol" gap="200" direction="column">
                 {post.toc.map((entry) => (
                   <li>
