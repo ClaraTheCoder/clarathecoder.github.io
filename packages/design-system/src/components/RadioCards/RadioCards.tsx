@@ -8,6 +8,7 @@ import {
 } from 'react';
 import './RadioCards.css';
 import { cx } from '../../utils/cx.js';
+import { VisuallyHidden } from '../VisuallyHidden/index.js';
 
 interface RadioCardsContextValue {
   name: string;
@@ -39,7 +40,7 @@ export const RadioCards = ({
   return (
     <RadioCardsContext.Provider value={{ name: name ?? generatedName, value, onValueChange }}>
       <fieldset className={cx('radio-cards', className)} disabled={disabled} {...props}>
-        <legend className="radio-cards__legend">{legend}</legend>
+        <VisuallyHidden as="legend">{legend}</VisuallyHidden>
         {children}
       </fieldset>
     </RadioCardsContext.Provider>

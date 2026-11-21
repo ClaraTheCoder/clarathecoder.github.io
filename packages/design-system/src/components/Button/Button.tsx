@@ -1,6 +1,7 @@
 import { type ElementType } from 'react';
 import './Button.css';
 import { cx } from '../../utils/cx.js';
+import { glyph, type IconName } from '../Icon/Icon.js';
 import { type Polymorphic } from '../../utils/polymorphic.js';
 
 export type ButtonVariant = 'primary' | 'fixed' | 'ghost';
@@ -12,6 +13,8 @@ export type ButtonProps<E extends ElementType = 'button'> = Polymorphic<
     variant?: ButtonVariant;
     size?: ButtonSize;
     iconOnly?: boolean;
+    icon?: IconName;
+    iconEnd?: IconName;
   }
 >;
 
@@ -20,7 +23,10 @@ export const Button = <E extends ElementType = 'button'>({
   variant = 'primary',
   size = 'md',
   iconOnly = false,
+  icon,
+  iconEnd,
   className,
+  style,
   ...props
 }: ButtonProps<E>) => {
   const Component = (as ?? 'button') as ElementType;
@@ -32,8 +38,15 @@ export const Button = <E extends ElementType = 'button'>({
         `button--${variant}`,
         `button--${size}`,
         iconOnly && 'button--icon-only',
+        icon && 'button--icon',
+        iconEnd && 'button--icon-end',
         className,
       )}
+      style={{
+        ...(icon && glyph('--_glyph', icon)),
+        ...(iconEnd && glyph('--_glyph-end', iconEnd)),
+        ...style,
+      }}
       {...typeProp}
       {...props}
     />

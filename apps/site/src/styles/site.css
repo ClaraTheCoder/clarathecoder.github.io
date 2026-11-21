@@ -163,7 +163,7 @@
     .theme-trigger__label {
       display: inline-block;
     }
-    .theme-trigger__icon {
+    .button.theme-trigger::before {
       display: none;
     }
   }

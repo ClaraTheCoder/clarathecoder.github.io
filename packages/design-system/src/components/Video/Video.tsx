@@ -5,10 +5,10 @@ import {
   type TrackHTMLAttributes,
   type VideoHTMLAttributes,
 } from 'react';
-import { Play } from 'lucide-react';
 import './Video.css';
 import './video-play-cover.js';
 import { Button } from '../Button';
+import { VisuallyHidden } from '../VisuallyHidden';
 import { Flex } from '../Layout';
 
 declare module 'react' {
@@ -37,15 +37,8 @@ export const Video = ({ className, poster, track, transcript, children, ...props
       className="video__frame"
       style={poster ? ({ '--video-poster': `url("${poster}")` } as CSSProperties) : undefined}
     >
-      <Button
-        variant="fixed"
-        size="xl"
-        iconOnly
-        className="video__play"
-        aria-label="Play video"
-        hidden
-      >
-        <Play fill="currentColor" aria-hidden />
+      <Button variant="fixed" size="xl" iconOnly icon="play" className="video__play" hidden>
+        <VisuallyHidden>Play video</VisuallyHidden>
       </Button>
       <video
         className="video__player"

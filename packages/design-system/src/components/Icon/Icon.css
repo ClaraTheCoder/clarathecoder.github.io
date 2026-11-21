@@ -1,0 +1,30 @@
+@layer reset, base, components, utilities;
+
+:root {
+  --icon-arrow-right: url('lucide-static/icons/arrow-right.svg');
+  --icon-circle-check: url('lucide-static/icons/circle-check.svg');
+  --icon-circle-x: url('lucide-static/icons/circle-x.svg');
+  --icon-heart: url('lucide-static/icons/heart.svg');
+  --icon-house: url('lucide-static/icons/house.svg');
+  --icon-info: url('lucide-static/icons/info.svg');
+  --icon-monitor: url('lucide-static/icons/monitor.svg');
+  --icon-moon: url('lucide-static/icons/moon.svg');
+  --icon-palette: url('lucide-static/icons/palette.svg');
+  --icon-play: url('lucide-static/icons/play.svg');
+  --icon-plus: url('lucide-static/icons/plus.svg');
+  --icon-settings: url('lucide-static/icons/settings.svg');
+  --icon-sun: url('lucide-static/icons/sun.svg');
+  --icon-triangle-alert: url('lucide-static/icons/triangle-alert.svg');
+  --icon-x: url('lucide-static/icons/x.svg');
+}
+
+@layer components {
+  .icon {
+    display: inline-block;
+    flex: none;
+    inline-size: var(--space-500);
+    block-size: var(--space-500);
+    background: currentColor;
+    mask: var(--_glyph) center / contain no-repeat;
+  }
+}

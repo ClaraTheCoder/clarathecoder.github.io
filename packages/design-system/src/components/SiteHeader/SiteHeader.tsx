@@ -1,8 +1,8 @@
 import { type ReactNode } from 'react';
-import { House } from 'lucide-react';
 import './SiteHeader.css';
 import { cx } from '../../utils/cx.js';
 import { Button } from '../Button/index.js';
+import { VisuallyHidden } from '../VisuallyHidden/index.js';
 
 export interface SiteHeaderLink {
   label: string;
@@ -33,11 +33,11 @@ export const SiteHeader = ({ brand, nav, current, actions, className }: SiteHead
         as="a"
         variant="ghost"
         iconOnly
+        icon="house"
         href={brand.href}
-        aria-label={brand.label}
         aria-current={isCurrent(brand.href, current) ? 'page' : undefined}
       >
-        <House aria-hidden="true" />
+        <VisuallyHidden>{brand.label}</VisuallyHidden>
       </Button>
       <div className="site-header__right">
         <nav aria-label="Main" className="site-nav">

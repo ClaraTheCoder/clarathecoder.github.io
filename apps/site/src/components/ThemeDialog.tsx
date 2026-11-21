@@ -7,11 +7,12 @@ import {
   DialogTitle,
   DialogTrigger,
   Flex,
+  type IconName,
   Link,
   RadioCard,
   RadioCards,
+  VisuallyHidden,
 } from '@clara/design-system';
-import { ArrowRight, Monitor, Moon, Palette, Sun, X } from 'lucide-react';
 import { useState } from 'react';
 import { flushSync } from 'react-dom';
 import { revealTheme } from '../scripts/theme-reveal';
@@ -27,10 +28,10 @@ const MODES: { value: Mode; title: string; description: string; preset?: string 
 ];
 
 const SCHEMES = {
-  system: { label: 'System', next: 'light', Icon: Monitor },
-  light: { label: 'Light', next: 'dark', Icon: Sun },
-  dark: { label: 'Dark', next: 'system', Icon: Moon },
-} as const satisfies Record<Scheme, { label: string; next: Scheme; Icon: typeof Monitor }>;
+  system: { label: 'System', next: 'light', icon: 'monitor' },
+  light: { label: 'Light', next: 'dark', icon: 'sun' },
+  dark: { label: 'Dark', next: 'system', icon: 'moon' },
+} as const satisfies Record<Scheme, { label: string; next: Scheme; icon: IconName }>;
 
 declare global {
   interface Window {
@@ -60,19 +61,23 @@ export function ThemeDialog({ variant }: ThemeDialogProps) {
     setOpen(next);
   };
 
-  const { label: schemeLabel, next: nextScheme, Icon: SchemeIcon } = SCHEMES[scheme];
+  const { label: schemeLabel, next: nextScheme, icon: schemeIcon } = SCHEMES[scheme];
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       {variant === 'hero' ? (
         <Flex align="start" direction="column">
-          <DialogTrigger size="lg">
-            Pick a theme <ArrowRight className="button__arrow" aria-hidden="true" />
+          <DialogTrigger size="lg" iconEnd="arrow-right">
+            Pick a theme
           </DialogTrigger>
         </Flex>
       ) : (
-        <DialogTrigger variant="ghost" aria-label="Pick a theme">
-          <Palette aria-hidden="true" className="theme-trigger__icon"/>
+        <DialogTrigger
+          variant="ghost"
+          icon="palette"
+          className="theme-trigger"
+          aria-label="Pick a theme"
+        >
           <span className="theme-trigger__label">Pick a theme</span>
         </DialogTrigger>
       )}
@@ -82,6 +87,7 @@ export function ThemeDialog({ variant }: ThemeDialogProps) {
           <Flex align="center" gap="100" className="theme-dialog__actions">
             <Button
               variant="ghost"
+              icon={schemeIcon}
               className="theme-dialog__scheme"
               aria-label={`Appearance: ${schemeLabel}. Switch to ${SCHEMES[nextScheme].label.toLowerCase()}.`}
               onClick={() => {
@@ -94,11 +100,10 @@ export function ThemeDialog({ variant }: ThemeDialogProps) {
                 );
               }}
             >
-              <SchemeIcon aria-hidden="true" />
               {schemeLabel}
             </Button>
-            <DialogClose iconOnly aria-label="Close">
-              <X aria-hidden="true" />
+            <DialogClose iconOnly icon="x">
+              <VisuallyHidden>Close</VisuallyHidden>
             </DialogClose>
           </Flex>
         </Flex>

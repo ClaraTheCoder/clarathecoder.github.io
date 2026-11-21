@@ -1,8 +1,8 @@
-import { ArrowRight, Heart, Plus, Settings } from 'lucide-react';
 import preview from '../../../.storybook/preview';
 import { Button, type ButtonSize, type ButtonVariant } from './Button';
 import { Box, Flex } from '../Layout';
 import { Text } from '../Text';
+import { VisuallyHidden } from '../VisuallyHidden';
 
 const meta = preview.meta({
   title: 'Components/Button',
@@ -68,14 +68,14 @@ export const Variants = meta.story({
     <Stack>
       {VARIANTS.map((v) => (
         <VariantRow key={v} variant={v}>
-          <Button key={`${v}-sm`} variant={v} size="sm">
-            <Plus /> Add item
+          <Button key={`${v}-sm`} variant={v} size="sm" icon="plus">
+            Add item
           </Button>
-          <Button key={`${v}-md`} variant={v}>
-            <Heart /> Save
+          <Button key={`${v}-md`} variant={v} icon="heart">
+            Save
           </Button>
-          <Button key={`${v}-lg`} variant={v} size="lg">
-            See all projects <ArrowRight className="button__arrow" />
+          <Button key={`${v}-lg`} variant={v} size="lg" iconEnd="arrow-right">
+            See all projects
           </Button>
           <Button key={`${v}-disabled`} variant={v} disabled size="lg">
             Disabled
@@ -86,19 +86,19 @@ export const Variants = meta.story({
   ),
 });
 
-/** Icon-only renders a square at each size — always give it an `aria-label`. */
+/** Icon-only renders a square at each size — always give it a `VisuallyHidden` label. */
 export const IconOnly = meta.story({
   render: () => (
     <Stack>
       {VARIANTS.map((v) => (
         <VariantRow key={v} variant={v}>
           {SIZES.map((s) => (
-            <Button key={s} variant={v} size={s} iconOnly aria-label="Settings">
-              <Settings />
+            <Button key={s} variant={v} size={s} iconOnly icon="settings">
+              <VisuallyHidden>Settings</VisuallyHidden>
             </Button>
           ))}
-          <Button key={v} variant={v} disabled iconOnly aria-label="Settings" size="lg">
-            <Settings />
+          <Button key={v} variant={v} disabled iconOnly icon="settings" size="lg">
+            <VisuallyHidden>Settings</VisuallyHidden>
           </Button>
         </VariantRow>
       ))}

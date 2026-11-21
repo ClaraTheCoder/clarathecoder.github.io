@@ -37,13 +37,21 @@
       transform var(--motion-feedback-duration) var(--motion-feedback-easing);
   }
 
-  .button > svg {
+  .button--icon::before,
+  .button--icon-end::after {
+    content: '';
     flex: none;
     inline-size: var(--_icon);
     block-size: var(--_icon);
+    background: currentColor;
   }
 
-  .button__arrow {
+  .button--icon::before {
+    mask: var(--_glyph) center / contain no-repeat;
+  }
+
+  .button--icon-end::after {
+    mask: var(--_glyph-end) center / contain no-repeat;
     transition: transform var(--motion-feedback-nudge-duration) var(--motion-feedback-nudge-easing);
   }
 
@@ -130,18 +138,18 @@
   }
 
   @media (hover: hover) and (pointer: fine) {
-    .button:hover:not(:disabled) .button__arrow {
+    .button--icon-end:hover:not(:disabled)::after {
       transform: translateX(var(--motion-feedback-nudge));
     }
   }
-  .button:focus-visible:not(:disabled) .button__arrow {
+  .button--icon-end:focus-visible:not(:disabled)::after {
     transform: translateX(var(--motion-feedback-nudge));
   }
 
   @media (prefers-reduced-motion: reduce) {
     .button:active:not(:disabled),
-    .button:hover:not(:disabled) .button__arrow,
-    .button:focus-visible:not(:disabled) .button__arrow {
+    .button--icon-end:hover:not(:disabled)::after,
+    .button--icon-end:focus-visible:not(:disabled)::after {
       transform: none;
     }
   }

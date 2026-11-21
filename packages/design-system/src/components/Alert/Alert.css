@@ -43,7 +43,7 @@
     line-height: 0;
   }
 
-  .alert__icon svg {
+  .alert__icon .icon {
     inline-size: var(--alert-icon-size);
     block-size: var(--alert-icon-size);
   }

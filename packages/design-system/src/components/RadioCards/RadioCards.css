@@ -14,15 +14,6 @@
     border: 0;
   }
 
-  .radio-cards__legend {
-    position: absolute;
-    inline-size: var(--space-25);
-    block-size: var(--space-25);
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-  }
-
   .radio-card {
     container: radio-card / inline-size;
     position: relative;

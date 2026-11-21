@@ -1,14 +1,14 @@
 import { type ReactNode } from 'react';
-import { Info as InfoIcon, CircleCheck, TriangleAlert, CircleX } from 'lucide-react';
 import preview from '../../../.storybook/preview';
 import { Alert, AlertIcon, AlertTitle, AlertDescription, type AlertVariant } from './Alert';
 import { Flex } from '../Layout';
+import { Icon } from '../Icon';
 
 const icons: Record<AlertVariant, ReactNode> = {
-  info: <InfoIcon />,
-  success: <CircleCheck />,
-  warning: <TriangleAlert />,
-  danger: <CircleX />,
+  info: <Icon name="info" />,
+  success: <Icon name="circle-check" />,
+  warning: <Icon name="triangle-alert" />,
+  danger: <Icon name="circle-x" />,
 };
 
 const VARIANTS: Record<AlertVariant, { title: string; desc: string }> = {

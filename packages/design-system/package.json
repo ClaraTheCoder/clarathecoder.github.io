@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "@clara/tokens": "workspace:*",
-    "lucide-react": "^1.65.0"
+    "lucide-static": "^1.77.0"
   },
   "peerDependencies": {
     "react": "^19.0.0",
