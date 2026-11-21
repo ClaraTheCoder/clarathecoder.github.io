@@ -126,7 +126,7 @@ One hat, endless tricks. Every page is the same structure — the same token tie
 
 Each preset is a complete world in its own right, not a skin over Default. Presets are partial, override-only layers in the token build, but what they override — colour, type families, case, radius, depth, backdrop, entrance distance — is chosen so each one has a distinct personality. Everything should feel fun, a little magical, and worth poking: components spring, nudge and press back.
 
-Density is relaxed. Content sits in a prose measure (680px) or a 12-column grid with a fluid gutter, with plenty of air above and between blocks. Type is fluid (`clamp()` everywhere) rather than stepping at breakpoints (ADR 0007).
+Density is relaxed. Content sits in a prose measure (68ch) or a 12-column grid with a fluid gutter, with plenty of air above and between blocks. Type is fluid (`clamp()` everywhere) rather than stepping at breakpoints (ADR 0007).
 
 **Rejected:** the generic SaaS/template look — centred hero, three feature cards, gradient call-to-action. If a page could belong to any startup, it has drifted.
 
@@ -203,7 +203,7 @@ Roles are responsive composites exploded into per-property custom props (`--text
 - **Display 1 / 2** (Fraunces 500, size 1000 / 900, 1.0 line-height, −0.02em): hero titles only.
 - **Heading 1–6** (Fraunces 600, sizes 800 → 300, 1.15 line-height; H1 −0.01em): section and component headings.
 - **Lead** (Nunito 400, size 400, 1.55): hero intro paragraphs.
-- **Body** (Nunito 400, size 200, 1.65): running text, set in a 680px measure.
+- **Body** (Nunito 400, size 200, 1.65): running text, set in a 68ch measure.
 - **Body Small / Caption** (Nunito 400, size 100): secondary detail.
 - **Overline** (Nunito 600, size 100, +0.08em, uppercase): small labels; Blueprint widens to +0.18em.
 - **Code** (mono 400, size 200, 1.55).
@@ -216,7 +216,7 @@ Roles are responsive composites exploded into per-property custom props (`--text
 
 ## Layout
 
-- **Containers:** page container up to 1820px; prose container 680px. Both use a fluid gutter, `clamp(16px, 5vw, 72px)`.
+- **Containers:** page container up to 1820px; prose container 68ch. Both use a fluid gutter, `clamp(16px, 5vw, 72px)`.
 - **Grid:** 12 columns on large screens, collapsing to a single column on small. Pages place content across column spans (e.g. testimonial in 1–7, copy in 7–12) rather than centring everything.
 - **Hero:** left-aligned, prose-width, widening to roughly seven of twelve columns at 1280px+. Its children enter with a staggered rise.
 - **Breakpoints:** 768px (two-column post rows, roomier header), 1024px, 1280px.

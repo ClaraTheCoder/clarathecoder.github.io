@@ -2,7 +2,7 @@
 
 @layer components {
   .dialog {
-    inline-size: min(var(--size-container-prose), 100% - 2 * var(--space-400));
+    inline-size: min(700px, 100% - 2 * var(--space-400));
     max-block-size: calc(100% - 2 * var(--space-400));
     margin: auto;
     padding: 0;

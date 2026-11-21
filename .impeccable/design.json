@@ -314,7 +314,7 @@
       },
       "body": {
         "displayName": "Body",
-        "purpose": "Running text in a 680px measure. JetBrains Mono in Blueprint."
+        "purpose": "Running text in a 68ch measure. JetBrains Mono in Blueprint."
       },
       "label": {
         "displayName": "Overline",
@@ -498,7 +498,7 @@
   ],
   "narrative": {
     "northStar": "The Magician's Hat",
-    "overview": "One hat, endless tricks. Every page is the same structure — the same token tiers, components, spacing and motion — and the visitor reaches in and pulls out a different world: the warm, bookish **Default**; the strong, technical, precise **Blueprint**; the polished but friendly **Opal**. The magic is that nothing underneath changes. Swapping `data-preset` and `data-theme` (ADR 0004) re-dresses the whole site in one move, and the reveal is animated so the trick lands.\n\nEach preset is a complete world in its own right, not a skin over Default. Presets are partial, override-only layers in the token build, but what they override — colour, type families, case, radius, depth, backdrop, entrance distance — is chosen so each one has a distinct personality. Everything should feel fun, a little magical, and worth poking: components spring, nudge and press back.\n\nDensity is relaxed. Content sits in a prose measure (680px) or a 12-column grid with a fluid gutter, with plenty of air above and between blocks. Type is fluid (`clamp()` everywhere) rather than stepping at breakpoints (ADR 0007).\n\n**Rejected:** the generic SaaS/template look — centred hero, three feature cards, gradient call-to-action. If a page could belong to any startup, it has drifted.",
+    "overview": "One hat, endless tricks. Every page is the same structure — the same token tiers, components, spacing and motion — and the visitor reaches in and pulls out a different world: the warm, bookish **Default**; the strong, technical, precise **Blueprint**; the polished but friendly **Opal**. The magic is that nothing underneath changes. Swapping `data-preset` and `data-theme` (ADR 0004) re-dresses the whole site in one move, and the reveal is animated so the trick lands.\n\nEach preset is a complete world in its own right, not a skin over Default. Presets are partial, override-only layers in the token build, but what they override — colour, type families, case, radius, depth, backdrop, entrance distance — is chosen so each one has a distinct personality. Everything should feel fun, a little magical, and worth poking: components spring, nudge and press back.\n\nDensity is relaxed. Content sits in a prose measure (68ch) or a 12-column grid with a fluid gutter, with plenty of air above and between blocks. Type is fluid (`clamp()` everywhere) rather than stepping at breakpoints (ADR 0007).\n\n**Rejected:** the generic SaaS/template look — centred hero, three feature cards, gradient call-to-action. If a page could belong to any startup, it has drifted.",
     "keyCharacteristics": [
       "Three named presets × light/dark, all driven by the same semantic and component tokens.",
       "Each preset owns its type pairing, corner language and depth model.",

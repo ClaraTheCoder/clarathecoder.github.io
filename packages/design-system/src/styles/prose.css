@@ -9,7 +9,7 @@
 
 @layer components {
   .prose {
-    max-inline-size: var(--size-container-prose, 680px);
+    max-inline-size: var(--size-container-prose, 68ch);
     font-family: var(--text-body-font-family);
     font-size: var(--text-body-font-size);
     font-weight: var(--text-body-font-weight);
