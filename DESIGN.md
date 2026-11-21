@@ -144,6 +144,8 @@ Density is relaxed. Content sits in a prose measure (680px) or a 12-column grid 
 - **Blueprint — strong, technical, precise.** Neutral paper ground, graphite ink, celadon accent. Saira Condensed headings, bold and uppercase with wide tracking; JetBrains Mono for every text role. 2px corners. A faint accent-tinted 36px grid backdrop; surfaces get an accent outline and soft accent glow. Entrances fade in place with no travel.
 - **Opal — polished but friendly.** Neutral paper ground under a slowly drifting, rotating aurora (lavender, fuchsia, cerulean, celadon). Frosted-glass surfaces: translucent white, 30px blur, inner top highlight and a deep soft drop shadow. All-Nunito type with tight tracking; 26px corners. The accent is near-black ink, so the aurora supplies the colour.
 
+**The Reading Default Rule.** Default is the landing look and the look for reading: someone arriving on an article should be able to just read. Default can become more distinctive, but never by adding distraction. No backdrop, ambient motion or decoration competes with the text; showier ideas belong in Opal or Blueprint.
+
 ## Colors
 
 Colour comes from a named primitive palette of 13-step OKLCH ramps; semantic roles pick from them per preset and per mode, so components only ever see roles (`--color-accent`, `--color-surface`), never raw hues.
@@ -296,6 +298,7 @@ A large quote in heading-scale text, framed by oversized quote marks set in the 
 
 ### Do:
 
+- **Do** keep Default calm enough to read an article in; push distinctiveness into other themes (The Reading Default Rule).
 - **Do** read every styled property from a token custom property. No literal values in component CSS (ADR 0002).
 - **Do** let the preset decide radius, depth, backdrop and type family. Components consume `--surface-*`, `--button-*` and `--color-surface-*` roles.
 - **Do** describe each preset by its own personality when extending it: Default warm and bookish, Blueprint strong, technical and precise, Opal polished but friendly.
@@ -305,6 +308,7 @@ A large quote in heading-scale text, framed by oversized quote marks set in the 
 
 ### Don't:
 
+- **Don't** add backdrops, ambient motion or decoration to Default.
 - **Don't** drift into the generic SaaS/template look: centred hero, three feature cards, gradient call-to-action.
 - **Don't** hard-code a shadow, blur or radius in a component; that breaks the Depth-Is-Preset Rule.
 - **Don't** change type _sizes_ per preset; only families, weights, tracking and case.

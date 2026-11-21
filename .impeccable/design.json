@@ -536,9 +536,15 @@
         "name": "The Depth-Is-Preset Rule",
         "body": "Never add a shadow or blur in component CSS. Components read `--color-surface-shadow`, `--color-surface-shadow-tight` and `--color-surface-backdrop`; the preset decides whether those are `none`, glow or glass.",
         "section": "elevation"
+      },
+      {
+        "name": "The Reading Default Rule",
+        "body": "Default is the landing look and the look for reading: someone arriving on an article should be able to just read. Default can become more distinctive, but never by adding distraction. No backdrop, ambient motion or decoration competes with the text; showier ideas belong in other themes.",
+        "section": "overview"
       }
     ],
     "dos": [
+      "Do keep Default calm enough to read an article in; push distinctiveness into other themes (The Reading Default Rule).",
       "Do read every styled property from a token custom property. No literal values in component CSS (ADR 0002).",
       "Do let the preset decide radius, depth, backdrop and type family. Components consume `--surface-*`, `--button-*` and `--color-surface-*` roles.",
       "Do describe each preset by its own personality when extending it: Default warm and bookish, Blueprint strong, technical and precise, Opal polished but friendly.",
@@ -547,6 +553,7 @@
       "Do name new primitive hues after Kanto towns."
     ],
     "donts": [
+      "Don't add backdrops, ambient motion or decoration to Default.",
       "Don't drift into the generic SaaS/template look: centred hero, three feature cards, gradient call-to-action.",
       "Don't hard-code a shadow, blur or radius in a component; that breaks the Depth-Is-Preset Rule.",
       "Don't change type *sizes* per preset; only families, weights, tracking and case.",
