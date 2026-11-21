@@ -155,6 +155,19 @@
 }
 
 @layer components {
+  .theme-trigger__label {
+    display: none;
+  }
+  
+  @media (min-width: 768px) {
+    .theme-trigger__label {
+      display: inline-block;
+    }
+    .theme-trigger__icon {
+      display: none;
+    }
+  }
+
   .button.theme-dialog__scheme {
     --_fg: var(--color-text-muted);
   }

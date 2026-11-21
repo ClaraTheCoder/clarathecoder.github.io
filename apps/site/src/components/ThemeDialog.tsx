@@ -71,8 +71,9 @@ export function ThemeDialog({ variant }: ThemeDialogProps) {
           </DialogTrigger>
         </Flex>
       ) : (
-        <DialogTrigger variant="ghost" iconOnly aria-label="Pick a theme">
-          <Palette aria-hidden="true" />
+        <DialogTrigger variant="ghost" aria-label="Pick a theme">
+          <Palette aria-hidden="true" className="theme-trigger__icon"/>
+          <span className="theme-trigger__label">Pick a theme</span>
         </DialogTrigger>
       )}
       <DialogContent>
