@@ -7,6 +7,7 @@ const meta = preview.meta({
 });
 
 const NAMES: IconName[] = [
+  'arrow-left',
   'arrow-right',
   'circle-check',
   'circle-x',

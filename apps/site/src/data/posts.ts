@@ -21,7 +21,7 @@ export const POSTS: Post[] = [
   {
     slug: 'nam-libero-tempore',
     date: '2026-11-02',
-    title: 'Nam libero tempore cum soluta',
+    title: 'Nam libero tempore cum soluta nobis est eligendi optio cumque',
     description: 'Soluta nobis est eligendi optio cumque nihil impedit quo minus.',
     toc: [
       { id: 'context', label: 'Context' },
@@ -33,14 +33,14 @@ export const POSTS: Post[] = [
   {
     slug: 'itaque-earum-rerum',
     date: '2026-09-18',
-    title: 'Itaque earum rerum hic tenetur',
+    title: 'Itaque earum rerum hic tenetur a sapiente delectus reiciendis',
     description: 'Tenetur a sapiente delectus reiciendis voluptatibus maiores alias.',
     // No toc — rail shows meta only.
   },
   {
     slug: 'maiores-alias-consequatur',
     date: '2026-07-07',
-    title: 'Maiores alias consequatur aut',
+    title: 'Maiores alias consequatur aut perferendis doloribus',
     description: 'Aut perferendis doloribus asperiores repellat earum voluptatem.',
     toc: [
       { id: 'context', label: 'Context' },
@@ -51,13 +51,13 @@ export const POSTS: Post[] = [
   {
     slug: 'temporibus-autem',
     date: '2026-04-21',
-    title: 'Temporibus autem quibusdam',
+    title: 'Temporibus autem quibusdam et aut officiis debitis rerum',
     description: 'Et aut officiis debitis aut rerum necessitatibus saepe eveniet.',
   },
   {
     slug: 'nam-libero-soluta',
     date: '2026-02-09',
-    title: 'Nam libero tempore soluta nobis',
+    title: 'Nam libero tempore soluta, nobis eligendi cumque impedit',
     description: 'Ut et voluptates repudiandae sint et molestiae non recusandae.',
   },
 ];

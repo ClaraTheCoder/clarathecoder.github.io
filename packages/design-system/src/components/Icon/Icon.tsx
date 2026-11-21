@@ -3,6 +3,7 @@ import './Icon.css';
 import { cx } from '../../utils/cx.js';
 
 export type IconName =
+  | 'arrow-left'
   | 'arrow-right'
   | 'circle-check'
   | 'circle-x'

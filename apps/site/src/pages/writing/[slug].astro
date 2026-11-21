@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { Text, Container, Grid, Box, Flex, Image, Link } from '@clara/design-system';
+import { Text, Container, Grid, Box, Flex, Image, Link, Icon } from '@clara/design-system';
 import { POSTS, formatDate, type Post } from '../../data/posts';
 
 export function getStaticPaths() {
@@ -8,19 +8,19 @@ export function getStaticPaths() {
     params: { slug: post.slug },
     props: {
       post,
-      prev: POSTS[i - 1] ?? null,
-      next: POSTS[i + 1] ?? null,
+      newer: POSTS[i - 1] ?? null,
+      older: POSTS[i + 1] ?? null,
     },
   }));
 }
 
 interface Props {
   post: Post;
-  prev: Post | null;
-  next: Post | null;
+  newer: Post | null;
+  older: Post | null;
 }
 
-const { post, prev, next } = Astro.props;
+const { post, newer, older } = Astro.props;
 const sections = post.toc ?? [{ id: '', label: '' }];
 ---
 
@@ -29,7 +29,7 @@ const sections = post.toc ?? [{ id: '', label: '' }];
     <!-- Title + meta live in the left column; prose on the right -->
     <Grid className="article" columns={{ initial: 1, md: 12 }} gapX="var(--grid-gutter)" gapY="600">
       <Box as="header" className="article-rail" gridColumn={{ md: '1 / 5' }}>
-        <Text variant="heading-1" as="h1">{post.title}</Text>
+        <Text variant="heading-2" as="h1" className="article-title">{post.title}</Text>
         <Flex align="center" wrap="wrap" gap="300">
           <time datetime={post.date}>{formatDate(post.date)}</time>
         </Flex>
@@ -80,6 +80,28 @@ const sections = post.toc ?? [{ id: '', label: '' }];
           ))
         }
         </Container>
+        {
+          (older || newer) && (
+            <nav class="article-pager" aria-label="More writing">
+              {older && (
+                <a class="article-pager__link article-pager__link--older" href={`/writing/${older.slug}`}>
+                  <span class="article-pager__label">
+                    <Icon name="arrow-left" /> Older
+                  </span>
+                  <span class="article-pager__title">{older.title}</span>
+                </a>
+              )}
+              {newer && (
+                <a class="article-pager__link article-pager__link--newer" href={`/writing/${newer.slug}`}>
+                  <span class="article-pager__label">
+                    Newer <Icon name="arrow-right" />
+                  </span>
+                  <span class="article-pager__title">{newer.title}</span>
+                </a>
+              )}
+            </nav>
+          )
+        }
       </Flex>
     </Grid>
   </article>

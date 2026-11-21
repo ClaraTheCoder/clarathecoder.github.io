@@ -1,6 +1,7 @@
 @layer reset, base, components, utilities;
 
 :root {
+  --icon-arrow-left: url('lucide-static/icons/arrow-left.svg');
   --icon-arrow-right: url('lucide-static/icons/arrow-right.svg');
   --icon-circle-check: url('lucide-static/icons/circle-check.svg');
   --icon-circle-x: url('lucide-static/icons/circle-x.svg');
