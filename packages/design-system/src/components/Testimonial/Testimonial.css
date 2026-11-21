@@ -4,38 +4,79 @@
   .testimonial {
     display: flex;
     flex-direction: column;
-    gap: var(--space-400);
+    gap: var(--space-500);
     margin: 0;
   }
 
   .testimonial__quote {
     margin: 0;
+    font-family: var(--text-heading-3-font-family);
     font-size: var(--font-size-600);
+    font-weight: var(--text-heading-3-font-weight);
     line-height: var(--font-line-height-snug);
-    display: flex;
-    flex-direction: column;
+    letter-spacing: var(--text-heading-3-letter-spacing);
+    color: var(--color-text-subtle);
+    text-wrap: pretty;
   }
 
-  .testimonial__cite {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-50);
+  .testimonial__quote p {
+    margin: 0;
   }
 
-  .testimonial__role {
-    color: var(--color-text-muted);
-    font-size: var(--font-size-200);
+  .testimonial__quote strong {
+    font-weight: inherit;
+    color: var(--color-text);
   }
 
-  .testimonial__quote-mark {
+  .testimonial__mark {
     font-family: var(--text-display-1-font-family);
+    font-size: calc(var(--font-size-1000) * 2);
     font-weight: var(--text-display-1-font-weight);
-    font-size: var(--font-size-1000);
     line-height: var(--font-line-height-tight);
     color: var(--color-accent);
   }
 
-  .testimonial__quote-mark:last-child {
-    align-self: flex-end;
+  .testimonial__mark--open {
+    display: block;
+    block-size: 0.45em;
+    margin-block-end: var(--space-400);
+  }
+
+  .testimonial__mark--close {
+    flex: none;
+    block-size: 0.55em;
+    margin-block-start: calc(var(--space-500) * -1);
+  }
+
+  .testimonial__cite {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: var(--space-500);
+  }
+
+  .testimonial__who {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-200);
+    padding-block-start: var(--space-200);
+  }
+
+  .testimonial__name {
+    font-family: var(--text-heading-3-font-family);
+    font-size: var(--text-heading-4-font-size);
+    font-weight: var(--text-heading-3-font-weight);
+    line-height: var(--font-line-height-tight);
+    letter-spacing: var(--text-heading-3-letter-spacing);
+    text-transform: var(--text-heading-3-text-transform);
+  }
+
+  .testimonial__role {
+    color: var(--color-text-subtle);
+    line-height: var(--font-line-height-snug);
+  }
+
+  .testimonial__role > span {
+    display: block;
   }
 }

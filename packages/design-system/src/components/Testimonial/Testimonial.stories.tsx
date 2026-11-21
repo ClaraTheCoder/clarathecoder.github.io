@@ -7,15 +7,21 @@ const meta = preview.meta({
   component: Testimonial,
   args: {
     name: 'Name Surname',
-    role: 'Role, Company',
-    children:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, quis nostrud exercitation ullamco.',
+    role: 'Role',
+    company: 'Company',
+    children: (
+      <>
+        Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>, sed do eiusmod
+        tempor incididunt ut <strong>labore et dolore magna aliqua</strong>, quis nostrud
+        exercitation ullamco.
+      </>
+    ),
   },
 });
 
 export const Default = meta.story({
   render: (args) => (
-    <Box style={{ inlineSize: 'min(480px, 100%)' }}>
+    <Box style={{ inlineSize: 'min(36rem, 100%)' }}>
       <Testimonial {...args} />
     </Box>
   ),

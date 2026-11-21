@@ -31,10 +31,6 @@
     margin: 0;
   }
 
-  .banner__body .link {
-    color: var(--banner-accent);
-  }
-
   @media (max-width: 767px) {
     .banner {
       padding: var(--space-500);

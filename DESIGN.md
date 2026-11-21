@@ -152,7 +152,8 @@ Colour comes from a named primitive palette of 13-step OKLCH ramps; semantic rol
 
 ### Primary
 
-- **Saffron** (`saffron`): Default's accent — links, primary buttons, testimonial quote marks. Deepens to **Saffron Deep** on hover; **Saffron Wash** is the subtle accent fill. In dark mode the accent lifts to **Saffron Glow** (saffron 500) so it reads on lavender night.
+- **Lavender** (lavender 700): Default's accent in light mode — links, primary buttons, testimonial marks and names. Deepens to lavender 800 on hover; lavender 200 is the subtle accent fill. Light-mode text is neutral (neutral 900), not lavender-tinted.
+- **Saffron** (`saffron`): Default's accent in dark mode, as **Saffron Glow** (saffron 500), so it reads on lavender night.
 
 ### Secondary
 
@@ -259,9 +260,9 @@ The feel is **springy and pokeable**: every interactive thing gives a small phys
 
 ### Wordmark
 
-"claras.place" in the header: Fraunces 600 in the text colour (the `text.brand` role, size 500, stepping down on small phones), with the dot drawn as a celadon circle (`color.brand-mark`: celadon 600 light, 400 dark). It is the site's identity, not part of the box of tricks: no preset overrides its tokens, so it looks the same in every world. A visually hidden "." inside the mark keeps the name intact for screen readers and raw mode.
+"claras.place" in the header: Fraunces 600 in the text colour (the `text.brand` role, size 500, stepping down on small phones), with the dot drawn as a circle in the world's accent colour, so the mark is the one part of the identity that changes with the theme (lavender in Default light, saffron in Default dark, celadon in Blueprint, ink in Opal). A visually hidden "." inside the mark keeps the name intact for screen readers and raw mode.
 
-The favicon is the dot alone: `apps/site/public/favicon.svg` (celadon 600, celadon 400 when the browser is dark) and a 180px `apple-touch-icon.png` with the dot on lavender 50. SVG favicons can't read tokens, so they carry hex conversions of the brand-mark colours; keep them in step if `color.brand-mark` changes.
+The favicon is the dot alone, in Default's accents: `apps/site/public/favicon.svg` (lavender 800, saffron 500 when the browser is dark) and a 180px `apple-touch-icon.png` with the lavender dot on lavender 50. SVG favicons can't read tokens, so they carry hex conversions; keep them in step if Default's accent changes.
 
 ### Dialog
 
@@ -291,7 +292,7 @@ Ruled rows (1px border top, plus bottom on the last row). Uppercase, +0.04em, mu
 
 ### Testimonial
 
-A large quote in heading-scale text, framed by oversized quote marks set in the display face in the accent colour, with the closing mark aligned to the end. Attribution below in muted text.
+A quote at heading-3 face and size 600, with key phrases wrapped in `<strong>` shown in full text colour and the rest at 55% of the text colour, so the muted words stay in the world's own ink rather than grey. Two oversized quote marks (twice display size) in the display face and accent colour: the opening mark above the quote, the closing mark on the right of the attribution row, aligned to the top of the name. The name is in the heading face in the accent colour; the role and company sit below on separate lines. There is no avatar.
 
 ### Signature: preset backdrops
 

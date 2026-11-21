@@ -3,29 +3,33 @@ import './Testimonial.css';
 import { cx } from '../../utils/cx.js';
 
 export interface TestimonialProps {
-  /** The pull-quote text. */
+  /** The quote. Wrap the key phrases in `<strong>`; the rest is muted. */
   children: ReactNode;
-  /** Attributed name. */
   name: string;
-  /** Attributed role / company. */
   role: string;
+  /** Shown on its own line under the role. */
+  company?: string;
   className?: string;
 }
 
-export const Testimonial = ({ children, name, role, className }: TestimonialProps) => (
+export const Testimonial = ({ children, name, role, company, className }: TestimonialProps) => (
   <figure className={cx('testimonial', className)}>
     <blockquote className="testimonial__quote">
-      <span className="testimonial__quote-mark" aria-hidden="true">
+      <span className="testimonial__mark testimonial__mark--open" aria-hidden="true">
         “
       </span>
       <p>{children}</p>
-      <span className="testimonial__quote-mark" aria-hidden="true">
-        ”
-      </span>
     </blockquote>
     <figcaption className="testimonial__cite">
-      <span className="text-default">{name}</span>
-      <span className="testimonial__role">{role}</span>
+      <span className="testimonial__who">
+        <span className="testimonial__name">{name}</span>
+        <span className="testimonial__role">
+          <span>{company ? `${role},` : role}</span> {company && <span>{company}</span>}
+        </span>
+      </span>
+      <span className="testimonial__mark testimonial__mark--close" aria-hidden="true">
+        ”
+      </span>
     </figcaption>
   </figure>
 );

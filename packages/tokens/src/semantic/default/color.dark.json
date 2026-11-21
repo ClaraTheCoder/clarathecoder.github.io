@@ -11,7 +11,7 @@
 
     "text": { "$value": "{color.neutral.100}" },
     "text-muted": { "$value": "{color.neutral.300}" },
-    "text-subtle": { "$value": "{color.neutral.400}" },
+    "text-subtle": { "$value": "color-mix(in oklab, {color.text} 55%, transparent)" },
     "text-on-color": { "$value": "{color.neutral.950}" },
     "text-on-color-fixed": { "$value": "{color.neutral.50}" },
 
@@ -22,8 +22,6 @@
     "accent-hover": { "$value": "{color.saffron.400}" },
     "accent-subtle": { "$value": "{color.saffron.950}" },
     "accent-subtle-hover": { "$value": "{color.saffron.900}" },
-
-    "brand-mark": { "$value": "{color.celadon.400}" },
 
     "fixed": { "$value": "{color.neutral.100}" },
     "fixed-hover": { "$value": "{color.neutral.50}" },

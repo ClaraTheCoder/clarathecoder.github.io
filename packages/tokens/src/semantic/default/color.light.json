@@ -9,21 +9,19 @@
     "surface-backdrop": { "$value": "none" },
     "surface-border": { "$value": "{color.border}" },
 
-    "text": { "$value": "{color.lavender.900}" },
+    "text": { "$value": "{color.neutral.900}" },
     "text-muted": { "$value": "{color.neutral.700}" },
-    "text-subtle": { "$value": "{color.neutral.600}" },
+    "text-subtle": { "$value": "color-mix(in oklab, {color.text} 55%, transparent)" },
     "text-on-color": { "$value": "{color.neutral.50}" },
     "text-on-color-fixed": { "$value": "{color.neutral.50}" },
 
     "border": { "$value": "{color.lavender.300}" },
     "border-strong": { "$value": "{color.lavender.600}" },
 
-    "accent": { "$value": "{color.saffron.700}" },
-    "accent-hover": { "$value": "{color.saffron.800}" },
-    "accent-subtle": { "$value": "{color.saffron.200}" },
-    "accent-subtle-hover": { "$value": "{color.saffron.300}" },
-
-    "brand-mark": { "$value": "{color.celadon.600}" },
+    "accent": { "$value": "{color.lavender.800}" },
+    "accent-hover": { "$value": "{color.lavender.900}" },
+    "accent-subtle": { "$value": "{color.lavender.200}" },
+    "accent-subtle-hover": { "$value": "{color.lavender.300}" },
 
     "fixed": { "$value": "{color.neutral.100}" },
     "fixed-hover": { "$value": "{color.neutral.50}" },

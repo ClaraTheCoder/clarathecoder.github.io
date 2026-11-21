@@ -52,7 +52,7 @@
     block-size: 0.3em;
     margin-inline: 0.08em;
     border-radius: var(--radius-full);
-    background: var(--color-brand-mark);
+    background: var(--color-accent);
   }
 
   .site-header__brand:focus-visible {
