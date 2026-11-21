@@ -1,6 +1,6 @@
 {
   "banner": {
-    "bg": { "$value": "light-dark({color.accent-subtle}, {color.lavender.850})" },
+    "bg": { "$value": "{color.accent-subtle}" },
     "border-color": { "$value": "{color.transparent}" },
     "shadow": { "$value": "none" },
     "backdrop": { "$value": "none" }
