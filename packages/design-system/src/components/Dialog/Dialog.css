@@ -78,6 +78,12 @@
     padding: var(--space-600);
   }
 
+  @media (max-width: 480px) {
+    .dialog__content {
+      padding: var(--space-300);
+    }
+  }
+
   .dialog__content > * {
     margin: 0;
   }

@@ -39,7 +39,12 @@ export interface DialogProps {
   children: ReactNode;
 }
 
-export const Dialog = ({ open: openProp, defaultOpen = false, onOpenChange, children }: DialogProps) => {
+export const Dialog = ({
+  open: openProp,
+  defaultOpen = false,
+  onOpenChange,
+  children,
+}: DialogProps) => {
   const [uncontrolledOpen, setUncontrolledOpen] = useState(defaultOpen);
   const open = openProp ?? uncontrolledOpen;
   const titleId = useId();
@@ -69,6 +74,22 @@ export const DialogTrigger = ({ onClick, ...props }: DialogTriggerProps) => {
         onClick?.(event);
         triggerRef.current = event.currentTarget;
         if (!event.defaultPrevented) setOpen(true);
+      }}
+      {...props}
+    />
+  );
+};
+
+export type DialogCloseProps = ButtonProps<'button'>;
+
+export const DialogClose = ({ onClick, ...props }: DialogCloseProps) => {
+  const { setOpen } = useDialog('DialogClose');
+  return (
+    <Button
+      variant="ghost"
+      onClick={(event: MouseEvent<HTMLButtonElement>) => {
+        onClick?.(event);
+        if (!event.defaultPrevented) setOpen(false);
       }}
       {...props}
     />
@@ -124,10 +145,20 @@ export const DialogContent = ({ className, children, ...props }: DialogContentPr
 
 export type DialogTitleProps<E extends ElementType = 'h2'> = Polymorphic<E>;
 
-export const DialogTitle = <E extends ElementType = 'h2'>({ as, className, ...props }: DialogTitleProps<E>) => {
+export const DialogTitle = <E extends ElementType = 'h2'>({
+  as,
+  className,
+  ...props
+}: DialogTitleProps<E>) => {
   const { titleId } = useDialog('DialogTitle');
   const Component = (as ?? 'h2') as ElementType;
-  return <Component id={titleId} className={cx('dialog__title', 'text-heading-4', className)} {...props} />;
+  return (
+    <Component
+      id={titleId}
+      className={cx('dialog__title', 'text-heading-4', className)}
+      {...props}
+    />
+  );
 };
 
 export type DialogDescriptionProps<E extends ElementType = 'p'> = Polymorphic<E>;

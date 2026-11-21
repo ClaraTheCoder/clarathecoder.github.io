@@ -153,3 +153,105 @@
     }
   }
 }
+
+@layer components {
+  .button.theme-dialog__scheme {
+    --_fg: var(--color-text-muted);
+  }
+
+  .theme-card--blueprint::before {
+    --_line: color-mix(in srgb, var(--color-accent) 12%, transparent);
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: var(--z-below);
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        var(--_line) 0 var(--space-25),
+        transparent var(--space-25) var(--space-400)
+      ),
+      repeating-linear-gradient(
+        90deg,
+        var(--_line) 0 var(--space-25),
+        transparent var(--space-25) var(--space-400)
+      );
+  }
+
+  .theme-card--opal::before,
+  .theme-card--opal::after {
+    content: '';
+    position: absolute;
+    z-index: var(--z-below);
+    pointer-events: none;
+  }
+  .theme-card--opal::before {
+    inset: 0;
+    background: light-dark(
+      var(--color-white),
+      color-mix(in oklab, var(--color-bg), var(--color-black) 50%)
+    );
+  }
+  .theme-card--opal::after {
+    inset: -30%;
+    background:
+      radial-gradient(
+        42% 42% at 25% 30%,
+        color-mix(in oklab, var(--color-lavender-500) 70%, transparent),
+        transparent 65%
+      ),
+      radial-gradient(
+        46% 46% at 80% 20%,
+        color-mix(in oklab, var(--color-fuchsia-500) 70%, transparent),
+        transparent 65%
+      ),
+      radial-gradient(
+        52% 52% at 70% 80%,
+        color-mix(in oklab, var(--color-cerulean-500) 70%, transparent),
+        transparent 65%
+      ),
+      radial-gradient(
+        40% 40% at 20% 85%,
+        color-mix(in oklab, var(--color-celadon-500) 70%, transparent),
+        transparent 65%
+      );
+    filter: blur(var(--space-500)) saturate(2);
+    animation: aurora-drift 20s ease-in-out infinite alternate;
+  }
+  .theme-card--opal[data-theme='dark']::after {
+    opacity: var(--motion-attention-opacity);
+  }
+  @media (prefers-color-scheme: dark) {
+    .theme-card--opal:not([data-theme])::after {
+      opacity: var(--motion-attention-opacity);
+    }
+  }
+
+  /* Doubled class: RadioCards.css loads later and would win the tie. */
+  .radio-card.theme-card--raw {
+    font-family: serif;
+    color: CanvasText;
+    background: Canvas;
+    border-color: CanvasText;
+    border-radius: var(--radius-none);
+    box-shadow: none;
+  }
+  .theme-card--raw .radio-card__title {
+    font-family: serif;
+    font-weight: var(--font-weight-bold);
+    letter-spacing: normal;
+    text-transform: none;
+  }
+  .theme-card--raw .radio-card__description {
+    color: CanvasText;
+  }
+  .theme-card--raw .radio-card__input {
+    all: revert;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .theme-card--opal::after {
+      animation: none;
+    }
+  }
+}

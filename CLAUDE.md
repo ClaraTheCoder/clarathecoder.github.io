@@ -17,7 +17,7 @@ Personal site for Clara + the design system it's built on. pnpm monorepo, Node �
 
 ## ADRs
 
-See `docs/adr/`: 0001 static Astro + React islands · 0002 vanilla CSS + cascade layers · 0003 token pipeline build gates · 0004 two-axis theming via data attributes · 0005 shadcn + Base UI primitives (superseded by 0009) · 0006 pnpm monorepo · 0007 responsive typography tokens · 0008 nested primitive inheritance reset · 0009 native HTML interactive components.
+See `docs/adr/`: 0001 static Astro + React islands · 0002 vanilla CSS + cascade layers · 0003 token pipeline build gates · 0004 two-axis theming via data attributes · 0005 shadcn + Base UI primitives (superseded by 0009) · 0006 pnpm monorepo · 0007 responsive typography tokens · 0008 nested primitive inheritance reset · 0009 native HTML interactive components · 0010 nested presets via `:where([data-preset])` + `@scope`.
 
 ## Commands
 

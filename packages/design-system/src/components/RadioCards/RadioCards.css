@@ -1,0 +1,169 @@
+@layer reset, base, components, utilities;
+
+@layer components {
+  .radio-cards {
+    /* Resolved here, so the ring uses the page's tokens rather than each card's. */
+    --_ring: var(--color-border-strong);
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-300);
+    min-inline-size: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .radio-cards__legend {
+    position: absolute;
+    inline-size: var(--space-25);
+    block-size: var(--space-25);
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .radio-card {
+    container: radio-card / inline-size;
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-200);
+    padding: var(--space-400);
+    overflow: hidden;
+    color: var(--color-text);
+    background: var(--color-bg);
+    border: var(--surface-border-width) solid var(--color-border);
+    border-radius: var(--surface-radius);
+    box-shadow: var(--color-surface-shadow);
+    font-family: var(--text-body-font-family);
+    cursor: pointer;
+    user-select: none;
+    outline: var(--focus-ring-width) solid transparent;
+    outline-offset: var(--focus-ring-offset);
+    transition:
+      border-color var(--duration-fast) var(--ease-standard),
+      outline-color var(--duration-fast) var(--ease-standard),
+      outline-offset var(--motion-feedback-duration) var(--motion-feedback-easing),
+      transform var(--motion-feedback-duration) var(--motion-feedback-easing);
+  }
+
+  .radio-card__header {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: start;
+    justify-content: space-between;
+    gap: var(--space-200);
+  }
+
+  .radio-card__input {
+    flex: none;
+    display: grid;
+    place-items: center;
+    inline-size: var(--space-500);
+    block-size: var(--space-500);
+    margin: 0;
+    appearance: none;
+    background: var(--color-surface);
+    border: var(--space-50) solid var(--color-border-strong);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition:
+      background-color var(--duration-fast) var(--ease-standard),
+      border-color var(--duration-fast) var(--ease-standard);
+  }
+
+  .radio-card__input::before {
+    content: '';
+    inline-size: var(--space-200);
+    block-size: var(--space-200);
+    border-radius: var(--radius-full);
+    background: var(--color-text-on-color);
+    transform: scale(0);
+    transition: transform var(--motion-overlay-enter-duration) var(--motion-overlay-enter-easing);
+  }
+
+  .radio-card__input:checked {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+
+  .radio-card__input:checked::before {
+    transform: scale(1);
+  }
+
+  .radio-card__input:focus-visible {
+    outline: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .radio-card:hover {
+      border-color: var(--color-border-strong);
+    }
+  }
+
+  .radio-card:active {
+    transform: scale(var(--motion-feedback-press-scale));
+  }
+
+  .radio-card:has(.radio-card__input:checked) {
+    outline-color: var(--_ring);
+  }
+
+  .radio-card:has(.radio-card__input:focus-visible) {
+    outline-color: var(--_ring);
+    outline-offset: calc(var(--focus-ring-offset) * 3);
+  }
+
+  .radio-card:has(.radio-card__input:disabled) {
+    cursor: not-allowed;
+    opacity: var(--opacity-disabled);
+  }
+
+  .radio-card__title {
+    font-family: var(--text-heading-3-font-family);
+    font-size: var(--text-heading-4-font-size);
+    font-weight: var(--text-heading-3-font-weight);
+    line-height: var(--font-line-height-tight);
+    letter-spacing: var(--text-heading-3-letter-spacing);
+    text-transform: var(--text-heading-3-text-transform);
+  }
+
+  .radio-card__description {
+    font-size: var(--text-body-sm-font-size);
+    line-height: var(--font-line-height-snug);
+    color: var(--color-text-muted);
+  }
+
+  .radio-card__separator {
+    display: none;
+  }
+
+  @container radio-card (max-width: 9rem) {
+    .radio-card__header {
+      flex-direction: column;
+    }
+    .radio-card__input {
+      align-self: flex-end;
+    }
+    .radio-card__title {
+      font-size: var(--text-heading-5-font-size);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .radio-card {
+      padding: var(--space-300);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .radio-card:active {
+      transform: none;
+    }
+    .radio-card__input::before {
+      transition: none;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font",
+        "value": "font-family",
+        "createdAt": "2026-11-21T17:47:08.433Z",
+        "reason": "model triage: build.js maps the DTCG key fontFamily to the CSS suffix 'font-family'; it is not a font in use"
+      }
+    ]
+  }
+}

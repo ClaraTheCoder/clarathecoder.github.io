@@ -61,6 +61,11 @@
     --_fs: var(--font-size-200);
     --_icon: var(--space-500);
   }
+  @media (max-width: 480px) {
+    .button--md {
+      --_px: var(--space-300);
+    }
+  }
   .button--lg {
     --_h: var(--space-900);
     --_px: var(--space-500);
