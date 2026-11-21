@@ -2,23 +2,24 @@
 name: Clara's Site
 description: One token architecture wearing three looks — Default, Blueprint and Opal — for a personal site that wants to be poked.
 colors:
-  lavender-ground: 'oklch(0.984 0.003 293)'
-  lavender-ink: 'oklch(0.271 0.079 293)'
-  lavender-rule: 'oklch(0.874 0.047 293)'
-  lavender-strong: 'oklch(0.63 0.199 293)'
+  cream-ground: 'oklch(0.971 0.006 58)'
+  ink: 'oklch(0.32 0.0045 120)'
+  ash: 'oklch(0.41 0.005 120)'
+  stone-rule: 'oklch(0.833 0.0045 120)'
+  stone-strong: 'oklch(0.505 0.0055 120)'
+  lavender: 'oklch(0.44 0.213 293)'
+  lavender-deep: 'oklch(0.271 0.079 293)'
+  lavender-dusk: 'oklch(0.378 0.166 293)'
   lavender-night: 'oklch(0.242 0.024 293)'
-  saffron: 'oklch(0.54 0.112 58)'
-  saffron-deep: 'oklch(0.44 0.088 58)'
   saffron-wash: 'oklch(0.936 0.023 58)'
   saffron-glow: 'oklch(0.714 0.14 58)'
+  saffron-light: 'oklch(0.796 0.117 58)'
   celadon: 'oklch(0.58 0.0888 172)'
-  celadon-deep: 'oklch(0.49 0.0755 172)'
+  celadon-bright: 'oklch(0.68 0.0945 172)'
   paper: 'oklch(0.98 0 0)'
   white: '#ffffff'
   graphite: 'oklch(0.255 0.0035 120)'
-  ash: 'oklch(0.41 0.005 120)'
-  ash-light: 'oklch(0.505 0.0055 120)'
-  stone-rule: 'oklch(0.833 0.0045 120)'
+  carbon: 'oklch(0.195 0.003 120)'
   viridian: 'oklch(0.502 0.145 150)'
   vermilion: 'oklch(0.502 0.205 20)'
   cerulean: 'oklch(0.54 0.225 262)'
@@ -82,13 +83,13 @@ spacing:
   '900': '72px'
 components:
   button-primary:
-    backgroundColor: '{colors.saffron}'
+    backgroundColor: '{colors.lavender}'
     textColor: '{colors.paper}'
     rounded: '{rounded.full}'
     padding: '0 16px'
     height: '48px'
   button-primary-hover:
-    backgroundColor: '{colors.saffron-deep}'
+    backgroundColor: '{colors.lavender-deep}'
   button-fixed:
     backgroundColor: '{colors.paper}'
     textColor: '{colors.graphite}'
@@ -97,23 +98,32 @@ components:
     height: '48px'
   button-ghost:
     backgroundColor: 'transparent'
-    textColor: '{colors.lavender-ink}'
+    textColor: '{colors.ink}'
     rounded: '{rounded.full}'
     padding: '0 16px'
     height: '48px'
   surface:
     backgroundColor: '{colors.white}'
-    textColor: '{colors.lavender-ink}'
+    textColor: '{colors.ink}'
     rounded: '{rounded.md}'
   radio-card:
-    backgroundColor: '{colors.lavender-ground}'
-    textColor: '{colors.lavender-ink}'
+    backgroundColor: '{colors.cream-ground}'
+    textColor: '{colors.ink}'
     rounded: '{rounded.md}'
     padding: '16px'
+  banner:
+    backgroundColor: '{colors.saffron-wash}'
+    textColor: '{colors.ink}'
+    rounded: '{rounded.md}'
+    padding: '60px'
   link:
-    textColor: '{colors.saffron}'
+    textColor: '{colors.lavender}'
   link-hover:
-    textColor: '{colors.saffron-deep}'
+    textColor: '{colors.lavender-deep}'
+  link-plain:
+    textColor: '{colors.ink}'
+  link-plain-hover:
+    textColor: '{colors.lavender}'
 ---
 
 # Design System: Clara's Site
@@ -140,7 +150,7 @@ Density is relaxed. Content sits in a prose measure (68ch) or a 12-column grid w
 
 ### The three looks
 
-- **Default — warm and bookish.** Lavender ground, deep lavender ink, saffron accent. Fraunces serif headings over rounded Nunito body. Flat white surfaces with 12px corners, pill buttons.
+- **Default — warm and bookish.** Warm cream ground, neutral ink, lavender accent (saffron in dark mode, on lavender night). Fraunces serif headings over rounded Nunito body. Flat white surfaces with 12px corners, pill buttons.
 - **Blueprint — strong, technical, precise.** Neutral paper ground, graphite ink, celadon accent. Saira Condensed headings, bold and uppercase with wide tracking; JetBrains Mono for every text role. 2px corners. A faint accent-tinted 36px grid backdrop; surfaces get an accent outline and soft accent glow. Entrances fade in place with no travel.
 - **Opal — polished but friendly.** Neutral paper ground under a slowly drifting, rotating aurora (lavender, fuchsia, cerulean, celadon). Frosted-glass surfaces: translucent white, 30px blur, inner top highlight and a deep soft drop shadow. All-Nunito type with tight tracking; 26px corners. The accent is near-black ink, so the aurora supplies the colour.
 
@@ -152,12 +162,13 @@ Colour comes from a named primitive palette of 13-step OKLCH ramps; semantic rol
 
 ### Primary
 
-- **Lavender** (lavender 700): Default's accent in light mode — links, primary buttons, testimonial marks and names. Deepens to lavender 800 on hover; lavender 200 is the subtle accent fill. Light-mode text is neutral (neutral 900), not lavender-tinted.
-- **Saffron** (`saffron`): Default's accent in dark mode, as **Saffron Glow** (saffron 500), so it reads on lavender night.
+- **Lavender** (`lavender`, lavender 800): Default's accent in light mode — links, primary buttons, the wordmark dot, year rules, testimonial marks and names. Deepens to **Lavender Deep** (lavender 900) on hover.
+- **Saffron Wash** (`saffron-wash`): Default's subtle accent fill in light mode (the Banner card).
+- **Saffron Glow** (`saffron-glow`, saffron 500): Default's accent in dark mode, lifting to **Saffron Light** on hover, so it reads on lavender night. **Lavender Dusk** (lavender 850) is the dark-mode subtle fill.
 
 ### Secondary
 
-- **Celadon** (`celadon`): Blueprint's accent, hover to **Celadon Deep**. Also drives the grid-backdrop lines (8% mix) and the surface glow (30%/28% mixes).
+- **Celadon** (`celadon`, celadon 700; **Celadon Bright**, celadon 600, in dark mode): Blueprint's accent. Also drives the grid-backdrop lines (8% mix) and the surface glow (30%/28% mixes).
 
 ### Tertiary
 
@@ -165,15 +176,15 @@ Colour comes from a named primitive palette of 13-step OKLCH ramps; semantic rol
 
 ### Neutral
 
-- **Lavender Ground** (`lavender-ground`): Default's page background.
-- **Lavender Ink** (`lavender-ink`): Default's body text and headings.
-- **Lavender Rule** / **Lavender Strong**: Default's borders and strong borders (also the focus-ring colour).
+- **Cream Ground** (`cream-ground`, saffron 100): Default's light page background — warm, not white.
+- **Ink** (`ink`, neutral 800): Default's light text. Text is neutral, not lavender-tinted.
+- **Ash** (`ash`): muted text. Subtle text is the text colour at 55% (a `color-mix`), so it stays in each world's own ink.
+- **Stone Rule** / **Stone Strong**: borders and strong borders (also the focus-ring colour), in every preset.
 - **Lavender Night** (`lavender-night`): Default's dark-mode background and surface.
-- **Paper** (`paper`): Blueprint and Opal background; text-on-colour in light mode.
+- **Paper** (`paper`): Blueprint and Opal light background; text-on-colour in light mode.
+- **Carbon** (`carbon`, neutral 950): Blueprint and Opal dark background.
 - **White** (`white`): Default's raised surface.
 - **Graphite** (`graphite`): Blueprint and Opal text.
-- **Ash** / **Ash Light**: muted and subtle text in every preset.
-- **Stone Rule** (`stone-rule`): Blueprint and Opal borders.
 
 ### Status
 
@@ -227,7 +238,7 @@ Roles are responsive composites exploded into per-property custom props (`--text
 
 Each preset owns its depth model; it is part of what makes a world.
 
-- **Default: flat.** No shadows, no blur. Surfaces separate from the lavender ground by being white with a lavender-rule border.
+- **Default: flat.** No shadows, no blur. Surfaces separate from the cream ground by being white with a stone-rule border.
 - **Blueprint: glow.** Surfaces have an accent border plus `0 0 0 1px` accent at 30% and an 18px accent glow at 28%. The grid backdrop sits behind everything.
 - **Opal: glass.** Translucent white surfaces (40%, 60% on hover) with `blur(30px) saturate(2)` and a white 60% border. Two shadows: a deep soft lift for panels (`0 22px 48px -24px rgba(12,18,40,0.6)` plus a 1px inset white highlight) and a tight one for buttons and thumbs (`0 4px 12px -4px` black 40% plus the highlight).
 
@@ -262,7 +273,7 @@ The feel is **springy and pokeable**: every interactive thing gives a small phys
 
 "claras.place" in the header: Fraunces 600 in the text colour (the `text.brand` role, size 500, stepping down on small phones), with the dot drawn as a circle in the world's accent colour, so the mark is the one part of the identity that changes with the theme (lavender in Default light, saffron in Default dark, celadon in Blueprint, ink in Opal). A visually hidden "." inside the mark keeps the name intact for screen readers and raw mode.
 
-The favicon is the dot alone, in Default's accents: `apps/site/public/favicon.svg` (lavender 800, saffron 500 when the browser is dark) and a 180px `apple-touch-icon.png` with the lavender dot on lavender 50. SVG favicons can't read tokens, so they carry hex conversions; keep them in step if Default's accent changes.
+The favicon is the dot alone, in Default's accents: `apps/site/public/favicon.svg` (lavender 800, saffron 500 when the browser is dark) and a 180px `apple-touch-icon.png` with the lavender dot on lavender 50 (the page ground is now cream, saffron 100; regenerate the touch icon if that matters). SVG favicons can't read tokens, so they carry hex conversions; keep them in step if Default's accent changes.
 
 ### Dialog
 
@@ -275,12 +286,12 @@ The favicon is the dot alone, in Default's accents: `apps/site/public/favicon.sv
 - Native radios in a `fieldset`, two columns at every width. Each radio is wrapped by its card's `label`, so the whole card is the control and arrow keys move the selection.
 - A card is a small page: background, border, corner radius and surface shadow all come from the tokens in scope on it. Title in the heading-3 face at heading-4 size (heading-5 in narrow cards), optional muted description. The native radio sits top-right, restyled as a ring in the strong border colour that fills with the scope's accent and springs in a dot when checked; in narrow cards it moves above the title.
 - Selection is a 2px ring in the **page's** strong border colour, captured on the group so it reads the same on every card. Focus pushes the ring out to 6px. Cards press to 0.97 on `:active`.
-- **Signature use, the theme picker:** each card carries its own `data-preset` and mirrors the page's `data-theme`, so it renders in its own world (ADR 0010): Default lavender with a saffron radio, Opal glass over a mini aurora, Blueprint on grid paper in celadon. The No CSS card wears browser defaults (Times, system colours, the native radio).
+- **Signature use, the theme picker:** each card carries its own `data-preset` and mirrors the page's `data-theme`, so it renders in its own world (ADR 0010): Default with a lavender radio, Opal glass over a mini aurora, Blueprint on grid paper in celadon. The No CSS card wears browser defaults (Times, system colours, the native radio).
 - **Raw mode:** a hidden separator turns each card into one readable radio line ("Default – Good for reading").
 
 ### Banner
 
-The page's closing call to action: an inset card within the content width, with a full-width display-2 title and the body below at prose measure. Corners come from each world's `surface-radius` and the treatment from `--banner-*` tokens: Default a saffron-wash card in light mode and deep violet (lavender 850) in dark, Blueprint a solid surface with an accent border and glow, Opal a thin frosted-glass pane (white 10% / 5%, hairline white border, inner top highlight, the surface backdrop blur) with no drop shadow. Links use `--banner-accent` (accent-hover on Default) so they keep contrast. First used for "Drop me a line" at the end of Work.
+The page's closing call to action: an inset card within the content width, with a full-width display-2 title and the body below at prose measure. Corners come from each world's `surface-radius` and the treatment from `--banner-*` tokens: each world's `accent-subtle` fill — Default a saffron-wash card in light mode and lavender dusk (lavender 850) in dark — with Blueprint a solid surface with an accent border and glow, and Opal a thin frosted-glass pane (white 10% / 5%, hairline white border, inner top highlight, the surface backdrop blur) with no drop shadow. Links inside are ordinary accent links. First used for "Drop me a line" at the end of Work.
 
 ### Notice
 

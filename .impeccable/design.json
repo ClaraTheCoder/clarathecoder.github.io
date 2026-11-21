@@ -1,13 +1,88 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-11-21T10:17:37+00:00",
+  "generatedAt": "2026-11-21T23:19:52+00:00",
   "title": "Design System: Clara's Site",
   "extensions": {
     "colorMeta": {
-      "lavender-ground": {
+      "cream-ground": {
         "role": "neutral",
-        "displayName": "Lavender Ground",
-        "canonical": "oklch(0.984 0.003 293)",
+        "displayName": "Cream Ground",
+        "canonical": "oklch(0.971 0.006 58)",
+        "tonalRamp": [
+          "oklch(0.242 0.02 58)",
+          "oklch(0.316 0.049 58)",
+          "oklch(0.44 0.088 58)",
+          "oklch(0.54 0.112 58)",
+          "oklch(0.714 0.14 58)",
+          "oklch(0.874 0.06 58)",
+          "oklch(0.954 0.0145 58)",
+          "oklch(0.994 0.001 58)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(0.32 0.0045 120)",
+        "tonalRamp": [
+          "oklch(0.195 0.003 120)",
+          "oklch(0.255 0.0035 120)",
+          "oklch(0.32 0.0045 120)",
+          "oklch(0.41 0.005 120)",
+          "oklch(0.605 0.0055 120)",
+          "oklch(0.833 0.0045 120)",
+          "oklch(0.939 0.003 120)",
+          "oklch(0.98 0 0 / 1)"
+        ]
+      },
+      "ash": {
+        "role": "neutral",
+        "displayName": "Ash",
+        "canonical": "oklch(0.41 0.005 120)",
+        "tonalRamp": [
+          "oklch(0.195 0.003 120)",
+          "oklch(0.255 0.0035 120)",
+          "oklch(0.32 0.0045 120)",
+          "oklch(0.41 0.005 120)",
+          "oklch(0.605 0.0055 120)",
+          "oklch(0.833 0.0045 120)",
+          "oklch(0.939 0.003 120)",
+          "oklch(0.98 0 0 / 1)"
+        ]
+      },
+      "stone-rule": {
+        "role": "neutral",
+        "displayName": "Stone Rule",
+        "canonical": "oklch(0.833 0.0045 120)",
+        "tonalRamp": [
+          "oklch(0.195 0.003 120)",
+          "oklch(0.255 0.0035 120)",
+          "oklch(0.32 0.0045 120)",
+          "oklch(0.41 0.005 120)",
+          "oklch(0.605 0.0055 120)",
+          "oklch(0.833 0.0045 120)",
+          "oklch(0.939 0.003 120)",
+          "oklch(0.98 0 0 / 1)"
+        ]
+      },
+      "stone-strong": {
+        "role": "neutral",
+        "displayName": "Stone Strong",
+        "canonical": "oklch(0.505 0.0055 120)",
+        "tonalRamp": [
+          "oklch(0.195 0.003 120)",
+          "oklch(0.255 0.0035 120)",
+          "oklch(0.32 0.0045 120)",
+          "oklch(0.41 0.005 120)",
+          "oklch(0.605 0.0055 120)",
+          "oklch(0.833 0.0045 120)",
+          "oklch(0.939 0.003 120)",
+          "oklch(0.98 0 0 / 1)"
+        ]
+      },
+      "lavender": {
+        "role": "primary",
+        "displayName": "Lavender",
+        "canonical": "oklch(0.44 0.213 293)",
         "tonalRamp": [
           "oklch(0.242 0.024 293)",
           "oklch(0.271 0.079 293)",
@@ -19,9 +94,9 @@
           "oklch(0.984 0.003 293)"
         ]
       },
-      "lavender-ink": {
-        "role": "neutral",
-        "displayName": "Lavender Ink",
+      "lavender-deep": {
+        "role": "primary",
+        "displayName": "Lavender Deep",
         "canonical": "oklch(0.271 0.079 293)",
         "tonalRamp": [
           "oklch(0.242 0.024 293)",
@@ -34,25 +109,10 @@
           "oklch(0.984 0.003 293)"
         ]
       },
-      "lavender-rule": {
-        "role": "neutral",
-        "displayName": "Lavender Rule",
-        "canonical": "oklch(0.874 0.047 293)",
-        "tonalRamp": [
-          "oklch(0.242 0.024 293)",
-          "oklch(0.271 0.079 293)",
-          "oklch(0.44 0.213 293)",
-          "oklch(0.54 0.256 293)",
-          "oklch(0.714 0.14 293)",
-          "oklch(0.874 0.047 293)",
-          "oklch(0.954 0.012 293)",
-          "oklch(0.984 0.003 293)"
-        ]
-      },
-      "lavender-strong": {
-        "role": "neutral",
-        "displayName": "Lavender Strong",
-        "canonical": "oklch(0.63 0.199 293)",
+      "lavender-dusk": {
+        "role": "primary",
+        "displayName": "Lavender Dusk",
+        "canonical": "oklch(0.378 0.166 293)",
         "tonalRamp": [
           "oklch(0.242 0.024 293)",
           "oklch(0.271 0.079 293)",
@@ -77,36 +137,6 @@
           "oklch(0.874 0.047 293)",
           "oklch(0.954 0.012 293)",
           "oklch(0.984 0.003 293)"
-        ]
-      },
-      "saffron": {
-        "role": "primary",
-        "displayName": "Saffron",
-        "canonical": "oklch(0.54 0.112 58)",
-        "tonalRamp": [
-          "oklch(0.242 0.02 58)",
-          "oklch(0.316 0.049 58)",
-          "oklch(0.44 0.088 58)",
-          "oklch(0.54 0.112 58)",
-          "oklch(0.714 0.14 58)",
-          "oklch(0.874 0.06 58)",
-          "oklch(0.954 0.0145 58)",
-          "oklch(0.994 0.001 58)"
-        ]
-      },
-      "saffron-deep": {
-        "role": "primary",
-        "displayName": "Saffron Deep",
-        "canonical": "oklch(0.44 0.088 58)",
-        "tonalRamp": [
-          "oklch(0.242 0.02 58)",
-          "oklch(0.316 0.049 58)",
-          "oklch(0.44 0.088 58)",
-          "oklch(0.54 0.112 58)",
-          "oklch(0.714 0.14 58)",
-          "oklch(0.874 0.06 58)",
-          "oklch(0.954 0.0145 58)",
-          "oklch(0.994 0.001 58)"
         ]
       },
       "saffron-wash": {
@@ -139,6 +169,21 @@
           "oklch(0.994 0.001 58)"
         ]
       },
+      "saffron-light": {
+        "role": "primary",
+        "displayName": "Saffron Light",
+        "canonical": "oklch(0.796 0.117 58)",
+        "tonalRamp": [
+          "oklch(0.242 0.02 58)",
+          "oklch(0.316 0.049 58)",
+          "oklch(0.44 0.088 58)",
+          "oklch(0.54 0.112 58)",
+          "oklch(0.714 0.14 58)",
+          "oklch(0.874 0.06 58)",
+          "oklch(0.954 0.0145 58)",
+          "oklch(0.994 0.001 58)"
+        ]
+      },
       "celadon": {
         "role": "secondary",
         "displayName": "Celadon",
@@ -154,10 +199,10 @@
           "oklch(0.994 0.0009 172)"
         ]
       },
-      "celadon-deep": {
+      "celadon-bright": {
         "role": "secondary",
-        "displayName": "Celadon Deep",
-        "canonical": "oklch(0.49 0.0755 172)",
+        "displayName": "Celadon Bright",
+        "canonical": "oklch(0.68 0.0945 172)",
         "tonalRamp": [
           "oklch(0.242 0.0144 172)",
           "oklch(0.316 0.0333 172)",
@@ -204,40 +249,10 @@
           "oklch(0.98 0 0 / 1)"
         ]
       },
-      "ash": {
+      "carbon": {
         "role": "neutral",
-        "displayName": "Ash",
-        "canonical": "oklch(0.41 0.005 120)",
-        "tonalRamp": [
-          "oklch(0.195 0.003 120)",
-          "oklch(0.255 0.0035 120)",
-          "oklch(0.32 0.0045 120)",
-          "oklch(0.41 0.005 120)",
-          "oklch(0.605 0.0055 120)",
-          "oklch(0.833 0.0045 120)",
-          "oklch(0.939 0.003 120)",
-          "oklch(0.98 0 0 / 1)"
-        ]
-      },
-      "ash-light": {
-        "role": "neutral",
-        "displayName": "Ash Light",
-        "canonical": "oklch(0.505 0.0055 120)",
-        "tonalRamp": [
-          "oklch(0.195 0.003 120)",
-          "oklch(0.255 0.0035 120)",
-          "oklch(0.32 0.0045 120)",
-          "oklch(0.41 0.005 120)",
-          "oklch(0.605 0.0055 120)",
-          "oklch(0.833 0.0045 120)",
-          "oklch(0.939 0.003 120)",
-          "oklch(0.98 0 0 / 1)"
-        ]
-      },
-      "stone-rule": {
-        "role": "neutral",
-        "displayName": "Stone Rule",
-        "canonical": "oklch(0.833 0.0045 120)",
+        "displayName": "Carbon",
+        "canonical": "oklch(0.195 0.003 120)",
         "tonalRamp": [
           "oklch(0.195 0.003 120)",
           "oklch(0.255 0.0035 120)",
@@ -491,9 +506,25 @@
     {
       "name": "Post Row",
       "kind": "custom",
-      "description": "Ruled writing-list row: uppercase muted date beside title and description.",
-      "html": "<article class=\"ds-post\"><time class=\"ds-post__meta\">2 Nov 2026</time><div><h3 class=\"ds-post__title\"><a href=\"#\">Post title</a></h3><p class=\"ds-post__desc\">One-line description.</p></div></article>",
-      "css": ".ds-post{display:grid;grid-template-columns:8rem 1fr;column-gap:var(--space-500);align-items:baseline;padding-block:var(--space-400);border-block:1px solid var(--color-border)}.ds-post__meta{color:var(--color-text-muted);font-family:var(--text-body-font-family);font-size:var(--font-size-100);letter-spacing:var(--font-tracking-wide);text-transform:uppercase}.ds-post__title{margin:0;font-family:var(--text-heading-4-font-family);font-size:var(--text-heading-4-font-size);font-weight:var(--text-heading-4-font-weight)}.ds-post__title a{color:var(--color-text);text-decoration:none}.ds-post__title a:hover{color:var(--color-accent)}.ds-post__desc{margin:0;font-family:var(--text-body-font-family);color:var(--color-text-muted)}"
+      "refersTo": "link-plain",
+      "description": "Year-grouped writing list: heading with an accent rule, spacious rows, ink titles that take the accent on hover, date and reading time on the right.",
+      "html": "<section class='ds-pl'><h2 class='ds-pl__y'>2026</h2><article class='ds-post'><div><h3 class='ds-post__t'><a href='#'>Post title balanced over two lines</a></h3><p class='ds-post__d'>One-line description.</p></div><p class='ds-post__m'>2 Nov · 8 min read</p></article></section>",
+      "css": ".ds-pl__y{display:flex;align-items:center;gap:var(--space-400);margin:0;font-family:var(--text-heading-3-font-family);font-size:var(--text-heading-3-font-size);font-weight:var(--text-heading-3-font-weight);text-transform:var(--text-heading-3-text-transform)}.ds-pl__y::after{content:'';flex:1;border-top:var(--space-50) solid var(--color-accent)}.ds-post{position:relative;display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:var(--space-700);padding-block:var(--space-600)}.ds-post__t{margin:0 0 var(--space-300);font-family:var(--text-heading-4-font-family);font-size:var(--text-heading-4-font-size);font-weight:var(--text-heading-4-font-weight);text-wrap:balance}.ds-post__t a{color:inherit;text-decoration:none}.ds-post__t a::after{content:'';position:absolute;inset:0}.ds-post:hover .ds-post__t a{color:var(--link-plain-hover-color);text-decoration-line:var(--link-plain-hover-decoration)}.ds-post__d{margin:0;color:var(--color-text-muted)}.ds-post__m{margin:0;font-size:var(--font-size-100);color:var(--color-text-subtle)}"
+    },
+    {
+      "name": "Banner",
+      "kind": "card",
+      "refersTo": "banner",
+      "description": "The page's closing call to action: an inset card in the world's subtle accent fill.",
+      "html": "<section class='ds-banner'><h2 class='ds-banner__t'>Drop me a line</h2><p class='ds-banner__b'>Get in touch anyway. <a href='#'>Send me an email</a>.</p></section>",
+      "css": ".ds-banner{display:flex;flex-direction:column;gap:var(--space-500);padding:var(--space-800);background:var(--banner-bg);border:var(--surface-border-width) solid var(--banner-border-color);border-radius:var(--surface-radius);box-shadow:var(--banner-shadow);backdrop-filter:var(--banner-backdrop)}.ds-banner__t{margin:0;font-family:var(--text-display-2-font-family);font-size:var(--text-display-2-font-size);font-weight:var(--text-display-2-font-weight);text-transform:var(--text-display-2-text-transform)}.ds-banner__b{margin:0;font-size:var(--text-lead-font-size)}.ds-banner__b a{color:var(--color-accent)}"
+    },
+    {
+      "name": "Testimonial",
+      "kind": "custom",
+      "description": "Quote with highlighted phrases, oversized accent marks, accent name and two-line role.",
+      "html": "<figure class='ds-t'><blockquote class='ds-t__q'><span class='ds-t__m'>“</span><p>Clara has felt <strong>integral to the team</strong> from day one.</p></blockquote><figcaption class='ds-t__c'><span><span class='ds-t__n'>Name Surname</span><span class='ds-t__r'>Role, Company</span></span><span class='ds-t__m'>”</span></figcaption></figure>",
+      "css": ".ds-t{margin:0;display:flex;flex-direction:column;gap:var(--space-500)}.ds-t__q{margin:0;font-family:var(--text-heading-3-font-family);font-size:var(--font-size-600);font-weight:var(--text-heading-3-font-weight);color:var(--color-text-subtle)}.ds-t__q p{margin:0}.ds-t__q strong{font-weight:inherit;color:var(--color-text)}.ds-t__m{display:block;font-family:var(--text-display-1-font-family);font-size:calc(var(--font-size-1000)*2);line-height:1;height:.5em;color:var(--color-accent)}.ds-t__c{display:flex;justify-content:space-between;align-items:flex-start}.ds-t__c>span:first-child{display:flex;flex-direction:column;gap:var(--space-200)}.ds-t__n{font-family:var(--text-heading-3-font-family);font-size:var(--text-heading-4-font-size);font-weight:var(--text-heading-3-font-weight);color:var(--color-accent)}.ds-t__r{color:var(--color-text-subtle)}"
     }
   ],
   "narrative": {
@@ -507,6 +538,11 @@
       "Native HTML interactive components that work without JavaScript."
     ],
     "rules": [
+      {
+        "name": "The Reading Default Rule",
+        "body": "Default is the landing look and the look for reading: someone arriving on an article should be able to just read. Default can become more distinctive, but never by adding distraction. No backdrop, ambient motion or decoration competes with the text; showier ideas belong in Opal or Blueprint.",
+        "section": "overview"
+      },
       {
         "name": "The Kanto Rule",
         "body": "Every primitive hue is named after a Kanto town from Pokémon — Lavender, Saffron, Celadon, Cerulean, Viridian, Vermilion, Fuchsia. A new hue gets a new Kanto town name, never a generic `blue`/`green`.",
@@ -524,7 +560,7 @@
       },
       {
         "name": "The Shared Scale Rule",
-        "body": "Presets change *how* type looks, never *how big* it is. Size steps are global so layout is identical across worlds.",
+        "body": "Presets change _how_ type looks, never _how big_ it is. Size steps are global so layout is identical across worlds.",
         "section": "typography"
       },
       {
@@ -536,11 +572,6 @@
         "name": "The Depth-Is-Preset Rule",
         "body": "Never add a shadow or blur in component CSS. Components read `--color-surface-shadow`, `--color-surface-shadow-tight` and `--color-surface-backdrop`; the preset decides whether those are `none`, glow or glass.",
         "section": "elevation"
-      },
-      {
-        "name": "The Reading Default Rule",
-        "body": "Default is the landing look and the look for reading: someone arriving on an article should be able to just read. Default can become more distinctive, but never by adding distraction. No backdrop, ambient motion or decoration competes with the text; showier ideas belong in other themes.",
-        "section": "overview"
       }
     ],
     "dos": [
@@ -556,7 +587,7 @@
       "Don't add backdrops, ambient motion or decoration to Default.",
       "Don't drift into the generic SaaS/template look: centred hero, three feature cards, gradient call-to-action.",
       "Don't hard-code a shadow, blur or radius in a component; that breaks the Depth-Is-Preset Rule.",
-      "Don't change type *sizes* per preset; only families, weights, tracking and case.",
+      "Don't change type _sizes_ per preset; only families, weights, tracking and case.",
       "Don't reference a primitive ramp step from a component (`--color-saffron-700`); use the semantic role.",
       "Don't add a preset token the default theme doesn't define; the build rejects it."
     ]
