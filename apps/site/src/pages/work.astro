@@ -1,18 +1,32 @@
 ---
 import Base from '../layouts/Base.astro';
-import { Banner, Hero, Text, Link, Video, Testimonial, Grid, Box, Flex } from '@clara/design-system';
-import showreel1080 from '../assets/showreel/showreel-2026-10-1080.mp4';
-import showreel720 from '../assets/showreel/showreel-2026-10-720.mp4';
-import showreelPoster from '../assets/showreel/showreel-2026-10-poster.webp';
-import showreelCaptions from '../assets/showreel/showreel-2026-10.en.vtt?no-inline';
-import { Content as ShowreelTranscript } from '../assets/showreel/showreel-2026-10-transcript.md';
+import { Hero, Text, Link, Testimonial, PostList, Post, RuledHeading, Disclosure, DisclosureList, Grid, Box, Flex } from '@clara/design-system';
 import unOchaLogo from '../assets/logos/un-ocha.svg?raw';
 import adidasLogo from '../assets/logos/adidas.svg?raw';
 import aggrekoLogo from '../assets/logos/aggreko.svg?raw';
 import macmillanLogo from '../assets/logos/macmillan.svg?raw';
 import butlinsLogo from '../assets/logos/butlins.svg?raw';
 import dfdsLogo from '../assets/logos/dfds.svg?raw';
+import NeoVideo from '../components/NeoVideo.astro';
 import { SITE } from '../data/site';
+import { POSTS } from '../data/posts';
+
+const caseStudies = ['neo-foundations', 'neo-for-agents'].map((slug) => POSTS.find((post) => post.slug === slug)!);
+
+const principles = [
+  {
+    title: 'Nothing is “not my problem.”',
+    body: 'I’m an engineer, but I care about the design as much as the designers do, and about business goals as much as the product owner. I’m a systems thinker, and it makes me pretty good at translating between the business, design and code, and at remembering that people and processes are part of a software system too.',
+  },
+  {
+    title: 'I care about helping people.',
+    body: 'I try to make the right thing the easy thing rather than being the Design System Police. I love to delight designers with journeys that look exactly how they drew it, create tools that turn a week of boring work into an afternoon, and give users what they need so they can get on with living life (and maybe spending a little less time online).',
+  },
+  {
+    title: 'I love working with talented, thoughtful people.',
+    body: 'It’s the best part of the job.',
+  },
+];
 
 const waysToWork = [
   {
@@ -25,15 +39,14 @@ const waysToWork = [
   },
   {
     title: 'An extra pair of hands',
-    body: 'Sometimes you just need another experienced engineer. I’ll slot in as a tech lead or senior engineer and ship product with you, and I’ll happily take on the legacy code nobody else wants to touch, fixing it up rather than starting again.',
+    body: 'Sometimes you just need another experienced engineer. I’ll slot in as a tech lead or senior engineer and ship product with you. I’ll happily take on the legacy code nobody else wants to touch, fixing it up rather than starting again.',
   },
   {
     title: 'Talks, workshops and writing',
-    body: 'I love talking about design systems, AI and the space where design meets engineering. If your team, meetup or conference would like a talk or a hands-on workshop on any of that, I’d be delighted to hear from you.',
+    body: 'I love talking about design systems, AI and the space where design meets engineering. If your team, meetup or conference would like a talk or a hands-on workshop on any of that, get in touch.',
   },
 ];
 
-// Logos are single-colour SVGs inlined with fill="currentColor", so they take the theme's text colour.
 const clients = [
   { name: 'UN OCHA', logo: unOchaLogo },
   { name: 'Adidas', logo: adidasLogo },
@@ -43,13 +56,11 @@ const clients = [
   { name: 'DFDS', logo: dfdsLogo },
 ];
 
-// Pass each logo's aspect ratio to CSS, which sizes wide logos down and tall ones up so they carry equal visual weight.
 const labelLogo = (svg: string, name: string) => {
   const [, , width, height] = svg.match(/viewBox="([^"]+)"/)![1].split(/\s+/).map(Number);
   const ratio = (width / height).toFixed(2);
   return svg.replace('<svg ', `<svg class="logo-wall__logo" role="img" aria-label="${name}" style="--logo-ratio: ${ratio}" `);
 };
-
 ---
 
 <Base title="Work">
@@ -60,90 +71,51 @@ const labelLogo = (svg: string, name: string) => {
       </Text>
     </Hero>
 
-    <Grid
-      as="section"
-      aria-labelledby="how-i-work"
-      columns={{ initial: 1, lg: 12 }}
-      gap="var(--grid-gutter)"
-      align={{ md: 'center' }}
-    >
-      <Box pr={{ lg: '700' }} mb={{initial: '900', lg:'0'}} gridColumn={{ lg: '1 / 7' }} gridRow={{ md: '1' }}>
-        <Testimonial name="Ashton Snook" role="Head of Design & Research" company="Vodafone Group">
-          Despite working remotely, Clara has felt <strong>integral to the team from day one</strong>, bringing
-          candour, positivity and <strong>genuine collaboration</strong> across design and engineering.
-        </Testimonial>
+    <Flex as="section" aria-labelledby="how-i-work" direction="column" gap="600">
+      <RuledHeading id="how-i-work">How I work</RuledHeading>
+      <Text variant="lead" className="how-i-work__intro">
+        I’ve been a tech lead, a design system engineer and a product engineer. I started out in agencies, building everything from sites for small local businesses to campaigns for global brands, and more recently I’ve been embedded with product teams. Before any of that I studied architecture, and it left me with a lasting love of good design. Through all of it, a few things have held true:
+      </Text>
+      <DisclosureList>
+        {
+          principles.map((principle) => (
+            <Disclosure title={principle.title}>
+              <Text>{principle.body}</Text>
+            </Disclosure>
+          ))
+        }
+      </DisclosureList>
+    </Flex>
+
+    <Grid as="section" aria-labelledby="case-study-title" columns={{ initial: 1, lg: 12 }} gapX="var(--grid-gutter)" gapY="500">
+      <Box className="work-rail" gridColumn={{ lg: '1 / 5' }}>
+        <Text variant="heading-2" as="h2" id="case-study-title">Case study: Vodafone’s first AI-native design system</Text>
       </Box>
-      <Flex direction="column" gap="500" gridColumn={{ lg: '7 / -1' }} gridRow={{ lg: '1' }}>
-        <Text variant="heading-1" as="h2" id="how-i-work">How I work</Text>
+      <Flex direction="column" gap="700" gridColumn={{ lg: '5 / -1' }}>
+        <NeoVideo video="showreel" />
         <Text as="div" className="prose">
           <p>
-            I’ve been a tech lead, a design system engineer and a product engineer. I started out in agencies, building everything from sites for small local businesses to campaigns for global brands, and more recently I’ve been embedded with product teams. Before any of that I studied architecture, and it left me with a lasting love of good design. Through all of it, a few things have held true.
-          </p>
-          <p>
-            First, <strong>nothing is “not my problem.”</strong> I’m an engineer, but I care about the design as much as the designers do, and about business goals as much as the product owner. I’m a systems thinker, and it makes me pretty good at translating between the business, design and code, and at remembering that people and processes are part of a software system too.
-          </p>
-          <p>
-            <strong>My favourite work helps others to be brilliant at whatever they do.</strong> I try to make the right thing the easy thing rather than being the Design System Police. I love to delight designers with journeys that look exactly how they drew it, create tools that turn a week of boring work into an afternoon, and give users what they need so they can get on with living life (and maybe spending a little less time online).
-          </p>
-          <p>
-            Finally, and most importantly, <strong>I love working with talented, thoughtful people.</strong> It’s the best part of the job.
+            Neo is Vodafone’s new global design system, used by teams across the company on web and React Native. In 2026, I joined a small team of designers to architect the foundations, build the core components, and make it a system that coding agents can use to build a working, on-brand page with a single prompt. I’ve written it up in two parts:
           </p>
         </Text>
+        <PostList>
+          {
+            caseStudies.map((post) => (
+              <Post meta={`${post.readingTime} min read`} title={post.title} href={`/writing/${post.slug}`} description={post.description} />
+            ))
+          }
+        </PostList>
       </Flex>
     </Grid>
 
-    <Grid
-      as="section"
-      aria-labelledby="case-study-title"
-      columns={{ initial: 1, md: 12 }}
-      gapX="var(--grid-gutter)"
-      gapY="600"
-    >
-      <Box gridColumn={{ md: '3 / -1' }}>
-        <Video
-          poster={showreelPoster.src}
-          aria-label="Showreel: Vodafone Neo"
-          track={{ src: showreelCaptions, srcLang: 'en', label: 'English' }}
-        >
-          <source
-            src={showreel1080}
-            type='video/mp4; codecs="avc1.640029, mp4a.40.2"'
-            media="(min-width: 52rem)"
-          />
-          <source src={showreel720} type='video/mp4; codecs="avc1.640029, mp4a.40.2"' />
-          <Fragment slot="transcript"><ShowreelTranscript /></Fragment>
-        </Video>
-      </Box>
-      <Flex direction="column" gap="500" gridColumn={{ md: '3 / -1', lg: '3 / 10' }}>
-        <Text variant="heading-1" as="h2" id="case-study-title">Case study: Vodafone’s first AI-native design system</Text>
-        <Text as="div" className="prose">
-          <p>
-            Neo is Vodafone’s new global design system, used by teams across the company. I joined a small team of designers to build it from scratch, and set the engineering foundations everything else relies on: React Aria as an accessible base layer, token architecture for white-labelling across sub-brands, the forms and interaction patterns, metadata for AI legibility, and the testing strategy.
-          </p>
-          <p>
-            Every decision was written down as an Architectural Decision Record, so engineers who joined later could pick up the system and build on it with very little onboarding, and the architecture held as the library grew past a hundred components across web and React Native.
-          </p>
-          <p>
-            Neo is built to be read by machines, too. Each component’s contract is generated from its types and feeds both the Storybook docs and the metadata agents read, so the two can’t drift apart. On top of that sit Figma Code Connect, a Figma Make kit, an index of when to use each component (and when not to), and a guide to migrating off the old system.
-          </p>
-          <p>
-            Together they let a product engineer, or a designer with an AI tool, build a working, on-brand page from a single prompt. To check it really worked, I built a tool that gets several models to build the same page and tracks how long each one takes and how many tokens it uses. Whenever one got stuck, I fixed the system so the next one wouldn’t.
-          </p>
-        </Text>
-      </Flex>
-    </Grid>
+    <Testimonial name="Ashton Snook" role="Head of Design & Research" company="Vodafone Group" wide>
+      Despite working remotely, Clara has felt <strong>integral to the team from day one</strong>, bringing
+      candour, positivity and <strong>genuine collaboration</strong> across design and engineering.
+    </Testimonial>
 
-    <Grid
-      as="section"
-      aria-labelledby="clients"
-      columns={{ initial: 1, md: 12 }}
-      gapX="var(--grid-gutter)"
-      gapY="600"
-    >
-      <Box gridColumn={{ md: '1 / -1' }}>
-        <Text variant="heading-1" as="h2" id="clients">Others I’ve worked with</Text>
-      </Box>
-      <Grid as="ul" className="logo-wall" columns={{ initial: 2, sm: 3, lg: 6 }} gap="var(--grid-gutter)" gridColumn={{ md: '1 / -1' }}>
+    <Flex as="section" aria-labelledby="clients" direction="column" gap="900">
+      <RuledHeading id="clients">Others I’ve worked with</RuledHeading>
+      <Grid as="ul" className="logo-wall" columns={{ initial: 2, sm: 3, lg: 6 }} gap="var(--grid-gutter)">
         {
           clients.map(({ name, logo }) => (
             <li class="logo-wall__item">
@@ -152,37 +124,34 @@ const labelLogo = (svg: string, name: string) => {
           ))
         }
       </Grid>
-    </Grid>
+    </Flex>
 
-    <Grid
-      as="section"
-      aria-labelledby="ways-to-work"
-      columns={{ initial: 1, xl: 12 }}
-      gapX="var(--grid-gutter)"
-      gapY="600"
-    >
-      <Box gridColumn={{ xl: '1 / 4' }}>
-        <Text variant="heading-1" as="h2" id="ways-to-work">What I do</Text>
-      </Box>
-      <Grid columns={{ initial: 1, sm: 2, xl: 2 }} gap="var(--grid-gutter)" gridColumn={{ xl: '4 / -1' }}>
+    <Flex as="section" aria-labelledby="ways-to-work" direction="column" gap="600">
+      <RuledHeading id="ways-to-work">What I do</RuledHeading>
+      <Grid as="ul" className="work-cards" columns={{ initial: 1, sm: 2, lg: 4 }} gap="var(--grid-gutter)">
         {
           waysToWork.map((item) => (
-            <Flex direction="column" gap="200">
-              <Text variant="heading-5" as="h3" className="way__title">{item.title}</Text>
+            <Flex as="li" direction="column" gap="300">
+              <Text variant="heading-5" as="h3">{item.title}</Text>
               <Text color="muted">{item.body}</Text>
             </Flex>
           ))
         }
       </Grid>
-    </Grid>
+    </Flex>
 
-    <Banner title="Drop me a line">
-      <Text variant="lead">
-        If what you need doesn’t fit neatly into any of those, <Link href={`mailto:${SITE.email}`}>send me an email</Link> anyway, and tell me what you’re working on.
-      </Text>
-      <Text variant="lead">
-        I’m based in South Yorkshire and mostly work remotely, with the occasional day in Sheffield, Leeds, Manchester or London.
-      </Text>
-    </Banner>
+    <Grid as="section" aria-labelledby="contact" columns={{ initial: 1, lg: 12 }} gapX="var(--grid-gutter)" gapY="500">
+      <Box gridColumn={{ lg: '1 / 7' }}>
+        <Text variant="display-2" as="h2" id="contact">Drop me a line</Text>
+      </Box>
+      <Flex direction="column" gap="400" gridColumn={{ lg: '7 / -1' }}>
+        <Text variant="lead">
+          If what you need doesn’t fit neatly into any of those, <Link href={`mailto:${SITE.email}`}>send me an email</Link> anyway, and tell me what you’re working on.
+        </Text>
+        <Text variant="lead">
+          I’m based in South Yorkshire and mostly work remotely, with the occasional day in Sheffield, Leeds, Manchester or London.
+        </Text>
+      </Flex>
+    </Grid>
   </div>
 </Base>
