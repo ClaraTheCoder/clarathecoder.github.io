@@ -1,0 +1,52 @@
+@layer reset, base, components, utilities;
+
+@layer components {
+  .disclosure-list {
+    border-block-end: var(--surface-border-width) solid var(--color-border);
+  }
+
+  .disclosure {
+    border-block-start: var(--surface-border-width) solid var(--color-border);
+  }
+
+  .disclosure__summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-500);
+    padding-block: var(--space-600);
+    list-style: none;
+    cursor: pointer;
+  }
+
+  .disclosure__summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .disclosure__summary:focus-visible {
+    outline: var(--focus-ring-width) solid var(--color-border-strong);
+    outline-offset: var(--focus-ring-offset);
+  }
+
+  .disclosure__title {
+    transition: color var(--duration-fast) var(--ease-standard);
+  }
+
+  .disclosure__summary:hover .disclosure__title {
+    color: var(--color-accent);
+  }
+
+  .disclosure__icon {
+    color: var(--color-accent);
+    transition: rotate var(--duration-fast) var(--ease-standard);
+  }
+
+  .disclosure[open] .disclosure__icon {
+    rotate: 45deg;
+  }
+
+  .disclosure__body {
+    max-inline-size: var(--size-container-prose);
+    padding-block-end: var(--space-600);
+  }
+}
