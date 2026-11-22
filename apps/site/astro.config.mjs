@@ -16,7 +16,7 @@ const devOnlyWriting = {
 };
 
 export default defineConfig({
-  site: 'https://czmj.github.io',
+  site: 'https://clarathecoder.github.io',
   output: 'static',
   integrations: [react(), mdx(), devOnlyWriting],
 });
