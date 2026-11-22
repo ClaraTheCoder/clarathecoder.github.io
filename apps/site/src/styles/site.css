@@ -121,7 +121,8 @@
     }
   }
 
-  .how-i-work__intro {
+  .how-i-work__intro,
+  .contact__body {
     max-inline-size: var(--size-container-prose);
   }
 

@@ -152,7 +152,7 @@ const labelLogo = (svg: string, name: string) => {
       <Box gridColumn={{ lg: '1 / 7' }}>
         <Text variant="display-2" as="h2" id="contact">Drop me a line</Text>
       </Box>
-      <Flex direction="column" gap="400" gridColumn={{ lg: '7 / -1' }}>
+      <Flex className="contact__body" direction="column" gap="400" gridColumn={{ lg: '7 / -1' }}>
         <Text variant="lead">
           If what you need doesn’t fit neatly into any of those, <Link href={`mailto:${SITE.email}`}>send me an email</Link> anyway, and tell me what you’re working on.
         </Text>

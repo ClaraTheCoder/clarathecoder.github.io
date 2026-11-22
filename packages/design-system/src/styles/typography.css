@@ -82,6 +82,21 @@
     text-transform: var(--text-heading-6-text-transform);
   }
 
+  :where(h1, h2, h3, h4, h5, h6) {
+    text-wrap: balance;
+  }
+  :where(p, li, dd, figcaption, blockquote) {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background: var(--color-accent-subtle);
+    color: var(--color-text);
+  }
+  :where(input, textarea, [contenteditable]) {
+    caret-color: var(--color-accent);
+  }
+
   :where(small) {
     font-size: var(--text-caption-font-size);
     line-height: var(--text-caption-line-height);
