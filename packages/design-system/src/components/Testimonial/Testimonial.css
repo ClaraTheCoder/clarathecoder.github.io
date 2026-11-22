@@ -79,4 +79,47 @@
   .testimonial__role > span {
     display: block;
   }
+
+  @media (min-width: 1280px) {
+    .testimonial--wide {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      column-gap: var(--grid-gutter);
+    }
+
+    .testimonial--wide .testimonial__quote,
+    .testimonial--wide .testimonial__cite {
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-column: 1 / -1;
+      column-gap: normal;
+    }
+
+    .testimonial--wide .testimonial__quote {
+      font-family: var(--text-heading-1-font-family);
+      font-size: var(--text-heading-1-font-size);
+      font-weight: var(--text-heading-1-font-weight);
+      line-height: var(--text-heading-1-line-height);
+      letter-spacing: var(--text-heading-1-letter-spacing);
+    }
+
+    .testimonial--wide .testimonial__mark--open {
+      grid-column: 1 / 2;
+    }
+
+    .testimonial--wide .testimonial__quote p {
+      grid-row: 2;
+      grid-column: 2 / -2;
+    }
+
+    .testimonial--wide .testimonial__who {
+      grid-column: 2 / -2;
+    }
+
+    .testimonial--wide .testimonial__mark--close {
+      grid-column: -2 / -1;
+      justify-self: end;
+      align-self: end;
+    }
+  }
 }

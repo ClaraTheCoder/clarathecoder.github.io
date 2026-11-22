@@ -26,3 +26,8 @@ export const Default = meta.story({
     </Box>
   ),
 });
+
+export const Wide = meta.story({
+  args: { wide: true },
+  parameters: { fullWidth: true },
+});

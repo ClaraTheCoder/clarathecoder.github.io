@@ -9,11 +9,12 @@ export interface TestimonialProps {
   role: string;
   /** Shown on its own line under the role. */
   company?: string;
+  wide?: boolean;
   className?: string;
 }
 
-export const Testimonial = ({ children, name, role, company, className }: TestimonialProps) => (
-  <figure className={cx('testimonial', className)}>
+export const Testimonial = ({ children, name, role, company, wide, className }: TestimonialProps) => (
+  <figure className={cx('testimonial', wide && 'testimonial--wide', className)}>
     <blockquote className="testimonial__quote">
       <span className="testimonial__mark testimonial__mark--open" aria-hidden="true">
         “
