@@ -1,0 +1,16 @@
+@layer reset, base, components, utilities;
+
+@layer components {
+  .ruled-heading {
+    display: flex;
+    align-items: center;
+    gap: var(--space-400);
+    margin: 0;
+  }
+
+  .ruled-heading::after {
+    content: '';
+    flex: 1;
+    border-block-start: var(--space-50) solid var(--color-accent);
+  }
+}

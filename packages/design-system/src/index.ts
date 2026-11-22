@@ -9,6 +9,7 @@ export * from './components/Link';
 export * from './components/Notice';
 export * from './components/Post';
 export * from './components/RadioCards';
+export * from './components/RuledHeading';
 export * from './components/SiteFooter';
 export * from './components/SiteHeader';
 export * from './components/Testimonial';

@@ -4,6 +4,7 @@ import { cx } from '../../utils/cx.js';
 import { Flex } from '../Layout';
 import { Text } from '../Text';
 import { Link } from '../Link';
+import { RuledHeading } from '../RuledHeading';
 
 export type PostListProps = HTMLAttributes<HTMLElement> & {
   /** Heading for the group, e.g. a year or "Recent writing". */
@@ -21,9 +22,7 @@ export const PostList = ({ title, className, children, ...props }: PostListProps
   }
   return (
     <section className={cx('post-list', className)} aria-labelledby={titleId} {...props}>
-      <h2 id={titleId} className="post-list__title">
-        {title}
-      </h2>
+      <RuledHeading id={titleId}>{title}</RuledHeading>
       {children}
     </section>
   );
