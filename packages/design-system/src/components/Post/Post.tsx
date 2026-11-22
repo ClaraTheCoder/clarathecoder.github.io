@@ -30,7 +30,7 @@ export const PostList = ({ title, className, children, ...props }: PostListProps
 };
 
 export interface PostProps {
-  /** Pre-formatted date and reading time, shown on the right. */
+  /** Pre-formatted date and reading time, shown below the description. */
   meta: string;
   title: string;
   /** Destination for the title link. */
@@ -48,7 +48,7 @@ export const Post = ({ meta, title, href, description, className }: PostProps) =
         </Link>
       </Text>
       <p className="post__desc">{description}</p>
+      <p className="post__meta">{meta}</p>
     </Flex>
-    <p className="post__meta">{meta}</p>
   </article>
 );

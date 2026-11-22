@@ -72,17 +72,4 @@
     color: var(--color-text-subtle);
   }
 
-  @media (min-width: 768px) {
-    .post {
-      grid-template-columns: minmax(0, 1fr) auto;
-      column-gap: var(--space-700);
-      align-items: start;
-    }
-
-    .post__meta {
-      padding-block-start: var(--space-100);
-      text-align: end;
-      white-space: nowrap;
-    }
-  }
 }
