@@ -11,7 +11,7 @@
   @media (min-width: 1280px) {
     .page-hero {
       max-inline-size: calc(
-        100% * 7 / 12 - var(--grid-gutter, clamp(var(--space-400), 5vw, var(--space-900))) / 2.5
+        100% - var(--grid-gutter, clamp(var(--space-400), 5vw, var(--space-900))) / 2.5
       );
     }
   }
