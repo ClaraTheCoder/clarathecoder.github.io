@@ -16,11 +16,11 @@ const caseStudies = ['neo-foundations', 'neo-for-agents'].map((slug) => POSTS.fi
 const principles = [
   {
     title: 'Nothing is “not my problem.”',
-    body: 'I’m nosy about everything: the design, the business, the people who’ll actually use the thing. So I ask “but why?” more than is strictly polite, until the real problem falls out. I’d rather solve that than just close the ticket. It makes me pretty good at translating between business, design and code, and at remembering that people and processes are part of a software system too.',
+    body: 'I’m curious about everything: the design, the business, the people who’ll actually use the thing. So I ask “but why?” more than is strictly polite, until the real problem falls out. I’d rather solve that than just close the ticket. It makes me pretty good at translating between business, design and code, and at remembering that people and processes are part of a software system too.',
   },
   {
-    title: 'I judge the work by what it does for people.',
-    body: 'I like tidy code as much as the next engineer, but I care more about helping people than building the perfect abstraction. My favourite days at work are when I delight designers with journeys that look exactly how they drew them, create tools that turn a week of boring work into an afternoon, and give users what they need so they can get on with living life (and maybe spend a little less time online). I’d rather make a system people want to use than be the Design System Police.',
+    title: 'I judge my work by what it does for people.',
+    body: 'I like tidy code as much as the next engineer, but I care more about helping people than building the perfect abstraction. My favourite days at work are when I delight designers with journeys that look exactly how they drew them, create tools that turn a month of boring work into an afternoon, and give users what they need so they can get on with living life (and maybe spend a little less time online). I’d rather make a system that people want to use than be the Design System Police.',
   },
   {
     title: 'I do good work in good company.',
@@ -31,11 +31,11 @@ const principles = [
 const waysToWork = [
   {
     title: 'Lay the foundations',
-    body: 'Starting a design system, or giving a wobbly one a proper base? I’ll make the engineering decisions everything else sits on (tokens, accessible primitives, testing, docs) and write them all down, so your team can carry on long after I’ve gone.',
+    body: 'Get started on a new design system, or give a wobbly one a proper base. I’ll make the engineering decisions and build the foundation, and document everything so your team can keep building on it long after I’ve left.',
   },
   {
     title: 'Get your team AI-ready',
-    body: 'I’ll make your design system and tooling legible to agents, so they reach for the right component instead of inventing their own. Then I’ll test it against real models, so your team ships on-brand pages faster and burns fewer tokens doing it.',
+    body: 'I’ll make your design system legible to agents, so they reach for the right component instead of inventing their own. Then I’ll test it against real models, so your team ships on-brand pages faster and burns fewer tokens doing it.',
   },
   {
     title: 'An extra pair of hands',
@@ -67,14 +67,14 @@ const labelLogo = (svg: string, name: string) => {
   <div class="page page--roomy">
     <Hero title="Let’s work together">
       <Text variant="lead">
-        I’m a creative engineer who’s spent more than 12 years turning business requirements and design into working software. I usually work on a contract basis, and short projects of three to six months suit me nicely, but I’m open to longer engagements or a permanent role if the right one comes along. Read on, or <Link href={`mailto:${SITE.email}`}>drop me an email</Link> if you’ve got something in mind.
+        I’m a creative engineer who’s spent 12 years turning business requirements and design into working software. I usually work on a contract basis, and short projects of three to six months suit me nicely, but I’m open to longer engagements or a permanent role if the right one comes along. Read on, or <Link href={`mailto:${SITE.email}`}>drop me an email</Link> if you’ve got something in mind.
       </Text>
     </Hero>
 
     <Flex as="section" aria-labelledby="how-i-work" direction="column" gap="600">
       <RuledHeading id="how-i-work">How I work</RuledHeading>
       <Text variant="lead" className="how-i-work__intro">
-        I’ve been a tech lead, a design system engineer and a product engineer. I started out in agencies, building everything from sites for small local businesses to campaigns for global brands, and more recently I’ve been embedded with product teams. Before any of that I studied architecture, and it left me with a lasting love of good design. Through all of it, a few things have held true:
+        I’ve been a tech lead, a design system engineer and a product engineer. I started out in agencies, building everything from sites for small local businesses to campaigns for global brands, and more recently I’ve been embedded with product teams. Before any of that I studied architecture, and it left me with a lasting love of good design. Through everything, a few things have held true:
       </Text>
       <DisclosureList>
         {
@@ -95,7 +95,7 @@ const labelLogo = (svg: string, name: string) => {
         <NeoVideo video="showreel" />
         <Text as="div" className="prose">
           <p>
-            Neo is Vodafone’s new global design system, used by teams across the company on web and React Native. In 2026, I joined a small team of designers to architect the foundations, build the core components, and make it a system that coding agents can use to build a working, on-brand page with a single prompt. I’ve written it up in two parts:
+            Neo is Vodafone’s new global design system, used by teams across the company on web and React Native. In 2026, I joined a small team of designers to architect the foundations, build the core components, and make it a system that coding agents can use to build a working, on-brand page with a single prompt.
           </p>
         </Text>
         <PostList>
