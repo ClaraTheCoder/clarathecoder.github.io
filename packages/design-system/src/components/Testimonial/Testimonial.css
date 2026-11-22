@@ -97,6 +97,11 @@
 
   testimonial-words[data-split] > .testimonial__words {
     display: inline;
+    white-space: nowrap;
+  }
+
+  .testimonial__space {
+    white-space: normal;
   }
 
   .testimonial__word {

@@ -36,7 +36,12 @@ if (typeof customElements !== 'undefined' && !customElements.get('testimonial-wo
           const parts = text.data.split(/(\s+)/).filter(Boolean);
           text.replaceWith(
             ...parts.map((part) => {
-              if (/^\s+$/.test(part)) return part;
+              if (/^\s+$/.test(part)) {
+                const space = document.createElement('span');
+                space.className = 'testimonial__space';
+                space.textContent = part;
+                return space;
+              }
               const word = document.createElement('span');
               word.className = 'testimonial__word';
               word.style.setProperty('--testimonial-word', String(index++));
