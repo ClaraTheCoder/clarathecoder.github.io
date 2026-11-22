@@ -11,7 +11,7 @@
       "600": { "$value": "clamp(1.8125rem, 1.625rem + 0.9375vw, 2.375rem)" },
       "700": { "$value": "clamp(2.125rem, 1.8333rem + 1.4583vw, 3rem)" },
       "800": { "$value": "clamp(2.5rem, 2rem + 2.5vw, 4rem)" },
-      "900": { "$value": "clamp(3.5rem, 2.25rem + 4vw, 6rem)" },
+      "900": { "$value": "clamp(3.5rem, 2.25rem + 3vw, 6rem)" },
       "1000": { "$value": "clamp(4.5rem, 2.5rem + 8vw, 9rem)" }
     },
     "line-height": {
