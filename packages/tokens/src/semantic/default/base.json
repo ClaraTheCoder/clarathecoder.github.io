@@ -36,6 +36,14 @@
             "exit-blur": { "$value": "6px" },
             "distance": { "$value": "{space.400}" }
         },
+        "expand": {
+            "duration": { "$value": "{duration.slower}" },
+            "easing": { "$value": "{ease.out}" },
+            "collapse-duration": { "$value": "{duration.base}" },
+            "icon-duration": { "$value": "{duration.slower}" },
+            "icon-easing": { "$value": "{ease.spring}" },
+            "icon-turn": { "$value": "135deg" }
+        },
         "theme": {
             "duration": { "$value": "{duration.slowest}" },
             "easing": { "$value": "{ease.in-out}" }
