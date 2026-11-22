@@ -41,7 +41,7 @@ A personal site for Clara, a design-systems engineer and tech lead, built on her
 
 ## Evidence on Hand
 
-- **Vodafone Neo**: public. The showreel, captions, poster and transcript are in `apps/site/src/assets/showreel/`. OK to name Vodafone and Neo.
+- **Vodafone Neo**: public. The showreel, captions and poster are in `apps/site/public/videos/`; the transcript is a page at `apps/site/src/pages/transcripts/`. OK to name Vodafone and Neo.
 - **Testimonials**: the Work page quote from Ashton Snook (Head of Design & Research, Vodafone Group) is real and approved for use. More real quotes are coming. Never invent quotes, names or roles.
 - **Clients**: some past clients can't be named. Case studies about them stay anonymised or are left out. Never guess at or fill in client names.
 - **Writing**: real articles are coming. `apps/site/src/data/posts.ts` is lorem ipsum layout scaffolding. Never present invented posts as real.

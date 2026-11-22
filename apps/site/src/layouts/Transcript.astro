@@ -1,0 +1,21 @@
+---
+import Base from './Base.astro';
+import { Hero, Text, Container } from '@clara/design-system';
+
+interface Props {
+  frontmatter: { title: string; description: string };
+}
+
+const { frontmatter } = Astro.props;
+---
+
+<Base title={frontmatter.title} description={frontmatter.description}>
+  <div class="page">
+    <Hero title={frontmatter.title}>
+      <Text variant="lead">{frontmatter.description}</Text>
+    </Hero>
+    <Container variant="prose" className="prose">
+      <slot />
+    </Container>
+  </div>
+</Base>

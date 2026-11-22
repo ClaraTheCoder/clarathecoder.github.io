@@ -1,7 +1,6 @@
 import {
   type CSSProperties,
   type HTMLAttributes,
-  type ReactNode,
   type TrackHTMLAttributes,
   type VideoHTMLAttributes,
 } from 'react';
@@ -9,6 +8,7 @@ import './Video.css';
 import './video-play-cover.js';
 import { Button } from '../Button';
 import { VisuallyHidden } from '../VisuallyHidden';
+import { Link } from '../Link';
 import { Flex } from '../Layout';
 
 declare module 'react' {
@@ -26,12 +26,19 @@ type CaptionsTrack = Omit<TrackHTMLAttributes<HTMLTrackElement>, 'kind'> &
 export type VideoProps = VideoHTMLAttributes<HTMLVideoElement> & {
   /** Captions file, rendered as a `<track kind="captions">` shown by default. */
   track: CaptionsTrack;
-  /** Full text alternative, rendered after the video in a native disclosure. */
-  transcript?: ReactNode;
+  /** URL of a page holding the full text alternative, linked below the video. */
+  transcriptHref?: string;
 };
 
 /** Load `@clara/design-system/video-play-cover.js` on the page for the play button. */
-export const Video = ({ className, poster, track, transcript, children, ...props }: VideoProps) => (
+export const Video = ({
+  className,
+  poster,
+  track,
+  transcriptHref,
+  children,
+  ...props
+}: VideoProps) => (
   <Flex className={className} gap="400" direction="column">
     <video-play-cover
       className="video__frame"
@@ -52,11 +59,10 @@ export const Video = ({ className, poster, track, transcript, children, ...props
         <track default {...track} kind="captions" />
       </video>
     </video-play-cover>
-    {transcript && (
-      <details className="video__transcript prose">
-        <summary>Read the transcript</summary>
-        {transcript}
-      </details>
+    {transcriptHref && (
+      <Link href={transcriptHref} className="video__transcript">
+        Read the transcript
+      </Link>
     )}
   </Flex>
 );

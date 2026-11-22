@@ -2,7 +2,14 @@
 title: Teaching agents to build with Neo
 description: How Vodafone’s design system describes itself to coding agents, and how benchmarking real models showed us where it still fell short.
 date: 2026-11-22
-video: migration
+video:
+  label: Migrating a page to Neo with one prompt
+  poster: /videos/neo-migration-promo-poster.jpg
+  captions: /videos/neo-migration-promo.en.vtt
+  sources:
+    - src: /videos/neo-migration-promo-1080.mp4
+      media: '(min-width: 52rem)'
+    - src: /videos/neo-migration-promo-720.mp4
 ---
 
 Neo is built to be read by machines, too. Each component’s contract is generated from its types and feeds both the Storybook docs and the metadata agents read, so the two can’t drift apart. On top of that sit Figma Code Connect, a Figma Make kit, an index of when to use each component (and when not to), and a guide to migrating off the old system.

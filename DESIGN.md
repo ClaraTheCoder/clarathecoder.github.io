@@ -290,7 +290,7 @@ A framed picture at a fixed `ratio` (any CSS aspect ratio; default a wide 16 / 7
 
 ### Video
 
-A native `<video>` whose controls a small custom element covers with the poster and a fixed play button until first play, or until keyboard focus reaches the video. Without JavaScript the native controls show as normal. Captions are a required `<track>`, shown by default; a video with only music gets a single cue naming it. An optional transcript sits below in a native disclosure at prose measure.
+A native `<video>` whose controls a small custom element covers with the poster and a fixed play button until first play, or until keyboard focus reaches the video. Without JavaScript the native controls show as normal. Captions are a required `<track>`, shown by default; a video with only music gets a single cue naming it. An optional transcript is a link below the video to a page holding the full text.
 
 ### Notice
 

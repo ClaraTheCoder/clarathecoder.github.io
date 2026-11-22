@@ -1,9 +1,16 @@
 import type { MarkdownInstance } from 'astro';
-import type { NeoVideoName } from '../components/NeoVideo.astro';
 
 export interface TocEntry {
   id: string;
   label: string;
+}
+
+export interface PostVideo {
+  label: string;
+  poster: string;
+  captions: string;
+  transcript?: string;
+  sources: { src: string; media?: string }[];
 }
 
 export interface Post {
@@ -16,14 +23,14 @@ export interface Post {
    *  sticky Contents list; omitted → the rail carries meta only. */
   toc?: TocEntry[];
   Content: MarkdownInstance<PostFrontmatter>['Content'];
-  video?: NeoVideoName;
+  video?: PostVideo;
 }
 
 interface PostFrontmatter {
   title: string;
   description: string;
   date: string;
-  video?: NeoVideoName;
+  video?: PostVideo;
 }
 
 const WORDS_PER_MINUTE = 200;

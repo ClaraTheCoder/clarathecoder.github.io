@@ -18,7 +18,7 @@
       var(--color-surface);
     border-radius: var(--surface-radius);
   }
-  
+
   .button.video__play[hidden] {
     display: none;
   }
@@ -70,6 +70,6 @@
     font-family: var(--text-body-font-family);
   }
   .video__transcript {
-    color: var(--color-text-muted);
+    align-self: start;
   }
 }

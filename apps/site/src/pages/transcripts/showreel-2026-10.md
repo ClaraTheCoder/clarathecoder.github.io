@@ -1,6 +1,12 @@
+---
+layout: ../../layouts/Transcript.astro
+title: Introducing Neo
+description: A descriptive transcript of the Vodafone Neo showreel.
+---
+
 <!--
   Descriptive transcript for showreel-2026-10. The narration here and the
-  captions in showreel-2026-10.en.vtt must match: edit both together.
+  captions in public/videos/showreel-2026-10.en.vtt must match: edit both together.
 -->
 
 Introducing Neo, our new approach to creating digital products for the AI era. We’ve always strived to create design systems that enhance customer experiences, drive consistency and help our people work more efficiently. Neo goes further. It reimagines both the experiences our customers see and the way we design and build at scale.

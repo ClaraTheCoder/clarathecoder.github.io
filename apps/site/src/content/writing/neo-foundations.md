@@ -2,7 +2,15 @@
 title: Laying Neo’s foundations
 description: The engineering base under Vodafone’s global design system, from an accessible primitive layer and a testing strategy to every decision written down.
 date: 2026-11-22
-video: showreel
+video:
+  label: 'Showreel: Vodafone Neo'
+  poster: /videos/showreel-2026-10-poster.webp
+  captions: /videos/showreel-2026-10.en.vtt
+  transcript: /transcripts/showreel-2026-10/
+  sources:
+    - src: /videos/showreel-2026-10-1080.mp4
+      media: '(min-width: 52rem)'
+    - src: /videos/showreel-2026-10-720.mp4
 ---
 
 Neo is Vodafone’s new global design system, used by teams across the company. I joined a small team of designers to build it from scratch, and set the engineering foundations everything else relies on: React Aria as an accessible base layer, token architecture for white-labelling across sub-brands, the forms and interaction patterns, metadata for AI legibility, and the testing strategy.

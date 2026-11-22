@@ -1,13 +1,12 @@
 ---
 import Base from '../layouts/Base.astro';
-import { Hero, Text, Link, Testimonial, PostList, Post, RuledHeading, Disclosure, DisclosureList, Grid, Box, Flex } from '@clara/design-system';
+import { Hero, Text, Link, Testimonial, PostList, Post, RuledHeading, Disclosure, DisclosureList, Grid, Box, Flex, Video } from '@clara/design-system';
 import unOchaLogo from '../assets/logos/un-ocha.svg?raw';
 import adidasLogo from '../assets/logos/adidas.svg?raw';
 import aggrekoLogo from '../assets/logos/aggreko.svg?raw';
 import macmillanLogo from '../assets/logos/macmillan.svg?raw';
 import butlinsLogo from '../assets/logos/butlins.svg?raw';
 import dfdsLogo from '../assets/logos/dfds.svg?raw';
-import NeoVideo from '../components/NeoVideo.astro';
 import { SITE } from '../data/site';
 import { POSTS } from '../data/posts';
 
@@ -92,7 +91,15 @@ const labelLogo = (svg: string, name: string) => {
         <Text variant="heading-2" as="h2" id="case-study-title">Case study: Vodafone’s first AI-native design system</Text>
       </Box>
       <Flex direction="column" gap="700" gridColumn={{ lg: '5 / -1' }}>
-        <NeoVideo video="showreel" />
+        <Video
+          poster="/videos/showreel-2026-10-poster.webp"
+          aria-label="Showreel: Vodafone Neo"
+          track={{ src: '/videos/showreel-2026-10.en.vtt', srcLang: 'en', label: 'English' }}
+          transcriptHref="/transcripts/showreel-2026-10/"
+        >
+          <source src="/videos/showreel-2026-10-1080.mp4" type="video/mp4" media="(min-width: 52rem)" />
+          <source src="/videos/showreel-2026-10-720.mp4" type="video/mp4" />
+        </Video>
         <Text as="div" className="prose">
           <p>
             Neo is Vodafone’s new global design system, used by teams across the company on web and React Native. In 2026, I joined a small team of designers to architect the foundations, build the core components, and make it a system that coding agents can use to build a working, on-brand page with a single prompt.

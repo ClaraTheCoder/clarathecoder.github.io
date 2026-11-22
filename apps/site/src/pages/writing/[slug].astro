@@ -1,7 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { Text, Container, Grid, Box, Flex, Link, Icon } from '@clara/design-system';
-import NeoVideo from '../../components/NeoVideo.astro';
+import { Text, Container, Grid, Box, Flex, Link, Icon, Video } from '@clara/design-system';
 import { POSTS, formatDate, type Post } from '../../data/posts';
 
 export function getStaticPaths() {
@@ -53,7 +52,14 @@ const { post, newer, older } = Astro.props;
         {
           post.video && (
             <figure>
-              <NeoVideo video={post.video} />
+              <Video
+                poster={post.video.poster}
+                aria-label={post.video.label}
+                track={{ src: post.video.captions, srcLang: 'en', label: 'English' }}
+                transcriptHref={post.video.transcript}
+              >
+                {post.video.sources.map((source) => <source src={source.src} type="video/mp4" media={source.media} />)}
+              </Video>
             </figure>
           )
         }
