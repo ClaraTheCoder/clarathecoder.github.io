@@ -15,3 +15,11 @@ export const Default = meta.story({
     </Box>
   ),
 });
+
+export const Portrait = meta.story({
+  render: () => (
+    <Box py="500" style={{ maxWidth: 320 }}>
+      <Image ratio="4 / 5" />
+    </Box>
+  ),
+});
