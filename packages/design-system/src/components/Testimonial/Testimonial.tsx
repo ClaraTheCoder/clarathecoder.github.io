@@ -13,24 +13,25 @@ export interface TestimonialProps {
   className?: string;
 }
 
-export const Testimonial = ({ children, name, role, company, wide, className }: TestimonialProps) => (
+export const Testimonial = ({
+  children,
+  name,
+  role,
+  company,
+  wide,
+  className,
+}: TestimonialProps) => (
   <figure className={cx('testimonial', wide && 'testimonial--wide', className)}>
     <blockquote className="testimonial__quote">
-      <span className="testimonial__mark testimonial__mark--open" aria-hidden="true">
-        “
-      </span>
       <p>{children}</p>
     </blockquote>
     <figcaption className="testimonial__cite">
-      <span className="testimonial__who">
+      <div className="testimonial__who">
         <span className="testimonial__name">{name}</span>
-        <span className="testimonial__role">
+        <div className="testimonial__role">
           <span>{company ? `${role},` : role}</span> {company && <span>{company}</span>}
-        </span>
-      </span>
-      <span className="testimonial__mark testimonial__mark--close" aria-hidden="true">
-        ”
-      </span>
+        </div>
+      </div>
     </figcaption>
   </figure>
 );

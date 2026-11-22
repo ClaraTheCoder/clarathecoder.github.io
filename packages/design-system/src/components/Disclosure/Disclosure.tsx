@@ -12,17 +12,22 @@ export const DisclosureList = ({ className, ...props }: DisclosureListProps) => 
 
 export interface DisclosureProps {
   title: string;
-  as?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
   variant?: TextVariant;
   open?: boolean;
   className?: string;
   children: ReactNode;
 }
 
-export const Disclosure = ({ title, as = 'h3', variant = 'heading-3', open, className, children }: DisclosureProps) => (
+export const Disclosure = ({
+  title,
+  variant = 'heading-3',
+  open,
+  className,
+  children,
+}: DisclosureProps) => (
   <details className={cx('disclosure', className)} open={open}>
     <summary className="disclosure__summary">
-      <Text variant={variant} as={as} className="disclosure__title">
+      <Text variant={variant} as="span" className="disclosure__title">
         {title}
       </Text>
       <Icon name="plus" className="disclosure__icon" />

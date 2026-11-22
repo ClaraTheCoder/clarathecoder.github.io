@@ -306,7 +306,7 @@ A heading followed by a 2px accent rule running to the right edge. Heading-3 by 
 
 ### Disclosure
 
-A list of statements that each open to their detail, built on native `<details>`, so it works in raw mode. Hairlines above each row and below the list; a heading-3 title on the left that takes the accent on hover, and an accent plus on the right that turns to a cross when open. The body sits at prose measure. Used for the principles in Work's How I work.
+A list of statements that each open to their detail, built on native `<details>`, so it works in raw mode. Hairlines above each row and below the list; a title in heading-3 type (a span, not a heading, so the summary stays one line in raw mode) on the left that takes the accent on hover, and an accent plus on the right that turns to a cross when open. The body sits at prose measure. Used for the principles in Work's How I work.
 
 ### Testimonial
 

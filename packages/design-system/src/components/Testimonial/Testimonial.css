@@ -28,7 +28,11 @@
     color: var(--color-text);
   }
 
-  .testimonial__mark {
+  /* The marks are generated content, so raw mode (which reverts all author
+     CSS) drops them from the page; the empty alt keeps them out of the
+     accessibility tree. */
+  .testimonial__quote::before,
+  .testimonial__cite::after {
     font-family: var(--text-display-1-font-family);
     font-size: calc(var(--font-size-1000) * 2);
     font-weight: var(--text-display-1-font-weight);
@@ -36,13 +40,15 @@
     color: var(--color-accent);
   }
 
-  .testimonial__mark--open {
+  .testimonial__quote::before {
+    content: '“' / '';
     display: block;
     block-size: 0.45em;
     margin-block-end: var(--space-400);
   }
 
-  .testimonial__mark--close {
+  .testimonial__cite::after {
+    content: '”' / '';
     flex: none;
     block-size: 0.55em;
     margin-block-start: calc(var(--space-500) * -1);
@@ -103,7 +109,7 @@
       letter-spacing: var(--text-heading-1-letter-spacing);
     }
 
-    .testimonial--wide .testimonial__mark--open {
+    .testimonial--wide .testimonial__quote::before {
       grid-column: 1 / 2;
     }
 
@@ -116,7 +122,7 @@
       grid-column: 2 / -2;
     }
 
-    .testimonial--wide .testimonial__mark--close {
+    .testimonial--wide .testimonial__cite::after {
       grid-column: -2 / -1;
       justify-self: end;
       align-self: end;

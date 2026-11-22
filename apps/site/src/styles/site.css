@@ -1,7 +1,10 @@
+/* Inline SVGs are skipped: path data and shape geometry (d, x, r…) are CSS
+   properties, so reverting them would erase every drawing, and the <svg>
+   keeps its sizing so logos don't blow up to full width. */
 :root[data-raw],
-:root[data-raw] *,
-:root[data-raw] *::before,
-:root[data-raw] *::after {
+:root[data-raw] :not(svg, svg *),
+:root[data-raw] :not(svg, svg *)::before,
+:root[data-raw] :not(svg, svg *)::after {
   all: revert !important;
 }
 
