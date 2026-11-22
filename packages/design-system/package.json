@@ -5,7 +5,8 @@
   "type": "module",
   "sideEffects": [
     "*.css",
-    "./src/components/Video/video-play-cover.ts"
+    "./src/components/Video/video-play-cover.ts",
+    "./src/components/Testimonial/testimonial-words.ts"
   ],
   "exports": {
     ".": "./src/index.ts",
