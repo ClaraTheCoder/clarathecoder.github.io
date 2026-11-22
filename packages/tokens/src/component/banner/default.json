@@ -1,8 +1,0 @@
-{
-  "banner": {
-    "bg": { "$value": "{color.accent-subtle}" },
-    "border-color": { "$value": "{color.transparent}" },
-    "shadow": { "$value": "none" },
-    "backdrop": { "$value": "none" }
-  }
-}
