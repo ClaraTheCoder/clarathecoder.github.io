@@ -8,7 +8,7 @@ import macmillanLogo from '../assets/logos/macmillan.svg?raw';
 import butlinsLogo from '../assets/logos/butlins.svg?raw';
 import dfdsLogo from '../assets/logos/dfds.svg?raw';
 import { SITE } from '../data/site';
-import { POSTS } from '../data/posts';
+import { POSTS, SHOW_WRITING } from '../data/posts';
 
 const caseStudies = ['neo-foundations', 'neo-for-agents'].map((slug) => POSTS.find((post) => post.slug === slug)!);
 
@@ -105,13 +105,15 @@ const labelLogo = (svg: string, name: string) => {
             Neo is Vodafone’s new global design system, used by teams across the company on web and React Native. In 2026, I joined a small team of designers to architect the foundations, build the core components, and make it a system that coding agents can use to build a working, on-brand page with a single prompt.
           </p>
         </Text>
-        <PostList>
-          {
-            caseStudies.map((post) => (
-              <Post meta={`${post.readingTime} min read`} title={post.title} href={`/writing/${post.slug}`} description={post.description} />
-            ))
-          }
-        </PostList>
+        {
+          SHOW_WRITING && (
+            <PostList>
+              {caseStudies.map((post) => (
+                <Post meta={`${post.readingTime} min read`} title={post.title} href={`/writing/${post.slug}`} description={post.description} />
+              ))}
+            </PostList>
+          )
+        }
       </Flex>
     </Grid>
 

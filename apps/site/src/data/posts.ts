@@ -48,6 +48,9 @@ const posts: Post[] = Object.entries(
   Content: md.Content,
 }));
 
+/** Writing routes only exist under `astro dev` (see astro.config.mjs). */
+export const SHOW_WRITING = import.meta.env.DEV;
+
 export const POSTS: Post[] = posts.sort((a, b) => b.date.localeCompare(a.date));
 
 export const formatDate = (iso: string, { year = true } = {}): string =>

@@ -3,6 +3,7 @@ import Base from '../layouts/Base.astro';
 import { Hero, Text, Link } from '@clara/design-system';
 import { ThemeDialog } from '../components/ThemeDialog';
 import { SITE } from '../data/site';
+import { SHOW_WRITING } from '../data/posts';
 ---
 
 <Base>
@@ -10,7 +11,7 @@ import { SITE } from '../data/site';
     <Hero title="Hi, I’m Clara">
       <Text variant="lead">
         I like making things and helping people. At the moment I’m <Link href="/work">working</Link> on design systems and shipping products, tinkering with online tools and toys, growing food and making music.
-        Sometimes I <Link href="/writing">write</Link> about those things.
+        {SHOW_WRITING && <>Sometimes I <Link href="/writing">write</Link> about those things.</>}
       </Text>
       <Text variant="lead">
         If you’d like to work together, read about <Link href="/work">what I do</Link> or
