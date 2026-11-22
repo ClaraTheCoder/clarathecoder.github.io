@@ -59,6 +59,7 @@
 
   .prose strong {
     font-weight: var(--font-weight-bold);
+    color: var(--prose-strong-color);
   }
   .prose em {
     font-style: italic;

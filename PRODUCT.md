@@ -27,7 +27,7 @@ A personal site for Clara, a design-systems engineer and tech lead, built on her
 
 ## Operating Context
 
-- Pages: Home, Work (availability, ways to work, Vodafone Neo showreel), Writing (index plus article pages with an optional table of contents).
+- Pages: Home, Work (availability, how I work, Vodafone Neo case study and showreel, clients, what I do), Writing (index plus article pages with an optional table of contents).
 - Visitors can change the theme (light/dark) and preset (`blueprint`, `opal`) through a native `<dialog>` picker.
 - Contact is by email (`example@example.com`), with LinkedIn and GitHub listed in `apps/site/src/data/site.ts`.
 - The availability line is calculated from a lead time (`AvailableFrom.tsx`).
@@ -45,7 +45,7 @@ A personal site for Clara, a design-systems engineer and tech lead, built on her
 - **Testimonials**: the Work page quote from Ashton Snook (Head of Design & Research, Vodafone Group) is real and approved for use. More real quotes are coming. Never invent quotes, names or roles.
 - **Clients**: some past clients can't be named. Case studies about them stay anonymised or are left out. Never guess at or fill in client names.
 - **Writing**: real articles are coming. `apps/site/src/data/posts.ts` is lorem ipsum layout scaffolding. Never present invented posts as real.
-- The "ways to work" and "What I do" copy on the Work page is still placeholder text.
+- The Work page copy is real. Every client in the logo wall has a real logo.
 - Inspiration notes: `docs/inspo.md`.
 
 ## Product Principles

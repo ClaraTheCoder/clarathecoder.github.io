@@ -1,5 +1,6 @@
 {
   "prose": {
-    "color": { "$value": "light-dark({color.text}, {color.text-muted})" }
+    "color": { "$value": "light-dark({color.text}, {color.text-muted})" },
+    "strong-color": { "$value": "{color.text}" }
   }
 }
