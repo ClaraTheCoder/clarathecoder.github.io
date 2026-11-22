@@ -111,11 +111,6 @@ components:
     textColor: '{colors.ink}'
     rounded: '{rounded.md}'
     padding: '16px'
-  banner:
-    backgroundColor: '{colors.saffron-wash}'
-    textColor: '{colors.ink}'
-    rounded: '{rounded.md}'
-    padding: '60px'
   link:
     textColor: '{colors.lavender}'
   link-hover:
@@ -163,7 +158,7 @@ Colour comes from a named primitive palette of 13-step OKLCH ramps; semantic rol
 ### Primary
 
 - **Lavender** (`lavender`, lavender 800): Default's accent in light mode — links, primary buttons, the wordmark dot, year rules, testimonial marks and names. Deepens to **Lavender Deep** (lavender 900) on hover.
-- **Saffron Wash** (`saffron-wash`): Default's subtle accent fill in light mode (the Banner card).
+- **Saffron Wash** (`saffron-wash`): Default's subtle accent fill in light mode.
 - **Saffron Glow** (`saffron-glow`, saffron 500): Default's accent in dark mode, lifting to **Saffron Light** on hover, so it reads on lavender night. **Lavender Dusk** (lavender 850) is the dark-mode subtle fill.
 
 ### Secondary
@@ -228,11 +223,11 @@ Roles are responsive composites exploded into per-property custom props (`--text
 ## Layout
 
 - **Containers:** page container up to 1820px; prose container 68ch. Both use a fluid gutter, `clamp(16px, 5vw, 72px)`.
-- **Grid:** 12 columns on large screens, collapsing to a single column on small. Pages place content across column spans (e.g. testimonial in 1–7, copy in 7–12) rather than centring everything.
-- **Hero:** left-aligned, prose-width, widening to roughly seven of twelve columns at 1280px+. Its children enter with a staggered rise.
-- **Breakpoints:** 768px (two-column post rows, roomier header), 1024px, 1280px.
+- **Grid:** 12 columns on large screens, collapsing to a single column on small. Pages place content across column spans rather than centring everything: Work hangs its case-study heading in a pinned rail (columns 1–4, sticky from 1280px) beside content in 5–12.
+- **Hero:** left-aligned, prose-width, widening to the full content width at 1280px+. Its children enter with a staggered rise.
+- **Breakpoints:** 768px (roomier header), 1024px, 1280px (12-column placements, wide testimonial).
 - **Rhythm:** a 4px-based space scale (1px → 72px). Vertical gaps between blocks come from the role's paragraph-spacing token in prose.
-- **Lists:** writing posts are ruled rows — a date column (8rem) beside title and description at 768px+, stacked below.
+- **Lists:** writing posts and Work's principles are ruled rows: hairlines between rows, generous 36px padding, everything stacked in one column.
 
 ## Elevation & Depth
 
@@ -289,9 +284,13 @@ The favicon is the dot alone, in Default's accents: `apps/site/public/favicon.sv
 - **Signature use, the theme picker:** each card carries its own `data-preset` and mirrors the page's `data-theme`, so it renders in its own world (ADR 0010): Default with a lavender radio, Opal glass over a mini aurora, Blueprint on grid paper in celadon. The No CSS card wears browser defaults (Times, system colours, the native radio).
 - **Raw mode:** a hidden separator turns each card into one readable radio line ("Default – Good for reading").
 
-### Banner
+### Image
 
-The page's closing call to action: an inset card within the content width, with a full-width display-2 title and the body below at prose measure. Corners come from each world's `surface-radius` and the treatment from `--banner-*` tokens: each world's `accent-subtle` fill — Default a saffron-wash card in light mode and lavender dusk (lavender 850) in dark — with Blueprint a solid surface with an accent border and glow, and Opal a thin frosted-glass pane (white 10% / 5%, hairline white border, inner top highlight, the surface backdrop blur) with no drop shadow. Links inside are ordinary accent links. First used for "Drop me a line" at the end of Work.
+A framed picture at a fixed `ratio` (any CSS aspect ratio; default a wide 16 / 7.5) with medium corners. Empty, it is a dashed placeholder on the surface colour with a muted label, for layouts waiting on a photo. Holding an `<img>`, it crops the picture to the ratio with `object-fit: cover` and drops the dashed border.
+
+### Video
+
+A native `<video>` whose controls a small custom element covers with the poster and a fixed play button until first play, or until keyboard focus reaches the video. Without JavaScript the native controls show as normal. Captions are a required `<track>`, shown by default; a video with only music gets a single cue naming it. An optional transcript sits below in a native disclosure at prose measure.
 
 ### Notice
 
@@ -299,11 +298,21 @@ A surface-coloured strip in muted text that turns to full text colour on hover. 
 
 ### Post list
 
-Posts grouped under a heading (a year on Writing; later "Recent writing" or "A few faves" on Home): the heading in the heading-3 face, followed by a 2px accent rule running to the right edge. Each row is spacious (36px padding, hairline rule between rows): a heading-4 title balanced to two lines and a muted description on the left, with the date and reading time small and subtle on the right (stacked under the text on phones). Titles are plain links in ink that take the accent on hover (Opal: underline); the whole row is the click target, and the link's accessible name stays the title.
+Posts grouped under a Ruled heading (a year on Writing; later "Recent writing" or "A few faves" on Home). Each row is spacious (36px padding, hairline rule between rows): a heading-4 title balanced to two lines, a muted description, then the date and reading time small and subtle underneath. Titles are plain links in ink that take the accent on hover (Opal: underline); the whole row is the click target, and the link's accessible name stays the title.
+
+### Ruled heading
+
+A heading followed by a 2px accent rule running to the right edge. Heading-3 by default; Work uses heading-2 for its section headings. The brand's section marker, shared by Writing and Work.
+
+### Disclosure
+
+A list of statements that each open to their detail, built on native `<details>`, so it works in raw mode. Hairlines above each row and below the list; a heading-3 title on the left that takes the accent on hover, and an accent plus on the right that turns to a cross when open. The body sits at prose measure. Used for the principles in Work's How I work.
 
 ### Testimonial
 
-A quote at heading-3 face and size 600, with key phrases wrapped in `<strong>` shown in full text colour and the rest at 55% of the text colour, so the muted words stay in the world's own ink rather than grey. Two oversized quote marks (twice display size) in the display face and accent colour: the opening mark above the quote, the closing mark on the right of the attribution row, aligned to the top of the name. The name is in the heading face in the accent colour; the role and company sit below on separate lines. There is no avatar.
+A quote in the heading-2 role, with key phrases wrapped in `<strong>` shown in full text colour and the rest at 55% of the text colour, so the muted words stay in the world's own ink rather than grey. Two oversized quote marks (twice display size) in the display face and accent colour: the opening mark above the quote, the closing mark on the right of the attribution row. The name is in the heading-4 role; the role and company sit below on separate lines in subtle text. There is no avatar.
+
+**Wide:** from 1280px the testimonial lays itself on the page's 12 columns (CSS subgrid) at the heading-1 role: the opening mark alone at the top of columns 1–2, the quote in 3–11 and the attribution in 3–10, the closing mark at the right edge. Below 1280px it is the stacked default. Work uses it full-width after the case study.
 
 ### Signature: preset backdrops
 
