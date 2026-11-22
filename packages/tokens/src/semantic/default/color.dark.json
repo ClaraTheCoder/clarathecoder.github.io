@@ -4,8 +4,8 @@
     "bg": { "$value": "{color.lavender.950}" },
     "surface": { "$value": "{color.lavender.950}" },
     "surface-hover": { "$value": "{color.lavender.900}" },
-    "surface-shadow": {"$value": "none"},
-    "surface-shadow-tight": {"$value": "none"},
+    "surface-shadow": { "$value": "none" },
+    "surface-shadow-tight": { "$value": "none" },
     "surface-backdrop": { "$value": "none" },
     "surface-border": { "$value": "{color.border}" },
 

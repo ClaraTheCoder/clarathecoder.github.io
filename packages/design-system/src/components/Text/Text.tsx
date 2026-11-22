@@ -26,7 +26,13 @@ export type TextProps<E extends ElementType = 'p'> = Polymorphic<
   { variant?: TextVariant; color?: TextColor }
 >;
 
-export const Text = <E extends ElementType = 'p'>({ as, variant = 'body', color, className, ...props }: TextProps<E>) => {
+export const Text = <E extends ElementType = 'p'>({
+  as,
+  variant = 'body',
+  color,
+  className,
+  ...props
+}: TextProps<E>) => {
   const Component = (as ?? 'p') as ElementType;
   return (
     <Component className={cx(`text-${variant}`, color && `text-${color}`, className)} {...props} />

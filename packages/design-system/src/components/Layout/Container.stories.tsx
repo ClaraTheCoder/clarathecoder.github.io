@@ -18,7 +18,9 @@ const panel = {
 export const Default = meta.story({
   render: () => (
     <Container>
-      <Box p="500" style={panel}>max 1820px with gutter</Box>
+      <Box p="500" style={panel}>
+        max 1820px with gutter
+      </Box>
     </Container>
   ),
 });
@@ -27,7 +29,9 @@ export const Default = meta.story({
 export const Prose = meta.story({
   render: () => (
     <Container variant="prose">
-      <Box p="500" style={panel}>768px no gutter</Box>
+      <Box p="500" style={panel}>
+        768px no gutter
+      </Box>
     </Container>
   ),
 });

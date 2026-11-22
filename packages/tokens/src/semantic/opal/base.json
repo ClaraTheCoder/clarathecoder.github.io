@@ -1,10 +1,10 @@
 {
-    "surface": {
-        "radius": { "$value": "{radius.lg}" }
-    },
-    "motion": {
-        "entrance": {
-            "distance": { "$value": "{space.400}" }
-        }
+  "surface": {
+    "radius": { "$value": "{radius.lg}" }
+  },
+  "motion": {
+    "entrance": {
+      "distance": { "$value": "{space.400}" }
     }
+  }
 }

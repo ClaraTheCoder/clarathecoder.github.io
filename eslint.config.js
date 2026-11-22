@@ -5,7 +5,16 @@ import globals from 'globals';
 
 export default tseslint.config(
   {
-    ignores: ['**/dist/**', '**/.astro/**', '**/storybook-static/**', 'drafts/**', '**/*.d.ts'],
+    ignores: [
+      '**/dist/**',
+      '**/.astro/**',
+      '**/storybook-static/**',
+      'drafts/**',
+      '**/*.d.ts',
+      '.agents/**',
+      '.claude/**',
+      '.github/skills/**',
+    ],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,

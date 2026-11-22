@@ -23,7 +23,7 @@
     "fixed-shadow": { "$value": "none" },
     "fixed-border-color": { "$value": "{color.transparent}" },
     "fixed-backdrop": { "$value": "none" },
-    
+
     "ghost-bg-hover": { "$value": "{color.ghost}" }
   }
 }

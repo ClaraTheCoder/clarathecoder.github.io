@@ -1,13 +1,7 @@
 import { useState } from 'react';
 import preview from '../../../.storybook/preview';
 import { Button } from '../Button';
-import {
-  Dialog,
-  DialogTrigger,
-  DialogContent,
-  DialogTitle,
-  DialogDescription,
-} from './Dialog';
+import { Dialog, DialogTrigger, DialogContent, DialogTitle, DialogDescription } from './Dialog';
 
 const meta = preview.meta({
   title: 'Components/Dialog',
@@ -21,8 +15,8 @@ export const Default = meta.story({
       <DialogContent>
         <DialogTitle>Dialog title</DialogTitle>
         <DialogDescription>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-          incididunt ut labore.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt
+          ut labore.
         </DialogDescription>
       </DialogContent>
     </Dialog>
@@ -53,9 +47,7 @@ export const LongContent = meta.story({
         <DialogTitle>Long content</DialogTitle>
         <DialogDescription>Scrolls within the dialog.</DialogDescription>
         {Array.from({ length: 30 }, (_, i) => (
-          <p key={i}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Paragraph {i + 1}.
-          </p>
+          <p key={i}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Paragraph {i + 1}.</p>
         ))}
         <Button>A focusable button at the end</Button>
       </DialogContent>

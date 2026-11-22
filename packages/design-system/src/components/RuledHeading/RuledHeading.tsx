@@ -10,6 +10,11 @@ export interface RuledHeadingProps {
   children: string;
 }
 
-export const RuledHeading = ({ as = 'h2', variant = 'heading-2', className, ...props }: RuledHeadingProps) => (
+export const RuledHeading = ({
+  as = 'h2',
+  variant = 'heading-2',
+  className,
+  ...props
+}: RuledHeadingProps) => (
   <Text as={as} variant={variant} className={cx('ruled-heading', className)} {...props} />
 );

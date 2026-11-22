@@ -49,7 +49,7 @@
     max-inline-size: var(--size-container-prose);
     padding-block-end: var(--space-600);
   }
-  
+
   @supports (interpolate-size: allow-keywords) {
     @media (prefers-reduced-motion: no-preference) {
       .disclosure {

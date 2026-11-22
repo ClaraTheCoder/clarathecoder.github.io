@@ -57,15 +57,15 @@ Nice simple one-pager. I hate the infinite scroll though.
 https://www.elainanatario.com/
 One of my favourites. It's very clean, minimal and calm but still feels designed through the interesting colour choice and fonts
 
-
 ## Case study pages
 
 https://katekalento.framer.website/case-study-task-card
 Highlighted text, problem, impact and findings boxes make everything very clear.
 I would change the order:
-Context, then impact, then approach. 
+Context, then impact, then approach.
 Put the business result early so readers know why the project mattered.
 But make sure you explain the context and the problem FIRST.
 
 ## Blogs
+
 https://gerireid.com/blog/

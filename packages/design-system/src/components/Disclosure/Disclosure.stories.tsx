@@ -12,7 +12,9 @@ export const List = meta.story({
   render: () => (
     <DisclosureList>
       <Disclosure title="Nam libero tempore cum soluta" open>
-        <Text>Soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.</Text>
+        <Text>
+          Soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.
+        </Text>
       </Disclosure>
       <Disclosure title="Itaque earum rerum hic tenetur">
         <Text>Tenetur a sapiente delectus reiciendis voluptatibus maiores alias consequatur.</Text>
