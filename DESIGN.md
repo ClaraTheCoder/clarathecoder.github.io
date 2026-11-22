@@ -271,7 +271,7 @@ The feel is **springy and pokeable**: every interactive thing gives a small phys
 
 ### Wordmark
 
-"claras.place" in the header: Fraunces 600 in the text colour (the `text.brand` role, size 500, stepping down on small phones), with the dot drawn as a circle in the world's accent colour, so the mark is the one part of the identity that changes with the theme (lavender in Default light, saffron in Default dark, celadon in Blueprint, ink in Opal). A visually hidden "." inside the mark keeps the name intact for screen readers and raw mode.
+"clara.place" in the header: Fraunces 600 in the text colour (the `text.brand` role, size 500, stepping down on small phones), with the dot drawn as a circle in the world's accent colour, so the mark is the one part of the identity that changes with the theme (lavender in Default light, saffron in Default dark, celadon in Blueprint, ink in Opal). A visually hidden "." inside the mark keeps the name intact for screen readers and raw mode.
 
 The favicon is the dot alone, in Default's accents: `apps/site/public/favicon.svg` (lavender 800, saffron 500 when the browser is dark) and a 180px `apple-touch-icon.png` with the lavender dot on lavender 50 (the page ground is now cream, saffron 100; regenerate the touch icon if that matters). SVG favicons can't read tokens, so they carry hex conversions; keep them in step if Default's accent changes.
 

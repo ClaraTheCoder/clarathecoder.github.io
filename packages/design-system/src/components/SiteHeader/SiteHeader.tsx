@@ -18,7 +18,6 @@ export interface SiteHeaderProps {
   className?: string;
 }
 
-// "claras.place" renders its dot as the brand mark.
 const Wordmark = ({ label }: { label: string }) => {
   const [name, ...rest] = label.split('.');
   if (!rest.length) return <>{label}</>;
