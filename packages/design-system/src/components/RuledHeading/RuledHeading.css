@@ -12,5 +12,20 @@
     content: '';
     flex: 1;
     border-block-start: var(--space-50) solid var(--color-accent);
+    transform-origin: left;
+    animation: ruled-heading-draw var(--motion-entrance-duration) var(--ease-out) both;
+    animation-delay: var(--ruled-heading-delay, var(--motion-entrance-lead));
+  }
+
+  @keyframes ruled-heading-draw {
+    from {
+      transform: scaleX(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ruled-heading::after {
+      animation: none;
+    }
   }
 }

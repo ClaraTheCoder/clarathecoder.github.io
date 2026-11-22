@@ -1,4 +1,4 @@
-const sections = document.querySelectorAll<HTMLElement>('.page > :not(.page-hero)');
+const targets = document.querySelectorAll<HTMLElement>('.page > :not(.page-hero)');
 
 const observer = new IntersectionObserver(
   (entries) => {
@@ -8,11 +8,16 @@ const observer = new IntersectionObserver(
       observer.unobserve(entry.target);
     }
   },
-  { rootMargin: '0px 0px -20% 0px' },
+  { rootMargin: '0px 0px -14% 0px' },
 );
 
-for (const section of sections) {
-  if (section.getBoundingClientRect().top < window.innerHeight) continue;
-  section.dataset.reveal = 'pending';
-  observer.observe(section);
+const revealLine = window.innerHeight * 0.8;
+const scrollLeft = document.documentElement.scrollHeight - window.innerHeight - window.scrollY;
+
+for (const target of targets) {
+  const { top } = target.getBoundingClientRect();
+  // Already past the reveal line, or too near the end of the page to ever reach it.
+  if (top < revealLine || top - scrollLeft >= revealLine) continue;
+  target.dataset.reveal = 'pending';
+  observer.observe(target);
 }

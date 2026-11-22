@@ -26,7 +26,7 @@ const { post, newer, older } = Astro.props;
 <Base title={post.title} description={post.description}>
   <article class="page">
     <!-- Title + meta live in the left column; prose on the right -->
-    <Grid className="article" columns={{ initial: 1, md: 12 }} gapX="var(--grid-gutter)" gapY="600">
+    <Grid className="entrance-stagger" columns={{ initial: 1, md: 12 }} gapX="var(--grid-gutter)" gapY="600">
       <Box as="header" className="article-rail" gridColumn={{ md: '1 / 5' }}>
         <Text variant="heading-2" as="h1" className="article-title">{post.title}</Text>
         <Flex align="center" wrap="wrap" gap="300">

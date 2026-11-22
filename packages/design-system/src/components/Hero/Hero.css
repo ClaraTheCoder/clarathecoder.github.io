@@ -16,23 +16,35 @@
     }
   }
 
-  .page-hero > * {
-    animation: entrance-rise var(--motion-entrance-duration) var(--motion-entrance-easing) both;
-    animation-delay: calc(
-      var(--motion-entrance-lead) * min(var(--_i, 0), 1) +
-        var(--motion-entrance-stagger) * max(var(--_i, 0) - 1, 0)
-    );
+  /* Each word rises from behind its own baseline mask. The padding gives
+     ascenders and descenders room inside the clip without moving the line. */
+  .page-hero__word {
+    display: inline-block;
+    overflow: clip;
+    padding-block: 0.15em;
+    margin-block: -0.15em;
   }
-  .page-hero > :nth-child(2) {
-    --_i: 1;
+
+  .page-hero__word > span {
+    display: inline-block;
+    animation: hero-word-rise 500ms var(--ease-out) both;
+    animation-delay: calc(var(--motion-entrance-lead) + sqrt(var(--page-hero-word)) * 70ms);
   }
-  .page-hero > :nth-child(3) {
-    --_i: 2;
+
+  .page-hero > :not(h1) {
+    animation: entrance-fade 500ms var(--ease-out) both;
+    animation-delay: calc(var(--motion-entrance-lead) + 120ms);
+  }
+
+  @keyframes hero-word-rise {
+    from {
+      translate: 0 calc(100% + 0.3em);
+    }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .page-hero > * {
-      animation: entrance-fade var(--duration-base) var(--motion-entrance-easing) both;
+    .page-hero__word > span {
+      animation: none;
     }
   }
 }

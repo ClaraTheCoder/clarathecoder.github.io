@@ -86,6 +86,100 @@
     display: block;
   }
 
+  testimonial-words[data-split] > .testimonial__source {
+    position: absolute;
+    inline-size: var(--space-25);
+    block-size: var(--space-25);
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  testimonial-words[data-split] > .testimonial__words {
+    display: inline;
+  }
+
+  .testimonial__word {
+    display: inline-block;
+  }
+
+  @supports (animation-timeline: view()) {
+    .testimonial:has(testimonial-words[data-split]) {
+      timeline-scope: --testimonial-quote;
+    }
+
+    .testimonial__quote p {
+      view-timeline-name: --testimonial-quote;
+    }
+
+    .testimonial__word {
+      --testimonial-word-start: calc(5% + 32% * var(--testimonial-word) / var(--testimonial-words));
+      --testimonial-word-end: calc(var(--testimonial-word-start) + 15%);
+    }
+
+    .testimonial__words strong .testimonial__word {
+      animation: testimonial-word-ink var(--ease-out) both;
+      animation-timeline: --testimonial-quote;
+      animation-range: cover calc(var(--testimonial-word-start) + 5%) cover
+        calc(var(--testimonial-word-start) + 20%);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .testimonial__word {
+        animation: testimonial-word-in var(--ease-out) both;
+        animation-timeline: --testimonial-quote;
+        animation-range: cover var(--testimonial-word-start) cover var(--testimonial-word-end);
+      }
+
+      .testimonial__words strong .testimonial__word {
+        animation:
+          testimonial-word-in var(--ease-out) both,
+          testimonial-word-ink var(--ease-out) both;
+        animation-timeline: --testimonial-quote, --testimonial-quote;
+        animation-range:
+          cover var(--testimonial-word-start) cover var(--testimonial-word-end),
+          cover calc(var(--testimonial-word-start) + 5%) cover
+            calc(var(--testimonial-word-start) + 20%);
+      }
+
+      .testimonial:has(testimonial-words[data-split]) .testimonial__quote::before,
+      .testimonial:has(testimonial-words[data-split]) .testimonial__cite::after {
+        animation: testimonial-mark-in var(--ease-spring) both;
+        animation-timeline: --testimonial-quote;
+      }
+
+      .testimonial:has(testimonial-words[data-split]) .testimonial__quote::before {
+        transform-origin: bottom left;
+        animation-range: cover 0% cover 20%;
+      }
+
+      .testimonial:has(testimonial-words[data-split]) .testimonial__cite::after {
+        transform-origin: bottom right;
+        animation-range: cover 37% cover 52%;
+      }
+    }
+  }
+
+  @keyframes testimonial-word-in {
+    from {
+      opacity: 0;
+      translate: 0 0.6em;
+    }
+  }
+
+  @keyframes testimonial-word-ink {
+    from {
+      color: var(--color-text-subtle);
+    }
+  }
+
+  @keyframes testimonial-mark-in {
+    from {
+      opacity: 0;
+      transform: translateY(0.6em) scale(var(--motion-overlay-scale));
+    }
+  }
+
   @media (min-width: 1280px) {
     .testimonial--wide {
       display: grid;

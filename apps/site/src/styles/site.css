@@ -7,6 +7,9 @@
 :root[data-raw] :not(svg, svg *)::after {
   all: revert !important;
 }
+:root[data-raw] [hidden]:not([hidden='until-found' i]) {
+  display: none !important;
+}
 
 @layer base {
   body {
@@ -55,25 +58,54 @@
     }
   }
 
+  /* Sections already on screen wait for the hero; revealed ones start at once.
+     Anything inside a section times itself from --entrance-delay. */
   .page > :not(.page-hero) {
+    --entrance-delay: 0ms;
     animation: entrance-rise var(--motion-entrance-duration) var(--motion-entrance-easing) both;
+    animation-delay: var(--entrance-delay);
   }
-  .page > .page-hero ~ * {
-    animation-delay: calc(var(--motion-entrance-lead) + var(--motion-entrance-stagger));
+  .page > .page-hero ~ :not([data-reveal]) {
+    --entrance-delay: calc(var(--motion-entrance-lead) + var(--motion-entrance-stagger));
   }
-
-  @media (prefers-reduced-motion: reduce) {
-    .page > :not(.page-hero) {
-      animation: entrance-fade var(--duration-base) var(--motion-entrance-easing) both;
-    }
-  }
-
   .page > [data-reveal='pending'] {
     opacity: 0;
     animation: none;
   }
-  .page > [data-reveal='shown'] {
-    animation-delay: 0ms;
+  .page > [data-reveal='pending'] *,
+  .page > [data-reveal='pending'] *::after {
+    animation-play-state: paused;
+  }
+
+  .page .ruled-heading {
+    --ruled-heading-delay: calc(var(--entrance-delay) + var(--motion-entrance-duration) * 0.75);
+  }
+
+  .page > .entrance-stagger {
+    animation: none;
+  }
+  .entrance-stagger > * {
+    animation: entrance-rise var(--motion-entrance-duration) var(--motion-entrance-easing) both;
+    animation-delay: var(--entrance-delay, 0ms);
+  }
+  .entrance-stagger > :nth-child(2) {
+    animation-delay: calc(var(--entrance-delay, 0ms) + var(--motion-entrance-lead));
+  }
+
+  :root[data-hero-seen] .page-hero__word > span {
+    animation: none;
+  }
+  :root[data-hero-seen] .page-hero > * {
+    animation: entrance-fade var(--duration-base) var(--motion-entrance-easing) both;
+  }
+
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .page > .testimonial:has(testimonial-words[data-split]) {
+        opacity: 1;
+        animation: none;
+      }
+    }
   }
 
   .page--roomy {
@@ -110,6 +142,33 @@
     block-size: calc(var(--space-900) / sqrt(var(--logo-ratio, 1)));
     inline-size: auto;
     max-inline-size: 100%;
+  }
+
+  @supports (animation-timeline: view()) {
+    .logo-wall {
+      --logo-columns: 2;
+
+      @media (min-width: 768px) {
+        --logo-columns: 3;
+      }
+      @media (min-width: 1280px) {
+        --logo-columns: 6;
+      }
+    }
+
+    .logo-wall__item {
+      --logo-ink-start: calc(28% + 4% * mod(var(--logo-index), var(--logo-columns)));
+      animation: logo-ink both;
+      animation-timeline: view();
+      animation-range: cover var(--logo-ink-start) cover calc(var(--logo-ink-start) + 12%);
+      animation-timing-function: var(--ease-standard);
+    }
+  }
+
+  @keyframes logo-ink {
+    from {
+      opacity: 0.15;
+    }
   }
 
   .article-title {
@@ -195,23 +254,6 @@
     }
   }
 
-  .page > .article {
-    animation: none;
-  }
-  .article-rail,
-  .article-body {
-    animation: entrance-rise var(--motion-entrance-duration) var(--motion-entrance-easing) both;
-  }
-  .article-body {
-    animation-delay: var(--motion-entrance-lead);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .article-rail,
-    .article-body {
-      animation: entrance-fade var(--duration-base) var(--motion-entrance-easing) both;
-    }
-  }
 }
 
 @layer base {

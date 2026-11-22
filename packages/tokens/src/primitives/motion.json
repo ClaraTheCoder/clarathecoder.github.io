@@ -11,7 +11,7 @@
   "ease": {
     "$type": "cubicBezier",
     "standard": { "$value": "cubic-bezier(0.25, 0.1, 0.25, 1)" },
-    "out": { "$value": "cubic-bezier(0.23, 1, 0.32, 1)" },
+    "out": { "$value": "cubic-bezier(0.33, 1, 0.68, 1)" },
     "in-out": { "$value": "cubic-bezier(0.77, 0, 0.175, 1)" },
     "in-out-soft": { "$value": "cubic-bezier(0.4, 0, 0.2, 1)" },
     "spring": {

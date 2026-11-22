@@ -34,6 +34,13 @@ const nav = [
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <script is:inline>
+      // The hero's entrance plays on the first page of a visit only (site.css).
+      try {
+        if (sessionStorage.getItem('hero-seen')) document.documentElement.setAttribute('data-hero-seen', '');
+        else sessionStorage.setItem('hero-seen', '1');
+      } catch (e) {}
+    </script>
     <script is:inline define:vars={{ fontPreloads }}>
       (function () {
         var KEY = 'theme-mode';
@@ -119,6 +126,7 @@ const nav = [
 
     <script>
       import '@clara/design-system/video-play-cover.js';
+      import '@clara/design-system/testimonial-words.js';
       import '../scripts/reveal';
     </script>
   </body>

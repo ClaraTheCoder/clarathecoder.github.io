@@ -17,6 +17,7 @@
     "./grid-backdrop.css": "./src/styles/grid-backdrop.css",
     "./styles.css": "./src/styles/index.css",
     "./video-play-cover.js": "./src/components/Video/video-play-cover.ts",
+    "./testimonial-words.js": "./src/components/Testimonial/testimonial-words.ts",
     "./font-preloads.js": "./src/styles/font-preloads.ts"
   },
   "scripts": {

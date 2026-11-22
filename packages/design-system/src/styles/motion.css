@@ -1,6 +1,16 @@
 @layer reset, base, components, utilities;
 
 @layer base {
+  /* Reduced motion turns every entrance rise into a short fade. Important so
+     it also wins over the presets' own distances. */
+  @media (prefers-reduced-motion: reduce) {
+    :root,
+    [data-preset] {
+      --motion-entrance-distance: 0px !important;
+      --motion-entrance-duration: var(--duration-base) !important;
+    }
+  }
+
   @keyframes entrance-rise {
     from {
       opacity: 0;
