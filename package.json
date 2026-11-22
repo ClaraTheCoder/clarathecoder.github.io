@@ -9,6 +9,7 @@
   },
   "scripts": {
     "dev": "pnpm --filter @clara/site dev",
+    "preview": "pnpm --filter @clara/site preview",
     "build": "pnpm -r build",
     "tokens": "pnpm --filter @clara/tokens build",
     "storybook": "pnpm --filter @clara/design-system storybook",
