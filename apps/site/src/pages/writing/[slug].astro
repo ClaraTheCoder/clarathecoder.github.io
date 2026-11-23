@@ -1,17 +1,21 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { Text, Container, Grid, Box, Flex, Link, Icon, Video } from '@clara/design-system';
-import { POSTS, formatDate, type Post } from '../../data/posts';
+import { Text, Container, Grid, Box, Flex, Link, Icon, Video, Alert, AlertTitle, AlertDescription } from '@clara/design-system';
+import { ALL_POSTS, POSTS, formatDate, type Post } from '../../data/posts';
 
 export function getStaticPaths() {
-  return POSTS.map((post, i) => ({
-    params: { slug: post.slug },
-    props: {
-      post,
-      newer: POSTS[i - 1] ?? null,
-      older: POSTS[i + 1] ?? null,
-    },
-  }));
+  return ALL_POSTS.map((post) => {
+    // Undated drafts aren't in POSTS, so they get no pager.
+    const i = POSTS.findIndex((dated) => dated.slug === post.slug);
+    return {
+      params: { slug: post.slug },
+      props: {
+        post,
+        newer: i === -1 ? null : (POSTS[i - 1] ?? null),
+        older: i === -1 ? null : (POSTS[i + 1] ?? null),
+      },
+    };
+  });
 }
 
 interface Props {
@@ -30,7 +34,7 @@ const { post, newer, older } = Astro.props;
       <Box as="header" className="article-rail" gridColumn={{ md: '1 / 5' }}>
         <Text variant="heading-2" as="h1" className="article-title">{post.title}</Text>
         <Flex align="center" wrap="wrap" gap="300">
-          <time datetime={post.date}>{formatDate(post.date)}</time>
+          {post.date ? <time datetime={post.date}>{formatDate(post.date)}</time> : <span>Undated</span>}
         </Flex>
         {
           post.toc && (
@@ -49,6 +53,17 @@ const { post, newer, older } = Astro.props;
       </Box>
 
       <Flex className="article-body" direction="column" gap="600" gridColumn={{ md: '5 / -1' }}>
+        {
+          post.draft && (
+            <Alert variant="warning">
+              <AlertTitle>Draft</AlertTitle>
+              <AlertDescription>
+                Only visible under <code>astro dev</code>. Remove <code>draft: true</code> from the frontmatter to
+                publish. <Link href="/writing/drafts">All drafts</Link>
+              </AlertDescription>
+            </Alert>
+          )
+        }
         {
           post.video && (
             <figure>

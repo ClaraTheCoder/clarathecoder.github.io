@@ -8,9 +8,10 @@ import macmillanLogo from '../assets/logos/macmillan.svg?raw';
 import butlinsLogo from '../assets/logos/butlins.svg?raw';
 import dfdsLogo from '../assets/logos/dfds.svg?raw';
 import { SITE } from '../data/site';
-import { POSTS, SHOW_WRITING } from '../data/posts';
+import { postsInSeries } from '../data/posts';
 
-const caseStudies = ['neo-foundations', 'neo-for-agents'].map((slug) => POSTS.find((post) => post.slug === slug)!);
+// Drafts drop out in production, so a case study may not be listed yet.
+const caseStudies = postsInSeries('neo');
 
 const principles = [
   {
@@ -110,7 +111,7 @@ const labelLogo = (svg: string, name: string) => {
           </Text>
         </div>
         {
-          SHOW_WRITING && (
+          caseStudies.length > 0 && (
             <PostList>
               {caseStudies.map((post) => (
                 <Post meta={`${post.readingTime} min read`} title={post.title} href={`/writing/${post.slug}`} description={post.description} />

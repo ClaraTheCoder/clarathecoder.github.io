@@ -1,57 +1,60 @@
-import type { MarkdownInstance } from 'astro';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
 
 export interface TocEntry {
   id: string;
   label: string;
 }
 
-export interface PostVideo {
-  label: string;
-  poster: string;
-  captions: string;
-  transcript?: string;
-  sources: { src: string; media?: string }[];
-}
+type PostData = CollectionEntry<'writing'>['data'];
 
-export interface Post {
+export interface Post extends Omit<PostData, 'slug'> {
   slug: string;
-  date: string;
-  title: string;
-  description: string;
   readingTime: number;
   /** Optional per ADR of this wireframe: present → the article rail shows a
    *  sticky Contents list; omitted → the rail carries meta only. */
   toc?: TocEntry[];
-  Content: MarkdownInstance<PostFrontmatter>['Content'];
-  video?: PostVideo;
+  Content: Awaited<ReturnType<typeof render>>['Content'];
 }
 
-interface PostFrontmatter {
-  title: string;
-  description: string;
-  date: string;
-  video?: PostVideo;
-}
+export type PostVideo = NonNullable<PostData['video']>;
+export type DatedPost = Post & { date: string };
 
 const WORDS_PER_MINUTE = 200;
 
-const posts: Post[] = Object.entries(
-  import.meta.glob<MarkdownInstance<PostFrontmatter>>('../content/writing/*.md', { eager: true }),
-).map(([path, md]) => ({
-  slug: path.split('/').pop()!.replace(/\.md$/, ''),
-  ...md.frontmatter,
-  readingTime: Math.max(1, Math.round(md.rawContent().split(/\s+/).length / WORDS_PER_MINUTE)),
-  toc: md
-    .getHeadings()
-    .filter((heading) => heading.depth === 2)
-    .map((heading) => ({ id: heading.slug, label: heading.text })),
-  Content: md.Content,
-}));
+/** Drafts are listed and built under `astro dev` only. */
+const SHOW_DRAFTS = import.meta.env.DEV;
 
-/** Writing routes only exist under `astro dev` (see astro.config.mjs). */
-export const SHOW_WRITING = import.meta.env.DEV;
+const entries = await getCollection('writing', ({ data }) => SHOW_DRAFTS || !data.draft);
 
-export const POSTS: Post[] = posts.sort((a, b) => b.date.localeCompare(a.date));
+/** Every post that gets a page. */
+export const ALL_POSTS: Post[] = await Promise.all(
+  entries.map(async (entry) => {
+    const { Content, headings } = await render(entry);
+    return {
+      ...entry.data,
+      slug: entry.id,
+      readingTime: Math.max(1, Math.round((entry.body ?? '').split(/\s+/).length / WORDS_PER_MINUTE)),
+      toc: headings
+        .filter((heading) => heading.depth === 2)
+        .map((heading) => ({ id: heading.slug, label: heading.text })),
+      Content,
+    };
+  }),
+);
+
+/** Dated posts, newest first: the writing list and the article pager. */
+export const POSTS: DatedPost[] = ALL_POSTS.filter((post): post is DatedPost => Boolean(post.date)).sort((a, b) =>
+  b.date.localeCompare(a.date),
+);
+
+/** Drafts for the dev-only drafts page: dated ones newest first, then undated ones by title. */
+export const DRAFTS: Post[] = ALL_POSTS.filter((post) => post.draft).sort(
+  (a, b) => (b.date ?? '').localeCompare(a.date ?? '') || a.title.localeCompare(b.title),
+);
+
+/** A series' dated posts in reading order, oldest first. */
+export const postsInSeries = (series: string): DatedPost[] =>
+  POSTS.filter((post) => post.series === series).reverse();
 
 export const formatDate = (iso: string, { year = true } = {}): string =>
   new Date(iso).toLocaleDateString('en-GB', {
@@ -60,8 +63,8 @@ export const formatDate = (iso: string, { year = true } = {}): string =>
     ...(year && { year: 'numeric' }),
   });
 
-export const postsByYear = (posts: Post[]): [string, Post[]][] => {
-  const groups = new Map<string, Post[]>();
+export const postsByYear = (posts: DatedPost[]): [string, DatedPost[]][] => {
+  const groups = new Map<string, DatedPost[]>();
   for (const post of posts) {
     const year = post.date.slice(0, 4);
     groups.set(year, [...(groups.get(year) ?? []), post]);

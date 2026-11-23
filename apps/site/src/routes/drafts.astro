@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import { Hero, Text, PostList, Post } from '@clara/design-system';
+import { DRAFTS, formatDate } from '../data/posts';
+---
+
+<Base title="Drafts">
+  <div class="page">
+    <Hero title="Drafts">
+      <Text variant="lead">Only visible under <code>astro dev</code>, and not linked from the nav.</Text>
+    </Hero>
+
+    <PostList>
+      {
+        DRAFTS.map((post) => (
+          <Post
+            meta={`${post.date ? formatDate(post.date) : 'Undated'} · ${post.readingTime} min read`}
+            title={post.title}
+            href={`/writing/${post.slug}`}
+            description={post.description}
+          />
+        ))
+      }
+    </PostList>
+  </div>
+</Base>

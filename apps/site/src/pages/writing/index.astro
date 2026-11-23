@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+import { Hero, Text, PostList, Post, Flex, Image } from '@clara/design-system';
+import { POSTS, formatDate, postsByYear } from '../../data/posts';
+---
+
+<Base>
+  <div class="page">
+    <Hero title="Writing">
+      <Text variant="lead">
+        I’m writing new articles! Coming soon!
+      </Text>
+    </Hero>
+
+    {
+      // POSTS.length === 0 ? (
+        <Flex direction="column" gap="600">
+          <Image ratio="350 / 200" maxWidth="prose">
+            <picture>
+              <source srcset="/images/cat-typing.png" media="(prefers-reduced-motion: reduce)" />
+              <img src="/images/cat-typing.gif" alt="A black-and-white cat typing furiously on a laptop" width="350" height="200" />
+            </picture>
+          </Image>
+        </Flex>
+      <!--) : (
+        <Flex direction="column" gap="800">
+          {postsByYear(POSTS).map(([year, posts]) => (
+            <PostList title={year}>
+              {posts.map((post) => (
+                <Post
+                  meta={`${post.draft ? 'Draft · ' : ''}${formatDate(post.date, { year: false })} · ${post.readingTime} min read`}
+                  title={post.title}
+                  href={`/writing/${post.slug}`}
+                  description={post.description}
+                />
+              ))}
+            </PostList>
+          ))}
+        </Flex>
+      )-->
+    }
+  </div>
+</Base>

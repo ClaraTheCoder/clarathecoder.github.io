@@ -9,7 +9,6 @@ import { ThemeDialog } from '../components/ThemeDialog';
 import { AvailableFrom } from '../components/AvailableFrom';
 import { fontPreloads } from '@clara/design-system/font-preloads.js';
 import { SITE } from '../data/site';
-import { SHOW_WRITING } from '../data/posts';
 
 interface Props {
   title?: string;
@@ -22,7 +21,7 @@ const {
 } = Astro.props;
 
 const nav = [
-  ...(SHOW_WRITING ? [{ label: 'Writing', href: '/writing' }] : []),
+  { label: 'Writing', href: '/writing' },
   { label: 'Work', href: '/work' },
 ];
 ---
