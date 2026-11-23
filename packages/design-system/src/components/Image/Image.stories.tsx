@@ -16,6 +16,14 @@ export const Default = meta.story({
   ),
 });
 
+export const MaxWidthProse = meta.story({
+  render: () => (
+    <Box py="500">
+      <Image maxWidth="prose" />
+    </Box>
+  ),
+});
+
 export const Portrait = meta.story({
   render: () => (
     <Box py="500" style={{ maxWidth: 320 }}>

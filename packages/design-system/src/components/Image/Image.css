@@ -12,12 +12,21 @@
     aspect-ratio: var(--image-ratio, 16 / 7.5);
   }
 
-  .image:has(> img) {
+  .image--max-prose {
+    max-inline-size: var(--size-container-prose);
+  }
+
+  .image:has(> img, > picture) {
     overflow: hidden;
     border: 0;
   }
 
-  .image > img {
+  .image > picture {
+    display: contents;
+  }
+
+  .image > img,
+  .image > picture > img {
     inline-size: 100%;
     block-size: 100%;
     object-fit: cover;
