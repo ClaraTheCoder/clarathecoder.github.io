@@ -1,7 +1,10 @@
 ---
-title: Laying the foundations
-description: Building the technical base for Vodafone’s global React design system, and what I’d do differently next time
-date: 2026-11-22
+title: Laying the foundations for a global, multi-brand design system
+slug: design-system-foundations
+description: The technical decisions under Vodafone’s Neo design system, and why they held up as it grew from web to React Native
+date: 2026-11-23
+draft: true
+series: neo
 video:
   label: 'Showreel: Vodafone Neo'
   poster: /videos/showreel-2026-10-poster.webp
@@ -13,50 +16,74 @@ video:
     - src: /videos/showreel-2026-10-720.mp4
 ---
 
-Neo is Vodafone’s new global design system, used by teams across the company. I joined a small team of designers to build it from scratch, and set the engineering foundations everything else relies on: React Aria as an accessible base layer, token architecture for white-labelling across sub-brands, the forms and interaction patterns, metadata for AI legibility, and the testing strategy.
+<!--
+Post 1 of 3 on Neo. Outline, not prose. Target ~1000 words, stretch to 1200.
+Technical. Must stand alone: brief context first. The "why teams trusted it"
+story is in neo-trust (next); the agents work is in neo-for-agents.
+Series order is set by date, a week apart: foundations 23 Nov, trust 30 Nov, agents 7 Dec.
+Through line: building at scale (multi-theme, multi-brand, multi-platform).
+Each new axis multiplies the work; the foundations keep that multiplication cheap.
+Framing: the team's work, an engineering take on a topic usually written up by designers.
+Be honest about what's proven: light/dark ships on both platforms, breakpoints on web,
+brand and density are in the architecture but not in components yet.
+Rules and sources: docs/writing/neo.md.
+[Brackets] = planned MDX components.
+-->
 
-Every decision was written down as an Architectural Decision Record, so engineers who joined later could pick up the system and build on it with very little onboarding, and the architecture held as the library grew past a hundred components across web and React Native.
+[CaseMeta] Role: technical side of the Neo design team · Timeline: February 2026 to present · Platforms: web, React Native · Focus: accessible foundations, testing, core components, component metadata
 
-## Why Neo needed to exist
+- Hook: TODO. Scale as multiplication, not as a component count (81 stable on web, 14 in labs on React Native, so don't say "past a hundred")
 
-- Product teams were each building their own UI, so brand and accessibility drifted from product to product
-- One shared system only wins if using it costs a team less than building their own
-- Started February 2026; who else was on the team (check wording with Phil, whose write-up calls him the first engineer)
+## Context
 
-## React Aria as an accessible base layer
+- Neo is Vodafone’s new global design system, and the first with a shared React library rather than Figma files each team implemented its own way
+- The axes it has to serve, each multiplying the others:
+  - Theme: light and dark
+  - Brand: sub-brands themed from one source
+  - Platform: web, then React Native
+  - Breakpoint: four on web (React Native is mobile-only)
+  - Locale: many languages, including right-to-left
+- One line on the team: I joined the design team in February 2026 to work on the technical side
 
-- What was coming: Select, Combobox, DatePicker, Dialog, Menu, Tabs, Accordion
-- Radix vs React Aria Components, and why RAC won: locale-aware date and calendar handling, RTL from the locale (ADR 0013)
-- What it freed Neo’s own code to focus on: tokens, variants, the Vodafone brand
-- Where RAC stopped and you built your own: `useInteractiveControl`, the stretched overlay control, gesture-driven overlays with Motion
+## Tokens: a base and sparse overlays
 
-## Tokens and white-labelling
+- One token source for web (plain CSS, with Tailwind as a mapping layer, Tailwind Variants) and React Native, built in-project with Style Dictionary
+- Each axis value is an overlay that only holds what it changes, merged over one complete base at build time (ADR 0033)
+- [StatGroup] Complete trees for every combination of theme, density and breakpoint would be 2 × 3 × 4 = 24; overlays make a new axis one more set of files, not a multiplication
+- A collision between two overlays fails the build rather than silently winning
+- Light/dark doesn't stop at colour: `Image` takes a `dark` source too
+- Brand is the next overlay. Don't claim it ships, and don't mention unannounced plans
+- Density: in the tokens but not in components, because it isn't in Figma. Leave it out, or use it only to illustrate the 24
+- [Figure] Base + overlays, one per axis, merging into a resolved set
+- TODO: answers to the tokens questions (pain of full trees, what component code doesn't have to write, why dark images, what adding a brand would take)
 
-- The token architecture for sub-brands, and your part in it
-- One token source for web and React Native; the plain-CSS output, with Tailwind as a mapping layer
-- Resetting the default Tailwind spacing scale and enforcing spacing tokens (ADR 0048)
+## One component contract, two platforms
 
-## Forms and interaction patterns
+- The same idea one layer up: each component's contract is a shared file plus sparse web and React Native overlays (ADR 0060)
+- Shared fields flow to every platform, so differences are explicit and listed with a reason (e.g. `testID` vs `data-testid`)
+- When React Native arrived, the contract was the specification: no requirements gathering, no rediscovering edge cases
+- [Callout: impact] Infrastructure plus the first 10 React Native components in two weeks, by an engineer who joined late and was productive within days
 
-- Who owns validation, and who owns loading state (ADRs 0037, 0021)
-- One worked example, with a screenshot or snippet
+## Tests across the combinations
 
-## The testing strategy
+- Unit tests for behaviour, accessibility checks on every documented example, visual snapshots in real browsers (ADR 0012)
+- Web visual tests run per theme × breakpoint on every PR; React Native has its own tiers, with visual regression in light and dark on an Android emulator
+- Caught real regressions when later, more complex components needed changes to Text, Link, Button and Popover
+- Don't imply the platforms have equal coverage: React Native visual runs locally, Android only
+- TODO: add RTL to the visual baselines, then say so here
 
-- Three tiers, each with one job: unit tests for behaviour, accessibility checks on every documented example, visual snapshots in real browsers (ADR 0012)
-- Why class-name assertions were banned
-- What a failing check blocks
+## An accessible base layer with locale support (only if it fits)
 
-## Writing it all down
+- React Aria Components as the headless primitive layer (ADR 0013): keyboard, focus, RTL and locale-aware dates handled for every market
+- Accessibility: WCAG 2.2 AA, required by law
+- Why not Radix: no DatePicker or Calendar primitive, and its RTL is layout-only, so date formatting and calendar systems would have been ours to build
+- React Aria derives direction from the locale, so RTL isn't a separate concern; DatePicker and Calendar handle calendar systems (Gregorian, Hijri, Buddhist, Persian) and locale formatting
+- Base UI: had momentum but no track record yet
+- Most thoroughly accessibility-tested, Radix development slowing - briefly - don't duplicate neo-trust too much
+- React Native follows its own platform model for right-to-left (ADR 0055)
 
-- 64 ADRs by November 2026, ten of them yours
-- How later joiners onboarded from them
-- A decision that was hard, and the record that settled it
+## Close
 
-## Where it landed
+- What's proven so far, and what the foundations are ready for: brand as the next overlay
 
-- Past a hundred components across web and React Native
-- Adoption: the part still going
-- What you’d do differently
-
-Neo was also built to be read by machines. That’s its own story: [Teaching agents to build with Neo](/writing/neo-for-agents).
+Next: [Earning trust when you’re one more competing standard](/writing/one-more-competing-standard), how Neo won over teams that already had a design system of their own.

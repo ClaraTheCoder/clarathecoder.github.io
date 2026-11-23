@@ -33,7 +33,10 @@ export const ALL_POSTS: Post[] = await Promise.all(
     return {
       ...entry.data,
       slug: entry.id,
-      readingTime: Math.max(1, Math.round((entry.body ?? '').split(/\s+/).length / WORDS_PER_MINUTE)),
+      readingTime: Math.max(
+        1,
+        Math.round((entry.body ?? '').split(/\s+/).length / WORDS_PER_MINUTE),
+      ),
       toc: headings
         .filter((heading) => heading.depth === 2)
         .map((heading) => ({ id: heading.slug, label: heading.text })),
@@ -43,9 +46,9 @@ export const ALL_POSTS: Post[] = await Promise.all(
 );
 
 /** Dated posts, newest first: the writing list and the article pager. */
-export const POSTS: DatedPost[] = ALL_POSTS.filter((post): post is DatedPost => Boolean(post.date)).sort((a, b) =>
-  b.date.localeCompare(a.date),
-);
+export const POSTS: DatedPost[] = ALL_POSTS.filter((post): post is DatedPost =>
+  Boolean(post.date),
+).sort((a, b) => b.date.localeCompare(a.date));
 
 /** Drafts for the dev-only drafts page: dated ones newest first, then undated ones by title. */
 export const DRAFTS: Post[] = ALL_POSTS.filter((post) => post.draft).sort(

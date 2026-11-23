@@ -19,6 +19,10 @@ Personal site for Clara + the design system it's built on. pnpm monorepo, Node �
 
 See `docs/adr/`: 0001 static Astro + React islands · 0002 vanilla CSS + cascade layers · 0003 token pipeline build gates · 0004 two-axis theming via data attributes · 0005 shadcn + Base UI primitives (superseded by 0009) · 0006 pnpm monorepo · 0007 responsive typography tokens · 0008 nested primitive inheritance reset · 0009 native HTML interactive components · 0010 nested presets via `:where([data-preset])` + `@scope`.
 
+## Writing
+
+Posts live in `apps/site/src/content/writing/` (a content collection, `src/content.config.ts`). Before working on the Neo posts, read `docs/writing/neo.md`.
+
 ## Commands
 
 `pnpm tokens` · `pnpm storybook` · `pnpm dev` · `pnpm build` · `pnpm lint` · `pnpm typecheck` · `pnpm format`
