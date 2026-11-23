@@ -8,7 +8,7 @@ const observer = new IntersectionObserver(
       observer.unobserve(entry.target);
     }
   },
-  { rootMargin: '0px 0px -14% 0px' },
+  { rootMargin: '0px 0px -10% 0px' },
 );
 
 const revealLine = window.innerHeight * 0.8;

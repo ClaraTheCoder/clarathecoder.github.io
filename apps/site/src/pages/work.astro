@@ -14,35 +14,35 @@ const caseStudies = ['neo-foundations', 'neo-for-agents'].map((slug) => POSTS.fi
 
 const principles = [
   {
-    title: 'Nothing is “not my problem.”',
-    body: 'I’m curious about everything: the design, the business, the people who’ll actually use the thing. So I ask “but why?” more than is strictly polite, until the real problem falls out. I’d rather solve that than just close the ticket. It makes me pretty good at translating between business, design and code, and at remembering that people and processes are part of a software system too.',
+    title: 'I think in systems.',
+    body: 'Much of my work has involved making sense of big, complex digital systems, and looking for the small changes that give a system room to grow. Coding agents can build components faster than I can these days, but they still need someone who can keep the big picture in mind. People and processes are a vital part of any software system too.',
   },
   {
-    title: 'I judge my work by what it does for people.',
-    body: 'I like tidy code as much as the next engineer, but I care more about helping people than building the perfect abstraction. My favourite days at work are when I delight designers with journeys that look exactly how they drew them, create tools that turn a month of boring work into an afternoon, and give users what they need so they can get on with living life (and maybe spend a little less time online). I’d rather make a system that people want to use than be the Design System Police.',
+    title: 'I ask “why” a until it’s a bit annoying.',
+    body: 'I’m curious about everything, and I’d rather solve a problem than just close a ticket. As much as I enjoy well-crafted code, I care more about the people using it than about writing the perfect abstraction. That makes me pretty good at translating between business, design and code, and my favourite days are when I build a tool that turns a month of boring work into an afternoon, or gives users what they need so they can maybe spend a little less time online.',
   },
   {
     title: 'I do good work in good company.',
-    body: 'I love working with thoughtful, talented people. After more than a decade of coding professionally, it’s still the best part of the job.',
+    body: 'I love working with thoughtful, talented people. In more than a decade of coding professionally, it’s always been the best part of the job.',
   },
 ];
 
 const waysToWork = [
   {
     title: 'Lay the foundations',
-    body: 'Get started on a new design system, or give a wobbly one a proper base. I’ll make the engineering decisions and build the foundation, and document everything so your team can keep building on it long after I’ve left.',
+    body: 'Get started on a new design system, or give a wobbly one a proper base. I’ll make the engineering decisions, give you the core components, and document everything so your team can keep building on it long after I’ve left.',
   },
   {
-    title: 'Get your team AI-ready',
-    body: 'I’ll make your design system legible to agents, so they reach for the right component instead of inventing their own. Then I’ll test it against real models, so your team ships on-brand pages faster and burns fewer tokens doing it.',
+    title: 'Make your system AI-ready',
+    body: 'I’ll build tooling and documentation for coding agents, so your team can ship on-brand pages and burn fewer tokens doing it. If your design system already has agent tooling, I can benchmark how well different models use it and suggest improvements.',
   },
   {
     title: 'An extra pair of hands',
-    body: 'Sometimes you just need another experienced engineer. I’ll slot in as a tech lead or senior engineer and ship product with you. I’ll happily take on the legacy code nobody else wants to touch, fixing it up rather than starting again.',
+    body: 'Sometimes you just need another experienced engineer. I can lead the team or get stuck in, and I’m usually shipping by the end of the first week. I also love untangling the legacy code that nobody else wants to touch.',
   },
   {
     title: 'Talks, workshops and writing',
-    body: 'I love talking about design systems, AI and the space where design meets engineering. If your team, meetup or conference would like a talk or a hands-on workshop on any of that, get in touch.',
+    body: 'Chatting with other nerds is great fun. If your team, meetup or conference would like a talk or a hands-on workshop on design systems or coding agents, get in touch.',
   },
 ];
 
@@ -66,15 +66,20 @@ const labelLogo = (svg: string, name: string) => {
   <div class="page page--roomy">
     <Hero title="Let’s work together">
       <Text variant="lead">
-        I’m a creative engineer who’s spent 12 years turning business requirements and design into working software. I usually work on a contract basis, and short projects of three to six months suit me nicely, but I’m open to longer engagements or a permanent role if the right one comes along. Read on, or <Link href={`mailto:${SITE.email}`}>drop me an email</Link> if you’ve got something in mind.
+        I’m a creative engineer who’s spent 12 years building websites, apps and design systems. I work on a contract basis, and short projects of three to six months are where I do my best work, but I’m open to longer contracts too.
+      </Text>
+      <Text variant="lead">
+        I’m generally only interested in permanent roles if you’re a charity or a co-operative, or the work is exceptionally interesting and unusual. If you’ve got something in mind, <Link href={`mailto:${SITE.email}`}>send me an email</Link>.
       </Text>
     </Hero>
 
     <Flex as="section" aria-labelledby="how-i-work" direction="column" gap="600">
       <RuledHeading id="how-i-work">How I work</RuledHeading>
-      <Text variant="lead" className="how-i-work__intro">
-        I’ve been a tech lead, a design system engineer and a product engineer. I started out in agencies, building everything from sites for small local businesses to campaigns for global brands, and more recently I’ve been embedded with product teams. Before any of that I studied architecture, and it left me with a lasting love of good design. Through everything, a few things have held true:
-      </Text>
+      <div class="prose">
+        <Text variant="lead">
+          I’ve been a tech lead, a design system engineer and a product engineer, and I’ve worked with clients of all sizes, from small local businesses to the United Nations. Before that I studied architecture, which is where I got my eye for good design. A few things have stayed true for me throughout my career:
+        </Text>
+      </div>
       <DisclosureList>
         {
           principles.map((principle) => (
@@ -99,11 +104,11 @@ const labelLogo = (svg: string, name: string) => {
           <source src="/videos/neo-migration-promo-1080.mp4" type="video/mp4" media="(min-width: 52rem)" />
           <source src="/videos/neo-migration-promo-720.mp4" type="video/mp4" />
         </Video>
-        <Text as="div" className="prose">
-          <p>
+        <div class="prose">
+          <Text variant="lead">
             Neo is Vodafone’s new global design system, used by teams across the company on web and React Native. In 2026, I joined a small team of designers to architect the foundations, build the core components, and make it a system that coding agents can use to build a working, on-brand page with a single prompt.
-          </p>
-        </Text>
+          </Text>
+        </div>
         {
           SHOW_WRITING && (
             <PostList>
@@ -136,7 +141,7 @@ const labelLogo = (svg: string, name: string) => {
 
     <Flex as="section" aria-labelledby="ways-to-work" direction="column" gap="600">
       <RuledHeading id="ways-to-work">What I do</RuledHeading>
-      <Grid as="ul" className="work-cards" columns={{ initial: 1, sm: 2, lg: 4 }} gap="var(--grid-gutter)">
+      <Grid as="ul" className="work-cards" columns={{ initial: 1, sm: 2, xl: 4 }} gap="var(--grid-gutter)">
         {
           waysToWork.map((item) => (
             <Flex as="li" direction="column" gap="300">
@@ -149,12 +154,12 @@ const labelLogo = (svg: string, name: string) => {
     </Flex>
 
     <Grid as="section" aria-labelledby="contact" columns={{ initial: 1, lg: 12 }} gapX="var(--grid-gutter)" gapY="500">
-      <Box gridColumn={{ lg: '1 / 7' }}>
-        <Text variant="display-2" as="h2" id="contact">Drop me a line</Text>
+      <Box gridColumn={{ lg: '1 / 6' }}>
+        <Text variant="display-2" as="h2" id="contact">Something else in mind?</Text>
       </Box>
-      <Flex className="contact__body" direction="column" gap="400" gridColumn={{ lg: '7 / -1' }}>
+      <Flex className="prose" direction="column" gap="400" gridColumn={{ lg: '6 / -1' }}>
         <Text variant="lead">
-          If what you need doesn’t fit neatly into any of those, <Link href={`mailto:${SITE.email}`}>send me an email</Link> anyway, and tell me what you’re working on.
+          Are you working on something strange? I like strange. <Link href={`mailto:${SITE.email}`}>Send me an email</Link>.
         </Text>
         <Text variant="lead">
           I’m based in South Yorkshire and mostly work remotely, with the occasional day in Sheffield, Leeds, Manchester or London.

@@ -1,6 +1,6 @@
 ---
-title: Laying Neo’s foundations
-description: The engineering base under Vodafone’s global design system, from an accessible primitive layer and a testing strategy to every decision written down.
+title: Laying the foundations
+description: Building the technical base for Vodafone’s global React design system, and what I’d do differently next time
 date: 2026-11-22
 video:
   label: 'Showreel: Vodafone Neo'

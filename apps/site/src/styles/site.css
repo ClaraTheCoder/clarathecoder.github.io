@@ -109,7 +109,7 @@
   }
 
   .page--roomy {
-    gap: clamp(var(--space-800), 9vw, calc(var(--space-900) * 2));
+    gap: clamp(var(--space-800), 9vw, calc(var(--space-900) * 1.5));
     padding-top: var(--space-900);
   }
 
@@ -119,11 +119,6 @@
       top: var(--space-600);
       align-self: start;
     }
-  }
-
-  .how-i-work__intro,
-  .contact__body {
-    max-inline-size: var(--size-container-prose);
   }
 
   .logo-wall,
