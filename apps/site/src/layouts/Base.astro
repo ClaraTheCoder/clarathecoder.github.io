@@ -16,9 +16,11 @@ interface Props {
 }
 
 const {
-  title = 'Clara Jordan',
+  title,
   description = 'Design-systems engineer and tech lead.',
 } = Astro.props;
+
+const pageTitle = title ? `${title} - Clara Jordan` : 'Clara Jordan';
 
 const nav = [
   { label: 'Writing', href: '/writing' },
@@ -95,7 +97,7 @@ const nav = [
         applyScheme(scheme);
       })();
     </script>
-    <title>{title}</title>
+    <title>{pageTitle}</title>
     <meta name="description" content={description} />
   </head>
   <body>
