@@ -173,7 +173,7 @@ Colour comes from a named primitive palette of 13-step OKLCH ramps; semantic rol
 
 - **Cream Ground** (`cream-ground`, saffron 100): Default's light page background — warm, not white.
 - **Ink** (`ink`, neutral 800): Default's light text. Text is neutral, not lavender-tinted.
-- **Ash** (`ash`): muted text. Subtle text is the text colour at 55% (a `color-mix`), so it stays in each world's own ink.
+- **Ash** (`ash`): muted text. Subtle text is the text colour at 70% in light mode and 55% in dark (a `color-mix` inside `light-dark()`), so it stays in each world's own ink and keeps 4.5:1 on light grounds.
 - **Stone Rule** / **Stone Strong**: borders and strong borders (also the focus-ring colour), in every preset.
 - **Lavender Night** (`lavender-night`): Default's dark-mode background and surface.
 - **Paper** (`paper`): Blueprint and Opal light background; text-on-colour in light mode.
@@ -310,7 +310,7 @@ A list of statements that each open to their detail, built on native `<details>`
 
 ### Testimonial
 
-A quote in the heading-2 role, with key phrases wrapped in `<strong>` shown in full text colour and the rest at 55% of the text colour, so the muted words stay in the world's own ink rather than grey. Two oversized quote marks (twice display size) in the display face and accent colour: the opening mark above the quote, the closing mark on the right of the attribution row. The name is in the heading-4 role; the role and company sit below on separate lines in subtle text. There is no avatar.
+A quote in the heading-2 role, with key phrases wrapped in `<strong>` shown in full text colour and the rest in subtle text (70% of the text colour in light mode, 55% in dark), so the muted words stay in the world's own ink rather than grey. Two oversized quote marks (twice display size) in the display face and accent colour: the opening mark above the quote, the closing mark on the right of the attribution row. The name is in the heading-4 role; the role and company sit below on separate lines in subtle text. There is no avatar.
 
 **Wide:** from 1280px the testimonial lays itself on the page's 12 columns (CSS subgrid) at the heading-1 role: the opening mark alone at the top of columns 1–2, the quote in 3–11 and the attribution in 3–10, the closing mark at the right edge. Below 1280px it is the stacked default. Work uses it full-width after the case study.
 

@@ -11,7 +11,9 @@
 
     "text": { "$value": "{color.neutral.800}" },
     "text-muted": { "$value": "{color.neutral.700}" },
-    "text-subtle": { "$value": "color-mix(in oklab, {color.text} 55%, transparent)" },
+    "text-subtle": {
+      "$value": "light-dark(color-mix(in oklab, {color.text} 70%, transparent), color-mix(in oklab, {color.text} 55%, transparent))"
+    },
     "text-on-color": { "$value": "{color.neutral.50}" },
     "text-on-color-fixed": { "$value": "{color.neutral.50}" },
 
