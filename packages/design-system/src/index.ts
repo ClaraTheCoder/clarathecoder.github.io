@@ -13,6 +13,7 @@ export * from './components/RadioCards';
 export * from './components/RuledHeading';
 export * from './components/SiteFooter';
 export * from './components/SiteHeader';
+export * from './components/TableOfContents';
 export * from './components/Testimonial';
 export * from './components/Text';
 export * from './components/Video';

@@ -1,0 +1,95 @@
+@layer reset, base, components, utilities;
+
+@layer components {
+  .toc {
+    --_dot: var(--space-400);
+    --_dot-offset: calc((1lh - var(--_dot)) / 2);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-400);
+  }
+
+  .toc__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .toc__item {
+    position: relative;
+    display: grid;
+    grid-template-columns: var(--_dot) minmax(0, 1fr);
+    column-gap: var(--space-300);
+    padding-block-end: var(--space-400);
+    font-family: var(--text-body-font-family);
+    font-size: var(--text-body-font-size);
+    font-weight: var(--text-body-font-weight);
+    line-height: var(--text-body-line-height);
+    letter-spacing: var(--text-body-letter-spacing);
+    color: var(--color-text-subtle);
+  }
+
+  .toc__item:last-child {
+    padding-block-end: 0;
+  }
+
+  .toc__item[data-read],
+  .toc__item:has([aria-current]) {
+    color: var(--color-text);
+  }
+
+  .toc__item::after {
+    content: '';
+    position: absolute;
+    inset-block: calc(var(--_dot-offset) + var(--_dot)) calc(var(--_dot-offset) * -1);
+    inset-inline-start: calc((var(--_dot) - var(--space-50)) / 2);
+    inline-size: var(--space-50);
+    background:
+      linear-gradient(var(--color-accent), var(--color-accent)) top / 100%
+        calc(var(--toc-progress, 0) * 100%) no-repeat,
+      var(--color-border);
+  }
+
+  .toc__item:last-child::after {
+    content: none;
+  }
+
+  .toc__dot {
+    display: block;
+    inline-size: var(--_dot);
+    block-size: var(--_dot);
+    margin-block-start: var(--_dot-offset);
+    background: transparent;
+    border: var(--space-50) solid var(--color-border);
+    border-radius: var(--toc-dot-radius);
+    transition:
+      background-color var(--duration-fast) var(--ease-standard),
+      border-color var(--duration-fast) var(--ease-standard);
+  }
+
+  .toc__item[data-read] .toc__dot,
+  .toc__item:has([aria-current]) .toc__dot {
+    background: var(--color-accent);
+    border-color: transparent;
+  }
+
+  @media (scripting: none) {
+    .toc__item {
+      display: block;
+      padding-block-end: var(--space-200);
+      color: var(--color-text);
+    }
+
+    .toc__dot,
+    .toc__item::after {
+      display: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .toc__dot {
+      transition: none;
+    }
+  }
+}

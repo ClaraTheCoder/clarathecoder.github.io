@@ -19,6 +19,7 @@
     "./styles.css": "./src/styles/index.css",
     "./video-play-cover.js": "./src/components/Video/video-play-cover.ts",
     "./testimonial-words.js": "./src/components/Testimonial/testimonial-words.ts",
+    "./toc-progress.js": "./src/components/TableOfContents/toc-progress.ts",
     "./font-preloads.js": "./src/styles/font-preloads.ts"
   },
   "scripts": {

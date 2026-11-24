@@ -1,0 +1,5 @@
+{
+  "toc": {
+    "dot-radius": { "$value": "{radius.sm}" }
+  }
+}
