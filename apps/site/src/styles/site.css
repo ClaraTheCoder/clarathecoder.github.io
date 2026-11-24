@@ -177,12 +177,19 @@
     gap: var(--space-500);
   }
 
+  .article-rail .article-toc {
+    display: none;
+  }
+
   @media (min-width: 1024px) {
-    .article-rail {
+    .article-rail .article-toc {
+      display: flex;
       position: sticky;
       top: var(--space-600);
-      align-self: start;
-      text-align: left;
+      max-block-size: calc(100dvh - 2 * var(--space-600));
+      overflow-y: auto;
+      padding-block-end: calc(var(--focus-ring-width) + var(--focus-ring-offset));
+      padding-inline-end: calc(var(--focus-ring-width) + var(--focus-ring-offset));
     }
   }
 

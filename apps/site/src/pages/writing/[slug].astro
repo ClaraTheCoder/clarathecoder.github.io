@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { Text, Container, Grid, Box, Flex, Link, Icon, Video, Image, Alert, AlertTitle, AlertDescription } from '@clara/design-system';
+import { Text, Container, Grid, Box, Flex, Link, Icon, Video, Image, Alert, AlertTitle, AlertDescription, TableOfContents } from '@clara/design-system';
 import { ALL_POSTS, POSTS, formatDate, type Post } from '../../data/posts';
 
 export function getStaticPaths() {
@@ -31,25 +31,14 @@ const { post, newer, older } = Astro.props;
   <article class="page">
     <!-- Title + meta live in the left column; prose on the right -->
     <Grid className="entrance-stagger" columns={{ initial: 1, md: 12 }} gapX="var(--grid-gutter)" gapY="600">
-      <Box as="header" className="article-rail" gridColumn={{ md: '1 / 5' }}>
-        <Text variant="heading-2" as="h1" className="article-title">{post.title}</Text>
-        <Flex align="center" wrap="wrap" gap="300">
-          {post.date ? <time datetime={post.date}>{formatDate(post.date)}</time> : <span>Undated</span>}
+      <Box className="article-rail" gridColumn={{ md: '1 / 5' }}>
+        <Flex as="header" direction="column" gap="500">
+          <Text variant="heading-2" as="h1" className="article-title">{post.title}</Text>
+          <Flex align="center" wrap="wrap" gap="300">
+            {post.date ? <time datetime={post.date}>{formatDate(post.date)}</time> : <span>Undated</span>}
+          </Flex>
         </Flex>
-        {
-          post.toc && (
-            <Flex as="nav" direction="column" gap="300" aria-labelledby="toc-title">
-              <Text variant="heading-5" as="h2" id="toc-title">Contents</Text>
-              <Flex as="ol" gap="200" direction="column">
-                {post.toc.map((entry) => (
-                  <li>
-                    <Link href={`#${entry.id}`}>{entry.label}</Link>
-                  </li>
-                ))}
-              </Flex>
-            </Flex>
-          )
-        }
+        {post.toc && <TableOfContents entries={post.toc} className="article-toc" />}
       </Box>
 
       <Flex className="article-body" direction="column" gap="600" gridColumn={{ md: '5 / -1' }}>
