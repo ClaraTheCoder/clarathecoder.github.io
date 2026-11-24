@@ -67,17 +67,18 @@ Rules and sources: docs/writing/neo.md.
 ## Tests across the combinations
 
 - Unit tests for behaviour, accessibility checks on every documented example, visual snapshots in real browsers (ADR 0012)
-- Web visual tests run per theme × breakpoint on every PR; React Native has its own tiers, with visual regression in light and dark on an Android emulator
+- Web visual tests run per theme × breakpoint on every PR, plus a right-to-left pass: one Arabic-locale story per component, about 80 baselines (light mode only, so don't claim RTL × theme); React Native has its own tiers, with visual regression in light and dark on an Android emulator
 - Caught real regressions when later, more complex components needed changes to Text, Link, Button and Popover
+- [Callout: finding] The first RTL run caught a real consumer bug: Modal, FullScreenModal and MegaMenu didn't mirror. Overlays render into `<body>`, outside the element where the provider sets `dir` and `lang`, so any RTL app following the setup docs was affected. Dark mode had hit the same issue and been patched per overlay; direction never had. Overlays now re-apply direction and language alongside colour mode, guarded by a unit test and the baselines
+- Lesson, tied to the through line: fixing one axis doesn't fix the next. Each axis needs its own test, or the multiplication hides gaps
 - Don't imply the platforms have equal coverage: React Native visual runs locally, Android only
-- TODO: add RTL to the visual baselines, then say so here
 
 ## An accessible base layer with locale support (only if it fits)
 
 - React Aria Components as the headless primitive layer (ADR 0013): keyboard, focus, RTL and locale-aware dates handled for every market
 - Accessibility: WCAG 2.2 AA, required by law
 - Why not Radix: no DatePicker or Calendar primitive, and its RTL is layout-only, so date formatting and calendar systems would have been ours to build
-- React Aria derives direction from the locale, so RTL isn't a separate concern; DatePicker and Calendar handle calendar systems (Gregorian, Hijri, Buddhist, Persian) and locale formatting
+- React Aria derives direction from the locale, so RTL is mostly handled inside the component tree; overlays rendered outside it were the exception (→ the RTL callout above); DatePicker and Calendar handle calendar systems (Gregorian, Hijri, Buddhist, Persian) and locale formatting
 - Base UI: had momentum but no track record yet
 - Most thoroughly accessibility-tested, Radix development slowing - briefly - don't duplicate neo-trust too much
 - React Native follows its own platform model for right-to-left (ADR 0055)
