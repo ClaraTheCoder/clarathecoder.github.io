@@ -19,7 +19,7 @@ video:
 <!--
 Post 1 of 3 on Neo. Outline, not prose. Target ~1000 words, stretch to 1200.
 Technical. Must stand alone: brief context first. The "why teams trusted it"
-story is in neo-trust (next); the agents work is in neo-for-agents.
+story is in one-more-competing-standard (next); the agents work is in neo-for-agents.
 Series order is set by date, a week apart: foundations 23 Nov, trust 30 Nov, agents 7 Dec.
 Through line: building at scale (multi-theme, multi-brand, multi-platform).
 Each new axis multiplies the work; the foundations keep that multiplication cheap.
@@ -80,7 +80,7 @@ Rules and sources: docs/writing/neo.md.
 - Why not Radix: no DatePicker or Calendar primitive, and its RTL is layout-only, so date formatting and calendar systems would have been ours to build
 - React Aria derives direction from the locale, so RTL is mostly handled inside the component tree; overlays rendered outside it were the exception (→ the RTL callout above); DatePicker and Calendar handle calendar systems (Gregorian, Hijri, Buddhist, Persian) and locale formatting
 - Base UI: had momentum but no track record yet
-- Most thoroughly accessibility-tested, Radix development slowing - briefly - don't duplicate neo-trust too much
+- Most thoroughly accessibility-tested, Radix development slowing - briefly - don't duplicate the trust post too much
 - React Native follows its own platform model for right-to-left (ADR 0055)
 
 ## Close

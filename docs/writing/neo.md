@@ -4,15 +4,15 @@ Notes for writing the Neo posts, for Clara and any agent helping her. This repo 
 
 ## The series
 
-| Order | File                 | Slug                                | Date        | What it is                                                                     |
-| ----- | -------------------- | ----------------------------------- | ----------- | ------------------------------------------------------------------------------ |
-| 1     | `neo-foundations.md` | `design-system-foundations`         | 23 Nov 2026 | Technical: the decisions under Neo, and why they held up                       |
-| 2     | `neo-trust.md`       | `one-more-competing-standard`       | 30 Nov 2026 | Organisational: winning over teams that already had a design system            |
-| 3     | `neo-for-agents.md`  | `teaching-agents-to-build-with-neo` | 7 Dec 2026  | General how-to: making a design system readable by agents, and benchmarking it |
+| Order | File                             | Slug                                | Date        | What it is                                                                     |
+| ----- | -------------------------------- | ----------------------------------- | ----------- | ------------------------------------------------------------------------------ |
+| 1     | `neo-foundations.md`             | `design-system-foundations`         | 23 Nov 2026 | Technical: the decisions under Neo, and why they held up                       |
+| 2     | `one-more-competing-standard.md` | `one-more-competing-standard`       | 30 Nov 2026 | Organisational: winning over teams that already had a design system            |
+| 3     | `neo-for-agents.md`              | `teaching-agents-to-build-with-neo` | 7 Dec 2026  | General how-to: making a design system readable by agents, and benchmarking it |
 
 - The posts are in `apps/site/src/content/writing/`. Each opens with an HTML comment covering its purpose, length and through line. Those comments are public too, so keep them to editorial notes.
 - The order comes from the dates: the article pager follows them. Each post must also stand alone.
-- All three have `series: neo`, which the work page lists, and `draft: true` until they're published. Drafts only appear under `pnpm dev`, along with the unlinked `/writing/drafts` page.
+- Foundations and agents have `series: neo`, which the work page lists under the Vodafone case study. The trust post doesn't, so it isn't listed there. All three have `draft: true` until they're published. Drafts only appear under `pnpm dev`, along with the unlinked `/writing/drafts` page.
 - The outlines are bullet points, not prose. `[Brackets]` mark planned MDX components (`CaseMeta`, `Callout`, `StatGroup`, `PullQuote`, `Steps`, `Figure`).
 - Length: about 1,200 words for posts 1 and 2, and up to 2,000 for post 3. Never more than 2,000.
 
@@ -24,6 +24,7 @@ Principle posts that cite Neo but are about ideas, not Vodafone: `opinionated-vs
 - **Tone: positive.** The project was a success. Frame anything that went wrong as a lesson, never a failure, and never anyone's fault.
 - **People.** Don't name or credit colleagues, including where a source document names them; write Clara's own work as “I”. Don't call Clara the first or only engineer. The agreed wording is that she “joined the design team to work on the technical side” and made the early engineering decisions (React Aria, the testing strategy, Button and form fields).
 - **Leave out:** unannounced plans, releases and milestones; anything about Clara's terms of engagement; costs or prices from the benchmark.
+- **The trust post names nobody:** never write “Vodafone” or “Neo” in `one-more-competing-standard.md`, including its description and HTML comment. Say “the company”, “the new system”. The other posts can name both.
 - **Audience:** people who know design systems but not Vodafone. Drop internal jargon: say “local markets” and “the central team”, never Vodafone's own names for them.
 - **Adoption, honestly:** there are three levels (design only → tokens and pipeline → React components), and teams have taken up tokens much more than components. Present it as a ladder where each level builds trust for the next, not as full adoption. Talking up the token package was the turning point to widespread adoption.
 

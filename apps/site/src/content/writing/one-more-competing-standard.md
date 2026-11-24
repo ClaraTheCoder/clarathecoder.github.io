@@ -1,10 +1,8 @@
 ---
 title: Earning trust when you’re one more competing standard
 slug: one-more-competing-standard
-description: How Vodafone’s Neo design system won over teams that already had a design system of their own
-date: 2026-11-30
+description: How a new company-wide design system won over teams that already had one of their own
 draft: true
-series: neo
 image:
   src: https://imgs.xkcd.com/comics/standards_2x.png
   alt: 'xkcd comic. Panel 1: there are 14 competing standards. Panel 2: two people agree that’s ridiculous and they should develop one universal standard covering everyone’s use cases. Panel 3: there are 15 competing standards.'
@@ -17,39 +15,40 @@ image:
 ---
 
 <!--
-Post 2 of 3 on Neo. Outline, not prose. Target ~1200 words, hard limit 2000.
+Post 2 of 3 in the series. Outline, not prose. Target ~1200 words, hard limit 2000.
 Through line: TRUST. Organisational story; technical detail lives in
-neo-foundations, the agents work in neo-for-agents.
-Rules and sources: docs/writing/neo.md.
+the foundations post, the agents work in the agents post.
+Never name the company or the design system in this post, comment included.
+Rules and sources: the series notes in docs/writing/.
 [Brackets] = planned MDX components.
 -->
 
-[CaseMeta] Role: technical side of the Neo design team · Timeline: February 2026 to present · Platforms: web, React Native · Focus: accessible foundations, testing, core components
+[CaseMeta] Role: technical side of the design team · Timeline: February 2026 to present · Platforms: web, React Native · Focus: accessible foundations, testing, core components
 
 ## Context
 
-- Vodafone has product teams in markets around the world, plus a central team
+- A large company with product teams in markets around the world, plus a central team
 - Plenty of design systems already existed: some built centrally, some federated, some local; some over a decade old and no longer maintained
 - Most were built for the needs of a few teams, and most lived in Figma files that every team implemented its own way
-- Neo is the first system meant for the whole company, and the first with a shared React library
+- Ours is the first system meant for the whole company, and the first with a shared React library
 - Goal: one standard for design and accessibility, with WCAG 2.2 AA required by law
 - I joined the design team in February 2026 to work on the technical side
 
 ## The problem
 
-- Neo was one more competing standard (refer back to the lead image)
+- The new system was one more competing standard (refer back to the lead image)
 - Markets didn’t need persuading that design systems were good. The usual answer was “we love design systems, we’ve already got one”
-- Nobody wanted to go first: teams wouldn’t switch until Neo matched what they already had, and Neo couldn’t prove it was ready for production until someone used it
+- Nobody wanted to go first: teams wouldn’t switch until the new system matched what they already had, and it couldn’t prove it was ready for production until someone used it
 - [Callout: problem] A new design system only wins if using it costs a team less than building their own. The real job wasn’t building components, it was earning trust
 
 ## Impact
 
 - [StatGroup] 18 releases in nine months, each with release notes · 100+ components across web and React Native (TODO: confirm) · an external accessibility audit found only a handful of minor issues, fixed in days · a page migrated in under 20 minutes from one prompt (→ agents post)
 - [Steps] Three ways to adopt: design only → tokens and pipeline → React components
-- The turning point: once we started talking about the token package, Neo went from a few teams trying it out to widespread adoption
+- The turning point: once we started talking about the token package, the system went from a few teams trying it out to widespread adoption
 - Each level builds the trust needed for the next
 
-## How Neo earned trust
+## How the system earned trust
 
 <!-- Four short sections. Each: what teams worried about → what we did → evidence. -->
 
@@ -85,4 +84,4 @@ Rules and sources: docs/writing/neo.md.
 - [Callout: learning] **Decide early what’s fixed and what’s flexible.** An icon should look the same everywhere, but large components need room. Agree the line with designers up front
 - [Callout: learning] **Pitch the first step, not the whole system.** The ladder existed from day one, but we sold the full component set. Leading with tokens would have given teams an easier way in
 
-Previously: [Laying the foundations for a global design system](/writing/design-system-foundations), the technical decisions underneath all of this. Next: [Teaching agents to build with Neo](/writing/teaching-agents-to-build-with-neo).
+Previously: [Laying the foundations for a global design system](/writing/design-system-foundations), the technical decisions underneath all of this. Next: [Teaching agents to build with the system](/writing/teaching-agents-to-build-with-neo).
