@@ -86,5 +86,3 @@ Rules and sources: docs/writing/neo.md.
 ## Close
 
 - What's proven so far, and what the foundations are ready for: brand as the next overlay
-
-Next: [Earning trust when you’re one more competing standard](/writing/one-more-competing-standard), how Neo won over teams that already had a design system of their own.

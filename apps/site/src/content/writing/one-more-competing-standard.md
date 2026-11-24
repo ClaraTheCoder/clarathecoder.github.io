@@ -83,5 +83,3 @@ Rules and sources: the series notes in docs/writing/.
 - [Callout: learning] **Talk to consumers first.** We learned how many local systems there were only after three months building the MVP. Smaller releases with earlier feedback earn trust faster than a complete system nobody has used yet
 - [Callout: learning] **Decide early what’s fixed and what’s flexible.** An icon should look the same everywhere, but large components need room. Agree the line with designers up front
 - [Callout: learning] **Pitch the first step, not the whole system.** The ladder existed from day one, but we sold the full component set. Leading with tokens would have given teams an easier way in
-
-Previously: [Laying the foundations for a global design system](/writing/design-system-foundations), the technical decisions underneath all of this. Next: [Teaching agents to build with the system](/writing/teaching-agents-to-build-with-neo).

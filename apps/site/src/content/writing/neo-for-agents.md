@@ -73,4 +73,4 @@ Rules and sources: docs/writing/neo.md.
   - Smaller context: ask for one component’s contract instead of reading files
   - Reach and feedback: works where there’s no `node_modules` (design tools, chat), and shows what agents actually ask for, so the benchmark’s loop never stops
 
-Previously: [Earning trust when you’re one more competing standard](/writing/one-more-competing-standard). The component metadata comes from [Laying the foundations for a global design system](/writing/design-system-foundations).
+The component metadata comes from [Laying the foundations for a global design system](/writing/design-system-foundations).
