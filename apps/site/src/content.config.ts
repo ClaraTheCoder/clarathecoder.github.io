@@ -41,6 +41,26 @@ const writing = defineCollection({
         sources: z.array(z.object({ src: z.string(), media: z.string().optional() })),
       })
       .optional(),
+    /** Shown where the video would be; ignored when `video` is set. */
+    image: z
+      .object({
+        src: z.string(),
+        alt: z.string(),
+        /** Intrinsic size, so the page doesn't shift as it loads. */
+        width: z.number().optional(),
+        height: z.number().optional(),
+        /** Crops to a ratio, e.g. `16 / 9`; omitted, the image keeps its own shape. */
+        ratio: z.string().optional(),
+        /** Sets the image on a white mount; pair with `p`. */
+        matte: z.boolean().optional(),
+        /** Padding, as a space step (e.g. `'500'`). */
+        p: z.string().optional(),
+        /** Caption or attribution, below the image. */
+        caption: z.string().optional(),
+        /** Links the caption, e.g. to the image's source. */
+        captionHref: z.string().optional(),
+      })
+      .optional(),
   }),
 });
 

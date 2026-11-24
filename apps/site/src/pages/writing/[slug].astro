@@ -1,6 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { Text, Container, Grid, Box, Flex, Link, Icon, Video, Alert, AlertTitle, AlertDescription } from '@clara/design-system';
+import { Text, Container, Grid, Box, Flex, Link, Icon, Video, Image, Alert, AlertTitle, AlertDescription } from '@clara/design-system';
 import { ALL_POSTS, POSTS, formatDate, type Post } from '../../data/posts';
 
 export function getStaticPaths() {
@@ -65,7 +65,7 @@ const { post, newer, older } = Astro.props;
           )
         }
         {
-          post.video && (
+          post.video ? (
             <figure>
               <Video
                 poster={post.video.poster}
@@ -76,6 +76,29 @@ const { post, newer, older } = Astro.props;
                 {post.video.sources.map((source) => <source src={source.src} type="video/mp4" media={source.media} />)}
               </Video>
             </figure>
+          ) : (
+            post.image && (
+              <Flex as="figure" direction="column" gap="400">
+                <Image
+                  src={post.image.src}
+                  alt={post.image.alt}
+                  width={post.image.width}
+                  height={post.image.height}
+                  ratio={post.image.ratio}
+                  matte={post.image.matte}
+                  p={post.image.p}
+                />
+                {post.image.caption && (
+                  <figcaption>
+                    {post.image.captionHref ? (
+                      <Link href={post.image.captionHref}>{post.image.caption}</Link>
+                    ) : (
+                      post.image.caption
+                    )}
+                  </figcaption>
+                )}
+              </Flex>
+            )
           )
         }
         <Container variant="prose" className="prose">

@@ -5,6 +5,15 @@ description: How Vodafone’s Neo design system won over teams that already had 
 date: 2026-11-30
 draft: true
 series: neo
+image:
+  src: https://imgs.xkcd.com/comics/standards_2x.png
+  alt: 'xkcd comic. Panel 1: there are 14 competing standards. Panel 2: two people agree that’s ridiculous and they should develop one universal standard covering everyone’s use cases. Panel 3: there are 15 competing standards.'
+  width: 500
+  height: 283
+  matte: true
+  p: '500'
+  caption: 'Standards by Randall Munroe, xkcd (CC BY-NC 2.5)'
+  captionHref: https://xkcd.com/927/
 ---
 
 <!--
@@ -14,8 +23,6 @@ neo-foundations, the agents work in neo-for-agents.
 Rules and sources: docs/writing/neo.md.
 [Brackets] = planned MDX components.
 -->
-
-[Figure, lead image: xkcd 927 “Standards” (https://xkcd.com/927/). Credit Randall Munroe and link the original; xkcd is CC BY-NC 2.5]
 
 [CaseMeta] Role: technical side of the Neo design team · Timeline: February 2026 to present · Platforms: web, React Native · Focus: accessible foundations, testing, core components
 
