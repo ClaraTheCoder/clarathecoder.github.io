@@ -13,6 +13,11 @@
     color: var(--color-accent-hover);
   }
 
+  .link:focus-visible {
+    outline: var(--focus-ring-width) solid var(--color-border-strong);
+    outline-offset: var(--focus-ring-offset);
+  }
+
   .link--plain {
     color: inherit;
     text-decoration-line: none;
