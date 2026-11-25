@@ -150,7 +150,7 @@
         "letterSpacing": "{font.tracking.normal}",
         "textCase": "none",
         "textDecoration": "none",
-        "paragraphSpacing": "1em",
+        "paragraphSpacing": "1.4em",
         "paragraphIndent": "0"
       }
     },
@@ -164,7 +164,7 @@
         "letterSpacing": "{font.tracking.normal}",
         "textCase": "none",
         "textDecoration": "none",
-        "paragraphSpacing": "0.8em",
+        "paragraphSpacing": "1em",
         "paragraphIndent": "0"
       }
     },
