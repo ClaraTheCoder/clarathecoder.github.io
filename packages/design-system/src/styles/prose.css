@@ -15,7 +15,7 @@
     font-weight: var(--text-body-font-weight);
     line-height: var(--text-body-line-height);
     letter-spacing: var(--text-body-letter-spacing);
-    color: var(--prose-color);
+    color: var(--color-text);
   }
 
   /* Flow: gap between consecutive blocks = the body role's paragraph-spacing. */
@@ -59,7 +59,6 @@
 
   .prose strong {
     font-weight: var(--font-weight-bold);
-    color: var(--prose-strong-color);
   }
   .prose em {
     font-style: italic;
@@ -69,7 +68,6 @@
     margin-inline: 0;
     padding-inline-start: 1em;
     border-inline-start: 2px solid var(--color-border-strong);
-    color: var(--color-text-muted);
     font-style: italic;
   }
 
