@@ -20,7 +20,7 @@ export interface DisclosureProps {
 
 export const Disclosure = ({
   title,
-  variant = 'heading-3',
+  variant = 'heading-2',
   open,
   className,
   children,

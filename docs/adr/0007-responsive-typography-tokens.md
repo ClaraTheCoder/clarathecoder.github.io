@@ -36,3 +36,13 @@ Typography follows colour's three tiers (ADR 0003), with two twists: it must be 
 - **Atomic per-axis tokens:** flexible, but no enforced role cohesion.
 - **`sd-transforms`:** ingestion machinery for a Figma export we do not produce.
 - **Static scale, opt-in fluidity (legacy):** scatters responsiveness per role.
+
+## Amendment (2026-11-25): a heading scale tuned for reading
+
+Bare `<h2>`–`<h6>` in prose take the element defaults, and a post's section `h2` came out the same size as its title. The heading roles now sit one step smaller, so the defaults suit long-form reading:
+
+- A new `display-3` role takes the old `heading-1` values.
+- `heading-1`–`heading-5` each take the values of the role one below them (`heading-1` was `heading-2`, and so on).
+- `heading-6` keeps its values, so it now matches `heading-5`. There is no smaller step to take.
+
+The shift is made in every theme, so presets keep their per-role styling. Headings outside prose name their role (a `variant`, a `.text-<role>` class or the `--text-<role>-*` group) and were moved up one role, so they keep their size. Only prose headings, which rely on the element defaults, get smaller.

@@ -155,7 +155,7 @@ export const DialogTitle = <E extends ElementType = 'h2'>({
   return (
     <Component
       id={titleId}
-      className={cx('dialog__title', 'text-heading-4', className)}
+      className={cx('dialog__title', 'text-heading-3', className)}
       {...props}
     />
   );

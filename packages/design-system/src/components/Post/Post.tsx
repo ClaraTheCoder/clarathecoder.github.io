@@ -41,7 +41,7 @@ export interface PostProps {
 export const Post = ({ meta, title, href, description, className }: PostProps) => (
   <article className={cx('post', className)}>
     <Flex direction="column" gap="300" className="post__main">
-      <Text variant="heading-4" as="h3" className="post__title">
+      <Text variant="heading-3" as="h3" className="post__title">
         <Link variant="plain" href={href}>
           {title}
         </Link>

@@ -12,7 +12,7 @@ export interface RuledHeadingProps {
 
 export const RuledHeading = ({
   as = 'h2',
-  variant = 'heading-2',
+  variant = 'heading-1',
   className,
   ...props
 }: RuledHeadingProps) => (

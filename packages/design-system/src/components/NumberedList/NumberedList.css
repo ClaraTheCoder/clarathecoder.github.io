@@ -27,7 +27,7 @@
     place-items: center;
     inline-size: 2em;
     block-size: 2em;
-    font-family: var(--text-heading-5-font-family);
+    font-family: var(--text-heading-4-font-family);
     font-weight: var(--font-weight-semibold);
     line-height: var(--font-line-height-tight);
     color: var(--color-accent);

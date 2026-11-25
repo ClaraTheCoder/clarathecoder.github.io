@@ -10,11 +10,11 @@
 
   .testimonial__quote {
     margin: 0;
-    font-family: var(--text-heading-2-font-family);
-    font-size: var(--text-heading-2-font-size);
-    font-weight: var(--text-heading-2-font-weight);
-    line-height: var(--text-heading-2-line-height);
-    letter-spacing: var(--text-heading-2-letter-spacing);
+    font-family: var(--text-heading-1-font-family);
+    font-size: var(--text-heading-1-font-size);
+    font-weight: var(--text-heading-1-font-weight);
+    line-height: var(--text-heading-1-line-height);
+    letter-spacing: var(--text-heading-1-letter-spacing);
     color: var(--color-text-subtle);
     text-wrap: pretty;
   }
@@ -69,12 +69,12 @@
   }
 
   .testimonial__name {
-    font-family: var(--text-heading-4-font-family);
-    font-size: var(--text-heading-4-font-size);
-    font-weight: var(--text-heading-4-font-weight);
-    line-height: var(--text-heading-4-line-height);
-    letter-spacing: var(--text-heading-4-letter-spacing);
-    text-transform: var(--text-heading-4-text-transform);
+    font-family: var(--text-heading-3-font-family);
+    font-size: var(--text-heading-3-font-size);
+    font-weight: var(--text-heading-3-font-weight);
+    line-height: var(--text-heading-3-line-height);
+    letter-spacing: var(--text-heading-3-letter-spacing);
+    text-transform: var(--text-heading-3-text-transform);
   }
 
   .testimonial__role {
@@ -201,11 +201,11 @@
     }
 
     .testimonial--wide .testimonial__quote {
-      font-family: var(--text-heading-1-font-family);
-      font-size: var(--text-heading-1-font-size);
-      font-weight: var(--text-heading-1-font-weight);
-      line-height: var(--text-heading-1-line-height);
-      letter-spacing: var(--text-heading-1-letter-spacing);
+      font-family: var(--text-display-3-font-family);
+      font-size: var(--text-display-3-font-size);
+      font-weight: var(--text-display-3-font-weight);
+      line-height: var(--text-display-3-line-height);
+      letter-spacing: var(--text-display-3-letter-spacing);
     }
 
     .testimonial--wide .testimonial__quote::before {

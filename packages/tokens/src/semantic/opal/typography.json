@@ -16,6 +16,14 @@
         "letterSpacing": "{font.tracking.tighter}"
       }
     },
+    "display-3": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.nunito}",
+        "fontWeight": "{font.weight.bold}",
+        "letterSpacing": "{font.tracking.tight}"
+      }
+    },
     "heading-1": {
       "$type": "typography",
       "$value": {
@@ -37,7 +45,7 @@
       "$value": {
         "fontFamily": "{font.family.nunito}",
         "fontWeight": "{font.weight.bold}",
-        "letterSpacing": "{font.tracking.tight}"
+        "letterSpacing": "{font.tracking.snug}"
       }
     },
     "heading-4": {

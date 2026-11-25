@@ -110,6 +110,7 @@
 @layer components {
   .text-display-1,
   .text-display-2,
+  .text-display-3,
   .text-heading-1,
   .text-heading-2,
   .text-heading-3,
@@ -148,6 +149,15 @@
     --_ls: var(--text-display-2-letter-spacing);
     --_tt: var(--text-display-2-text-transform);
     --_td: var(--text-display-2-text-decoration);
+  }
+  .text-display-3 {
+    --_ff: var(--text-display-3-font-family);
+    --_fs: var(--text-display-3-font-size);
+    --_fw: var(--text-display-3-font-weight);
+    --_lh: var(--text-display-3-line-height);
+    --_ls: var(--text-display-3-letter-spacing);
+    --_tt: var(--text-display-3-text-transform);
+    --_td: var(--text-display-3-text-decoration);
   }
   .text-heading-1 {
     --_ff: var(--text-heading-1-font-family);

@@ -5,6 +5,7 @@ import { Flex } from '../Layout';
 const VARIANTS: TextVariant[] = [
   'display-1',
   'display-2',
+  'display-3',
   'heading-1',
   'heading-2',
   'heading-3',

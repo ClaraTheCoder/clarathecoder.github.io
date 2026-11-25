@@ -12,5 +12,5 @@ export const Default = meta.story({
 });
 
 export const Large = meta.story({
-  args: { children: 'What I do', variant: 'heading-2' },
+  args: { children: 'What I do', variant: 'heading-1' },
 });

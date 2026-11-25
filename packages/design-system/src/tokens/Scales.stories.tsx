@@ -21,11 +21,11 @@ function Section({ title, hint, children }: { title: string; hint: string; child
       <h2
         style={{
           margin: '0 0 4px',
-          fontFamily: 'var(--text-heading-4-font-family)',
-          fontSize: 'var(--text-heading-4-font-size)',
-          fontWeight: 'var(--text-heading-4-font-weight)',
-          lineHeight: 'var(--text-heading-4-line-height)',
-          letterSpacing: 'var(--text-heading-4-letter-spacing)',
+          fontFamily: 'var(--text-heading-3-font-family)',
+          fontSize: 'var(--text-heading-3-font-size)',
+          fontWeight: 'var(--text-heading-3-font-weight)',
+          lineHeight: 'var(--text-heading-3-line-height)',
+          letterSpacing: 'var(--text-heading-3-letter-spacing)',
           color: 'var(--color-text)',
         }}
       >

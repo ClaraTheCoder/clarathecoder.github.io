@@ -35,7 +35,7 @@ export const TableOfContents = ({
 
   return (
     <nav className={cx('toc', className)} aria-labelledby={titleId}>
-      <Text variant="heading-5" as="h2" id={titleId} className="toc__title">
+      <Text variant="heading-4" as="h2" id={titleId} className="toc__title">
         {title}
       </Text>
       <toc-progress>

@@ -28,6 +28,20 @@
         "paragraphIndent": "0"
       }
     },
+    "display-3": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.fraunces}",
+        "fontSize": "{font.size.800}",
+        "fontWeight": "{font.weight.semibold}",
+        "lineHeight": "{font.line-height.heading}",
+        "letterSpacing": "{font.tracking.snug}",
+        "textCase": "none",
+        "textDecoration": "none",
+        "paragraphSpacing": "0",
+        "paragraphIndent": "0"
+      }
+    },
     "brand": {
       "$type": "typography",
       "$value": {
@@ -46,20 +60,6 @@
       "$type": "typography",
       "$value": {
         "fontFamily": "{font.family.fraunces}",
-        "fontSize": "{font.size.800}",
-        "fontWeight": "{font.weight.semibold}",
-        "lineHeight": "{font.line-height.heading}",
-        "letterSpacing": "{font.tracking.snug}",
-        "textCase": "none",
-        "textDecoration": "none",
-        "paragraphSpacing": "0",
-        "paragraphIndent": "0"
-      }
-    },
-    "heading-2": {
-      "$type": "typography",
-      "$value": {
-        "fontFamily": "{font.family.fraunces}",
         "fontSize": "{font.size.700}",
         "fontWeight": "{font.weight.semibold}",
         "lineHeight": "{font.line-height.heading}",
@@ -70,7 +70,7 @@
         "paragraphIndent": "0"
       }
     },
-    "heading-3": {
+    "heading-2": {
       "$type": "typography",
       "$value": {
         "fontFamily": "{font.family.fraunces}",
@@ -84,7 +84,7 @@
         "paragraphIndent": "0"
       }
     },
-    "heading-4": {
+    "heading-3": {
       "$type": "typography",
       "$value": {
         "fontFamily": "{font.family.fraunces}",
@@ -98,11 +98,25 @@
         "paragraphIndent": "0"
       }
     },
-    "heading-5": {
+    "heading-4": {
       "$type": "typography",
       "$value": {
         "fontFamily": "{font.family.fraunces}",
         "fontSize": "{font.size.400}",
+        "fontWeight": "{font.weight.semibold}",
+        "lineHeight": "{font.line-height.heading}",
+        "letterSpacing": "{font.tracking.normal}",
+        "textCase": "none",
+        "textDecoration": "none",
+        "paragraphSpacing": "0",
+        "paragraphIndent": "0"
+      }
+    },
+    "heading-5": {
+      "$type": "typography",
+      "$value": {
+        "fontFamily": "{font.family.fraunces}",
+        "fontSize": "{font.size.300}",
         "fontWeight": "{font.weight.semibold}",
         "lineHeight": "{font.line-height.heading}",
         "letterSpacing": "{font.tracking.normal}",

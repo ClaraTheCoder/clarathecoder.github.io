@@ -94,7 +94,7 @@ const labelLogo = (svg: string, name: string) => {
 
     <Grid as="section" className="entrance-stagger" aria-labelledby="case-study-title" columns={{ initial: 1, lg: 12 }} gapX="var(--grid-gutter)" gapY="500">
       <Box className="work-rail" gridColumn={{ lg: '1 / 5' }}>
-        <Text variant="heading-2" as="h2" id="case-study-title">Case study: Vodafone’s first AI-native design system</Text>
+        <Text variant="heading-1" as="h2" id="case-study-title">Case study: Vodafone’s first AI-native design system</Text>
       </Box>
       <Flex direction="column" gap="700" gridColumn={{ lg: '5 / -1' }}>
         <Video
@@ -146,7 +146,7 @@ const labelLogo = (svg: string, name: string) => {
         {
           waysToWork.map((item) => (
             <Flex as="li" direction="column" gap="300">
-              <Text variant="heading-5" as="h3">{item.title}</Text>
+              <Text variant="heading-4" as="h3">{item.title}</Text>
               <Text color="muted">{item.body}</Text>
             </Flex>
           ))
