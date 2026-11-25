@@ -31,38 +31,39 @@ video:
 {/* Before publishing: real images use Storybook or demo content only (no unreleased screens, real prices or campaigns, internal URLs, Figma file or workspace names). No ADR numbers in prose. */}
 {/* MDX comments must stay one per line: Prettier mangles multi-line ones, and MDX rejects HTML comments. */}
 
-import { Card, Grid, Image, NumberedList, NumberedListItem, Text } from '@clara/design-system';
+import { Card, Image, NumberedList, NumberedListItem, Text } from '@clara/design-system';
 
-## Context
+Neo is Vodafone's global design system, and the first to bring engineers into the core team alongside designers. Before this, design lived primarily in Figma, with different code implementations scattered across products and markets. I was brought in to help architect the core of Neo and build its React components, making sure it was scalable to every consumer, accessible to WCAG 2.2 AA, and tested across every brand, theme, breakpoint and locale.
 
-{/* One short paragraph, ~100 words. It carries the hook too, so the handover comes first. */}
+<Card columns={2}>
 
-- The handover (once): before Neo, design handed Figma files to each market's teams, and each built them its own way, so the same component came out differently everywhere. Neo put engineers inside the design team, building each component once for every brand, market and platform. Frame the old way as a handover model, not anyone's fault
-- Neo is Vodafone’s new global design system, and the first with a shared React library
-- For everyone: that one build has to cover every brand, theme (light and dark), platform (web, then React Native), breakpoint and locale, including right-to-left. Each axis multiplies the others
-- My role, half a sentence: I joined in February 2026 on the technical side and made the early engineering decisions. Everything else is "we"
-- Possible last line, from the old close: many brands, many products, one system
+## Impact
 
-{/* Impact items are draft candidates, not Clara's words: rewrite or replace. Two to four items. No adoption numbers or commercial data. */}
+  <Text as="div" variant="lead">
+    A custom pipeline pulls tokens, illustrations, and more than 1,200 icons straight from Figma into versioned npm packages, so <strong>nothing drifts between Figma and code</strong>, and teams can update when they choose.
 
-<Card as="section" heading="Impact">
-  <Grid columns={{ initial: 1, md: 2 }} gapX="800" gapY="500">
-    <Text as="div" variant="lead">
-      <strong>The first 10 React Native components in two weeks</strong>, built against the exact
-      same tokens as web.
-    </Text>
-    <Text as="div" variant="lead">
-      <strong>A handful of issues</strong> across the entire component set in an external
-      accessibility audit, patched within days.
-    </Text>
-    <Text as="div" variant="lead">
-      <strong>Every component tested in light, dark and right-to-left</strong>, and at each
-      breakpoint where the layout changes, on every PR.
-    </Text>
-  </Grid>
+    <strong>Sub-brands can be implemented easily</strong> in a single file of token overrides, without input from the core design system team, and an external accessibility audit found only a handful of issues across the entire component set.
+
+    All of this allowed us to <strong>ramp up quickly on React Native as a second platform</strong>: the first 13 components, including the core form fields, took under two weeks.
+
+  </Text>
 </Card>
 
-## Pushing tokens from Figma to every platform
+## Tokens in layers
+
+Our tokens are split into three layers: primitives, semantic tokens that say what each value is for, and a brand layer on top that only overrides what's different. Primitives hold the raw values, and semantic tokens give each one a job, like "primary background". Dark mode just points the same semantic tokens at different primitives, so a brand can override the primitives and still be able to use light and dark modes.
+
+Creating a new sub-brand is easy, because nothing is hard-coded in the components. Consumers write a single file with the CSS variables they want to change (fonts, colours, border radii), and every component picks it up, with no need to restyle components through CSS classes. The tokens package is versioned, so if the design system team makes changes, consumers can choose when to update, without worrying that token changes will break a custom brand theme.
+
+<Image
+  src="/images/neo-foundations/card-light-dark.svg"
+  alt="Placeholder. The same marketing card twice, in light mode and in dark mode, with its illustration redrawn to suit each"
+  width={1600}
+  height={900}
+  caption="The same card in light and dark themes"
+/>
+
+## Building our own pipeline
 
 {/* Open: fact-check flags from the editor pass (per breakpoint, tokens "pull from Figma", plain SVG icons, "most illustrations"). */}
 {/* Captions are placeholders, not Clara's words yet. */}
@@ -79,19 +80,7 @@ This is done with a purely deterministic script (no LLMs as the tokens had to be
   caption="One script pulls the tokens, and Style Dictionary builds every platform's package from the same source."
 />
 
-Our tokens are split into three layers: primitives, semantic tokens that say what each value is for, and a brand layer on top that only overrides what's different. Primitives hold the raw values, and semantic tokens give each one a job, like "primary background". Dark mode just points the same semantic tokens at different primitives, which is why a brand can override the primitives and still work in light and dark modes.
-
-Creating a new sub-brand is easy, because nothing is hard-coded in the components. Consumers write a single file with the CSS variables they want to change (fonts, colours, border radii), and every component picks it up, with no need to restyle components through CSS classes. Every Neo package is individually versioned, so if the design system team makes changes, consumers choose when to update, without worrying that token changes will break a custom brand theme.
-
 Icons and illustrations are handled similarly: a script pulls changes from Figma and updates the icon and illustration packages. Icons come as plain SVG, React or React Native components. The script handles multi-colour icons too, so the main icon colour can match the text alongside it but meaningful colours such as the green bar on a full battery use the correct semantic tokens. Most illustrations come in light and dark mode, and they automatically switch to the right colour mode when used in our components.
-
-<Image
-  src="/images/neo-foundations/card-light-dark.svg"
-  alt="Placeholder. The same marketing card twice, in light mode and in dark mode, with its illustration redrawn to suit each"
-  width={1600}
-  height={900}
-  caption="The same card in light and dark themes"
-/>
 
 ## An accessible, global base layer
 
@@ -129,7 +118,10 @@ As well as having access to Storybook, Figma Code Connect gave designers a way t
 
 {/* Learnings are draft candidates, not Clara's words: what went well and she'd do again, or would change. Rewrite or replace. Bold line plus a sentence or two each, inline text only. */}
 
-<Card as="section" variant="secondary" heading="Learnings">
+<Card variant="secondary">
+
+## Learnings
+
   <NumberedList columns={2}>
     <NumberedListItem lead="Choose the base layer before you need it.">
       A headless library is hard to retrofit once components share pieces like a popover, so React
