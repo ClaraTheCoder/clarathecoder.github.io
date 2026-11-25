@@ -4,8 +4,8 @@
   .card {
     display: flex;
     flex-direction: column;
-    gap: var(--space-500);
-    padding: var(--space-600);
+    gap: var(--space-600);
+    padding: calc(var(--grid-gutter) * 1.5);
     color: var(--color-text);
     border: var(--card-border-width) solid var(--card-border-color);
     border-radius: var(--surface-radius);
@@ -25,10 +25,26 @@
     box-shadow: var(--card-secondary-shadow);
   }
 
-  /* Doubled with the root so it outranks `.prose h2` in a post. */
-  .card .card__heading {
-    margin: 0;
-    color: var(--color-accent);
+  /* Doubled with the root so a heading in a post's prose doesn't take its top margin. */
+  .card.card > :is(h1, h2, h3, h4, h5, h6) {
+    margin-block-start: 0;
+  }
+
+  .card p + p {
+    margin-block-start: var(--space-400);
+  }
+
+  .card--2-col {
+    container-type: inline-size;
+  }
+
+  @container (min-width: 52rem) {
+    .card--2-col > :not(:is(h1, h2, h3, h4, h5, h6)) {
+      column-count: 2;
+      column-gap: calc(var(--grid-gutter) * 1.5);
+      orphans: 2;
+      widows: 2;
+    }
   }
 
   .card--primary strong {

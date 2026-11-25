@@ -1,6 +1,6 @@
 import preview from '../../../.storybook/preview';
 import { Card } from './Card';
-import { Box, Grid } from '../Layout';
+import { Box } from '../Layout';
 import { Text } from '../Text';
 import { NumberedList, NumberedListItem } from '../NumberedList';
 
@@ -8,7 +8,6 @@ const meta = preview.meta({
   title: 'Components/Card',
   component: Card,
   args: {
-    heading: 'Heading',
     children: (
       <Text>
         Lorem ipsum <strong>dolor sit amet</strong>, consectetur adipiscing elit, sed do eiusmod
@@ -27,31 +26,27 @@ export const Primary = meta.story({});
 
 export const Secondary = meta.story({ args: { variant: 'secondary' } });
 
-export const NoHeading = meta.story({ args: { heading: undefined } });
-
 /** Two statements side by side, key phrases highlighted. */
-export const Statements = meta.story({
+/** One paragraph flowed into two columns, key phrases highlighted. */
+export const TwoColumns = meta.story({
   args: {
-    as: 'section',
-    heading: 'Impact',
+    columns: 2,
     children: (
-      <Grid columns={{ initial: 1, md: 2 }} gapX="800" gapY="500">
-        <Text as="div" variant="lead">
-          Lorem ipsum <strong>dolor sit amet in two weeks</strong>, consectetur adipiscing elit.
-        </Text>
-        <Text as="div" variant="lead">
-          <strong>A handful of issues</strong> ut labore et dolore magna aliqua, quis nostrud.
-        </Text>
-      </Grid>
+      <Text as="div" variant="lead">
+        Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.{' '}
+        <strong>Duis aute irure dolor</strong> in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+        culpa qui officia deserunt mollit anim id est laborum.
+      </Text>
     ),
   },
 });
 
 export const WithNumberedList = meta.story({
   args: {
-    as: 'section',
     variant: 'secondary',
-    heading: 'Learnings',
     children: (
       <NumberedList columns={2}>
         <NumberedListItem lead="Lorem ipsum dolor sit amet.">
