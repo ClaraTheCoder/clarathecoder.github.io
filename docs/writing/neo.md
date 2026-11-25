@@ -13,7 +13,7 @@ Notes for writing the Neo posts, for Clara and any agent helping her. This repo 
 - The posts are in `apps/site/src/content/writing/`. Each opens with an editorial comment (an HTML comment in `.md`; in `.mdx`, one `{/* … */}` per line, because MDX rejects HTML comments and Prettier mangles multi-line ones) covering its purpose, length and through line. Those comments are public too, so keep them to editorial notes.
 - The order comes from the dates: the article pager follows them. Each post must also stand alone.
 - Foundations and agents have `series: neo`, which the work page lists under the Vodafone case study. The trust post doesn't, so it isn't listed there. All three have `draft: true` until they're published. Drafts only appear under `pnpm dev`, along with the unlinked `/writing/drafts` page.
-- The outlines are bullet points, not prose. `[Brackets]` mark planned MDX components (`CaseMeta`, `Callout`, `StatGroup`, `PullQuote`, `Steps`, `Figure`).
+- The outlines are bullet points, not prose. `[Brackets]` mark planned MDX components (`Callout`, `StatGroup`, `PullQuote`, `Steps`, `Figure`).
 - Length: about 1,200 words for posts 1 and 2, and up to 2,000 for post 3. Never more than 2,000.
 
 Principle posts that cite Neo but are about ideas, not Vodafone: `opinionated-vs-composable.md`, `context-aware-components.md`, `adoption-ladders.md`, `video-in-html.md`. These are undated drafts.

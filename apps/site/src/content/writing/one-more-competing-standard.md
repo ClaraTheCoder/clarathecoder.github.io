@@ -28,8 +28,6 @@ Rules and sources: the series notes in docs/writing/.
 [Brackets] = planned MDX components.
 -->
 
-[CaseMeta] Role: technical side of the design team · Timeline: February 2026 to present · Platforms: web, React Native · Focus: accessible foundations, testing, core components
-
 - Hook: TODO. Teams don't trust a design system because it's good; they trust it because they can predict it. Open on what that takes: say what's coming, version it honestly, release on a rhythm, document every breaking change, and let teams adopt at their own pace
 
 ## Context
