@@ -22,6 +22,7 @@ const { caption: _caption, captionHref: _captionHref, ...imageProps } = post.ima
       <Box className="article-rail" gridColumn={{ md: '1 / 5' }}>
         <Flex as="header" direction="column" gap="500">
           <Text variant="heading-2" as="h1" className="article-title">{post.title}</Text>
+          <Text variant="lead" color="muted" className="article-subtitle">{post.description}</Text>
           <Flex align="center" wrap="wrap" gap="300">
             {post.date ? <time datetime={post.date}>{formatDate(post.date)}</time> : <span>Undated</span>}
           </Flex>
