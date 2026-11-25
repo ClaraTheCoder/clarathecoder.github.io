@@ -25,6 +25,7 @@ interface Props {
 }
 
 const { post, newer, older } = Astro.props;
+const { caption: _caption, captionHref: _captionHref, ...imageProps } = post.image ?? {};
 ---
 
 <Base title={post.title} description={post.description}>
@@ -55,38 +56,27 @@ const { post, newer, older } = Astro.props;
         }
         {
           post.video ? (
-            <figure>
-              <Video
-                poster={post.video.poster}
-                aria-label={post.video.label}
-                track={{ src: post.video.captions, srcLang: 'en', label: 'English' }}
-                transcriptHref={post.video.transcript}
-              >
-                {post.video.sources.map((source) => <source src={source.src} type="video/mp4" media={source.media} />)}
-              </Video>
-            </figure>
+            <Video
+              poster={post.video.poster}
+              aria-label={post.video.label}
+              track={{ src: post.video.captions, srcLang: 'en', label: 'English' }}
+              transcriptHref={post.video.transcript}
+              caption={post.video.caption}
+            >
+              {post.video.sources.map((source) => <source src={source.src} type="video/mp4" media={source.media} />)}
+            </Video>
           ) : (
             post.image && (
-              <Flex as="figure" direction="column" gap="400">
-                <Image
-                  src={post.image.src}
-                  alt={post.image.alt}
-                  width={post.image.width}
-                  height={post.image.height}
-                  ratio={post.image.ratio}
-                  matte={post.image.matte}
-                  p={post.image.p}
-                />
-                {post.image.caption && (
-                  <figcaption>
-                    {post.image.captionHref ? (
-                      <Link href={post.image.captionHref}>{post.image.caption}</Link>
-                    ) : (
-                      post.image.caption
-                    )}
-                  </figcaption>
-                )}
-              </Flex>
+              post.image.captionHref ? (
+                <Image {...imageProps}>
+                  {/* A named slot reaches a React component as the prop of that name. */}
+                  <Fragment slot="caption">
+                    <Link href={post.image.captionHref}>{post.image.caption}</Link>
+                  </Fragment>
+                </Image>
+              ) : (
+                <Image {...imageProps} caption={post.image.caption} />
+              )
             )
           )
         }

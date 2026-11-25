@@ -38,6 +38,8 @@ const writing = defineCollection({
         poster: z.string(),
         captions: z.string(),
         transcript: z.string().optional(),
+        /** Caption below the video. */
+        caption: z.string().optional(),
         sources: z.array(z.object({ src: z.string(), media: z.string().optional() })),
       })
       .optional(),
