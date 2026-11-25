@@ -8,6 +8,7 @@ export * from './components/Image';
 export * from './components/Layout';
 export * from './components/Link';
 export * from './components/Notice';
+export * from './components/NumberedList';
 export * from './components/Post';
 export * from './components/RadioCards';
 export * from './components/RuledHeading';

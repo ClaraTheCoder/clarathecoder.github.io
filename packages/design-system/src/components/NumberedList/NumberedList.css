@@ -1,0 +1,62 @@
+@layer reset, base, components, utilities;
+
+@layer components {
+  /* Selectors are doubled with the root so they outrank `.prose ol` and
+     `.prose li + li` in a post. */
+  .numbered-list.numbered-list {
+    display: grid;
+    gap: var(--space-500) var(--space-800);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: numbered-list;
+  }
+
+  .numbered-list .numbered-list__item {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: var(--space-400);
+    margin: 0;
+    counter-increment: numbered-list;
+  }
+
+  /* The ol already gives assistive tech the number, so the drawn one has empty alt. */
+  .numbered-list__item::before {
+    content: counter(numbered-list) / '';
+    display: grid;
+    place-items: center;
+    inline-size: 2em;
+    block-size: 2em;
+    font-family: var(--text-heading-5-font-family);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--font-line-height-tight);
+    color: var(--color-accent);
+    border: var(--surface-border-width) solid var(--color-accent);
+    border-radius: var(--numbered-list-marker-radius);
+  }
+
+  .numbered-list__text {
+    text-wrap: pretty;
+  }
+
+  /* MDX wraps multi-line children in a <p>; run it in after the lead. */
+  .numbered-list .numbered-list__text > p {
+    display: inline;
+    margin: 0;
+    text-indent: 0;
+  }
+
+  .numbered-list__lead {
+    font-weight: var(--font-weight-bold);
+  }
+
+  .numbered-list--2-col {
+    container-type: inline-size;
+  }
+
+  @container (min-width: 36rem) {
+    .numbered-list--2-col.numbered-list--2-col {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+}

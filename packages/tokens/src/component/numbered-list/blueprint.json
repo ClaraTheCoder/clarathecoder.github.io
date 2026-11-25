@@ -1,0 +1,5 @@
+{
+  "numbered-list": {
+    "marker-radius": { "$value": "{radius.sm}" }
+  }
+}
