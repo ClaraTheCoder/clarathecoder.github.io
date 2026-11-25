@@ -1,0 +1,7 @@
+{
+  "card": {
+    "border-width": { "$value": "{surface.border-width}" },
+    "secondary-border-style": { "$value": "solid" },
+    "shadow": { "$value": "{color.surface-shadow}" }
+  }
+}

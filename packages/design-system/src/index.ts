@@ -1,5 +1,6 @@
 export * from './components/Alert';
 export * from './components/Button';
+export * from './components/Card';
 export * from './components/Dialog';
 export * from './components/Disclosure';
 export * from './components/Hero';
