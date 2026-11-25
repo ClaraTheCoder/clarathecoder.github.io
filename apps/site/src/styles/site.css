@@ -193,6 +193,17 @@
       padding-inline-end: calc(var(--focus-ring-width) + var(--focus-ring-offset));
     }
   }
+
+  /* Cards in a post break out of the prose measure to the full article column,
+     like the header video. The prose sits at the column's start, so they only
+     grow towards the end. */
+  .article-body {
+    container: article / inline-size;
+  }
+
+  .article-body .prose > .card {
+    inline-size: 100cqi;
+  }
 }
 
 @layer base {
