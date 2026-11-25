@@ -18,6 +18,11 @@ image:
 Post 2 of 3 in the series. Outline, not prose. Target ~1200 words, hard limit 2000.
 Through line: TRUST. Organisational story; technical detail lives in
 the foundations post, the agents work in the agents post.
+Hook: teams trust what they can predict. Communication, semver, regular releases with
+release notes, breaking changes clearly documented with migration steps, and adoption at
+your own pace. Don't claim there are no breaking changes: there are, on 0.x, and each
+one is documented. No "built to last" angle: React Aria, the audit and the ADRs live in
+the foundations post.
 Never name the company or the design system in this post, comment included.
 Rules and sources: the series notes in docs/writing/.
 [Brackets] = planned MDX components.
@@ -25,11 +30,13 @@ Rules and sources: the series notes in docs/writing/.
 
 [CaseMeta] Role: technical side of the design team · Timeline: February 2026 to present · Platforms: web, React Native · Focus: accessible foundations, testing, core components
 
+- Hook: TODO. Teams don't trust a design system because it's good; they trust it because they can predict it. Open on what that takes: say what's coming, version it honestly, release on a rhythm, document every breaking change, and let teams adopt at their own pace
+
 ## Context
 
 - A large company with product teams in markets around the world, plus a central team
 - Plenty of design systems already existed: some built centrally, some federated, some local; some over a decade old and no longer maintained
-- Most were built for the needs of a few teams, and most lived in Figma files that every team implemented its own way
+- Most were built for the needs of a few teams
 - Ours is the first system meant for the whole company, and the first with a shared React library
 - Goal: one standard for design and accessibility, with WCAG 2.2 AA required by law
 - I joined the design team in February 2026 to work on the technical side
@@ -43,27 +50,21 @@ Rules and sources: the series notes in docs/writing/.
 
 ## Impact
 
-- [StatGroup] 18 releases in nine months, each with release notes · 100+ components across web and React Native (TODO: confirm) · an external accessibility audit found only a handful of minor issues, fixed in days · a page migrated in under 20 minutes from one prompt (→ agents post)
+- [StatGroup] 18 releases in nine months, each with release notes · 100+ components across web and React Native (TODO: confirm) · a page migrated in under 20 minutes from one prompt (→ agents post)
 - [Steps] Three ways to adopt: design only → tokens and pipeline → React components
 - The turning point: once we started talking about the token package, the system went from a few teams trying it out to widespread adoption
 - Each level builds the trust needed for the next
 
 ## How the system earned trust
 
-<!-- Four short sections. Each: what teams worried about → what we did → evidence. -->
-
-### Built to last
-
-- Teams had seen systems go unmaintained, so the foundations had to look like a safe long-term bet
-- React Aria as the accessible base layer: backed by Adobe, which stakeholders brought up in meetings unprompted; the most thoroughly accessibility-tested option; i18n, RTL and date handling built in
-- The alternatives looked riskier over the long term: Radix development was slowing, and Base UI had momentum but no track record yet
-- [Callout: impact] The external accessibility audit: a handful of minor issues, all patched within days
-- Every decision recorded, so the system doesn’t depend on who happens to be on the team (→ foundations post)
+<!-- Three short sections, matching the hook. Each: what teams worried about → what we did → evidence. -->
 
 ### Predictable releases
 
+- Teams had seen systems go unmaintained, or change under them without warning
 - Semantic versioning: teams know what a version number means before they upgrade
 - A release roughly every two weeks, each with release notes
+- Breaking changes happen, but each one is called out in the release notes with migration steps, so an upgrade is never a surprise
 - New components start in a labs tier and are promoted to stable once design and engineering are happy, so “stable” means something
 
 ### Working in the open
@@ -82,4 +83,4 @@ Rules and sources: the series notes in docs/writing/.
 
 - [Callout: learning] **Talk to consumers first.** We learned how many local systems there were only after three months building the MVP. Smaller releases with earlier feedback earn trust faster than a complete system nobody has used yet
 - [Callout: learning] **Decide early what’s fixed and what’s flexible.** An icon should look the same everywhere, but large components need room. Agree the line with designers up front
-- [Callout: learning] **Pitch the first step, not the whole system.** The ladder existed from day one, but we sold the full component set. Leading with tokens would have given teams an easier way in
+- [Callout: learning] **Pitch the first step, not the whole system.** The ladder existed from day one, but we sold the full component set. Leading with tokens would have given teams an easier way in. Or, just adopt a few components (maybe header and footer). keep things flexible - we don't need a big-bang migration.
