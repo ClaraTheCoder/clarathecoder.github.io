@@ -55,6 +55,20 @@ export const Sources = meta.story({
   ),
 });
 
+export const Caption = meta.story({
+  render: () => (
+    <Box py="500">
+      <Image
+        src={SAMPLE}
+        alt="A sample image"
+        width={800}
+        height={450}
+        caption="A caption, in muted caption text, below the image."
+      />
+    </Box>
+  ),
+});
+
 export const Matte = meta.story({
   render: () => (
     <Box py="500">

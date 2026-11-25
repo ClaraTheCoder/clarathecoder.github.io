@@ -1,7 +1,8 @@
 import { type CSSProperties, type ImgHTMLAttributes, type ReactNode } from 'react';
-import './Image.css';
 import { cx } from '../../utils/cx.js';
 import { resolveLayoutProps, type LayoutProps } from '../Layout/layoutProps.js';
+import { Text } from '../Text/index.js';
+import './Image.css';
 
 export type ImageProps = Omit<ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt' | 'children'> &
   Omit<LayoutProps, 'width' | 'height' | 'maxWidth'> & {
@@ -14,6 +15,8 @@ export type ImageProps = Omit<ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt'
     maxWidth?: 'prose' | LayoutProps['maxWidth'];
     /** Sets the image on a white mount, e.g. a black-on-white comic in dark mode. Pair with `p`. */
     matte?: boolean;
+    /** Wraps the image in a `<figure>` with this as its `<figcaption>`, in muted caption text. */
+    caption?: ReactNode;
     /**
      * `<source>` elements, ahead of `src` in a `<picture>`, e.g. a still frame
      * for `(prefers-reduced-motion: reduce)`.
@@ -31,6 +34,7 @@ export const Image = ({
   ratio,
   maxWidth,
   matte,
+  caption,
   width,
   height,
   className,
@@ -64,12 +68,22 @@ export const Image = ({
       ...style,
     } as CSSProperties,
   };
-  return children ? (
+  const image = children ? (
     <picture>
       {children}
       <img src={src} alt={alt} {...imgProps} />
     </picture>
   ) : (
     <img src={src} alt={alt} {...imgProps} />
+  );
+  return caption ? (
+    <figure className="image-figure">
+      {image}
+      <Text as="figcaption" variant="caption" color="muted">
+        {caption}
+      </Text>
+    </figure>
+  ) : (
+    image
   );
 };

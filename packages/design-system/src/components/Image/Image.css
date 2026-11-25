@@ -1,6 +1,12 @@
 @layer reset, base, components, utilities;
 
 @layer components {
+  .image-figure {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-300);
+  }
+
   .image {
     inline-size: 100%;
     block-size: auto;
