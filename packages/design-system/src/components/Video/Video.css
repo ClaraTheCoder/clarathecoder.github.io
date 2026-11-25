@@ -69,7 +69,4 @@
   .video__player::cue {
     font-family: var(--text-body-font-family);
   }
-  .video__transcript {
-    align-self: start;
-  }
 }

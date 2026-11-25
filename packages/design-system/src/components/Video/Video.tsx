@@ -1,15 +1,16 @@
 import {
   type CSSProperties,
-  type HTMLAttributes,
+  type ReactNode,
   type TrackHTMLAttributes,
-  type VideoHTMLAttributes,
+  type VideoHTMLAttributes
 } from 'react';
+import { Button } from '../Button';
+import { Flex } from '../Layout';
+import { Link } from '../Link';
+import { Text } from '../Text';
+import { VisuallyHidden } from '../VisuallyHidden';
 import './Video.css';
 import './video-play-cover.js';
-import { Button } from '../Button';
-import { VisuallyHidden } from '../VisuallyHidden';
-import { Link } from '../Link';
-import { Flex } from '../Layout';
 
 declare module 'react' {
   // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -26,8 +27,10 @@ type CaptionsTrack = Omit<TrackHTMLAttributes<HTMLTrackElement>, 'kind'> &
 export type VideoProps = VideoHTMLAttributes<HTMLVideoElement> & {
   /** Captions file, rendered as a `<track kind="captions">` shown by default. */
   track: CaptionsTrack;
-  /** URL of a page holding the full text alternative, linked below the video. */
+  /** URL of a page holding the full text alternative, linked at the end of the caption. */
   transcriptHref?: string;
+  /** Muted caption text below the video, as on `Image`. With a caption or a transcript, the video is a `<figure>`. */
+  caption?: ReactNode;
 };
 
 /** Load `@clara/design-system/video-play-cover.js` on the page for the play button. */
@@ -36,10 +39,16 @@ export const Video = ({
   poster,
   track,
   transcriptHref,
+  caption,
   children,
   ...props
 }: VideoProps) => (
-  <Flex className={className} gap="400" direction="column">
+  <Flex
+    as={caption || transcriptHref ? 'figure' : 'div'}
+    className={className}
+    gap="300"
+    direction="column"
+  >
     <video-play-cover
       className="video__frame"
       style={poster ? ({ '--video-poster': `url("${poster}")` } as CSSProperties) : undefined}
@@ -59,10 +68,12 @@ export const Video = ({
         <track default {...track} kind="captions" />
       </video>
     </video-play-cover>
-    {transcriptHref && (
-      <Link href={transcriptHref} className="video__transcript">
-        Read the transcript
-      </Link>
+    {(caption || transcriptHref) && (
+      <Text as="figcaption" variant="caption" color="muted">
+        {caption}
+        {caption && transcriptHref && ' '}
+        {transcriptHref && <Link href={transcriptHref}>Read the transcript</Link>}
+      </Text>
     )}
   </Flex>
 );

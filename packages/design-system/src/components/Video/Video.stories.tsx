@@ -23,3 +23,17 @@ export const Default = meta.story({
     </Video>
   ),
 });
+
+export const Caption = meta.story({
+  render: () => (
+    <Video
+      poster={poster}
+      aria-label="Showreel: Vodafone Neo"
+      track={{ src: captions, srcLang: 'en', label: 'English' }}
+      transcriptHref={transcript}
+      caption="A caption, in muted caption text, below the video."
+    >
+      <source src={src} type='video/mp4; codecs="avc1.640029, mp4a.40.2"' />
+    </Video>
+  ),
+});
