@@ -45,7 +45,7 @@ export const ALL_POSTS: Post[] = await Promise.all(
   }),
 );
 
-/** Dated posts, newest first: the writing list and the article pager. */
+/** Dated posts, newest first: the writing list. */
 export const POSTS: DatedPost[] = ALL_POSTS.filter((post): post is DatedPost =>
   Boolean(post.date),
 ).sort((a, b) => b.date.localeCompare(a.date));

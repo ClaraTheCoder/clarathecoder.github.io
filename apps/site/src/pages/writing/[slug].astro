@@ -1,30 +1,17 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { Text, Container, Grid, Box, Flex, Link, Icon, Video, Image, Alert, AlertTitle, AlertDescription, TableOfContents } from '@clara/design-system';
-import { ALL_POSTS, POSTS, formatDate, type Post } from '../../data/posts';
+import { Text, Container, Grid, Box, Flex, Link, Video, Image, Alert, AlertTitle, AlertDescription, TableOfContents } from '@clara/design-system';
+import { ALL_POSTS, formatDate, type Post } from '../../data/posts';
 
 export function getStaticPaths() {
-  return ALL_POSTS.map((post) => {
-    // Undated drafts aren't in POSTS, so they get no pager.
-    const i = POSTS.findIndex((dated) => dated.slug === post.slug);
-    return {
-      params: { slug: post.slug },
-      props: {
-        post,
-        newer: i === -1 ? null : (POSTS[i - 1] ?? null),
-        older: i === -1 ? null : (POSTS[i + 1] ?? null),
-      },
-    };
-  });
+  return ALL_POSTS.map((post) => ({ params: { slug: post.slug }, props: { post } }));
 }
 
 interface Props {
   post: Post;
-  newer: Post | null;
-  older: Post | null;
 }
 
-const { post, newer, older } = Astro.props;
+const { post } = Astro.props;
 const { caption: _caption, captionHref: _captionHref, ...imageProps } = post.image ?? {};
 ---
 
@@ -83,28 +70,6 @@ const { caption: _caption, captionHref: _captionHref, ...imageProps } = post.ima
         <Container variant="prose" className="prose">
           <post.Content />
         </Container>
-        {
-          (older || newer) && (
-            <nav class="article-pager" aria-label="More writing">
-              {older && (
-                <a class="article-pager__link article-pager__link--older" href={`/writing/${older.slug}`}>
-                  <span class="article-pager__label">
-                    <Icon name="arrow-left" /> Older
-                  </span>
-                  <span class="article-pager__title">{older.title}</span>
-                </a>
-              )}
-              {newer && (
-                <a class="article-pager__link article-pager__link--newer" href={`/writing/${newer.slug}`}>
-                  <span class="article-pager__label">
-                    Newer <Icon name="arrow-right" />
-                  </span>
-                  <span class="article-pager__title">{newer.title}</span>
-                </a>
-              )}
-            </nav>
-          )
-        }
       </Flex>
     </Grid>
   </article>

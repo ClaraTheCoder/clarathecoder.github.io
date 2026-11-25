@@ -23,7 +23,7 @@ const writing = defineCollection({
     title: z.string(),
     description: z.string(),
     slug: z.string().optional(),
-    /** Undated drafts get a page but stay out of the list and the pager. */
+    /** Undated drafts get a page but stay out of the list. */
     date: z.coerce
       .date()
       .transform((date) => date.toISOString().slice(0, 10))
