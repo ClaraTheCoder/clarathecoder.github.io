@@ -29,6 +29,7 @@
     block-size: 2em;
     font-family: var(--text-heading-4-font-family);
     font-weight: var(--font-weight-semibold);
+    font-variant-numeric: lining-nums;
     line-height: var(--font-line-height-tight);
     color: var(--color-accent);
     border: var(--surface-border-width) solid var(--color-accent);
