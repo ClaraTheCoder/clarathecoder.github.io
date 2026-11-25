@@ -1,0 +1,156 @@
+---
+title: Laying the foundations for a global, multi-brand design system
+slug: design-system-foundations
+description: The technical decisions under Vodafone’s Neo design system, and why they held up as it grew from web to React Native
+date: 2026-11-23
+draft: true
+series: neo
+video:
+  label: 'Showreel: Vodafone Neo'
+  poster: /videos/showreel-2026-10-poster.webp
+  captions: /videos/showreel-2026-10.en.vtt
+  transcript: /transcripts/showreel-2026-10/
+  sources:
+    - src: /videos/showreel-2026-10-1080.mp4
+      media: '(min-width: 52rem)'
+    - src: /videos/showreel-2026-10-720.mp4
+---
+
+{/* Post 1 of 3 on Neo. Outline, not prose. Target ~1200 words. */}
+{/* Technical. Must stand alone: brief context first. The "why teams trusted it" story is in one-more-competing-standard (next); the agents work is in neo-for-agents. */}
+{/* Series order is set by date, a week apart: foundations 23 Nov, trust 30 Nov, agents 7 Dec. */}
+{/* Story in one line: build it once, for everyone, for good. */}
+{/* Once: for the first time, the design team had its own engineers. Instead of Figma files handed over to every team and built inconsistently, designers worked closely with one engineering team that built each thing once, for everyone. Centre the engineering work ("we"), not the design work. Never call Clara the first or only engineer. */}
+{/* For everyone: built for global scale. One build has to serve every brand, market, language and screen. Each axis multiplies the work; the foundations keep that cheap, and the tests prove each axis actually works. */}
+{/* For good: built to last, not another unmaintained system (React Aria, the audit, the ADRs). */}
+{/* Engineering only: what happens to tokens after they leave Figma, not how design authors them. */}
+{/* A report on the project as a whole: team work is "we", Clara's own decisions are "I". */}
+{/* Brand is enabled, and that's the claim. Whether consumers have taken it up is theirs to say, so don't mention it either way. */}
+{/* Rules and sources: docs/writing/neo.md. [Brackets] = planned MDX components. */}
+{/* Figures are placeholder images in public/images/neo-foundations/; swap in the real ones at the same paths (update width and height). Figures marked optional go first if the post runs long. */}
+{/* MDX comments must stay one per line: Prettier mangles multi-line ones, and MDX rejects HTML comments. */}
+
+import { Image } from '@clara/design-system';
+
+[CaseMeta] Role: technical side of the Neo design team · Timeline: February 2026 to present · Platforms: web, React Native · Focus: accessible foundations, testing, core components, component metadata
+
+- Hook (once): the handover. Before Neo, design handed Figma files to each market's teams, and each built them its own way, so the same component came out differently everywhere. Neo put engineers inside the design team: one team of engineers working closely with designers, building each component once for every brand, market and platform. Frame the old way as a handover model, not anyone's fault. Keep it to a few lines
+
+## Context
+
+- Neo is Vodafone’s new global design system, and the first with a shared React library
+- Bridge (for everyone): building it once only works if that one build covers every combination of:
+  - Brand: themed from one source
+  - Theme: light and dark
+  - Platform: web, then React Native
+  - Breakpoint: four on web (React Native is mobile-only)
+  - Locale: many languages, including right-to-left
+- Each axis multiplies the others. The rest of the post is how the foundations keep that cheap
+- One line on the team: I joined the design team in February 2026 to work on the technical side, and made the early engineering decisions (React Aria, the testing strategy, Button and form fields). Everything else in the post is "we"
+
+## Tokens: from Figma to every platform
+
+- The pipeline. Design owns tokens in Figma and Supernova; engineering takes over at the pull:
+  - `tokens:pull` exports Style Dictionary JSON and commits it. It's deterministic, so a design change arrives as a reviewable diff in a pull request (ADR 0025)
+  - Style Dictionary builds every platform output in-project, from that one committed source, so web and React Native can't drift
+
+<Image
+  src="/images/neo-foundations/token-pipeline.svg"
+  alt="Placeholder. A diagram of the token pipeline: tokens defined in Figma and Supernova are pulled into a committed token source, which Style Dictionary builds into CSS, Tailwind and React Native outputs"
+  width={1600}
+  height={900}
+  caption="Tokens leave design once. From the pull onwards it’s engineering: committed, reviewed in a pull request, and built for every platform from the same source."
+/>
+
+- The tiers: primitives (raw palette) → semantic (background, text, border: what a colour is for) → components, which only ever read semantic tokens
+- Base and sparse overlays (ADR 0033): one complete base tree, and every other value is an overlay holding only what it changes
+
+{/* Optional: cut first if the post runs long. */}
+
+<Image
+  src="/images/neo-foundations/token-overlays.svg"
+  alt="Placeholder. A diagram of one complete base token tree with thin overlays for dark mode, a breakpoint and a brand stacked on it, merging into one resolved set of values"
+  width={1600}
+  height={900}
+  caption="One complete base, and overlays that hold only what they change. A new brand is one more set of files, not another copy of everything."
+/>
+
+- [StatGroup] Complete trees for every combination: 2 themes × 4 breakpoints = 8, multiplied again by every brand. With overlays, each new value is one more set of files
+- A collision between two overlays fails the build rather than silently winning
+- Brand is the payoff: a new brand is a new set of token files that overrides specific semantic tokens. Because components only read semantic tokens, every component re-skins with no component code changed, and the brand still composes with light and dark
+- Packaged to adopt separately: tokens only (plain CSS, a Tailwind mapping layer that only points at those variables (ADR 0032), or React Native), components with Neo's tokens, or, on web, components with your own token values via the `--neo-*` custom properties. One line, then a forward link to the trust post for how teams moved between them
+- Cut if over length: the `--neo-` prefix (ADR 0034) stops a host page's own variables colliding with Neo's and re-theming it by accident
+- Light/dark doesn't stop at colour, so `Image` takes a `dark` source too
+
+<Image
+  src="/images/neo-foundations/card-light-dark.svg"
+  alt="Placeholder. The same marketing card twice, in light mode and in dark mode, with its illustration redrawn to suit each"
+  width={1600}
+  height={900}
+  caption="The same card in light and dark. The illustration changes too, because images take a dark source as well as a light one."
+/>
+
+## One component contract, two platforms
+
+- The same base-and-overlay idea one layer up: each component's contract is a shared file plus sparse web and React Native overlays (ADR 0060)
+- Shared fields flow to every platform, so differences are explicit and listed with a reason (e.g. `testID` vs `data-testid`)
+- Figma links straight to code: every stable component has Code Connect with full prop mapping (ADR 0020), so an engineer looking at a design sees which component to use and with which props
+
+{/* Optional: cut first if the post runs long. */}
+
+<Image
+  src="/images/neo-foundations/code-connect.svg"
+  alt="Placeholder. A Neo component selected in Figma’s Dev Mode, showing the Code Connect snippet with the component name and its props"
+  width={1600}
+  height={900}
+  caption="Code Connect in Figma’s Dev Mode: an engineer looking at a design sees which component to use, and with which props."
+/>
+
+- When React Native arrived, the contract was the specification: no requirements gathering, no rediscovering edge cases
+
+{/* Optional: cut first if the post runs long. */}
+
+<Image
+  src="/images/neo-foundations/web-react-native.svg"
+  alt="Placeholder. The same Neo component rendered on the web in a browser and on React Native in an Android emulator, side by side"
+  width={1600}
+  height={900}
+  caption="One contract, two platforms: the same component on the web and on React Native."
+/>
+
+- [Callout: impact] Infrastructure plus the first 10 React Native components in two weeks, by an engineer who joined late and was productive within days
+
+## An accessible, global base layer
+
+- React Aria Components as the headless primitive layer (ADR 0013). Global adoption sets two non-negotiables:
+  - Accessibility: WCAG 2.2 AA, required by law
+  - Internationalisation: keyboard, focus, RTL and locale-aware dates handled once, for every market
+- React Aria derives direction from the locale, so RTL is handled inside the component tree. DatePicker and Calendar handle calendar systems (Gregorian, Hijri, Buddhist, Persian) and locale formatting. React Native follows its own platform model for right-to-left (ADR 0055)
+- Why not the alternatives, in a line or two: Radix had no DatePicker or Calendar primitive and layout-only RTL, so date formatting and calendar systems would have been ours to build; Base UI had momentum but no track record yet
+- For good: a base layer chosen to last
+  - React Aria is backed by Adobe, which stakeholders brought up in meetings unprompted, and it's the most thoroughly accessibility-tested option. Radix development was slowing
+  - [Callout: impact] The external accessibility audit: a handful of minor issues, all patched within days
+
+## Testing every axis
+
+- Unit tests for behaviour, accessibility checks on every documented example, visual snapshots in real browsers (ADR 0012). A failing accessibility check blocks the merge
+- Web visual tests run per theme × breakpoint on every PR, plus a right-to-left pass: one Arabic-locale story per component, about 80 baselines (light mode only, so don't claim RTL × theme). React Native has its own tiers, with visual regression in light and dark on an Android emulator. Keep the platform difference to one line
+- Pays off the hook: designers had seen their work drift once it was built. Visual regression on every PR means what they sign off stays as signed off. One line; the trust post covers it as working in the open
+- Caught real regressions when later, more complex components needed changes to Text, Link, Button and Popover
+- [Callout: finding] The first RTL run caught a real consumer bug: Modal, FullScreenModal and MegaMenu didn't mirror. React Aria handles direction inside the tree, but overlays render into `<body>`, outside the element where the provider sets `dir` and `lang`. Dark mode had hit the same issue and been patched per overlay; direction never had. Overlays now re-apply direction and language alongside colour mode, guarded by a unit test and the baselines
+
+<Image
+  src="/images/neo-foundations/rtl-modal.svg"
+  alt="Placeholder. A Modal in Arabic, twice: before the fix, laid out left to right, and after the fix, mirrored right to left"
+  width={1600}
+  height={900}
+  caption="Modal in Arabic, before and after the fix. It renders outside the element that sets the direction, so until the fix it didn’t mirror."
+/>
+
+- Lesson: fixing one axis doesn't fix the next. Each axis needs its own test, or the multiplication hides gaps
+
+## Close
+
+- Once: one engineering team working with design, so a component is built once and behaves the same everywhere
+- For everyone: many brands, many products, one system. Brand is a set of token files; light and dark, RTL and i18n, and breakpoints are tested on every change
+- For good: more than 60 ADRs record why each decision was made, so the next maintainer doesn't have to rediscover it. One review checklist tags every rule with who checks it: CI, an LLM pass or a person. Don't claim the PR-comment bot is live (ADR 0028 is proposed)

@@ -6,11 +6,11 @@ Notes for writing the Neo posts, for Clara and any agent helping her. This repo 
 
 | Order | File                             | Slug                                | Date        | What it is                                                                     |
 | ----- | -------------------------------- | ----------------------------------- | ----------- | ------------------------------------------------------------------------------ |
-| 1     | `neo-foundations.md`             | `design-system-foundations`         | 23 Nov 2026 | Technical: the decisions under Neo, and why they held up                       |
+| 1     | `neo-foundations.mdx`            | `design-system-foundations`         | 23 Nov 2026 | Technical: the decisions under Neo, and why they held up                       |
 | 2     | `one-more-competing-standard.md` | `one-more-competing-standard`       | 30 Nov 2026 | Organisational: winning over teams that already had a design system            |
 | 3     | `neo-for-agents.md`              | `teaching-agents-to-build-with-neo` | 7 Dec 2026  | General how-to: making a design system readable by agents, and benchmarking it |
 
-- The posts are in `apps/site/src/content/writing/`. Each opens with an HTML comment covering its purpose, length and through line. Those comments are public too, so keep them to editorial notes.
+- The posts are in `apps/site/src/content/writing/`. Each opens with an editorial comment (an HTML comment in `.md`; in `.mdx`, one `{/* … */}` per line, because MDX rejects HTML comments and Prettier mangles multi-line ones) covering its purpose, length and through line. Those comments are public too, so keep them to editorial notes.
 - The order comes from the dates: the article pager follows them. Each post must also stand alone.
 - Foundations and agents have `series: neo`, which the work page lists under the Vodafone case study. The trust post doesn't, so it isn't listed there. All three have `draft: true` until they're published. Drafts only appear under `pnpm dev`, along with the unlinked `/writing/drafts` page.
 - The outlines are bullet points, not prose. `[Brackets]` mark planned MDX components (`CaseMeta`, `Callout`, `StatGroup`, `PullQuote`, `Steps`, `Figure`).
@@ -22,7 +22,7 @@ Principle posts that cite Neo but are about ideas, not Vodafone: `opinionated-vs
 
 - **Story over detail.** Each post needs a coherent shape; drop anything that doesn't serve it. Clara's answers in interviews can run long, so distil them hard.
 - **Tone: positive.** The project was a success. Frame anything that went wrong as a lesson, never a failure, and never anyone's fault.
-- **People.** Don't name or credit colleagues, including where a source document names them; write Clara's own work as “I”. Don't call Clara the first or only engineer. The agreed wording is that she “joined the design team to work on the technical side” and made the early engineering decisions (React Aria, the testing strategy, Button and form fields).
+- **People.** Don't name or credit colleagues, including where a source document names them; write Clara's own work as “I” and the team's work as “we”. The posts report on the project as a whole, so they can cover work Clara didn't write herself, such as the token pipeline. Don't call Clara the first or only engineer. The agreed wording is that she “joined the design team to work on the technical side” and made the early engineering decisions (React Aria, the testing strategy, Button and form fields).
 - **Leave out:** unannounced plans, releases and milestones; anything about Clara's terms of engagement; costs or prices from the benchmark.
 - **The trust post names nobody:** never write “Vodafone” or “Neo” in `one-more-competing-standard.md`, including its description and HTML comment. Say “the company”, “the new system”. The other posts can name both.
 - **Audience:** people who know design systems but not Vodafone. Drop internal jargon: say “local markets” and “the central team”, never Vodafone's own names for them.
@@ -30,8 +30,8 @@ Principle posts that cite Neo but are about ideas, not Vodafone: `opinionated-vs
 
 ## Through lines
 
-- **Foundations:** decisions that outlast the people who made them.
-- **Trust:** Neo was one more competing standard (xkcd 927) in a company full of systems, many of them unmaintained. It earned trust by being built to last (React Aria, the audit), predictable (semver, regular releases with notes, labs → stable), open (a support channel, visual regression for designers), and adoptable at your own pace (the ladder, opinionated where it matters).
+- **Foundations:** build it once, for everyone, for good. Once: for the first time the design team had its own engineers, so instead of Figma files handed over and built inconsistently by every team, one engineering team built each thing once. Centres the engineering work. For everyone: each axis (brand, theme, platform, breakpoint, locale) multiplies the work; the foundations keep that cheap, and the tests prove each axis works. For good: built to last (React Aria, the audit, the ADRs). Close: many brands, many products, one system.
+- **Trust:** Neo was one more competing standard (xkcd 927) in a company full of systems, many of them unmaintained. It earned trust by being predictable (semver, regular releases with notes, breaking changes documented with migration steps, labs → stable), communicating openly (a support channel, visual regression for designers), and adoptable at your own pace (the ladder, opinionated where it matters). The "built to last" angle (React Aria, the audit, the ADRs) belongs to the foundations post.
 - **Agents:** you can test real models against your design system's agent tooling instead of guessing or taking experts' word for it. The benchmark matters as much as the docs. End with “What's next”: an MCP server, which adds checking, discovery, smaller context and feedback on top of plain files.
 
 ## Sources
@@ -45,6 +45,5 @@ Sibling checkouts next to this repo:
 
 - Component count across web and React Native
 - One example of a support-channel question that changed the system
-- Clara's part in the token work
 - Why class-name assertions were banned in tests
-- The ADR count to quote
+- The ADR count to quote (63 as of November 2026, so “more than 60”)
