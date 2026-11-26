@@ -2,6 +2,7 @@
   "color": {
     "$type": "color",
     "bg": { "$value": "{color.neutral.50}" },
+    "surface": { "$value": "{color.white}" },
     "surface-hover": { "$value": "{color.neutral.50}" },
     "text": { "$value": "{color.neutral.900}" },
     "border": { "$value": "{color.neutral.300}" },

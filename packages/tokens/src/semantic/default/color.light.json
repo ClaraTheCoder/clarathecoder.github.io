@@ -2,7 +2,7 @@
   "color": {
     "$type": "color",
     "bg": { "$value": "{color.lavender.50}" },
-    "surface": { "$value": "{color.lavender.150}" },
+    "surface": { "$value": "{color.white}" },
     "surface-hover": { "$value": "{color.lavender.100}" },
     "surface-shadow": { "$value": "none" },
     "surface-shadow-tight": { "$value": "none" },
