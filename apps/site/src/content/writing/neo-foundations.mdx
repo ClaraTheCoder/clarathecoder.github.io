@@ -3,7 +3,6 @@ title: Laying the foundations
 slug: design-system-foundations
 description: Building Vodafone’s Neo design system at a global, multi-brand, multi-platform scale
 date: 2026-11-27
-draft: true
 series: neo
 video:
   label: 'Showreel: Vodafone Neo'
@@ -22,7 +21,7 @@ import { Card, Image, NumberedList, NumberedListItem, Text } from '@clara/design
   Neo is Vodafone's global design system, and the first to bring engineers into the core team alongside designers. Before this, design lived primarily in Figma, with different code implementations scattered across products and markets. I was brought in to help architect the core of Neo and build its React components, making sure it was accessible to WCAG 2.2 AA and tested across every brand, theme, breakpoint and locale.
 </Text>
 
-<Card columns={2} className="my-700">
+<Card columns={2}>
 
 ## Impact
 
@@ -40,17 +39,24 @@ import { Card, Image, NumberedList, NumberedListItem, Text } from '@clara/design
 
 ## Tokens in layers
 
-Our tokens are split into three layers: primitives, semantic tokens that say what each value is for, and a brand layer on top that only overrides what's different. Primitives hold the raw values, and semantic tokens give each one a job, like "primary background". Dark mode just points the same semantic tokens at different primitives, so a brand can override the primitives and still be able to use light and dark modes.
-
-Creating a new sub-brand is easy, because nothing is hard-coded in the components. Consumers write a single file with the CSS variables they want to change (fonts, colours, border radii), and every component picks it up, with no need to restyle components through CSS classes. The tokens package is versioned, so if the design system team makes changes, consumers can choose when to update, without worrying that token changes will break a custom brand theme.
+Our tokens are split into three layers: primitives hold the raw values, semantic tokens give each one a job, like "primary background", and component tokens apply them to one component, like the corner radius of a button. Dark mode just points the same semantic tokens at different primitives, so a brand can override the primitives and still be able to use light and dark modes. A sub-brand can override tokens in any of the three layers, and only needs to override what's different.
 
 <Image
-  src="/images/neo-foundations/card-light-dark.svg"
-  alt="Placeholder. The same marketing card twice, in light mode and in dark mode, with its illustration redrawn to suit each"
-  width={1600}
-  height={900}
-  caption="The same card in light and dark themes"
-/>
+  src="/images/neo-foundations/card-light-dark-split.webp"
+  alt="The same marketing card in light mode and in dark mode, with a white smart speaker in light mode and a black one in dark mode"
+  width={800}
+  height={786}
+  caption="The same card in light and dark themes. Illustrations can also be defined per-theme."
+>
+  <source
+    media="(min-width: 680px)"
+    srcset="/images/neo-foundations/card-light-dark.webp"
+    width={1680}
+    height={786}
+  />
+</Image>
+
+Creating a new sub-brand is easy, because nothing is hard-coded in the components. Consumers write a single file with the CSS variables they want to change (fonts, colours, border radii), and every component picks it up, with no need to restyle components through CSS classes. The tokens package is versioned, so if the design system team makes changes, consumers can choose when to update, without worrying that token changes will break a custom brand theme.
 
 ## Building our own pipeline
 
@@ -58,13 +64,21 @@ Originally, we built the token pipeline with a third-party service, but we outgr
 
 The pipeline is a deterministic script (no LLMs as the tokens had to be exactly the same every time). The script uses Style Dictionary to push changes from Figma to a PR in three packages in the monorepo: plain CSS, Tailwind, and React Native.
 
-<Image
-  src="/images/neo-foundations/token-pipeline.svg"
-  alt="Placeholder. A diagram of the token pipeline: tokens defined in Figma are pulled through a third-party service into a committed token source, which Style Dictionary builds into CSS, Tailwind and React Native outputs"
-  width={1600}
-  height={900}
-  caption="One script pulls the tokens, and Style Dictionary builds every platform's package from the same source."
-/>
+<div className="breakout">
+  <Image
+    src={{
+      initial: { srcSet: '/images/neo-foundations/token-pipeline-mobile-light.webp', width: 1020, height: 1314 },
+      sm: { srcSet: '/images/neo-foundations/token-pipeline-desktop-light.webp', width: 1604, height: 400 },
+    }}
+    dark={{
+      initial: { srcSet: '/images/neo-foundations/token-pipeline-mobile-dark.webp', width: 1020, height: 1314 },
+      sm: { srcSet: '/images/neo-foundations/token-pipeline-desktop-dark.webp', width: 1604, height: 400 },
+    }}
+    alt="A diagram of the token pipeline: in Figma, the value #E60000 is the primitive token primary/500, which the component token button/primary uses. The token pipeline, built on Style Dictionary, turns it into a pull request with CSS, Tailwind and React Native packages."
+    maxWidth={{ initial: '400px', sm: 'none' }}
+    caption="The pipeline turns a token in Figma into one pull request for all three packages."
+  />
+</div>
 
 Icons and illustrations are handled similarly: a script pulls changes from Figma and updates the icon and illustration packages. Icons come as plain SVG, React or React Native components. The script handles multi-colour icons too, so the main icon colour can match the text alongside it but meaningful colours such as the green bar on a full battery use the correct semantic tokens. Most illustrations come in light and dark mode, and they automatically switch to the right colour mode when used in our components.
 
@@ -72,14 +86,31 @@ Icons and illustrations are handled similarly: a script pulls changes from Figma
 
 Have you ever had to build a date picker from scratch? It's a nightmare when you're building for one product, let alone when you need to support every product in a bunch of markets.
 
-When Neo started, we knew we'd have to meet WCAG 2.2 AA, which the European Accessibility Act makes a legal requirement. We also needed the components to work in every market's language, including right-to-left support and locale-aware dates. I chose React Aria Components as our headless base layer because all of this is built in. This had to be decided before we built anything complex, because a base layer is hard to retrofit. For example, MenuList and ComboBox both open in the same Popover, so changing the base layer later would mean reworking both at once.
+When Neo started, we knew we'd have to meet WCAG 2.2 AA, which the European Accessibility Act makes a legal requirement. We also needed the components to work in every market's language, including right-to-left support and locale-aware dates.
+
+<div className="breakout">
+  <Image
+    src={{
+      initial: { srcSet: '/images/neo-foundations/datepicker-locales-mobile-light.webp', width: 1029, height: 438 },
+      sm: { srcSet: '/images/neo-foundations/datepicker-locales-desktop-light.webp', width: 2202, height: 896 },
+    }}
+    dark={{
+      initial: { srcSet: '/images/neo-foundations/datepicker-locales-mobile-dark.webp', width: 1029, height: 438 },
+      sm: { srcSet: '/images/neo-foundations/datepicker-locales-desktop-dark.webp', width: 2202, height: 896 },
+    }}
+    alt="The DatePicker set to 5 September 2026 in English (UK), English (US) and Arabic: the UK shows 05/09/2026 with weeks starting on Monday, the US shows 9/5/2026 with weeks starting on Sunday, and Arabic is mirrored right to left"
+    caption="The same DatePicker in different locales. Date formats, the first day of the week and right-to-left layout all come from the base layer."
+  />
+</div>
+
+I chose React Aria Components as our headless base layer because all of this is built in. This had to be decided before we built anything complex, because a base layer is hard to retrofit. For example, Datepicker, MenuList and ComboBox all open in the same Popover, so changing the base layer later would mean reworking everything at once.
 
 <Image
-  src="/images/neo-foundations/shared-popover.svg"
-  alt="Placeholder. A MenuList and a ComboBox open side by side, both showing their options in the same Popover"
-  width={1600}
-  height={900}
-  caption="MenuList and ComboBox share one Popover, so the base layer had to be right before they were built."
+  src="/images/neo-foundations/datepicker-layers-light.webp"
+  dark="/images/neo-foundations/datepicker-layers-dark.webp"
+  alt="An exploded view of the DatePicker: DateField, Calendar and Popover stacked on a React Aria Components base layer, combining into the DatePicker at the top"
+  width={1225}
+  height={1228}
 />
 
 We wanted potential consumers to know that we weren't going anywhere, and they wouldn't need to do another migration in a year. React Aria was well tested for accessibility and still actively developed, with a release every month. Six months later, we had Neo externally audited for accessibility. The audit turned up only a few issues, and we patched them within days.
@@ -88,19 +119,26 @@ We wanted potential consumers to know that we weren't going anywhere, and they w
 
 Before Neo, designers had no single way to tell if their work had drifted, as components were spread across products and systems. We wanted to make sure what they signed off stayed exactly as they had intended, so we tested every theme, breakpoint and locale.
 
-Every component has unit tests for its behaviour, plus interaction and accessibility tests in Storybook. Visual regression runs against each story, too, in light and dark mode and at each breakpoint where the layout changes, and failure on any of these axes blocks the PR. Every component also has a right-to-left story with its own baseline snapshot. They've already caught regressions before they reached consumers: issues with modals not mirroring when portalled outside of the right-to-left provider, and fixes we needed to make to the bigger components when we updated the base buttons. Because these tests were so valuabe we decided to enforce them: unless a component recorded why it was exempt, CI failed on any PR without right-to-left baselines.
+Every component has unit tests for its behaviour, plus interaction and accessibility tests in Storybook. Visual regression runs against each story, too, in light and dark mode and at each breakpoint where the layout changes, and failure on any of these axes blocks the PR. Every component also has a right-to-left story with its own baseline snapshot. They've already caught regressions before they reached consumers: issues with modals not mirroring when portalled outside of the right-to-left provider, and fixes we needed to make to the bigger components when we updated the base buttons. Because these tests were so valuable we decided to enforce them: unless a component recorded why it was exempt, CI failed on any PR without right-to-left baselines.
 
-<Image
-  src="/images/neo-foundations/rtl-modal.svg"
-  alt="Placeholder. A Modal in Arabic, twice: before the fix, laid out left to right, and after the fix, mirrored right to left"
-  width={1600}
-  height={900}
-  caption="Modal in Arabic, before and after the fix. It renders outside the element that sets the direction, so until the fix it didn’t mirror."
-/>
+<div className="breakout">
+  <Image
+    src={{
+      initial: { srcSet: '/images/neo-foundations/modal-rtl-mobile-light.webp', width: 1080, height: 1179 },
+      sm: { srcSet: '/images/neo-foundations/modal-rtl-desktop-light.webp', width: 2416, height: 430 },
+    }}
+    dark={{
+      initial: { srcSet: '/images/neo-foundations/modal-rtl-mobile-dark.webp', width: 1080, height: 1179 },
+      sm: { srcSet: '/images/neo-foundations/modal-rtl-desktop-dark.webp', width: 2416, height: 430 },
+    }}
+    alt="A Modal in Arabic, twice. Before the fix, it's laid out left to right, with the title on the left and the close and more buttons on the right. After the fix, it's mirrored, with the title on the right and the buttons on the left."
+    caption="Modal in Arabic, before and after the fix. It renders outside the element that sets the direction, so until the fix it didn’t mirror."
+  />
+</div>
 
 As well as having access to Storybook, Figma Code Connect gave designers a way to check that components hadn't drifted, in the interface they were using every day. They can see the real code for each component in Figma and how it changes when they toggle props, because every Figma property maps to a prop in code.
 
-<Card variant="secondary" columns={2} className="my-700">
+<Card variant="secondary" columns={2}>
 
 ## What I learned
 
