@@ -15,7 +15,7 @@
   body {
     background: var(--color-bg);
     color: var(--color-text);
-    --grid-gutter: clamp(var(--space-400), 5vw, var(--space-600));
+    --grid-gutter: clamp(var(--space-400), 5vw, var(--space-800));
   }
 
   .skip-link {
