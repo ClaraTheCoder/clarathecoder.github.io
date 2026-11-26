@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     gap: var(--space-600);
-    padding: calc(var(--grid-gutter) * 1.5);
+    padding: var(--grid-gutter);
     color: var(--color-text);
     border: var(--card-border-width) solid var(--card-border-color);
     border-radius: var(--surface-radius);
@@ -41,9 +41,13 @@
   @container (min-width: 52rem) {
     .card--2-col > :not(:is(h1, h2, h3, h4, h5, h6)) {
       column-count: 2;
-      column-gap: calc(var(--grid-gutter) * 1.5);
+      column-gap: var(--grid-gutter);
       orphans: 2;
       widows: 2;
+    }
+
+    .card--2-col p {
+      break-inside: avoid;
     }
   }
 

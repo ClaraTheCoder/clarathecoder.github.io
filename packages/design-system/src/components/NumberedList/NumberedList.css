@@ -16,7 +16,6 @@
     column-gap: var(--space-400);
     margin: 0;
     counter-increment: numbered-list;
-    /* In a multi-column parent (e.g. a two-column Card), keep each item whole. */
     break-inside: avoid;
   }
 
