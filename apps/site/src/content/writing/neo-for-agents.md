@@ -1,7 +1,6 @@
 ---
 title: Teaching agents to build with Neo
 description: How Vodafone’s design system presents itself to coding agents, and how benchmarking showed us where to improve
-date: 2026-12-07
 draft: true
 series: neo
 video:
