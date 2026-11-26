@@ -144,7 +144,7 @@
       "$type": "typography",
       "$value": {
         "fontFamily": "{font.family.nunito}",
-        "fontSize": "{font.size.400}",
+        "fontSize": "{font.size.350}",
         "fontWeight": "{font.weight.regular}",
         "lineHeight": "{font.line-height.body}",
         "letterSpacing": "{font.tracking.normal}",
