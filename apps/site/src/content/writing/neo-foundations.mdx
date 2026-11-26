@@ -2,7 +2,7 @@
 title: Laying the foundations
 slug: design-system-foundations
 description: Building Vodafone’s Neo design system at a global, multi-brand, multi-platform scale
-date: 2026-11-23
+date: 2026-11-27
 draft: true
 series: neo
 video:
@@ -16,24 +16,11 @@ video:
     - src: /videos/showreel-2026-10-720.mp4
 ---
 
-{/* Post 1 of 3 on Neo. Target ~1200 words. Structure: Context (one short paragraph) → Impact → the details (Tokens, React Aria, Testing) → What I learned. */}
-{/* Technical. Must stand alone: brief context first. The "why teams trusted it" story is in one-more-competing-standard (next); the agents work is in neo-for-agents. */}
-{/* Series order is set by date, a week apart: foundations 23 Nov, trust 30 Nov, agents 7 Dec. */}
-{/* Story in one line: build it once, for everyone, for good. */}
-{/* Once: for the first time, the design team had its own engineers. Instead of Figma files handed over to every team and built inconsistently, designers worked closely with one engineering team that built each thing once, for everyone. Centre the engineering work ("we"), not the design work. Never call Clara the first or only engineer. */}
-{/* For everyone: built for global scale. One build has to serve every brand, market, language and screen. Each axis multiplies the work; the foundations keep that cheap, and the tests prove each axis actually works. */}
-{/* For good: built to last, not another unmaintained system (React Aria, the audit, the ADRs). */}
-{/* Engineering only: what happens to tokens after they leave Figma, not how design authors them. */}
-{/* A report on the project as a whole: team work is "we", Clara's own decisions are "I". */}
-{/* Brand is enabled, and that's the claim. Whether consumers have taken it up is theirs to say, so don't mention it either way. */}
-{/* Rules and sources: docs/writing/neo.md. [Brackets] = planned MDX components. */}
-{/* Figures are placeholder images in public/images/neo-foundations/; swap in the real ones at the same paths (update width and height). Figures marked optional go first if the post runs long. */}
-{/* Before publishing: real images use Storybook or demo content only (no unreleased screens, real prices or campaigns, internal URLs, Figma file or workspace names). No ADR numbers in prose. */}
-{/* MDX comments must stay one per line: Prettier mangles multi-line ones, and MDX rejects HTML comments. */}
-
 import { Card, Image, NumberedList, NumberedListItem, Text } from '@clara/design-system';
 
-Neo is Vodafone's global design system, and the first to bring engineers into the core team alongside designers. Before this, design lived primarily in Figma, with different code implementations scattered across products and markets. I was brought in to help architect the core of Neo and build its React components, making sure it was accessible to WCAG 2.2 AA and tested across every brand, theme, breakpoint and locale.
+<Text as="div" variant="lead">
+  Neo is Vodafone's global design system, and the first to bring engineers into the core team alongside designers. Before this, design lived primarily in Figma, with different code implementations scattered across products and markets. I was brought in to help architect the core of Neo and build its React components, making sure it was accessible to WCAG 2.2 AA and tested across every brand, theme, breakpoint and locale.
+</Text>
 
 <Card columns={2} className="my-700">
 
@@ -42,8 +29,8 @@ Neo is Vodafone's global design system, and the first to bring engineers into th
   <Text as="div" variant="lead">
     We built a custom pipeline that pulls tokens, illustrations, and more than 1,200 icons straight from Figma into versioned npm packages, so <strong>nothing drifts between Figma and code, and teams can update when they choose</strong>.
 
-    A sub-brand can be created with a single file of token overrides, without needing to wait for the design system team, and it cascades to all components. 
-    
+    A sub-brand can be created with a single file of token overrides, without needing to wait for the design system team, and it cascades to all components.
+
     <strong>We've built nearly 100 web components</strong>, and an external accessibility audit found only a handful of issues across the entire set.
 
     These foundations also made it quick to build for other platforms once needed: <strong>the first 13 React Native components, including the core form fields, took under two weeks</strong>.
@@ -67,9 +54,6 @@ Creating a new sub-brand is easy, because nothing is hard-coded in the component
 
 ## Building our own pipeline
 
-{/* Open: fact-check flags from the editor pass (per breakpoint, tokens "pull from Figma", plain SVG icons, "most illustrations"). */}
-{/* Captions are placeholders, not Clara's words yet. */}
-
 Originally, we built the token pipeline with a third-party service, but we outgrew it within a few months. Tokens couldn't be set per breakpoint, so we had to hand-roll our responsive typography at the component layer. We ran into bugs with CSS gradient tokens and with using the oklch colour space, and tokens weren't consistent from one platform to the next. So we built our own pipeline to handle everything we needed to pull from Figma.
 
 The pipeline is a deterministic script (no LLMs as the tokens had to be exactly the same every time). The script uses Style Dictionary to push changes from Figma to a PR in three packages in the monorepo: plain CSS, Tailwind, and React Native.
@@ -89,8 +73,6 @@ Icons and illustrations are handled similarly: a script pulls changes from Figma
 Have you ever had to build a date picker from scratch? It's a nightmare when you're building for one product, let alone when you need to support every product in a bunch of markets.
 
 When Neo started, we knew we'd have to meet WCAG 2.2 AA, which the European Accessibility Act makes a legal requirement. We also needed the components to work in every market's language, including right-to-left support and locale-aware dates. I chose React Aria Components as our headless base layer because all of this is built in. This had to be decided before we built anything complex, because a base layer is hard to retrofit. For example, MenuList and ComboBox both open in the same Popover, so changing the base layer later would mean reworking both at once.
-
-{/* Optional: cut first if the post runs long. */}
 
 <Image
   src="/images/neo-foundations/shared-popover.svg"
