@@ -205,6 +205,13 @@
   .prose > .card {
     inline-size: 100cqi;
   }
+
+  /* A wrapper for anything else that needs the full column, e.g. a wide
+     figure. It takes the spacing prose gives a card or image. */
+  .prose > .breakout {
+    inline-size: 100cqi;
+    margin-block: var(--space-700);
+  }
 }
 
 @layer base {
