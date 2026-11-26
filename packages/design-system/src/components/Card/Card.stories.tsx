@@ -2,7 +2,6 @@ import preview from '../../../.storybook/preview';
 import { Card } from './Card';
 import { Box } from '../Layout';
 import { Text } from '../Text';
-import { NumberedList, NumberedListItem } from '../NumberedList';
 
 const meta = preview.meta({
   title: 'Components/Card',
@@ -16,19 +15,26 @@ const meta = preview.meta({
     ),
   },
   render: (args) => (
-    <Box style={{ inlineSize: 'min(48rem, 100%)' }}>
+    <Box style={{ inlineSize: '48rem', maxInlineSize: '100%' }}>
       <Card {...args} />
     </Box>
   ),
 });
 
+/** Two-column cards span a post's full article column, so they get a wider stage. */
+const renderWide: typeof meta.input.render = (args) => (
+  <Box style={{ inlineSize: '72rem', maxInlineSize: '100%' }}>
+    <Card {...args} />
+  </Box>
+);
+
 export const Primary = meta.story({});
 
 export const Secondary = meta.story({ args: { variant: 'secondary' } });
 
-/** Two statements side by side, key phrases highlighted. */
 /** One paragraph flowed into two columns, key phrases highlighted. */
 export const TwoColumns = meta.story({
+  render: renderWide,
   args: {
     columns: 2,
     children: (
@@ -40,22 +46,6 @@ export const TwoColumns = meta.story({
         dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
         culpa qui officia deserunt mollit anim id est laborum.
       </Text>
-    ),
-  },
-});
-
-export const WithNumberedList = meta.story({
-  args: {
-    variant: 'secondary',
-    children: (
-      <NumberedList columns={2}>
-        <NumberedListItem lead="Lorem ipsum dolor sit amet.">
-          Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.
-        </NumberedListItem>
-        <NumberedListItem lead="Ut enim ad minim veniam.">
-          Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
-        </NumberedListItem>
-      </NumberedList>
     ),
   },
 });

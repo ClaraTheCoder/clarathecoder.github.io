@@ -43,6 +43,8 @@ const withTheme: Decorator = (Story, context) => {
         padding: 28,
         background: 'var(--color-bg)',
         color: 'var(--color-text)',
+        // The site sets a fluid --grid-gutter (site.css); Storybook uses a fixed step.
+        ['--grid-gutter' as string]: 'var(--space-600)',
       }}
     >
       <div className="grid-backdrop" aria-hidden="true" />

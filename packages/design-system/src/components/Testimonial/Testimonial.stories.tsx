@@ -21,7 +21,7 @@ const meta = preview.meta({
 
 export const Default = meta.story({
   render: (args) => (
-    <Box style={{ inlineSize: 'min(36rem, 100%)' }}>
+    <Box style={{ inlineSize: '36rem', maxInlineSize: '100%' }}>
       <Testimonial {...args} />
     </Box>
   ),
