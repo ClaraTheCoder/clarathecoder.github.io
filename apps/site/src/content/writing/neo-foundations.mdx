@@ -16,7 +16,7 @@ video:
     - src: /videos/showreel-2026-10-720.mp4
 ---
 
-{/* Post 1 of 3 on Neo. Target ~1200 words. Structure: Context (one short paragraph) → Impact → the details (Tokens, React Aria, Testing) → Learnings. */}
+{/* Post 1 of 3 on Neo. Target ~1200 words. Structure: Context (one short paragraph) → Impact → the details (Tokens, React Aria, Testing) → What I learned. */}
 {/* Technical. Must stand alone: brief context first. The "why teams trusted it" story is in one-more-competing-standard (next); the agents work is in neo-for-agents. */}
 {/* Series order is set by date, a week apart: foundations 23 Nov, trust 30 Nov, agents 7 Dec. */}
 {/* Story in one line: build it once, for everyone, for good. */}
@@ -33,18 +33,20 @@ video:
 
 import { Card, Image, NumberedList, NumberedListItem, Text } from '@clara/design-system';
 
-Neo is Vodafone's global design system, and the first to bring engineers into the core team alongside designers. Before this, design lived primarily in Figma, with different code implementations scattered across products and markets. I was brought in to help architect the core of Neo and build its React components, making sure it was scalable to every consumer, accessible to WCAG 2.2 AA, and tested across every brand, theme, breakpoint and locale.
+Neo is Vodafone's global design system, and the first to bring engineers into the core team alongside designers. Before this, design lived primarily in Figma, with different code implementations scattered across products and markets. I was brought in to help architect the core of Neo and build its React components, making sure it was accessible to WCAG 2.2 AA and tested across every brand, theme, breakpoint and locale.
 
 <Card columns={2}>
 
 ## Impact
 
   <Text as="div" variant="lead">
-    A custom pipeline pulls tokens, illustrations, and more than 1,200 icons straight from Figma into versioned npm packages, so <strong>nothing drifts between Figma and code</strong>, and teams can update when they choose.
+    We built a custom pipeline that pulls tokens, illustrations, and more than 1,200 icons straight from Figma into versioned npm packages, so <strong>nothing drifts between Figma and code, and teams can update when they choose</strong>.
 
-    <strong>Sub-brands can be implemented easily</strong> in a single file of token overrides, without input from the core design system team, and an external accessibility audit found only a handful of issues across the entire component set.
+    A sub-brand can be created with a single file of token overrides, without needing to wait for the design system team, and it cascades to all components. 
+    
+    <strong>We've built nearly 100 web components</strong>, and an external accessibility audit found only a handful of issues across the entire set.
 
-    All of this allowed us to <strong>ramp up quickly on React Native as a second platform</strong>: the first 13 components, including the core form fields, took under two weeks.
+    These foundations also made it quick to build for other platforms once needed: <strong>the first 13 React Native components, including the core form fields, took under two weeks</strong>.
 
   </Text>
 </Card>
@@ -70,7 +72,7 @@ Creating a new sub-brand is easy, because nothing is hard-coded in the component
 
 Originally, we built the token pipeline with a third-party service, but we outgrew it within a few months. Tokens couldn't be set per breakpoint, so we had to hand-roll our responsive typography at the component layer. We ran into bugs with CSS gradient tokens and with using the oklch colour space, and tokens weren't consistent from one platform to the next. So we built our own pipeline to handle everything we needed to pull from Figma.
 
-This is done with a purely deterministic script (no LLMs as the tokens had to be exactly the same every time). The script uses Style Dictionary to push changes from Figma to a PR in three packages in the monorepo: plain CSS, Tailwind, and React Native.
+The pipeline is a deterministic script (no LLMs as the tokens had to be exactly the same every time). The script uses Style Dictionary to push changes from Figma to a PR in three packages in the monorepo: plain CSS, Tailwind, and React Native.
 
 <Image
   src="/images/neo-foundations/token-pipeline.svg"
@@ -86,7 +88,7 @@ Icons and illustrations are handled similarly: a script pulls changes from Figma
 
 Have you ever had to build a date picker from scratch? It's a nightmare when you're building for one product, let alone when you need to support every product in a bunch of markets.
 
-From day one on Neo, we knew we'd have to meet WCAG 2.2 AA, which the European Accessibility Act makes a legal requirement. We also needed the components to work in every market's language, including right-to-left support and locale-aware dates. I chose React Aria Components as our headless base layer because all of this is built in. This had to be decided before we built anything complex, because a base layer is hard to retrofit. For example, MenuList and ComboBox both open in the same Popover, so changing the base layer later would mean reworking both at once.
+When Neo started, we knew we'd have to meet WCAG 2.2 AA, which the European Accessibility Act makes a legal requirement. We also needed the components to work in every market's language, including right-to-left support and locale-aware dates. I chose React Aria Components as our headless base layer because all of this is built in. This had to be decided before we built anything complex, because a base layer is hard to retrofit. For example, MenuList and ComboBox both open in the same Popover, so changing the base layer later would mean reworking both at once.
 
 {/* Optional: cut first if the post runs long. */}
 
@@ -98,13 +100,13 @@ From day one on Neo, we knew we'd have to meet WCAG 2.2 AA, which the European A
   caption="MenuList and ComboBox share one Popover, so the base layer had to be right before they were built."
 />
 
-We wanted potential consumers to know that we weren't going anywhere, and they wouldn't need to do another migration in a year. React Aria was mature, stable, heavily tested for accessibility, and shipping new features and updates every month. Six months later, we had Neo externally audited for accessibility, and only a handful of issues were found across the entire component set. We were able to patch them in a few days.
+We wanted potential consumers to know that we weren't going anywhere, and they wouldn't need to do another migration in a year. React Aria was well tested for accessibility and still actively developed, with a release every month. Six months later, we had Neo externally audited for accessibility. The audit turned up only a few issues, and we patched them within days.
 
 ## Testing every axis
 
 Before Neo, designers had no single way to tell if their work had drifted, as components were spread across products and systems. We wanted to make sure what they signed off stayed exactly as they had intended, so we tested every theme, breakpoint and locale.
 
-Every component has unit tests for its behaviour, with additional interaction and accessibility testing in Storybook. Visual regression runs against each story, too, in light and dark mode and at each breakpoint where the layout changes, and failure on any of these axes blocks the PR. Every component also has a right-to-left story with its own baseline snapshot. These tests caught real regressions before they made it to consumers: issues with modals not mirroring when portalled outside of the right-to-left provider, and fixes we needed to make to the bigger components when we updated the base buttons.
+Every component has unit tests for its behaviour, plus interaction and accessibility tests in Storybook. Visual regression runs against each story, too, in light and dark mode and at each breakpoint where the layout changes, and failure on any of these axes blocks the PR. Every component also has a right-to-left story with its own baseline snapshot. They've already caught regressions before they reached consumers: issues with modals not mirroring when portalled outside of the right-to-left provider, and fixes we needed to make to the bigger components when we updated the base buttons. Because these tests were so valuabe we decided to enforce them: unless a component recorded why it was exempt, CI failed on any PR without right-to-left baselines.
 
 <Image
   src="/images/neo-foundations/rtl-modal.svg"
@@ -114,30 +116,24 @@ Every component has unit tests for its behaviour, with additional interaction an
   caption="Modal in Arabic, before and after the fix. It renders outside the element that sets the direction, so until the fix it didn’t mirror."
 />
 
-As well as having access to Storybook, Figma Code Connect gave designers a way to check that components hadn't drifted, in the interface they were using every day. They can see the real code for each component in Figma and how it changes when they toggle props, because the full prop surface is mapped between Figma and code.
+As well as having access to Storybook, Figma Code Connect gave designers a way to check that components hadn't drifted, in the interface they were using every day. They can see the real code for each component in Figma and how it changes when they toggle props, because every Figma property maps to a prop in code.
 
-{/* Learnings are draft candidates, not Clara's words: what went well and she'd do again, or would change. Rewrite or replace. Bold line plus a sentence or two each, inline text only. */}
+<Card variant="secondary" columns={2}>
 
-<Card variant="secondary">
+## What I learned
 
-## Learnings
-
-  <NumberedList columns={2}>
-    <NumberedListItem lead="Choose the base layer before you need it.">
-      A headless library is hard to retrofit once components share pieces like a popover, so React
-      Aria went in before anything complex was built.
+  <NumberedList>
+    <NumberedListItem lead="Plan for the next platform before you need it.">
+      Shipping the React Native tokens early meant that when the components followed, much of the groundwork was already done.
     </NumberedListItem>
-    <NumberedListItem lead="Own the pipeline that everything depends on.">
-      The third-party token service got us started, but building our own was what made responsive
-      typography and consistent platforms possible.
+    <NumberedListItem lead="Don't rely on remembering the rules. Let the build enforce them.">
+      When a missing right-to-left story, visual regression or a hard-coded colour fails the build, it gets fixed before it's merged.
     </NumberedListItem>
-    <NumberedListItem lead="Test each axis on its own.">
-      Fixing dark mode in our overlays didn't fix right-to-left. Every axis needs its own test, or
-      the combinations hide gaps.
+    <NumberedListItem lead="Engineers belong in a design system from day one.">
+      Building the token pipeline together from the start would have meant it fit the system, instead of being refactored once we outgrew it.
     </NumberedListItem>
-    <NumberedListItem lead="Write down why.">
-      More than 60 decision records mean the next maintainer doesn't have to rediscover why
-      something was built the way it was.
+    <NumberedListItem lead="Work in the open.">
+      Storybook and Code Connect let designers see what shipped, in the tools they already use, without waiting on engineering to confirm it.
     </NumberedListItem>
   </NumberedList>
 </Card>
