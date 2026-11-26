@@ -19,6 +19,20 @@ if (typeof customElements !== 'undefined' && !customElements.get('toc-progress')
         this.#pinned = this.#sections.findIndex(({ link }) => link.hash === location.hash);
         this.#schedule();
       };
+      // A reload keeps the hash but restores the old scroll position, so only pin
+      // when the page is actually sitting at the hash's section.
+      #pinIfAtHash = () => {
+        const index = this.#sections.findIndex(({ link }) => link.hash === location.hash);
+        const target = this.#sections[index]?.target;
+        const atTarget =
+          target &&
+          Math.abs(
+            target.getBoundingClientRect().top -
+              parseFloat(getComputedStyle(target).scrollMarginTop),
+          ) < 2;
+        this.#pinned = atTarget ? index : -1;
+        this.#schedule();
+      };
       #unpin = () => {
         if (this.#pinned === -1) return;
         this.#pinned = -1;
@@ -47,13 +61,17 @@ if (typeof customElements !== 'undefined' && !customElements.get('toc-progress')
         for (const type of USER_SCROLL) addEventListener(type, this.#unpin, { passive: true });
         this.addEventListener('click', this.#onClick);
         this.#resize.observe(document.documentElement);
-        if (location.hash) this.#pinToHash();
+        if (location.hash) {
+          this.#pinIfAtHash();
+          addEventListener('load', this.#pinIfAtHash, { once: true });
+        }
         this.#update();
       }
 
       disconnectedCallback() {
         removeEventListener('scroll', this.#schedule);
         removeEventListener('hashchange', this.#pinToHash);
+        removeEventListener('load', this.#pinIfAtHash);
         for (const type of USER_SCROLL) removeEventListener(type, this.#unpin);
         this.removeEventListener('click', this.#onClick);
         this.#resize.disconnect();
