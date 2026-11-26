@@ -201,7 +201,7 @@
     container: article / inline-size;
   }
 
-  .article-body .prose > .card {
+  .prose > .card {
     inline-size: 100cqi;
   }
 }
