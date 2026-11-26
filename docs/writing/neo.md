@@ -11,10 +11,10 @@ Notes for writing the Neo posts, for Clara and any agent helping her. This repo 
 | 3     | `neo-for-agents.md`              | `teaching-agents-to-build-with-neo` | 7 Dec 2026  | General how-to: making a design system readable by agents, and benchmarking it |
 
 - The posts are in `apps/site/src/content/writing/`. Each opens with an editorial comment (an HTML comment in `.md`; in `.mdx`, one `{/* … */}` per line, because MDX rejects HTML comments and Prettier mangles multi-line ones) covering its purpose, length and through line. Those comments are public too, so keep them to editorial notes.
-- The order comes from the dates: the article pager follows them. Each post must also stand alone.
+- The order comes from the dates. Each post must also stand alone.
 - Foundations and agents have `series: neo`, which the work page lists under the Vodafone case study. The trust post doesn't, so it isn't listed there. All three have `draft: true` until they're published. Drafts only appear under `pnpm dev`, along with the unlinked `/writing/drafts` page.
 - The outlines are bullet points, not prose. `[Brackets]` mark planned MDX components (`Callout`, `StatGroup`, `PullQuote`, `Steps`, `Figure`).
-- Length: about 1,200 words for posts 1 and 2, and up to 2,000 for post 3. Never more than 2,000.
+- Length: about 1,200 words for post 2, and up to 2,000 for post 3. Never more than 2,000.
 
 Principle posts that cite Neo but are about ideas, not Vodafone: `opinionated-vs-composable.md`, `context-aware-components.md`, `adoption-ladders.md`, `video-in-html.md`. These are undated drafts.
 
@@ -30,8 +30,7 @@ Principle posts that cite Neo but are about ideas, not Vodafone: `opinionated-vs
 
 ## Through lines
 
-- **Foundations:** build it once, for everyone, for good. Once: for the first time the design team had its own engineers, so instead of Figma files handed over and built inconsistently by every team, one engineering team built each thing once. Centres the engineering work. For everyone: each axis (brand, theme, platform, breakpoint, locale) multiplies the work; the foundations keep that cheap, and the tests prove each axis works. For good: built to last (React Aria, the audit, the ADRs). Close: many brands, many products, one system.
-- **Trust:** Neo was one more competing standard (xkcd 927) in a company full of systems, many of them unmaintained. It earned trust by being predictable (semver, regular releases with notes, breaking changes documented with migration steps, labs → stable), communicating openly (a support channel, visual regression for designers), and adoptable at your own pace (the ladder, opinionated where it matters). The "built to last" angle (React Aria, the audit, the ADRs) belongs to the foundations post.
+- **Trust:** Neo was one more competing standard (xkcd 927) in a company full of systems, many of them unmaintained. It earned trust by being predictable (semver, regular releases with notes, breaking changes documented with migration steps, labs → stable), communicating openly (a support channel, visual regression for designers), and adoptable at your own pace (the ladder, opinionated where it matters).
 - **Agents:** you can test real models against your design system's agent tooling instead of guessing or taking experts' word for it. The benchmark matters as much as the docs. End with “What's next”: an MCP server, which adds checking, discovery, smaller context and feedback on top of plain files.
 
 ## Sources
@@ -43,7 +42,5 @@ Sibling checkouts next to this repo:
 
 ## Still to find out (marked TODO in the outlines)
 
-- Component count across web and React Native
 - One example of a support-channel question that changed the system
 - Why class-name assertions were banned in tests
-- The ADR count to quote (63 as of November 2026, so “more than 60”)
