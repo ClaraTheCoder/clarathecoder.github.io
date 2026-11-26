@@ -22,6 +22,10 @@
   .prose > * + * {
     margin-block-start: var(--text-body-paragraph-spacing);
   }
+  /* Cards and images (with their caption, as one figure) get more room. */
+  .prose > :is(.card, .image-figure, .image, picture) {
+    margin-block: var(--space-700);
+  }
   .prose p {
     text-indent: var(--text-body-paragraph-indent);
   }

@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
-  <rect width="1600" height="900" fill="#e5e5e5"/>
-  <rect x="24" y="24" width="1552" height="852" fill="none" stroke="#a3a3a3" stroke-width="4" stroke-dasharray="24 16"/>
-  <text x="800" y="420" text-anchor="middle" font-family="system-ui, sans-serif" font-size="44" fill="#525252">Placeholder</text>
-  <text x="800" y="490" text-anchor="middle" font-family="system-ui, sans-serif" font-size="36" fill="#525252">Screenshot: Code Connect snippet in Figma Dev Mode</text>
-</svg>
