@@ -7,7 +7,8 @@
 :root[data-raw] :not(svg, svg *)::after {
   all: revert !important;
 }
-:root[data-raw] [hidden]:not([hidden='until-found' i]) {
+:root[data-raw] [hidden]:not([hidden='until-found' i]),
+:root[data-raw] .image-theme--dark {
   display: none !important;
 }
 

@@ -9,6 +9,10 @@ const sample = (label: string, bg: string, fg: string) =>
   )}`;
 const SAMPLE = sample('Sample', '#f1eef8', '#2b2440');
 const STILL = sample('Still frame', '#fdf3d8', '#3a2c06');
+const LIGHT = sample('Light theme', '#f1eef8', '#2b2440');
+const DARK = sample('Dark theme', '#2b2440', '#f1eef8');
+const WIDE = sample('sm and up', '#e3f1ec', '#0f3a2c');
+const WIDE_DARK = sample('sm and up, dark', '#0f3a2c', '#e3f1ec');
 
 const meta = preview.meta({
   title: 'Components/Image',
@@ -51,6 +55,36 @@ export const Sources = meta.story({
       >
         <source srcSet={STILL} media="(prefers-reduced-motion: reduce)" />
       </Image>
+    </Box>
+  ),
+});
+
+// Switch the toolbar's colour scheme to see the dark image.
+export const LightDark = meta.story({
+  render: () => (
+    <Box py="500">
+      <Image
+        src={LIGHT}
+        dark={DARK}
+        alt="A sample image with a dark-theme version"
+        width={800}
+        height={450}
+      />
+    </Box>
+  ),
+});
+
+// Resize the canvas past `sm` to swap images; each theme has its own pair.
+export const Breakpoints = meta.story({
+  render: () => (
+    <Box py="500">
+      <Image
+        src={{ initial: LIGHT, sm: WIDE }}
+        dark={{ initial: DARK, sm: WIDE_DARK }}
+        alt="A sample image with its own version from sm up, in each theme"
+        width={800}
+        height={450}
+      />
     </Box>
   ),
 });

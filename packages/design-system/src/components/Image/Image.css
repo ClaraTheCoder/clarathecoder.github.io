@@ -22,6 +22,24 @@
     background: var(--color-white);
   }
 
+  /* With `dark`: show the picture for the active theme, or the OS setting
+     when no theme is set. */
+  .image-theme--dark,
+  [data-theme='dark'] .image-theme--light {
+    display: none;
+  }
+  [data-theme='dark'] .image-theme--dark {
+    display: block;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) .image-theme--light {
+      display: none;
+    }
+    :root:not([data-theme]) .image-theme--dark {
+      display: block;
+    }
+  }
+
   .image--max-prose {
     max-inline-size: var(--size-container-prose);
   }

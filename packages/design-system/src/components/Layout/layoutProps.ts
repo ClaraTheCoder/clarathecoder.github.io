@@ -18,6 +18,17 @@ const RUNGS = ['initial', 'xs', 'sm', 'md', 'lg', 'xl'] as const;
 type Rung = (typeof RUNGS)[number];
 export type Responsive<T> = T | Partial<Record<Rung, T>>;
 
+// Each rung's min-width, for code that writes its own media queries
+// (`<source media>`). Lockstep with `BREAKPOINTS_UTIL` in build.js.
+export const BREAKPOINTS = {
+  xs: '520px',
+  sm: '768px',
+  md: '1024px',
+  lg: '1280px',
+  xl: '1640px',
+} as const satisfies Record<Exclude<Rung, 'initial'>, string>;
+export type Breakpoint = keyof typeof BREAKPOINTS;
+
 // The 12-step spacing scale (names shared with the `--space-*` primitives).
 export type SpaceScale =
   '25' | '50' | '100' | '150' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900';
