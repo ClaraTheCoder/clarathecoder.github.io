@@ -16,6 +16,10 @@
     border-block-end: var(--surface-border-width) solid var(--color-border);
   }
 
+  .post:first-child {
+    border-block-start: var(--surface-border-width) solid var(--color-border)
+  }
+
   .post:last-child {
     border-block-end: 0;
   }
