@@ -7,13 +7,10 @@ import { POSTS, formatDate, postsByYear } from '../../data/posts';
 <Base title="Writing">
   <div class="page">
     <Hero title="Writing">
-      <Text variant="lead">
-        I’m writing new articles! Coming soon!
-      </Text>
     </Hero>
 
     {
-      // POSTS.length === 0 ? (
+      POSTS.length === 0 ? (
         <Flex direction="column" gap="600">
           <Image
             src="/images/cat-typing.gif"
@@ -26,7 +23,7 @@ import { POSTS, formatDate, postsByYear } from '../../data/posts';
             <source srcset="/images/cat-typing.png" media="(prefers-reduced-motion: reduce)" />
           </Image>
         </Flex>
-      <!--) : (
+      ) : (
         <Flex direction="column" gap="800">
           {postsByYear(POSTS).map(([year, posts]) => (
             <PostList title={year}>
@@ -41,7 +38,7 @@ import { POSTS, formatDate, postsByYear } from '../../data/posts';
             </PostList>
           ))}
         </Flex>
-      )-->
+      )
     }
   </div>
 </Base>
