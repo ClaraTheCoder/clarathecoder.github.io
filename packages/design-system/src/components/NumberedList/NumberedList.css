@@ -4,8 +4,6 @@
   /* Selectors are doubled with the root so they outrank `.prose ol` and
      `.prose li + li` in a post. */
   .numbered-list.numbered-list {
-    display: grid;
-    gap: var(--space-500) var(--space-800);
     margin: 0;
     padding: 0;
     list-style: none;
@@ -18,6 +16,12 @@
     column-gap: var(--space-400);
     margin: 0;
     counter-increment: numbered-list;
+    /* In a multi-column parent (e.g. a two-column Card), keep each item whole. */
+    break-inside: avoid;
+  }
+
+  .numbered-list .numbered-list__item + .numbered-list__item {
+    margin-block-start: var(--space-500);
   }
 
   /* The ol already gives assistive tech the number, so the drawn one has empty alt. */
@@ -49,15 +53,5 @@
 
   .numbered-list__lead {
     font-weight: var(--font-weight-bold);
-  }
-
-  .numbered-list--2-col {
-    container-type: inline-size;
-  }
-
-  @container (min-width: 36rem) {
-    .numbered-list--2-col.numbered-list--2-col {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
   }
 }

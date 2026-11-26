@@ -3,17 +3,13 @@ import './NumberedList.css';
 import { cx } from '../../utils/cx.js';
 
 export interface NumberedListProps {
-  /** `2` sets the items in two columns when there's room. */
-  columns?: 1 | 2;
   /** `NumberedListItem`s. */
   children: ReactNode;
   className?: string;
 }
 
-export const NumberedList = ({ columns = 1, children, className }: NumberedListProps) => (
-  <ol className={cx('numbered-list', columns === 2 && 'numbered-list--2-col', className)}>
-    {children}
-  </ol>
+export const NumberedList = ({ children, className }: NumberedListProps) => (
+  <ol className={cx('numbered-list', className)}>{children}</ol>
 );
 
 export interface NumberedListItemProps {

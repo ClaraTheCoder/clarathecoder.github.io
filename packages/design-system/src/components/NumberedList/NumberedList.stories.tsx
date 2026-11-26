@@ -21,12 +21,10 @@ const meta = preview.meta({
     ),
   },
   render: (args) => (
-    <Box style={{ inlineSize: 'min(48rem, 100%)' }}>
+    <Box style={{ inlineSize: '48rem', maxInlineSize: '100%' }}>
       <NumberedList {...args} />
     </Box>
   ),
 });
 
 export const Default = meta.story({});
-
-export const TwoColumns = meta.story({ args: { columns: 2 } });
